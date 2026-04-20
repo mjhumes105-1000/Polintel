@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-bg text-ink;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-ink;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-4;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label-caps {
+    @apply font-mono text-[10px] tracking-widest uppercase;
+  }
+
+  .prose-editorial {
+    max-width: 65ch;
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      theme('colors.surface.DEFAULT') 25%,
+      theme('colors.surface.2') 50%,
+      theme('colors.surface.DEFAULT') 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  .animate-reveal {
+    animation: reveal 0.4s ease-out forwards;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.3s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton {
+      animation: none;
+      background: theme('colors.surface.2');
+    }
+    .animate-reveal,
+    .animate-fade-up {
+      animation: none;
+    }
+  }
+}

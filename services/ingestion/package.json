@@ -1,0 +1,20 @@
+{
+  "name": "@political-intel/ingestion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch:fec": "tsx src/scripts/fetch-fec.ts",
+    "fetch:legiscan": "tsx src/scripts/fetch-legiscan.ts",
+    "fetch:all": "tsx src/scripts/fetch-all.ts"
+  },
+  "dependencies": {
+    "@political-intel/types": "workspace:*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}

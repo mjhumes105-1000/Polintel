@@ -1,0 +1,4055 @@
+{
+  "C000059": {
+    "bioguide": "C000059",
+    "govtrack": 400057,
+    "officialName": "Ken Calvert",
+    "birthday": "1953-06-08",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 41,
+      "party": "Republican",
+      "url": "https://calvert.house.gov",
+      "phone": "202-225-1986",
+      "office": "2205 Rayburn House Office Building",
+      "address": "2205 Rayburn House Office Building Washington DC 20515-0541"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C000059.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP02",
+        "name": "Defense",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSAP10",
+        "name": "Energy and Water Development and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 6,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "KenCalvert",
+      "facebook": "70063393423",
+      "youtube": "RepKenCalvert",
+      "youtube_id": "UC5MEj7YOX_QdKoqD_HRxP3A",
+      "twitter_id": "22545491",
+      "instagram": "repkencalvert"
+    }
+  },
+  "C001080": {
+    "bioguide": "C001080",
+    "govtrack": 412379,
+    "officialName": "Judy Chu",
+    "birthday": "1953-07-07",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 28,
+      "party": "Democrat",
+      "url": "https://chu.house.gov",
+      "phone": "202-225-5464",
+      "office": "2423 Rayburn House Office Building",
+      "address": "2423 Rayburn House Office Building Washington DC 20515-0528"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001080.jpg",
+    "committees": [
+      {
+        "thomasId": "HSWM06",
+        "name": "Oversight",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM03",
+        "name": "Work and Welfare",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM02",
+        "name": "Health",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM",
+        "name": "House Committee on Ways and Means",
+        "parentName": null,
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 13,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepJudyChu",
+      "facebook": "RepJudyChu",
+      "youtube": "RepJudyChu",
+      "youtube_id": "UCfcbYOvdEXZNelM8T05nK-w",
+      "twitter_id": "193732179",
+      "instagram": "repjudychu"
+    }
+  },
+  "C001059": {
+    "bioguide": "C001059",
+    "govtrack": 400618,
+    "officialName": "Jim Costa",
+    "birthday": "1952-04-13",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 21,
+      "party": "Democrat",
+      "url": "https://costa.house.gov",
+      "phone": "202-225-3341",
+      "office": "2081 Rayburn House Office Building",
+      "address": "2081 Rayburn House Office Building Washington DC 20515-0521"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001059.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAG29",
+        "name": "Livestock, Dairy, and Poultry",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSAG15",
+        "name": "Forestry and Horticulture",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG",
+        "name": "House Committee on Agriculture",
+        "parentName": null,
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA14",
+        "name": "Europe",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 14,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepJimCosta",
+      "facebook": "RepJimCosta",
+      "youtube": "RepJimCostaCA20",
+      "youtube_id": "UCVgXX23eJEai6GiBOKO6dvA",
+      "twitter_id": "245451804"
+    }
+  },
+  "G000559": {
+    "bioguide": "G000559",
+    "govtrack": 412382,
+    "officialName": "John Garamendi",
+    "birthday": "1945-01-24",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 8,
+      "party": "Democrat",
+      "url": "https://garamendi.house.gov",
+      "phone": "202-225-1880",
+      "office": "2428 Rayburn House Office Building",
+      "address": "2428 Rayburn House Office Building Washington DC 20515-0508"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000559.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAS03",
+        "name": "Readiness",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS29",
+        "name": "Strategic Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW07",
+        "name": "Coast Guard and Maritime Transportation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW13",
+        "name": "Economic Development, Public Buildings, and Emergency Management",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 5,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepGaramendi",
+      "facebook": "repgaramendi",
+      "youtube": "garamendiCA10",
+      "youtube_id": "UCRym1qsO72C39gX6pBu4icg",
+      "twitter_id": "88806753",
+      "instagram": "repgaramendi"
+    }
+  },
+  "L000397": {
+    "bioguide": "L000397",
+    "govtrack": 400245,
+    "officialName": "Zoe Lofgren",
+    "birthday": "1947-12-21",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 18,
+      "party": "Democrat",
+      "url": "https://lofgren.house.gov",
+      "phone": "202-225-3072",
+      "office": "1401 Longworth House Office Building",
+      "address": "1401 Longworth House Office Building Washington DC 20515-0518"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/L/L000397.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSJU03",
+        "name": "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU05",
+        "name": "The Administrative State, Regulatory Reform, and Antitrust",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU01",
+        "name": "Immigration Integrity, Security, and Enforcement",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 8,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepZoeLofgren",
+      "facebook": "zoelofgren",
+      "youtube": "RepZoeLofgren",
+      "youtube_id": "UCOaQ79adORFcaTuJZoIFuZQ",
+      "twitter_id": "267938462"
+    }
+  },
+  "M001163": {
+    "bioguide": "M001163",
+    "govtrack": 400663,
+    "officialName": "Doris O. Matsui",
+    "birthday": "1944-09-25",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 7,
+      "party": "Democrat",
+      "url": "https://matsui.house.gov",
+      "phone": "202-225-7163",
+      "office": "2206 Rayburn House Office Building",
+      "address": "2206 Rayburn House Office Building Washington DC 20515-0507"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001163.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF03",
+        "name": "Energy",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 7,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "DorisMatsui",
+      "facebook": "doris.matsui",
+      "youtube": "RepDorisMatsui",
+      "youtube_id": "UCSqqxVkvskHq3cY2MCbTZsw",
+      "twitter_id": "38254095",
+      "instagram": "repdorismatsui"
+    }
+  },
+  "M001177": {
+    "bioguide": "M001177",
+    "govtrack": 412295,
+    "officialName": "Tom McClintock",
+    "birthday": "1956-07-10",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 5,
+      "party": "Republican",
+      "url": "https://mcclintock.house.gov",
+      "phone": "202-225-2511",
+      "office": "2256 Rayburn House Office Building",
+      "address": "2256 Rayburn House Office Building Washington DC 20515-0505"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001177.jpg",
+    "committees": [
+      {
+        "thomasId": "HSJU01",
+        "name": "Immigration Integrity, Security, and Enforcement",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSII10",
+        "name": "Federal Lands",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU10",
+        "name": "The Constitution and Limited Government",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 4,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepMcClintock",
+      "facebook": "81125319109",
+      "youtube": "McClintockCA04",
+      "youtube_id": "UCMh04KC4LfIzKoXh2Xws_pw",
+      "twitter_id": "50152441",
+      "instagram": "repmcclintock"
+    }
+  },
+  "P000197": {
+    "bioguide": "P000197",
+    "govtrack": 400314,
+    "officialName": "Nancy Pelosi",
+    "birthday": "1940-03-26",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 11,
+      "party": "Democrat",
+      "url": "https://pelosi.house.gov",
+      "phone": "202-225-4965",
+      "office": "1236 Longworth House Office Building",
+      "address": "1236 Longworth House Office Building Washington DC 20515-0511"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000197.jpg",
+    "committees": [],
+    "social": {
+      "facebook": "NancyPelosi",
+      "youtube": "nancypelosi",
+      "youtube_id": "UCxPeEcH0xaCK9nBK98EFhDg",
+      "twitter": "SpeakerPelosi",
+      "twitter_id": "15764644"
+    }
+  },
+  "S001150": {
+    "bioguide": "S001150",
+    "govtrack": 400361,
+    "officialName": "Adam B. Schiff",
+    "birthday": "1960-06-22",
+    "gender": "M",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2025-01-03",
+      "end": "2031-01-03",
+      "state": "CA",
+      "district": null,
+      "party": "Democrat",
+      "url": "https://www.schiff.senate.gov",
+      "phone": "202-224-3841",
+      "office": "112 Hart Senate Office Building",
+      "address": "112 Hart Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/S/S001150.jpg",
+    "committees": [
+      {
+        "thomasId": "SSEV15",
+        "name": "Fisheries, Wildlife, and Water",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSJU26",
+        "name": "Intellectual Property",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSAF13",
+        "name": "Commodities, Derivatives, Risk Management, and Trade",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF14",
+        "name": "Conservation, Forestry, Natural Resources, and Biotechnology",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU01",
+        "name": "Antitrust, Competition Policy, and Consumer Rights",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU28",
+        "name": "Privacy, Technology, and the Law",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV10",
+        "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV08",
+        "name": "Transportation and Infrastructure",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU21",
+        "name": "the Constitution",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV",
+        "name": "Senate Committee on Environment and Public Works",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSSB",
+        "name": "Senate Committee on Small Business and Entrepreneurship",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.sbc.senate.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF",
+        "name": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU",
+        "name": "Senate Committee on the Judiciary",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 10,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "SenAdamSchiff",
+      "instagram": "SenAdamSchiff",
+      "twitter": "SenAdamSchiff",
+      "youtube": "adamschiff"
+    }
+  },
+  "S000344": {
+    "bioguide": "S000344",
+    "govtrack": 400371,
+    "officialName": "Brad Sherman",
+    "birthday": "1954-10-24",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 32,
+      "party": "Democrat",
+      "url": "https://sherman.house.gov",
+      "phone": "202-225-5911",
+      "office": "2365 Rayburn House Office Building",
+      "address": "2365 Rayburn House Office Building Washington DC 20515-0532"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/S/S000344.jpg",
+    "committees": [
+      {
+        "thomasId": "HSBA16",
+        "name": "Capital Markets",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA05",
+        "name": "East Asia and Pacific",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA21",
+        "name": "Digital Assets, Financial Technology, and Artificial Intelligence",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA13",
+        "name": "Middle East and North Africa",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA20",
+        "name": "Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 5,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "BradSherman",
+      "facebook": "63158229861",
+      "youtube": "shermanca27",
+      "youtube_id": "UCPisrz6-SLwVy2l9Mcy8kug",
+      "twitter_id": "30216513",
+      "instagram": "congressmansherman"
+    }
+  },
+  "S001156": {
+    "bioguide": "S001156",
+    "govtrack": 400355,
+    "officialName": "Linda T. Sánchez",
+    "birthday": "1969-01-28",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 38,
+      "party": "Democrat",
+      "url": "https://lindasanchez.house.gov",
+      "phone": "202-225-6676",
+      "office": "2309 Rayburn House Office Building",
+      "address": "2309 Rayburn House Office Building Washington DC 20515-0538"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/S/S001156.jpg",
+    "committees": [
+      {
+        "thomasId": "HSWM04",
+        "name": "Trade",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSWM",
+        "name": "House Committee on Ways and Means",
+        "parentName": null,
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM02",
+        "name": "Health",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 8,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepLindaSanchez",
+      "facebook": "CongresswomanLindaSanchez",
+      "youtube": "LindaTSanchez",
+      "youtube_id": "UCu1K6uHxjMgj2mvzM7O9-ow",
+      "twitter_id": "312134473",
+      "instagram": "replindasanchez"
+    }
+  },
+  "T000460": {
+    "bioguide": "T000460",
+    "govtrack": 400403,
+    "officialName": "Mike Thompson",
+    "birthday": "1951-01-24",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 4,
+      "party": "Democrat",
+      "url": "https://mikethompson.house.gov",
+      "phone": "202-225-3311",
+      "office": "268 Cannon House Office Building",
+      "address": "268 Cannon House Office Building Washington DC 20515-0504"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/T/T000460.jpg",
+    "committees": [
+      {
+        "thomasId": "HSWM05",
+        "name": "Tax",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSWM02",
+        "name": "Health",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM",
+        "name": "House Committee on Ways and Means",
+        "parentName": null,
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 3,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepThompson",
+      "facebook": "RepMikeThompson",
+      "youtube": "CongressmanMThompson",
+      "youtube_id": "UC6pGbtqHZYZmScFGSz5bbdg",
+      "twitter_id": "303861808",
+      "mastodon": "@repthompson@mastodon.social"
+    }
+  },
+  "W000187": {
+    "bioguide": "W000187",
+    "govtrack": 400422,
+    "officialName": "Maxine Waters",
+    "birthday": "1938-08-15",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 43,
+      "party": "Democrat",
+      "url": "https://waters.house.gov",
+      "phone": "202-225-2201",
+      "office": "2221 Rayburn House Office Building",
+      "address": "2221 Rayburn House Office Building Washington DC 20515-0543"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/W/W000187.jpg",
+    "committees": [
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      }
+    ],
+    "social": {
+      "twitter": "RepMaxineWaters",
+      "facebook": "MaxineWaters",
+      "youtube": "MaxineWaters",
+      "youtube_id": "UCOQ2js1VYFlo74n7Ns8WsLQ",
+      "twitter_id": "36686040",
+      "instagram": "repmaxinewaters"
+    }
+  },
+  "H001068": {
+    "bioguide": "H001068",
+    "govtrack": 412511,
+    "officialName": "Jared Huffman",
+    "birthday": "1964-02-18",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 2,
+      "party": "Democrat",
+      "url": "https://huffman.house.gov",
+      "phone": "202-225-5161",
+      "office": "2330 Rayburn House Office Building",
+      "address": "2330 Rayburn House Office Building Washington DC 20515-0502"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/H/H001068.jpg",
+    "committees": [
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSII06",
+        "name": "Energy and Mineral Resources",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 8,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepHuffman",
+      "facebook": "RepHuffman",
+      "youtube": "rephuffman",
+      "youtube_id": "UCJU6SP1ppp1ZhSiqZLiFgDA",
+      "twitter_id": "1071102246",
+      "instagram": "rephuffman"
+    }
+  },
+  "B001287": {
+    "bioguide": "B001287",
+    "govtrack": 412512,
+    "officialName": "Ami Bera",
+    "birthday": "1965-03-02",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 6,
+      "party": "Democrat",
+      "url": "https://bera.house.gov",
+      "phone": "202-225-5716",
+      "office": "172 Cannon House Office Building",
+      "address": "172 Cannon House Office Building Washington DC 20515-0506"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/B/B001287.jpg",
+    "committees": [
+      {
+        "thomasId": "HSFA05",
+        "name": "East Asia and Pacific",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSFA19",
+        "name": "South and Central Asia",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG06",
+        "name": "National Intelligence Enterprise",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG02",
+        "name": "National Security Agency and Cyber",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG",
+        "name": "House Permanent Select Committee on Intelligence",
+        "parentName": null,
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 6,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepBera",
+      "facebook": "RepAmiBera",
+      "youtube": "repamibera",
+      "youtube_id": "UClJCTCo53Zk6b4kUL-bbdzg",
+      "twitter_id": "950783972",
+      "instagram": "repbera"
+    }
+  },
+  "B001285": {
+    "bioguide": "B001285",
+    "govtrack": 412516,
+    "officialName": "Julia Brownley",
+    "birthday": "1952-08-28",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 26,
+      "party": "Democrat",
+      "url": "https://juliabrownley.house.gov",
+      "phone": "202-225-5811",
+      "office": "2262 Rayburn House Office Building",
+      "address": "2262 Rayburn House Office Building Washington DC 20515-0526"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/B/B001285.jpg",
+    "committees": [
+      {
+        "thomasId": "HSVR03",
+        "name": "Health",
+        "parentName": "House Committee on Veterans' Affairs",
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSVR",
+        "name": "House Committee on Veterans' Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 19,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepBrownley",
+      "youtube": "RepJuliaBrownley",
+      "youtube_id": "UCFrC4Ouk5R6xQztS9PZin_A",
+      "facebook": "RepJuliaBrownley",
+      "twitter_id": "1243902714",
+      "instagram": "RepBrownley"
+    }
+  },
+  "R000599": {
+    "bioguide": "R000599",
+    "govtrack": 412519,
+    "officialName": "Raul Ruiz",
+    "birthday": "1972-08-25",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 25,
+      "party": "Democrat",
+      "url": "https://ruiz.house.gov",
+      "phone": "202-225-5330",
+      "office": "2342 Rayburn House Office Building",
+      "address": "2342 Rayburn House Office Building Washington DC 20515-0525"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/R/R000599.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF14",
+        "name": "Health",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF18",
+        "name": "Environment",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 8,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepRaulRuizMD",
+      "facebook": "CongressmanRaulRuizMD",
+      "youtube": "repraulruiz",
+      "youtube_id": "UCSDk-cyNPCo1iy6rweSPmBw",
+      "twitter_id": "1089859058"
+    }
+  },
+  "T000472": {
+    "bioguide": "T000472",
+    "govtrack": 412520,
+    "officialName": "Mark Takano",
+    "birthday": "1960-12-10",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 39,
+      "party": "Democrat",
+      "url": "https://takano.house.gov",
+      "phone": "202-225-2305",
+      "office": "2078 Rayburn House Office Building",
+      "address": "2078 Rayburn House Office Building Washington DC 20515-0539"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/T/T000472.jpg",
+    "committees": [
+      {
+        "thomasId": "HSVR",
+        "name": "House Committee on Veterans' Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSED13",
+        "name": "Higher Education and Workforce Development",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSED10",
+        "name": "Workforce Protections",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSED",
+        "name": "House Committee on Education and Workforce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSED02",
+        "name": "Health, Employment, Labor, and Pensions",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 9,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepMarkTakano",
+      "facebook": "RepMarkTakano",
+      "youtube": "RepMarkTakano",
+      "youtube_id": "UCJg4F1irmSFeKoXZBaZbX2w",
+      "twitter_id": "1037321378",
+      "instagram": "repmarktakano"
+    }
+  },
+  "V000130": {
+    "bioguide": "V000130",
+    "govtrack": 412522,
+    "officialName": "Juan Vargas",
+    "birthday": "1961-03-07",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 52,
+      "party": "Democrat",
+      "url": "https://vargas.house.gov",
+      "phone": "202-225-8045",
+      "office": "2467 Rayburn House Office Building",
+      "address": "2467 Rayburn House Office Building Washington DC 20515-0552"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/V/V000130.jpg",
+    "committees": [
+      {
+        "thomasId": "HSBA10",
+        "name": "National Security, Illicit Finance, and International Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA16",
+        "name": "Capital Markets",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA20",
+        "name": "Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 12,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "RepJuanVargas",
+      "twitter": "RepJuanVargas",
+      "youtube": "RepJuanVargas",
+      "youtube_id": "UCpMthf8y7bEMJH_td0dznRQ",
+      "twitter_id": "1260172386",
+      "instagram": "repjuanvargas"
+    }
+  },
+  "P000608": {
+    "bioguide": "P000608",
+    "govtrack": 412523,
+    "officialName": "Scott H. Peters",
+    "birthday": "1958-06-17",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 50,
+      "party": "Democrat",
+      "url": "https://scottpeters.house.gov",
+      "phone": "202-225-0508",
+      "office": "2369 Rayburn House Office Building",
+      "address": "2369 Rayburn House Office Building Washington DC 20515-0550"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000608.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF03",
+        "name": "Energy",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF18",
+        "name": "Environment",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 9,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepScottPeters",
+      "facebook": "RepScottPeters",
+      "youtube_id": "UCQK77QJxW7Xr-S3zqeMd-0g",
+      "twitter_id": "1135486501",
+      "instagram": "repscottpeters"
+    }
+  },
+  "D000623": {
+    "bioguide": "D000623",
+    "govtrack": 412613,
+    "officialName": "Mark DeSaulnier",
+    "birthday": "1952-03-31",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 10,
+      "party": "Democrat",
+      "url": "https://desaulnier.house.gov",
+      "phone": "202-225-2095",
+      "office": "2134 Rayburn House Office Building",
+      "address": "2134 Rayburn House Office Building Washington DC 20515-0510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/D/D000623.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSO",
+        "name": "House Committee on Ethics",
+        "parentName": null,
+        "type": "house",
+        "url": "https://ethics.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSED02",
+        "name": "Health, Employment, Labor, and Pensions",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSED",
+        "name": "House Committee on Education and Workforce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSED13",
+        "name": "Higher Education and Workforce Development",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW14",
+        "name": "Railroads, Pipelines, and Hazardous Materials",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 13,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepDeSaulnier",
+      "facebook": "RepMarkDeSaulnier",
+      "twitter_id": "2968007206",
+      "instagram": "repdesaulnier"
+    }
+  },
+  "A000371": {
+    "bioguide": "A000371",
+    "govtrack": 412615,
+    "officialName": "Pete Aguilar",
+    "birthday": "1979-06-19",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 33,
+      "party": "Democrat",
+      "url": "https://aguilar.house.gov",
+      "phone": "202-225-3201",
+      "office": "108 Cannon House Office Building",
+      "address": "108 Cannon House Office Building Washington DC 20515-0533"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/A/A000371.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP02",
+        "name": "Defense",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP20",
+        "name": "Transportation, Housing and Urban Development, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 13,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepPeteAguilar",
+      "facebook": "reppeteaguilar",
+      "twitter_id": "3018670151",
+      "youtube_id": "UCxwbFLOlKDsXrwizV5jah7g"
+    }
+  },
+  "L000582": {
+    "bioguide": "L000582",
+    "govtrack": 412616,
+    "officialName": "Ted Lieu",
+    "birthday": "1969-03-29",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 36,
+      "party": "Democrat",
+      "url": "https://lieu.house.gov",
+      "phone": "202-225-3976",
+      "office": "2454 Rayburn House Office Building",
+      "address": "2454 Rayburn House Office Building Washington DC 20515-0536"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/L/L000582.jpg",
+    "committees": [
+      {
+        "thomasId": "HSJU03",
+        "name": "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 7,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepTedLieu",
+      "facebook": "RepTedLieu",
+      "twitter_id": "3044993235",
+      "instagram": "RepTedLieu",
+      "youtube_id": "UC9qcJxTqfDNBnVul1IojlFg"
+    }
+  },
+  "T000474": {
+    "bioguide": "T000474",
+    "govtrack": 412617,
+    "officialName": "Norma J. Torres",
+    "birthday": "1965-04-04",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 35,
+      "party": "Democrat",
+      "url": "https://torres.house.gov",
+      "phone": "202-225-6161",
+      "office": "2227 Rayburn House Office Building",
+      "address": "2227 Rayburn House Office Building Washington DC 20515-0535"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/T/T000474.jpg",
+    "committees": [
+      {
+        "thomasId": "HSHA27",
+        "name": "Modernization and Innovation",
+        "parentName": "House Committee on House Administration",
+        "type": "house",
+        "url": "https://cha.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSHA",
+        "name": "House Committee on House Administration",
+        "parentName": null,
+        "type": "house",
+        "url": "https://cha.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP04",
+        "name": "National Security, Department of State, and Related Programs",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP20",
+        "name": "Transportation, Housing and Urban Development, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 16,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "NormaJTorres",
+      "facebook": "RepNormaTorres",
+      "twitter_id": "236279233",
+      "youtube_id": "UCvWY4qKP6--o3pIJY7hhKDg",
+      "instagram": "repnormatorres",
+      "mastodon": "@repnormatorres@mstdn.social"
+    }
+  },
+  "K000389": {
+    "bioguide": "K000389",
+    "govtrack": 412684,
+    "officialName": "Ro Khanna",
+    "birthday": "1976-09-13",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 17,
+      "party": "Democrat",
+      "url": "https://khanna.house.gov",
+      "phone": "202-225-2631",
+      "office": "306 Cannon House Office Building",
+      "address": "306 Cannon House Office Building Washington DC 20515-0517"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000389.jpg",
+    "committees": [
+      {
+        "thomasId": "HSZS",
+        "name": "House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "parentName": null,
+        "type": "house",
+        "url": null,
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSAS35",
+        "name": "Cyber, Information Technologies, and Innovation",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSGO12",
+        "name": "Cybersecurity, Information Technology, and Government Innovation",
+        "parentName": "House Committee on Oversight and Government Reform",
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS28",
+        "name": "Seapower and Projection Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO05",
+        "name": "Economic Growth, Energy Policy, and Regulatory Affairs",
+        "parentName": "House Committee on Oversight and Government Reform",
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO",
+        "name": "House Committee on Oversight and Government Reform",
+        "parentName": null,
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 7,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "RepRoKhanna",
+      "twitter": "RepRoKhanna",
+      "twitter_id": "816298918468259841",
+      "instagram": "reprokhanna",
+      "youtube_id": "UCr4KOYv1o1oEQhy1jhhm3pQ"
+    }
+  },
+  "P000613": {
+    "bioguide": "P000613",
+    "govtrack": 412685,
+    "officialName": "Jimmy Panetta",
+    "birthday": "1969-10-01",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 19,
+      "party": "Democrat",
+      "url": "https://panetta.house.gov",
+      "phone": "202-225-2861",
+      "office": "200 Cannon House Office Building",
+      "address": "200 Cannon House Office Building Washington DC 20515-0519"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000613.jpg",
+    "committees": [
+      {
+        "thomasId": "HSWM04",
+        "name": "Trade",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM",
+        "name": "House Committee on Ways and Means",
+        "parentName": null,
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 15,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "RepJimmyPanetta",
+      "twitter": "RepJimmyPanetta",
+      "twitter_id": "796736612554117120",
+      "instagram": "repjimmypanetta",
+      "youtube_id": "UCmw-aERG51C96edMDPN7fXQ"
+    }
+  },
+  "C001112": {
+    "bioguide": "C001112",
+    "govtrack": 412686,
+    "officialName": "Salud O. Carbajal",
+    "birthday": "1964-11-18",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 24,
+      "party": "Democrat",
+      "url": "https://carbajal.house.gov",
+      "phone": "202-225-3601",
+      "office": "2331 Rayburn House Office Building",
+      "address": "2331 Rayburn House Office Building Washington DC 20515-0524"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001112.jpg",
+    "committees": [
+      {
+        "thomasId": "HSPW07",
+        "name": "Coast Guard and Maritime Transportation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSAS25",
+        "name": "Tactical Air and Land Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS29",
+        "name": "Strategic Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 12,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 15,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 20,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG",
+        "name": "House Committee on Agriculture",
+        "parentName": null,
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 25,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "repsaludcarbajal",
+      "twitter": "RepCarbajal",
+      "twitter_id": "816157667882373120",
+      "instagram": "repcarbajal",
+      "youtube": "repcarbajal"
+    }
+  },
+  "B001300": {
+    "bioguide": "B001300",
+    "govtrack": 412687,
+    "officialName": "Nanette Diaz Barragán",
+    "birthday": "1976-09-15",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 44,
+      "party": "Democrat",
+      "url": "https://barragan.house.gov",
+      "phone": "202-225-8220",
+      "office": "2312 Rayburn House Office Building",
+      "address": "2312 Rayburn House Office Building Washington DC 20515-0544"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/B/B001300.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF18",
+        "name": "Environment",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF14",
+        "name": "Health",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 13,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "CongresswomanBarragan",
+      "twitter": "RepBarragan",
+      "twitter_id": "816833925456789505",
+      "instagram": "repbarragan"
+    }
+  },
+  "C001110": {
+    "bioguide": "C001110",
+    "govtrack": 412688,
+    "officialName": "J. Luis Correa",
+    "birthday": "1958-01-24",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 46,
+      "party": "Democrat",
+      "url": "https://correa.house.gov",
+      "phone": "202-225-2965",
+      "office": "2082 Rayburn House Office Building",
+      "address": "2082 Rayburn House Office Building Washington DC 20515-0546"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001110.jpg",
+    "committees": [
+      {
+        "thomasId": "HSHM11",
+        "name": "Border Security and Enforcement",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSJU05",
+        "name": "The Administrative State, Regulatory Reform, and Antitrust",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM05",
+        "name": "Counterterrorism and Intelligence",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU01",
+        "name": "Immigration Integrity, Security, and Enforcement",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 9,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepLouCorrea",
+      "facebook": "RepLouCorrea",
+      "twitter_id": "815985039485837312",
+      "youtube_id": "UCIKJJp4QJIDjnjodc23qKkw",
+      "instagram": "reploucorrea"
+    }
+  },
+  "G000585": {
+    "bioguide": "G000585",
+    "govtrack": 412739,
+    "officialName": "Jimmy Gomez",
+    "birthday": "1974-11-25",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 34,
+      "party": "Democrat",
+      "url": "https://gomez.house.gov",
+      "phone": "202-225-6235",
+      "office": "506 Cannon House Office Building",
+      "address": "506 Cannon House Office Building Washington DC 20515-0534"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000585.jpg",
+    "committees": [
+      {
+        "thomasId": "HLIG01",
+        "name": "Central Intelligence Agency",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HLIG06",
+        "name": "National Intelligence Enterprise",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM05",
+        "name": "Tax",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM03",
+        "name": "Work and Welfare",
+        "parentName": "House Committee on Ways and Means",
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG",
+        "name": "House Permanent Select Committee on Intelligence",
+        "parentName": null,
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSWM",
+        "name": "House Committee on Ways and Means",
+        "parentName": null,
+        "type": "house",
+        "url": "https://waysandmeans.house.gov/",
+        "rank": 16,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepJimmyGomez",
+      "twitter_id": "2371339658",
+      "facebook": "RepJimmyGomez",
+      "instagram": "repjimmygomez",
+      "youtube": "UCOmm091WM6D01xTdzsWNvbQ"
+    }
+  },
+  "H001090": {
+    "bioguide": "H001090",
+    "govtrack": 412754,
+    "officialName": "Josh Harder",
+    "birthday": "1986-08-01",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 9,
+      "party": "Democrat",
+      "url": "https://harder.house.gov",
+      "phone": "202-225-4540",
+      "office": "209 Cannon House Office Building",
+      "address": "209 Cannon House Office Building Washington DC 20515-0509"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/H/H001090.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP06",
+        "name": "Interior, Environment, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP07",
+        "name": "Labor, Health and Human Services, Education, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 19,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepJoshHarder",
+      "twitter_id": "1080851152151953410"
+    }
+  },
+  "L000593": {
+    "bioguide": "L000593",
+    "govtrack": 412760,
+    "officialName": "Mike Levin",
+    "birthday": "1978-10-28",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 49,
+      "party": "Democrat",
+      "url": "https://levin.house.gov",
+      "phone": "202-225-3906",
+      "office": "2352 Rayburn House Office Building",
+      "address": "2352 Rayburn House Office Building Washington DC 20515-0549"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/L/L000593.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP10",
+        "name": "Energy and Water Development and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP18",
+        "name": "Military Construction, Veterans Affairs, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 23,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepMikeLevin",
+      "twitter_id": "1072134139560620033",
+      "facebook": "RepMikeLevin",
+      "instagram": "RepMikeLevin",
+      "youtube": "UCYFDRohyZgoPy5rXOaVZO-A"
+    }
+  },
+  "I000056": {
+    "bioguide": "I000056",
+    "govtrack": 400196,
+    "officialName": "Darrell Issa",
+    "birthday": "1953-11-01",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 48,
+      "party": "Republican",
+      "url": "https://issa.house.gov",
+      "phone": "202-225-5672",
+      "office": "2108 Rayburn House Office Building",
+      "address": "2108 Rayburn House Office Building Washington DC 20515-0548"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/I/I000056.jpg",
+    "committees": [
+      {
+        "thomasId": "HSJU03",
+        "name": "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU05",
+        "name": "The Administrative State, Regulatory Reform, and Antitrust",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY21",
+        "name": "Investigations and Oversight",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY15",
+        "name": "Research and Technology",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA13",
+        "name": "Middle East and North Africa",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA17",
+        "name": "Oversight and Intelligence",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 7,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "repdarrellissa",
+      "twitter_id": "63650107",
+      "facebook": "congressmandarrellissa"
+    }
+  },
+  "V000129": {
+    "bioguide": "V000129",
+    "govtrack": 412515,
+    "officialName": "David G. Valadao",
+    "birthday": "1977-04-14",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 22,
+      "party": "Republican",
+      "url": "https://valadao.house.gov",
+      "phone": "202-225-4695",
+      "office": "2465 Rayburn House Office Building",
+      "address": "2465 Rayburn House Office Building Washington DC 20515-0522"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/V/V000129.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP24",
+        "name": "Legislative Branch",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "JSLC",
+        "name": "Joint Committee of Congress on the Library",
+        "parentName": null,
+        "type": "joint",
+        "url": "https://cha.house.gov/jointcommittees/joint-committee-library",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP01",
+        "name": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP02",
+        "name": "Defense",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 13,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepDavidValadao",
+      "twitter_id": "1128514404",
+      "facebook": "CongressmanDavidValadao"
+    }
+  },
+  "O000019": {
+    "bioguide": "O000019",
+    "govtrack": 456801,
+    "officialName": "Jay Obernolte",
+    "birthday": "1970-08-18",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 23,
+      "party": "Republican",
+      "url": "https://obernolte.house.gov",
+      "phone": "202-225-5861",
+      "office": "2433 Rayburn House Office Building",
+      "address": "2433 Rayburn House Office Building Washington DC 20515-0523"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/O/O000019.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY15",
+        "name": "Research and Technology",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF17",
+        "name": "Commerce, Manufacturing, and Trade",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF14",
+        "name": "Health",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 19,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "JayObernolte",
+      "twitter_id": "272482466"
+    }
+  },
+  "K000397": {
+    "bioguide": "K000397",
+    "govtrack": 456802,
+    "officialName": "Young Kim",
+    "birthday": "1962-10-18",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 40,
+      "party": "Republican",
+      "url": "https://youngkim.house.gov",
+      "phone": "202-225-4111",
+      "office": "2439 Rayburn House Office Building",
+      "address": "2439 Rayburn House Office Building Washington DC 20515-0540"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000397.jpg",
+    "committees": [
+      {
+        "thomasId": "HSFA05",
+        "name": "East Asia and Pacific",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSFA14",
+        "name": "Europe",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA10",
+        "name": "National Security, Illicit Finance, and International Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA20",
+        "name": "Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSZS",
+        "name": "House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "parentName": null,
+        "type": "house",
+        "url": null,
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 17,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepYoungKim",
+      "twitter_id": "1344677401465397249",
+      "facebook": "RepYoungKim",
+      "instagram": "repyoungkim",
+      "youtube": "@RepYoungKim"
+    }
+  },
+  "J000305": {
+    "bioguide": "J000305",
+    "govtrack": 456804,
+    "officialName": "Sara Jacobs",
+    "birthday": "1989-02-01",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 51,
+      "party": "Democrat",
+      "url": "https://sarajacobs.house.gov",
+      "phone": "202-225-2040",
+      "office": "2348 Rayburn House Office Building",
+      "address": "2348 Rayburn House Office Building Washington DC 20515-0551"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/J/J000305.jpg",
+    "committees": [
+      {
+        "thomasId": "HSFA16",
+        "name": "Africa",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSAS02",
+        "name": "Military Personnel",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA07",
+        "name": "Western Hemisphere",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS26",
+        "name": "Intelligence and Special Operations",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 12,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepSaraJacobs",
+      "twitter_id": "1345103905869455361",
+      "facebook": "RepSaraJacobs",
+      "instagram": "repsarajacobs"
+    }
+  },
+  "P000145": {
+    "bioguide": "P000145",
+    "govtrack": 456856,
+    "officialName": "Alex Padilla",
+    "birthday": "1973-03-22",
+    "gender": "M",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2023-01-03",
+      "end": "2029-01-03",
+      "state": "CA",
+      "district": null,
+      "party": "Democrat",
+      "url": "https://www.padilla.senate.gov",
+      "phone": "202-224-3553",
+      "office": "331 Hart Senate Office Building",
+      "address": "331 Hart Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000145.jpg",
+    "committees": [
+      {
+        "thomasId": "SSRA",
+        "name": "Senate Committee on Rules and Administration",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.rules.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSJU04",
+        "name": "Border Security and Immigration",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "JSPR",
+        "name": "Joint Committee on Printing",
+        "parentName": null,
+        "type": "joint",
+        "url": "https://cha.house.gov/jointcommittees/joint-committee-on-printing",
+        "rank": 1,
+        "title": null
+      },
+      {
+        "thomasId": "JSLC",
+        "name": "Joint Committee of Congress on the Library",
+        "parentName": null,
+        "type": "joint",
+        "url": "https://cha.house.gov/jointcommittees/joint-committee-library",
+        "rank": 1,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG07",
+        "name": "Water and Power",
+        "parentName": "Senate Committee on Energy and Natural Resources",
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV15",
+        "name": "Fisheries, Wildlife, and Water",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU25",
+        "name": "Federal Courts, Oversight, Agency Action, and Federal Rights",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU28",
+        "name": "Privacy, Technology, and the Law",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV10",
+        "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV08",
+        "name": "Transportation and Infrastructure",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU21",
+        "name": "the Constitution",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG03",
+        "name": "Public Lands, Forests, and Mining",
+        "parentName": "Senate Committee on Energy and Natural Resources",
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV",
+        "name": "Senate Committee on Environment and Public Works",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG01",
+        "name": "Energy",
+        "parentName": "Senate Committee on Energy and Natural Resources",
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG",
+        "name": "Senate Committee on Energy and Natural Resources",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU",
+        "name": "Senate Committee on the Judiciary",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "SSBU",
+        "name": "Senate Committee on the Budget",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.budget.senate.gov/",
+        "rank": 10,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "SenAlexPadilla",
+      "twitter_id": "1351236267707654145",
+      "facebook": "SenAlexPadilla",
+      "instagram": "SenAlexPadilla"
+    }
+  },
+  "K000401": {
+    "bioguide": "K000401",
+    "govtrack": 456881,
+    "officialName": "Kevin Kiley",
+    "birthday": "1985-01-30",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 3,
+      "party": "Independent",
+      "url": "https://kiley.house.gov",
+      "phone": "202-225-2523",
+      "office": "2445 Rayburn House Office Building",
+      "address": "2445 Rayburn House Office Building Washington DC 20515-0503"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000401.jpg",
+    "committees": [],
+    "social": {
+      "twitter": "RepKiley",
+      "twitter_id": "1610356961475809280",
+      "facebook": "100089382125341",
+      "youtube": "@repkevinkiley"
+    }
+  },
+  "M001225": {
+    "bioguide": "M001225",
+    "govtrack": 456883,
+    "officialName": "Kevin Mullin",
+    "birthday": "1970-06-15",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 15,
+      "party": "Democrat",
+      "url": "https://kevinmullin.house.gov",
+      "phone": "202-225-3531",
+      "office": "1404 Longworth House Office Building",
+      "address": "1404 Longworth House Office Building Washington DC 20515-0515"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001225.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF03",
+        "name": "Energy",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF17",
+        "name": "Commerce, Manufacturing, and Trade",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF02",
+        "name": "Oversight and Investigations",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 22,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepKevinMullin",
+      "twitter_id": "1610411994888409088",
+      "facebook": "CongressmanKevinMullin",
+      "instagram": "repkevinmullin",
+      "youtube": "UCAenuXjUZagZyD4HQL7_2ZA"
+    }
+  },
+  "K000400": {
+    "bioguide": "K000400",
+    "govtrack": 456884,
+    "officialName": "Sydney Kamlager-Dove",
+    "birthday": "1972-07-20",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 37,
+      "party": "Democrat",
+      "url": "https://kamlager-dove.house.gov",
+      "phone": "202-225-7084",
+      "office": "144 Cannon House Office Building",
+      "address": "144 Cannon House Office Building Washington DC 20515-0537"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000400.jpg",
+    "committees": [
+      {
+        "thomasId": "HSFA19",
+        "name": "South and Central Asia",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSFA07",
+        "name": "Western Hemisphere",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU10",
+        "name": "The Constitution and Limited Government",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU03",
+        "name": "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 13,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 16,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepKamlagerDove",
+      "facebook": "RepKamlagerDove",
+      "instagram": "rep_kamlagerdove"
+    }
+  },
+  "G000598": {
+    "bioguide": "G000598",
+    "govtrack": 456885,
+    "officialName": "Robert Garcia",
+    "birthday": "1977-12-02",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 42,
+      "party": "Democrat",
+      "url": "https://robertgarcia.house.gov",
+      "phone": "202-225-7924",
+      "office": "109 Cannon House Office Building",
+      "address": "109 Cannon House Office Building Washington DC 20515-0542"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000598.jpg",
+    "committees": [
+      {
+        "thomasId": "HSGO",
+        "name": "House Committee on Oversight and Government Reform",
+        "parentName": null,
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 24,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 25,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepRobertGarcia",
+      "twitter_id": "1602792195878047744",
+      "facebook": "reprobertgarcia",
+      "instagram": "RepRobertGarcia"
+    }
+  },
+  "F000480": {
+    "bioguide": "F000480",
+    "govtrack": 456958,
+    "officialName": "Vince Fong",
+    "birthday": "1979-10-24",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 20,
+      "party": "Republican",
+      "url": "https://fong.house.gov",
+      "phone": "202-225-2915",
+      "office": "243 Cannon House Office Building",
+      "address": "243 Cannon House Office Building Washington DC 20515-0520"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/F/F000480.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY15",
+        "name": "Research and Technology",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM08",
+        "name": "Cybersecurity and Infrastructure Protection",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY16",
+        "name": "Space and Aeronautics",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW14",
+        "name": "Railroads, Pipelines, and Hazardous Materials",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 12,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 13,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 16,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 16,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 21,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepVinceFong",
+      "instagram": "repvincefong"
+    }
+  },
+  "C001123": {
+    "bioguide": "C001123",
+    "govtrack": 412757,
+    "officialName": "Gilbert Ray Cisneros, Jr.",
+    "birthday": "1971-02-12",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 31,
+      "party": "Democrat",
+      "url": "https://cisneros.house.gov",
+      "phone": "202-225-5256",
+      "office": "2463 Rayburn House Office Building",
+      "address": "2463 Rayburn House Office Building Washington DC 20515-0531"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001123.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSM23",
+        "name": "Contracting and Infrastructure",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSSM24",
+        "name": "Oversight, Investigations, and Regulations",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM",
+        "name": "House Committee on Small Business",
+        "parentName": null,
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS02",
+        "name": "Military Personnel",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS26",
+        "name": "Intelligence and Special Operations",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 19,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "RepGilCisneros",
+      "instagram": "repgilcisneros"
+    }
+  },
+  "S001231": {
+    "bioguide": "S001231",
+    "govtrack": 456974,
+    "officialName": "Lateefah Simon",
+    "birthday": "1977-01-29",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 12,
+      "party": "Democrat",
+      "url": "https://simon.house.gov",
+      "phone": "202-225-2661",
+      "office": "1023 Longworth House Office Building",
+      "address": "1023 Longworth House Office Building Washington DC 20515-0512"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/S/S001231.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSM22",
+        "name": "Innovation, Entrepreneurship, and Workforce Development",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO33",
+        "name": "Federal Law Enforcement",
+        "parentName": "House Committee on Oversight and Government Reform",
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM24",
+        "name": "Oversight, Investigations, and Regulations",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO27",
+        "name": "Health Care and Financial Services",
+        "parentName": "House Committee on Oversight and Government Reform",
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM",
+        "name": "House Committee on Small Business",
+        "parentName": null,
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO",
+        "name": "House Committee on Oversight and Government Reform",
+        "parentName": null,
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 17,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepLSimon",
+      "facebook": "RepLSimon",
+      "instagram": "RepLSimon"
+    }
+  },
+  "G000605": {
+    "bioguide": "G000605",
+    "govtrack": 456975,
+    "officialName": "Adam Gray",
+    "birthday": "1977-09-23",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 13,
+      "party": "Democrat",
+      "url": "https://gray.house.gov",
+      "phone": "202-225-1947",
+      "office": "1230 Longworth House Office Building",
+      "address": "1230 Longworth House Office Building Washington DC 20515-0513"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000605.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAG15",
+        "name": "Forestry and Horticulture",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG29",
+        "name": "Livestock, Dairy, and Poultry",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG22",
+        "name": "Commodity Markets, Digital Assets, and Rural Development",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG",
+        "name": "House Committee on Agriculture",
+        "parentName": null,
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 17,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepAdamGrayCA",
+      "facebook": "repadamgrayca",
+      "instagram": "repadamgrayca"
+    }
+  },
+  "L000607": {
+    "bioguide": "L000607",
+    "govtrack": 456976,
+    "officialName": "Sam T. Liccardo",
+    "birthday": "1970-04-16",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 16,
+      "party": "Democrat",
+      "url": "https://liccardo.house.gov",
+      "phone": "202-225-8104",
+      "office": "1117 Longworth House Office Building",
+      "address": "1117 Longworth House Office Building Washington DC 20515-0516"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/L/L000607.jpg",
+    "committees": [
+      {
+        "thomasId": "HSBA09",
+        "name": "Oversight and Investigations",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA10",
+        "name": "National Security, Illicit Finance, and International Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA21",
+        "name": "Digital Assets, Financial Technology, and Artificial Intelligence",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 24,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "repliccardo",
+      "instagram": "repliccardo"
+    }
+  },
+  "W000830": {
+    "bioguide": "W000830",
+    "govtrack": 456977,
+    "officialName": "George Whitesides",
+    "birthday": "1974-03-03",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 27,
+      "party": "Democrat",
+      "url": "https://whitesides.house.gov",
+      "phone": "202-225-1956",
+      "office": "1504 Longworth House Office Building",
+      "address": "1504 Longworth House Office Building Washington DC 20515-0527"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/W/W000830.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY16",
+        "name": "Space and Aeronautics",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS29",
+        "name": "Strategic Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS28",
+        "name": "Seapower and Projection Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS35",
+        "name": "Cyber, Information Technologies, and Innovation",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 13,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 23,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "Rep_Whitesides",
+      "facebook": "repwhitesides",
+      "instagram": "repwhitesides"
+    }
+  },
+  "R000620": {
+    "bioguide": "R000620",
+    "govtrack": 456978,
+    "officialName": "Luz M. Rivas",
+    "birthday": "1974-02-06",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 29,
+      "party": "Democrat",
+      "url": "https://rivas.house.gov",
+      "phone": "202-225-6131",
+      "office": "1319 Longworth House Office Building",
+      "address": "1319 Longworth House Office Building Washington DC 20515-0529"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/R/R000620.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY21",
+        "name": "Investigations and Oversight",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY15",
+        "name": "Research and Technology",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSII06",
+        "name": "Energy and Mineral Resources",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 15,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepLuzRivas",
+      "facebook": "congresswomanluzrivas",
+      "instagram": "RepLuzRivas"
+    }
+  },
+  "F000483": {
+    "bioguide": "F000483",
+    "govtrack": 456979,
+    "officialName": "Laura Friedman",
+    "birthday": "1966-12-03",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 30,
+      "party": "Democrat",
+      "url": "https://friedman.house.gov",
+      "phone": "202-225-4176",
+      "office": "1517 Longworth House Office Building",
+      "address": "1517 Longworth House Office Building Washington DC 20515-0530"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/F/F000483.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSY20",
+        "name": "Energy",
+        "parentName": "House Committee on Science, Space, and Technology",
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW13",
+        "name": "Economic Development, Public Buildings, and Emergency Management",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW14",
+        "name": "Railroads, Pipelines, and Hazardous Materials",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 12,
+        "title": null
+      },
+      {
+        "thomasId": "HSSY",
+        "name": "House Committee on Science, Space, and Technology",
+        "parentName": null,
+        "type": "house",
+        "url": "https://science.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 16,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 28,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepFriedmanCA",
+      "facebook": "RepLauraFriedman",
+      "instagram": "RepLauraFriedman"
+    }
+  },
+  "T000491": {
+    "bioguide": "T000491",
+    "govtrack": 456980,
+    "officialName": "Derek Tran",
+    "birthday": "1980-12-22",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 45,
+      "party": "Democrat",
+      "url": "https://tran.house.gov",
+      "phone": "202-225-2415",
+      "office": "1127 Longworth House Office Building",
+      "address": "1127 Longworth House Office Building Washington DC 20515-0545"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/T/T000491.jpg",
+    "committees": [
+      {
+        "thomasId": "HSSM24",
+        "name": "Oversight, Investigations, and Regulations",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSSM23",
+        "name": "Contracting and Infrastructure",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS26",
+        "name": "Intelligence and Special Operations",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM",
+        "name": "House Committee on Small Business",
+        "parentName": null,
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS03",
+        "name": "Readiness",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 24,
+        "title": null
+      }
+    ],
+    "social": {}
+  },
+  "M001241": {
+    "bioguide": "M001241",
+    "govtrack": 456981,
+    "officialName": "Dave Min",
+    "birthday": "1976-03-05",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "CA",
+      "district": 47,
+      "party": "Democrat",
+      "url": "https://min.house.gov",
+      "phone": "202-225-5611",
+      "office": "1034 Longworth House Office Building",
+      "address": "1034 Longworth House Office Building Washington DC 20515-0547"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001241.jpg",
+    "committees": [
+      {
+        "thomasId": "HSII06",
+        "name": "Energy and Mineral Resources",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO05",
+        "name": "Economic Growth, Energy Policy, and Regulatory Affairs",
+        "parentName": "House Committee on Oversight and Government Reform",
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "JSEC",
+        "name": "Joint Economic Committee",
+        "parentName": null,
+        "type": "joint",
+        "url": "http://www.jec.senate.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSGO",
+        "name": "House Committee on Oversight and Government Reform",
+        "parentName": null,
+        "type": "house",
+        "url": "https://oversight.house.gov/",
+        "rank": 18,
+        "title": null
+      }
+    ],
+    "social": {}
+  }
+}
