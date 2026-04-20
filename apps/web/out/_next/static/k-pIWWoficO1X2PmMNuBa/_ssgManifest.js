@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fbills\u002F[id]","\u002Fcommittees\u002F[slug]","\u002Fpoliticians\u002F[slug]","\u002Fpoliticians\u002F[slug]\u002Fcandidacy"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

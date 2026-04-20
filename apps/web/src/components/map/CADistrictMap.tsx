@@ -30,7 +30,7 @@ export function CADistrictMap({ selectedDistrict, onDistrictHover, onDistrictCli
   const didDrag = useRef(false)
 
   useEffect(() => {
-    fetch('/data/ca-districts.json')
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/data/ca-districts.json`)
       .then(r => r.json())
       .then((data: FeatureCollection) => {
         // TIGERweb uses CCW winding; D3 spherical geometry needs CW for filled interiors.
