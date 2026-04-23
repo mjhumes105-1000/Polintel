@@ -7,8 +7,9 @@ import { stateData } from '@/data/states'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import newsom from '@/data/politicians/gavin-newsom'
+import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
 
-const politicians = [newsom]
+const politicians = [newsom, ...Object.values(caDelegationProfiles)]
 
 interface Result {
   type: 'politician' | 'state' | 'candidate' | 'bill'

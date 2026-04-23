@@ -1,5 +1,8 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
-import type { PoliticianProfile } from '@political-intel/types'
+import type { PoliticianProfile, CommitteeRole } from '@political-intel/types'
 
 interface BaselineCardProps {
   politician: PoliticianProfile
@@ -17,7 +20,7 @@ export function BaselineCard({ politician }: BaselineCardProps) {
       <h2 className="label-caps text-accent/70 mb-4">
         OVERVIEW
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded overflow-hidden border border-border">
+      <div className="grid grid-cols-3 gap-px bg-border rounded overflow-hidden border border-border">
         <StatCell
           label="Current Office"
           value={baselineCard.currentOffice.title}
@@ -28,13 +31,8 @@ export function BaselineCard({ politician }: BaselineCardProps) {
           value={baselineCard.party}
         />
         <StatCell
-          label="In Office Since"
-          value={formatYear(baselineCard.currentOffice.startDate)}
-        />
-        <StatCell
           label="Years Public Service"
           value={`${baselineCard.yearsInPublicService}+`}
-          sub="since 2004"
         />
       </div>
 
@@ -57,33 +55,64 @@ export function BaselineCard({ politician }: BaselineCardProps) {
       )}
 
       {politician.committees && politician.committees.length > 0 && (
-        <div className="mt-4 bg-surface rounded border border-border px-4 py-4">
-          <p className="font-mono text-[10px] tracking-widest text-ink-3 mb-3">COMMITTEE ASSIGNMENTS</p>
-          <div className="flex flex-col gap-1.5">
-            {politician.committees.map((c) => (
-              <Link
-                key={`${c.slug}-${c.role}`}
-                href={`/committees/${c.slug}`}
-                className="group flex items-center justify-between gap-3 rounded px-3 py-2.5 bg-surface-2 border border-border hover:border-ink-4/40 hover:bg-surface transition-colors"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <RoleDot role={c.role} />
-                  <span className="text-sm text-ink group-hover:text-accent transition-colors truncate">
-                    {c.name}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border ${roleChipColor(c.role)}`}>
-                    {c.role === 'Ranking Member' ? 'RANKING' : c.role.toUpperCase()}
-                  </span>
-                  <span className="text-ink-4 group-hover:text-accent transition-colors text-xs">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+        <CommitteeList committees={politician.committees} />
       )}
     </section>
+  )
+}
+
+function CommitteeList({ committees }: { committees: CommitteeRole[] }) {
+  return (
+    <div className="mt-4 bg-surface rounded border border-border px-4 py-4">
+      <p className="font-mono text-[10px] tracking-widest text-ink-3 mb-3">COMMITTEE ASSIGNMENTS</p>
+      <div className="flex flex-col gap-1.5">
+        {committees.map((c) => (
+          <CommitteeRow key={`${c.slug}-${c.role}`} committee={c} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function CommitteeRow({ committee: c }: { committee: CommitteeRole }) {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <div className="rounded border border-border bg-surface-2 overflow-hidden">
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="w-full flex items-center justify-between gap-3 px-3 py-2.5 hover:bg-surface transition-colors text-left"
+      >
+        <div className="flex items-center gap-2.5 min-w-0">
+          <RoleDot role={c.role} />
+          <span className="text-sm text-ink truncate">{c.name}</span>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border ${roleChipColor(c.role)}`}>
+            {c.role === 'Ranking Member' ? 'RANKING' : c.role.toUpperCase()}
+          </span>
+          <span className="text-ink-4 text-xs transition-transform duration-200" style={{ transform: expanded ? 'rotate(90deg)' : 'none' }}>›</span>
+        </div>
+      </button>
+
+      {expanded && (
+        <div className="px-3 pb-3 pt-1 border-t border-border/50">
+          {c.description ? (
+            <p className="text-xs text-ink-2 leading-relaxed mb-2">{c.description}</p>
+          ) : (
+            <p className="text-xs text-ink-3 italic mb-2">
+              {c.chamber} committee — {c.role === 'Chair' ? 'chaired by this member' : c.role === 'Ranking Member' ? 'ranking minority member' : 'member'}
+            </p>
+          )}
+          <Link
+            href={`/committees/${c.slug}`}
+            className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-bright transition-colors font-mono"
+          >
+            SEE MORE →
+          </Link>
+        </div>
+      )}
+    </div>
   )
 }
 

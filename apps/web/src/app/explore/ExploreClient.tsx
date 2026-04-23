@@ -500,7 +500,11 @@ export function ExploreClient() {
             </p>
             <div className="grid grid-cols-2 gap-3 mb-8">
               {caSenators.map(s => (
-                <div key={s.bioguideId} className="flex items-center gap-3 bg-surface border border-border rounded p-3">
+                <Link
+                  key={s.bioguideId}
+                  href={`/politicians/${memberSlug(s.name)}`}
+                  className="flex items-center gap-3 bg-surface border border-border rounded p-3 hover:border-accent/50 hover:bg-surface-2 transition-colors"
+                >
                   <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-2 shrink-0">
                     <Image
                       src={s.photoUrl}
@@ -518,7 +522,7 @@ export function ExploreClient() {
                       {partyLabel[s.party].toUpperCase()}
                     </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -532,9 +536,9 @@ export function ExploreClient() {
                 if (!m) return null
                 const isActive = focusedDistrict === d
                 return (
-                  <button
+                  <Link
                     key={d}
-                    onClick={() => setSelectedDistrict(prev => prev === d ? null : d)}
+                    href={`/politicians/${memberSlug(m.name)}`}
                     className={[
                       'flex flex-col items-center gap-2 p-3 rounded border transition-colors',
                       isActive
@@ -559,7 +563,7 @@ export function ExploreClient() {
                         {partyLabel[m.party].toUpperCase()}
                       </span>
                     </div>
-                  </button>
+                  </Link>
                 )
               })}
             </div>

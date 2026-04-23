@@ -11,8 +11,10 @@ import { FundingSection } from '@/components/profile/FundingSection'
 import { RecordAssessment } from '@/components/profile/RecordAssessment'
 import { StickyProfileHeader } from '@/components/profile/StickyProfileHeader'
 import { BackButton } from '@/components/ui/BackButton'
+import { AlertCapture } from '@/components/profile/AlertCapture'
 import { getLegislator } from '@/data/legislators'
 import { fetchLiveTimeline } from '@/lib/fetchLiveTimeline'
+import { fetchFECDonors } from '@/lib/fetchFECDonors'
 
 export const revalidate = 86400
 
@@ -33,9 +35,28 @@ export async function generateMetadata({
   const { slug } = await params
   const politician = politicians[slug]
   if (!politician) return {}
+
+  const { name, bio, photoUrl, baselineCard } = politician
+  const title = `${name} — PoliIntel`
+  const description =
+    bio ??
+    `${baselineCard.currentOffice.title}, ${baselineCard.currentOffice.jurisdiction} · ${baselineCard.party} · Public record, votes, funding, and bill activity.`
+
   return {
-    title: politician.name,
-    description: politician.bio,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'profile',
+      ...(photoUrl ? { images: [{ url: photoUrl, width: 400, height: 400, alt: name }] } : {}),
+    },
+    twitter: {
+      card: photoUrl ? 'summary_large_image' : 'summary',
+      title,
+      description,
+      ...(photoUrl ? { images: [photoUrl] } : {}),
+    },
   }
 }
 
@@ -75,10 +96,14 @@ export default async function PoliticianPage({
 
   // Fetch live timeline events from GovTrack (cached for 24h via revalidate)
   const enriched = getLegislator(politician.id)
-  let liveEvents: TimelineEvent[] = []
-  if (enriched?.govtrack) {
-    liveEvents = await fetchLiveTimeline(enriched.govtrack, politician.id).catch(() => [])
-  }
+  const chamber = enriched?.currentTerm?.type === 'sen' ? 'Senate' : 'House'
+
+  const [liveEvents, fecFunding] = await Promise.all([
+    enriched?.govtrack
+      ? fetchLiveTimeline(enriched.govtrack, politician.id).catch(() => [])
+      : Promise.resolve([]),
+    fetchFECDonors(politician.name, politician.state, chamber).catch(() => null),
+  ])
 
   // Merge live events with static timeline, deduplicate by id, sort newest first
   const staticIds = new Set(politician.timeline.map((e) => e.id))
@@ -87,12 +112,29 @@ export default async function PoliticianPage({
     ...liveEvents.filter((e) => !staticIds.has(e.id)),
   ]
 
+  // Merge FEC funding (real donor names) with static funding data
+  const fecSourceId = fecFunding ? `fec-${politician.id}` : null
+  const fecSource = fecFunding && fecSourceId ? {
+    id: fecSourceId,
+    label: `${politician.name} — FEC Campaign Finance (Live)`,
+    url: `https://www.fec.gov/data/candidate/?q=${encodeURIComponent(politician.name)}`,
+    publisher: 'Federal Election Commission',
+    retrievedAt: new Date().toISOString().slice(0, 10),
+    type: 'campaign-finance' as const,
+  } : null
+
+  const funding = fecFunding
+    ? [{ ...fecFunding, sourceIds: [fecSourceId!] }, ...politician.funding]
+    : politician.funding
+
   const enrichedPolitician: PoliticianProfile = {
     ...politician,
     timeline: merged,
+    funding,
     sources: [
       ...politician.sources,
       ...(liveEvents.length > 0 ? [GOVTRACK_SOURCE] : []),
+      ...(fecSource ? [fecSource] : []),
     ],
   }
 
@@ -131,6 +173,7 @@ export default async function PoliticianPage({
           </Link>
         )}
 
+        <AlertCapture politicianId={politician.id} politicianName={politician.name} />
         <BaselineCard politician={enrichedPolitician} />
         <Timeline politician={enrichedPolitician} liveEventCount={liveEvents.length} />
         <FundingSection politician={enrichedPolitician} />

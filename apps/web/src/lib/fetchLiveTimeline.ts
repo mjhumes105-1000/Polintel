@@ -49,11 +49,25 @@ function billStatusToTag(status: string): string[] {
   return ['legislation']
 }
 
+function parseVoteOption(value: string): 'yes' | 'no' | 'abstain' {
+  const v = value?.toLowerCase() ?? ''
+  if (v === 'yea' || v === 'yes' || v === 'aye') return 'yes'
+  if (v === 'nay' || v === 'no') return 'no'
+  return 'abstain'
+}
+
+function parseBillPassed(result: string): boolean {
+  const r = result?.toLowerCase() ?? ''
+  return r.includes('passed') || r.includes('agreed') || r.includes('confirmed')
+}
+
 function parseVote(v: GovTrackVoteVoter, bioguide: string, index: number): TimelineEvent {
   const date = v.created.slice(0, 10)
   const chamber = v.vote?.chamber === 'h' ? 'House' : 'Senate'
   const question = v.vote?.question ?? 'Vote'
   const truncated = question.length > 80 ? question.slice(0, 80) + '…' : question
+  const voteOption = parseVoteOption(v.option?.value)
+  const passed = parseBillPassed(v.vote?.result ?? '')
 
   return {
     id: `live-vote-${bioguide}-${index}`,
@@ -63,7 +77,14 @@ function parseVote(v: GovTrackVoteVoter, bioguide: string, index: number): Timel
     summary: `Voted ${v.option?.value} on ${question} — ${v.vote?.result} (${chamber}, ${date})`,
     sourceIds: ['govtrack'],
     tags: categoryToTag(v.vote?.category ?? 'passage'),
+    vote: voteOption,
+    billPassed: passed,
+    billCategory: 'voted',
   }
+}
+
+function parseBillPassedFromStatus(status: string): boolean {
+  return status === 'enacted_signed' || status === 'enacted_veto_override' || status?.includes('passed')
 }
 
 function parseBill(b: GovTrackBill, bioguide: string, index: number): TimelineEvent {
@@ -78,6 +99,8 @@ function parseBill(b: GovTrackBill, bioguide: string, index: number): TimelineEv
     summary: `Sponsored ${billRef}: ${b.title} — Status: ${b.current_status} (${b.congress}th Congress)`,
     sourceIds: ['govtrack'],
     tags: billStatusToTag(b.current_status ?? ''),
+    billPassed: parseBillPassedFromStatus(b.current_status ?? ''),
+    billCategory: 'sponsored',
   }
 }
 

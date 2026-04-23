@@ -16,17 +16,18 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/677d870dfdb6cf36bbb649b3_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'senate-judiciary', name: 'Senate Judiciary Committee', chamber: 'Senate', role: 'Member' },
+      { slug: 'senate-judiciary', name: 'Senate Judiciary Committee', chamber: 'Senate', role: 'Member', description: 'Oversees federal judicial nominations, immigration law, antitrust enforcement, and constitutional issues. One of the Senate\'s most powerful committees, handling everything from Supreme Court confirmations to criminal justice reform.' },
+      { slug: 'senate-intelligence', name: 'Senate Select Committee on Intelligence', chamber: 'Senate', role: 'Member', description: 'Provides congressional oversight of the CIA, NSA, FBI intelligence operations, and all 17 U.S. intelligence agencies. Reviews classified programs and foreign threats to national security.' },
     ],
     notableVote: {
-      title: 'Vote to Convict President Trump — First Impeachment Trial',
-      year: 2021,
-      summary: 'As lead House manager, Schiff presented the case for conviction in the Senate trial following the first impeachment of President Trump, drawing on his tenure as HPSCI chair.',
+      title: 'Vote Against Pete Hegseth Confirmation for Defense Secretary',
+      year: 2025,
+      summary: 'Schiff voted against confirming Pete Hegseth as Secretary of Defense in January 2025, citing concerns about Hegseth\'s qualifications and conduct — one of his first significant Senate floor votes.',
     },
     notableBill: {
-      title: 'FISA Reauthorization Act (House passage)',
-      year: 2024,
-      summary: 'Schiff was a key voice on FISA surveillance reform debates in the House before his Senate election, advocating for warrant requirements for Americans\' data.',
+      title: 'Protecting Democracy Act',
+      year: 2025,
+      summary: 'Schiff introduced legislation to strengthen democratic guardrails and executive accountability, building on his years as lead impeachment manager and HPSCI chair combating what he views as authoritarian erosion of institutional norms.',
     },
     topSectors: [
       { category: 'Individual Contributors', amount: 28000000, percentage: 72 },
@@ -47,13 +48,13 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/p000145_200.jpg',
     sinceYear: 2021,
     committees: [
-      { slug: 'senate-intelligence', name: 'Senate Select Committee on Intelligence', chamber: 'Senate', role: 'Member' },
-      { slug: 'senate-judiciary', name: 'Senate Judiciary Committee', chamber: 'Senate', role: 'Member' },
+      { slug: 'senate-intelligence', name: 'Senate Select Committee on Intelligence', chamber: 'Senate', role: 'Member', description: 'Provides congressional oversight of the CIA, NSA, FBI intelligence operations, and all 17 U.S. intelligence agencies. Reviews classified programs and foreign threats to national security.' },
+      { slug: 'senate-judiciary', name: 'Senate Judiciary Committee', chamber: 'Senate', role: 'Member', description: 'Oversees federal judicial nominations, immigration law, antitrust enforcement, and constitutional issues. One of the Senate\'s most powerful committees, handling everything from Supreme Court confirmations to criminal justice reform.' },
     ],
     notableVote: {
-      title: 'For the People Act (S.1) — Voting Rights',
-      year: 2021,
-      summary: 'Padilla was a key advocate for S.1, the sweeping voting rights bill that would have expanded access to the ballot nationwide. The bill passed the House but stalled in the Senate.',
+      title: 'Against 2025 Budget Reconciliation Cuts to Medicaid',
+      year: 2025,
+      summary: 'Padilla strongly opposed Republican budget reconciliation proposals in 2025 that would have cut Medicaid funding, warning that millions of Californians — including many in immigrant communities — depend on the program for healthcare coverage.',
     },
     notableBill: {
       title: 'Dream and Promise Act',
@@ -82,9 +83,9 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/l000566_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member', description: 'Writes farm bills that govern agricultural subsidies, crop insurance, nutrition programs including SNAP, and rural development. Critical for farming states and food policy nationwide.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableVote: {
       title: 'No on Inflation Reduction Act',
@@ -116,8 +117,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/h001068_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Ranking Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Ranking Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Public Lands Water Security Act',
@@ -149,8 +150,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/k000401_200.jpg',
     sinceYear: 2023,
     committees: [
-      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member', description: 'Writes farm bills that govern agricultural subsidies, crop insurance, nutrition programs including SNAP, and rural development. Critical for farming states and food policy nationwide.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'No Rogue Rulemakings Act',
@@ -182,7 +183,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/116_rp_ca_5_thompson_mike_200.jpg',
     sinceYear: 1999,
     committees: [
-      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member', description: 'The oldest House committee, with exclusive jurisdiction over taxation, trade, Social Security, Medicare, and unemployment insurance. All tax legislation must originate here.' },
     ],
     notableBill: {
       title: 'Bipartisan Background Checks Act',
@@ -214,8 +215,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/m001177_200.jpg',
     sinceYear: 2009,
     committees: [
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
     ],
     notableVote: {
       title: 'No on CHIPS and Science Act',
@@ -247,8 +248,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/b001287_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
     ],
     notableBill: {
       title: 'Global Health Security Act',
@@ -280,7 +281,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/m001163_200.jpg',
     sinceYear: 2005,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
     ],
     notableBill: {
       title: 'Telehealth Expansion Act',
@@ -312,8 +313,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/g000559_200.jpg',
     sinceYear: 2009,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Buy America Improvement Act',
@@ -345,8 +346,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/h001090_200.jpg',
     sinceYear: 2019,
     committees: [
-      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member', description: 'Writes farm bills that govern agricultural subsidies, crop insurance, nutrition programs including SNAP, and rural development. Critical for farming states and food policy nationwide.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'Central Valley Water Security Act',
@@ -378,8 +379,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/115_rp_ca_11_desaulnier_mark_200.jpg',
     sinceYear: 2015,
     committees: [
-      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member', description: 'Covers K-12 and higher education, labor law, workplace safety, and pension policy. Writes reauthorizations of laws like ESEA and the Higher Education Act.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Worker Flexibility and Small Business Protection Act',
@@ -418,14 +419,14 @@ const memberData: CongressMemberData[] = [
       { year: 2023, description: 'Steps down from leadership; named Speaker Emerita' },
     ],
     notableBill: {
-      title: 'Affordable Care Act (H.R. 3590)',
-      year: 2010,
-      summary: 'Pelosi drove the passage of the Affordable Care Act through the House in 2010, her signature domestic achievement as Speaker.',
+      title: 'Democracy Protection Act (119th Congress)',
+      year: 2025,
+      summary: 'Pelosi has championed democracy protection legislation in the 119th Congress, continuing her post-Speaker focus on safeguarding electoral integrity and democratic institutions against what she describes as authoritarian threats.',
     },
     notableVote: {
-      title: 'Voted to Impeach President Trump — First Impeachment',
-      year: 2019,
-      summary: 'Pelosi authorized the first impeachment inquiry against President Trump, managing the constitutional and political process as Speaker.',
+      title: 'Against Republican Rules Package — 119th Congress',
+      year: 2025,
+      summary: 'Pelosi voted against the House Republican rules package at the start of the 119th Congress, arguing it undermined minority rights and stacked the procedural deck against Democratic amendments.',
     },
     topSectors: [
       { category: 'Individual Contributors', amount: 6500000, percentage: 65 },
@@ -447,8 +448,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/67745f940b34857ecc909197_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Second Chance Act Reauthorization',
@@ -480,8 +481,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/67742a160b34857ecc9090bf_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member', description: 'Writes farm bills that govern agricultural subsidies, crop insurance, nutrition programs including SNAP, and rural development. Critical for farming states and food policy nationwide.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'San Joaquin Valley Water Reliability Act',
@@ -513,8 +514,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/s001193_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-intelligence', name: 'House Permanent Select Committee on Intelligence', chamber: 'House', role: 'Member' },
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-intelligence', name: 'House Permanent Select Committee on Intelligence', chamber: 'House', role: 'Member', description: 'Provides oversight of U.S. intelligence agencies including the CIA, NSA, and DIA. Reviews classified programs and authorizes intelligence community spending.' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
     ],
     notableBill: {
       title: 'Ban Assault Weapons Now Act',
@@ -546,8 +547,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/m001225_200.jpg',
     sinceYear: 2023,
     committees: [
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'AI Workforce Development Act',
@@ -579,8 +580,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/6774305d0b34857ecc90910d_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'Smart Cities Innovation Act',
@@ -612,9 +613,9 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/k000389_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
+      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member', description: 'The primary investigative committee of the House, with broad authority to investigate the executive branch, federal programs, and government waste, fraud, and abuse.' },
     ],
     notableBill: {
       title: 'National Economic Security and Reform Act (ESAR)',
@@ -646,7 +647,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/671024d7ec807bca66057fcb_200.jpg',
     sinceYear: 1995,
     committees: [
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Ranking Member' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Ranking Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
     ],
     notableBill: {
       title: 'America\'s College Promise Act',
@@ -678,8 +679,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/116_rp_ca_20_panetta_jimmy_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member', description: 'The oldest House committee, with exclusive jurisdiction over taxation, trade, Social Security, Medicare, and unemployment insurance. All tax legislation must originate here.' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
     ],
     notableBill: {
       title: 'Farm Workforce Modernization Act',
@@ -711,8 +712,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/669ff04f5d19788d1f2034aa_200.jpg',
     sinceYear: 2024,
     committees: [
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'American Energy Expansion Act',
@@ -744,8 +745,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/6973c909ded7781a35cc1fd7_200.jpg',
     sinceYear: 2005,
     committees: [
-      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-agriculture', name: 'House Agriculture Committee', chamber: 'House', role: 'Member', description: 'Writes farm bills that govern agricultural subsidies, crop insurance, nutrition programs including SNAP, and rural development. Critical for farming states and food policy nationwide.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'Water Accountability Act',
@@ -777,7 +778,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/v000129_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member', description: 'Controls discretionary federal spending through 12 annual appropriations subcommittees. Members with seats here have significant leverage over agency budgets and priorities.' },
     ],
     notableVote: {
       title: 'Voted to Certify 2020 Election Results',
@@ -809,9 +810,9 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/o000019_200.jpg',
     sinceYear: 2021,
     committees: [
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'AI Governance Preparedness Act',
@@ -843,8 +844,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/115_rp_ca_24_carbajal_salud_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Coast Guard Authorization Act provisions — Offshore Infrastructure',
@@ -876,8 +877,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/66e1aec832c796cea99fe06f_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'Salton Sea Restoration Act',
@@ -909,7 +910,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/68000188f22eaf56065817e8_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'VA MISSION Act — Community Care provisions',
@@ -941,8 +942,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/68dc43db199559bad714973d_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
     ],
     notableBill: {
       title: 'Commercial Space Competitiveness Act',
@@ -974,8 +975,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/c001080_200.jpg',
     sinceYear: 2009,
     committees: [
-      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member', description: 'The oldest House committee, with exclusive jurisdiction over taxation, trade, Social Security, Medicare, and unemployment insurance. All tax legislation must originate here.' },
+      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member', description: 'The primary investigative committee of the House, with broad authority to investigate the executive branch, federal programs, and government waste, fraud, and abuse.' },
     ],
     notableBill: {
       title: 'COVID-19 Hate Crimes Act',
@@ -1007,8 +1008,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/67745d860b34857ecc90916d_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
+      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member', description: 'Covers K-12 and higher education, labor law, workplace safety, and pension policy. Writes reauthorizations of laws like ESEA and the Higher Education Act.' },
     ],
     notableBill: {
       title: 'STEM Education Equity Act',
@@ -1040,8 +1041,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/677427070b34857ecc9090a1_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
+      { slug: 'house-transportation', name: 'House Transportation & Infrastructure Committee', chamber: 'House', role: 'Member', description: 'Oversees surface transportation, aviation, maritime, rail, pipelines, and water infrastructure. Authorizes the Highway Trust Fund and major public works investment.' },
     ],
     notableBill: {
       title: 'Safe Streets for All Act (federal version)',
@@ -1073,8 +1074,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/6807d8d63e52ea7df920ef05_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member', description: 'Covers K-12 and higher education, labor law, workplace safety, and pension policy. Writes reauthorizations of laws like ESEA and the Higher Education Act.' },
     ],
     notableBill: {
       title: 'PACT Act Implementation Oversight',
@@ -1106,8 +1107,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/s000344_200.jpg',
     sinceYear: 1997,
     committees: [
-      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member', description: 'Regulates banking, housing, consumer finance, securities markets, and international monetary policy. Oversees the Federal Reserve, SEC, FDIC, and Fannie Mae and Freddie Mac.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'Too Big to Fail, Too Big to Exist Act',
@@ -1135,11 +1136,11 @@ const memberData: CongressMemberData[] = [
     district: 33,
     state: 'California',
     currentTitle: "U.S. Representative, California's 33rd Congressional District",
-    bio: 'Pete Aguilar, the House Democratic Caucus Chair and the highest-ranking Latino in congressional Democratic leadership, leverages his Appropriations seat and leadership role to fight for Inland Empire infrastructure, immigration reform, and the Democratic legislative agenda.',
+    bio: 'Pete Aguilar, the House Democratic Caucus Chair and the highest-ranking Latino in congressional Democratic leadership, leverages his Appropriations seat and leadership role to fight for Inland Empire infrastructure, immigration reform, and to coordinate Democratic opposition to Republican budget cuts in 2025.',
     photoUrl: 'https://www.congress.gov/img/member/a000371_200.jpg',
     sinceYear: 2015,
     committees: [
-      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member', description: 'Controls discretionary federal spending through 12 annual appropriations subcommittees. Members with seats here have significant leverage over agency budgets and priorities.' },
     ],
     keyMilestones: [
       { year: 2022, description: 'Elected House Democratic Caucus Chair — highest-ranking Latino in congressional leadership' },
@@ -1150,9 +1151,9 @@ const memberData: CongressMemberData[] = [
       summary: 'Aguilar was a lead co-sponsor and floor advocate for the Dream and Promise Act, which would provide a pathway to citizenship for 4 million DACA recipients and TPS holders.',
     },
     notableVote: {
-      title: 'House Democratic Caucus leadership elections',
-      year: 2022,
-      summary: 'Aguilar was elected Democratic Caucus Chair following the 2022 midterms, becoming the most senior Latino member in House Democratic leadership.',
+      title: 'Led Democratic Opposition to Republican Budget Reconciliation Cuts — 119th Congress',
+      year: 2025,
+      summary: 'As Democratic Caucus Chair, Aguilar organized and led unified Democratic opposition to the Republican budget reconciliation package in 2025, publicly condemning cuts to Medicaid and other safety-net programs as harmful to working families across the country.',
     },
     topSectors: [
       { category: 'Individual Contributors', amount: 1400000, percentage: 52 },
@@ -1174,8 +1175,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/115_rp_ca_34_gomez_jimmy_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member', description: 'The oldest House committee, with exclusive jurisdiction over taxation, trade, Social Security, Medicare, and unemployment insurance. All tax legislation must originate here.' },
+      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member', description: 'The primary investigative committee of the House, with broad authority to investigate the executive branch, federal programs, and government waste, fraud, and abuse.' },
     ],
     notableBill: {
       title: 'American Families Act (Child Tax Credit expansion)',
@@ -1207,8 +1208,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/t000474_200.jpg',
     sinceYear: 2015,
     committees: [
-      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Member', description: 'Controls discretionary federal spending through 12 annual appropriations subcommittees. Members with seats here have significant leverage over agency budgets and priorities.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'Northern Triangle and Border Stabilization Act',
@@ -1240,8 +1241,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/l000582_200.jpg',
     sinceYear: 2015,
     committees: [
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'AI Oversight Act',
@@ -1273,8 +1274,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/k000400_200.jpg',
     sinceYear: 2023,
     committees: [
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
     ],
     notableBill: {
       title: 'INVEST in America\'s Communities Act',
@@ -1306,7 +1307,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/116_rp_ca_38_snchez_linda_200.jpg',
     sinceYear: 2003,
     committees: [
-      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-ways-and-means', name: 'House Ways & Means Committee', chamber: 'House', role: 'Member', description: 'The oldest House committee, with exclusive jurisdiction over taxation, trade, Social Security, Medicare, and unemployment insurance. All tax legislation must originate here.' },
     ],
     notableBill: {
       title: 'Social Security 2100 Act',
@@ -1338,7 +1339,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/t000472_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-education-workforce', name: 'House Education & the Workforce Committee', chamber: 'House', role: 'Member', description: 'Covers K-12 and higher education, labor law, workplace safety, and pension policy. Writes reauthorizations of laws like ESEA and the Higher Education Act.' },
     ],
     keyMilestones: [
       { year: 2021, description: 'Chairs House Veterans Affairs Committee — leads passage of PACT Act on toxic exposure' },
@@ -1373,9 +1374,9 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/k000397_200.jpg',
     sinceYear: 2021,
     committees: [
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
+      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member', description: 'Regulates banking, housing, consumer finance, securities markets, and international monetary policy. Oversees the Federal Reserve, SEC, FDIC, and Fannie Mae and Freddie Mac.' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
     ],
     notableBill: {
       title: 'Korean American WWII Veterans Congressional Gold Medal Act',
@@ -1407,7 +1408,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/c000059_200.jpg',
     sinceYear: 1993,
     committees: [
-      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Chair' },
+      { slug: 'house-appropriations', name: 'House Appropriations Committee', chamber: 'House', role: 'Chair', description: 'Controls discretionary federal spending through 12 annual appropriations subcommittees. Members with seats here have significant leverage over agency budgets and priorities.' },
     ],
     keyMilestones: [
       { year: 2023, description: 'Becomes Chair of the Defense Appropriations Subcommittee — controls the largest discretionary federal spending account' },
@@ -1442,8 +1443,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/g000598_200.jpg',
     sinceYear: 2023,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-oversight', name: 'House Oversight & Accountability Committee', chamber: 'House', role: 'Member', description: 'The primary investigative committee of the House, with broad authority to investigate the executive branch, federal programs, and government waste, fraud, and abuse.' },
     ],
     notableBill: {
       title: 'Port Security and Supply Chain Resilience Act',
@@ -1475,7 +1476,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/w000187_200.jpg',
     sinceYear: 1991,
     committees: [
-      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Ranking Member' },
+      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Ranking Member', description: 'Regulates banking, housing, consumer finance, securities markets, and international monetary policy. Oversees the Federal Reserve, SEC, FDIC, and Fannie Mae and Freddie Mac.' },
     ],
     keyMilestones: [
       { year: 2019, description: 'Chairs House Financial Services Committee — first Black woman to chair a major House committee' },
@@ -1510,7 +1511,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/b001300_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
     ],
     notableBill: {
       title: 'Environmental Justice For All Act',
@@ -1542,7 +1543,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/6774606d0b34857ecc9091a9_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
     ],
     notableBill: {
       title: 'Vietnamese American Veterans Recognition Act',
@@ -1574,7 +1575,7 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/115_rp_ca_46_correa_j_200.jpg',
     sinceYear: 2017,
     committees: [
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
     ],
     notableBill: {
       title: 'Ports of Entry Drug Interdiction Act',
@@ -1606,8 +1607,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/67744ed90b34857ecc909155_200.jpg',
     sinceYear: 2025,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
     ],
     notableBill: {
       title: 'Coastal Military Installation Climate Resilience Act',
@@ -1639,8 +1640,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/i000056_200.jpg',
     sinceYear: 2021,
     committees: [
-      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-judiciary', name: 'House Judiciary Committee', chamber: 'House', role: 'Member', description: 'Handles federal criminal law, civil rights, immigration, antitrust, intellectual property, and constitutional amendments. Conducts impeachment proceedings and oversees the Justice Department.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'PREVAIL Act (Patent Review reforms)',
@@ -1672,8 +1673,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/l000593_200.jpg',
     sinceYear: 2019,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
+      { slug: 'house-natural-resources', name: 'House Natural Resources Committee', chamber: 'House', role: 'Member', description: 'Has jurisdiction over federal public lands, national parks, forests, minerals, water, and energy development on federal property. Shapes policy for more than 600 million acres of public land.' },
     ],
     notableBill: {
       title: 'Offshore Wind Development Act',
@@ -1705,8 +1706,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/p000608_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-energy-commerce', name: 'House Energy & Commerce Committee', chamber: 'House', role: 'Member', description: 'The broadest House committee, covering health, energy, environment, telecommunications, consumer protection, and interstate commerce. Writes major legislation including the Affordable Care Act.' },
+      { slug: 'house-science-space-technology', name: 'House Science, Space & Technology Committee', chamber: 'House', role: 'Member', description: 'Oversees federal R&D investment, NASA, NOAA, NIST, and science education policy. Shapes America\'s competitiveness in technology, energy research, and space exploration.' },
     ],
     notableBill: {
       title: 'Elijah E. Cummings Lower Drug Costs Now Act — bipartisan provisions',
@@ -1738,8 +1739,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/j000305_200.jpg',
     sinceYear: 2021,
     committees: [
-      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-armed-services', name: 'House Armed Services Committee', chamber: 'House', role: 'Member', description: 'Authorizes the defense budget and military policy through the annual NDAA. Oversees the Pentagon, all military branches, nuclear weapons, and military construction.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'Civilian Harm Mitigation and Transparency Act',
@@ -1771,8 +1772,8 @@ const memberData: CongressMemberData[] = [
     photoUrl: 'https://www.congress.gov/img/member/v000130_200.jpg',
     sinceYear: 2013,
     committees: [
-      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member' },
-      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member' },
+      { slug: 'house-financial-services', name: 'House Financial Services Committee', chamber: 'House', role: 'Member', description: 'Regulates banking, housing, consumer finance, securities markets, and international monetary policy. Oversees the Federal Reserve, SEC, FDIC, and Fannie Mae and Freddie Mac.' },
+      { slug: 'house-foreign-affairs', name: 'House Foreign Affairs Committee', chamber: 'House', role: 'Member', description: 'Reviews U.S. foreign policy, international aid, arms sales, and diplomatic relations. Works alongside the Senate Foreign Relations Committee but lacks treaty confirmation power.' },
     ],
     notableBill: {
       title: 'Remittance Access Act',

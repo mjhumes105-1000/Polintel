@@ -52,6 +52,7 @@ jobs:
         run: pnpm --filter web build
         env:
           NEXT_PUBLIC_BASE_PATH: /Polintel
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

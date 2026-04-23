@@ -63,11 +63,16 @@ const config: Config = {
           from: { opacity: '0', transform: 'translateY(6px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        'page-enter': {
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         shimmer: 'shimmer 1.8s linear infinite',
         reveal: 'reveal 0.4s ease-out forwards',
         'fade-up': 'fade-up 0.3s ease-out forwards',
+        'page-enter': 'page-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
     },
   },

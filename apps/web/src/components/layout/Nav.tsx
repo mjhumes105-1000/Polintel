@@ -1,14 +1,24 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur-sm">
-      <div className="max-w-5xl mx-auto px-6 h-11 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-mono text-xs tracking-widest text-ink-2 hover:text-ink transition-colors"
-        >
-          POLINTEL
+      <div className="max-w-5xl mx-auto px-6 h-13 flex items-center justify-between" style={{ height: '52px' }}>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="relative w-8 h-8 shrink-0">
+            <Image
+              src="/bear-logo.png"
+              alt="PoliIntel"
+              width={32}
+              height={32}
+              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+              priority
+            />
+          </div>
+          <span className="font-mono text-xs tracking-widest text-ink-2 group-hover:text-ink transition-colors">
+            POLINTEL
+          </span>
         </Link>
         <div className="flex items-center gap-6">
           <Link

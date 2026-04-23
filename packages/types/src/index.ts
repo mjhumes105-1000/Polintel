@@ -39,6 +39,9 @@ export interface TimelineEvent {
   sourceIds: string[]
   tags: string[]
   contradiction?: ContradictionFlag
+  vote?: 'yes' | 'no' | 'abstain'
+  billPassed?: boolean
+  billCategory?: 'sponsored' | 'voted'
 }
 
 export interface Office {
@@ -94,6 +97,7 @@ export interface CommitteeRole {
   role: 'Chair' | 'Ranking Member' | 'Member'
   thomasId?: string
   rankingOnCommittee?: number
+  description?: string
 }
 
 export interface LegislatorSocial {
