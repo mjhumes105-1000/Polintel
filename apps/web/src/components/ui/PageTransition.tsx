@@ -17,7 +17,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   }, [pathname])
 
   return (
-    <div ref={ref} className="animate-page-enter">
+    <div ref={ref} className="animate-page-enter" style={{ willChange: 'opacity, transform' }}>
       {children}
     </div>
   )

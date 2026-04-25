@@ -16,7 +16,7 @@ export const presidentialCandidates2028: PresidentialCandidate[] = [
     state: 'California',
     currentTitle: 'Governor of California',
     status: 'exploring',
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Gavin_Newsom_official_portrait.jpg/400px-Gavin_Newsom_official_portrait.jpg',
+    photoUrl: '/politicians/gavin-newsom.jpg',
     profileSlug: 'gavin-newsom',
     tagline: 'Climate, housing, and reproductive rights as national platform',
   },

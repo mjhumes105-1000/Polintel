@@ -8,16 +8,20 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { allBills } from '@/data/bills'
+import { committees } from '@/data/committees'
+import { countries } from '@/data/economy/countries'
 
 const politicians = [newsom, ...Object.values(caDelegationProfiles)]
 
 interface Result {
-  type: 'politician' | 'state' | 'candidate' | 'bill'
+  type: 'politician' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
   label: string
   sub: string
   href?: string
   stateKey?: string
   photoUrl?: string
+  flagEmoji?: string
 }
 
 function getResults(query: string): Result[] {
@@ -57,6 +61,55 @@ function getResults(query: string): Result[] {
     }
   }
 
+  for (const bill of allBills) {
+    if (
+      bill.title.toLowerCase().includes(q) ||
+      bill.number.toLowerCase().includes(q) ||
+      bill.summary.toLowerCase().includes(q) ||
+      bill.tags.some((t) => t.toLowerCase().includes(q))
+    ) {
+      results.push({
+        type: 'bill',
+        label: bill.title,
+        sub: `${bill.number} · ${bill.jurisdiction}`,
+        href: `/bills/${bill.slug}`,
+      })
+    }
+    if (results.length >= 8) break
+  }
+
+  for (const committee of committees) {
+    if (
+      committee.name.toLowerCase().includes(q) ||
+      committee.shortName.toLowerCase().includes(q) ||
+      committee.summary.toLowerCase().includes(q)
+    ) {
+      results.push({
+        type: 'committee',
+        label: committee.name,
+        sub: `${committee.chamber} Committee`,
+        href: `/committees/${committee.slug}`,
+      })
+    }
+    if (results.length >= 8) break
+  }
+
+  for (const country of countries) {
+    if (
+      country.name.toLowerCase().includes(q) ||
+      country.region.toLowerCase().includes(q)
+    ) {
+      results.push({
+        type: 'country',
+        label: country.name,
+        sub: `${country.region} · #${country.tradePartnerRank} U.S. trade partner`,
+        href: `/economy/${country.slug}`,
+        flagEmoji: country.flagEmoji,
+      })
+    }
+    if (results.length >= 8) break
+  }
+
   for (const [key, info] of Object.entries(stateData)) {
     if (
       info.name.toLowerCase().includes(q) ||
@@ -82,13 +135,17 @@ const typeLabel: Record<Result['type'], string> = {
   state: 'STATE',
   candidate: 'CANDIDATE',
   bill: 'BILL',
+  committee: 'COMMITTEE',
+  country: 'ECONOMY',
 }
 
 const typeBadgeColor: Record<Result['type'], string> = {
   politician: 'text-accent/80 border-accent/30 bg-accent/5',
   state: 'text-teal-400 border-teal-900 bg-teal-950',
   candidate: 'text-violet-400 border-violet-900 bg-violet-950',
-  bill: 'text-ink-3 border-border bg-surface-2',
+  bill: 'text-signal-bill border-signal-bill/30 bg-surface-2',
+  committee: 'text-flag/80 border-flag-muted bg-flag-bg',
+  country: 'text-teal-400 border-teal-700/50 bg-teal-950/30',
 }
 
 interface SearchBarProps {
@@ -126,7 +183,7 @@ export function SearchBar({
     e.preventDefault()
     if (!query.trim()) return
     if (navigateOnSubmit) {
-      router.push(`/explore?q=${encodeURIComponent(query.trim())}`)
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`)
       setOpen(false)
     }
   }
@@ -189,6 +246,10 @@ export function SearchBar({
                   <div className="flex items-center gap-3 px-4 py-2.5 hover:bg-surface-2 transition-colors cursor-pointer group">
                     {r.photoUrl ? (
                       <PoliticianPhoto name={r.label} photoUrl={r.photoUrl} size={28} />
+                    ) : r.flagEmoji ? (
+                      <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                        <span className="text-xl leading-none">{r.flagEmoji}</span>
+                      </div>
                     ) : (
                       <div className="w-7 h-7 flex items-center justify-center shrink-0">
                         <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border ${typeBadgeColor[r.type]}`}>
@@ -202,7 +263,7 @@ export function SearchBar({
                       </p>
                       <p className="text-xs text-ink-3 truncate">{r.sub}</p>
                     </div>
-                    {r.photoUrl && (
+                    {(r.photoUrl || r.flagEmoji) && (
                       <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border shrink-0 ${typeBadgeColor[r.type]}`}>
                         {typeLabel[r.type]}
                       </span>

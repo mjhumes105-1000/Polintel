@@ -302,7 +302,15 @@ function CADistrictPanel({
           {district ? `DISTRICT ${district} — REPRESENTATIVE` : 'HOVER A DISTRICT'}
         </p>
         {member ? (
-          <MemberRow member={member} large />
+          <div className="space-y-2">
+            <MemberRow member={member} large />
+            <Link
+              href={`/politicians/${memberSlug(member.name)}`}
+              className="block text-center py-2 font-mono text-[10px] tracking-widest text-accent hover:text-accent-bright border border-accent/30 hover:border-accent rounded transition-colors"
+            >
+              VIEW FULL PROFILE →
+            </Link>
+          </div>
         ) : (
           <div className="border border-border rounded px-3 py-4 text-center">
             <p className="font-mono text-[10px] text-ink-4">Hover over a district to see the representative</p>
@@ -458,7 +466,7 @@ export function ExploreClient() {
             </button>
             <div>
               <p className="font-mono text-[10px] tracking-widest text-accent/70">CALIFORNIA — 119TH CONGRESSIONAL DISTRICTS</p>
-              <p className="text-xs text-ink-3 mt-0.5">Hover a district to preview the representative. Click to pin.</p>
+              <p className="text-xs text-ink-3 mt-0.5">Hover to preview. Click to pin a district and view the representative's profile.</p>
             </div>
           </div>
 

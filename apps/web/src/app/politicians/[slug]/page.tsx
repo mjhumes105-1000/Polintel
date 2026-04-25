@@ -15,6 +15,8 @@ import { AlertCapture } from '@/components/profile/AlertCapture'
 import { getLegislator } from '@/data/legislators'
 import { fetchLiveTimeline } from '@/lib/fetchLiveTimeline'
 import { fetchFECDonors } from '@/lib/fetchFECDonors'
+import { fetchNewsItems } from '@/lib/fetchNewsItems'
+import { NewsFeed } from '@/components/profile/NewsFeed'
 
 export const revalidate = 86400
 
@@ -98,11 +100,12 @@ export default async function PoliticianPage({
   const enriched = getLegislator(politician.id)
   const chamber = enriched?.currentTerm?.type === 'sen' ? 'Senate' : 'House'
 
-  const [liveEvents, fecFunding] = await Promise.all([
+  const [liveEvents, fecFunding, newsItems] = await Promise.all([
     enriched?.govtrack
       ? fetchLiveTimeline(enriched.govtrack, politician.id).catch(() => [])
       : Promise.resolve([]),
     fetchFECDonors(politician.name, politician.state, chamber).catch(() => null),
+    fetchNewsItems(enriched?.govtrack ?? null, politician.name).catch(() => []),
   ])
 
   // Merge live events with static timeline, deduplicate by id, sort newest first
@@ -176,6 +179,7 @@ export default async function PoliticianPage({
         <AlertCapture politicianId={politician.id} politicianName={politician.name} />
         <BaselineCard politician={enrichedPolitician} />
         <Timeline politician={enrichedPolitician} liveEventCount={liveEvents.length} />
+        <NewsFeed items={newsItems} politicianName={politician.name} />
         <FundingSection politician={enrichedPolitician} />
         <RecordAssessment politician={enrichedPolitician} />
       </div>

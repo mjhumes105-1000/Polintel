@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
-    "lint": "pnpm --filter web lint"
+    "lint": "pnpm --filter web lint",
+    "fetch:trade": "node scripts/fetch-census-data.mjs",
+    "fetch:tariffs": "node scripts/fetch-hts-tariff-data.mjs",
+    "fetch:investment": "node scripts/fetch-bea-investment-data.mjs"
   }
 }

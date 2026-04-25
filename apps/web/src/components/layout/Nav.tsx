@@ -20,19 +20,13 @@ export function Nav() {
             POLINTEL
           </span>
         </Link>
-        <div className="flex items-center gap-6">
-          <Link
-            href="/explore"
-            className="text-xs text-ink-3 hover:text-ink-2 transition-colors"
-          >
-            Explore
-          </Link>
-          <Link
-            href="/methodology"
-            className="text-xs text-ink-3 hover:text-ink-2 transition-colors"
-          >
-            Methodology
-          </Link>
+        <div className="flex items-center gap-5">
+          <Link href="/explore" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Explore</Link>
+          <Link href="/bills" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Bills</Link>
+          <Link href="/search" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Search</Link>
+          <Link href="/compare" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Compare</Link>
+          <Link href="/economy" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Economy</Link>
+          <Link href="/methodology" className="text-xs text-ink-3 hover:text-ink-2 transition-colors">Methodology</Link>
         </div>
       </div>
     </nav>

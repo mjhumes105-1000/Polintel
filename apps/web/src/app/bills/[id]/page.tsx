@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import type { Bill, BillStatus, LegislativeStep } from '@political-intel/types'
+import type { Bill, BillStatus, LegislativeStep, BillVote, BillVoteAction } from '@political-intel/types'
 import { billsById, allBills } from '@/data/bills'
 import { SourceBadge } from '@/components/ui/SourceBadge'
+import { AIExplanationDropdown } from '@/components/ui/AIExplanationDropdown'
 
 export function generateStaticParams() {
   return allBills.map((b) => ({ id: b.slug }))
@@ -72,6 +73,49 @@ function LegislativeHistory({ steps }: { steps: LegislativeStep[] }) {
   )
 }
 
+const actionConfig: Record<BillVoteAction, { label: string; color: string }> = {
+  signed:        { label: 'SIGNED',       color: 'text-teal-400 border-teal-900 bg-teal-950/30' },
+  vetoed:        { label: 'VETOED',       color: 'text-flag border-flag-muted bg-flag-bg' },
+  yes:           { label: 'YES',          color: 'text-teal-400 border-teal-900 bg-teal-950/30' },
+  no:            { label: 'NO',           color: 'text-red-400 border-red-900 bg-red-950/30' },
+  abstain:       { label: 'ABSTAIN',      color: 'text-ink-3 border-border bg-surface' },
+  sponsored:     { label: 'SPONSORED',    color: 'text-accent border-accent-muted bg-accent/5' },
+  'co-sponsored':{ label: 'CO-SPONSOR',   color: 'text-accent/70 border-accent/30 bg-accent/5' },
+  opposed:       { label: 'OPPOSED',      color: 'text-red-400 border-red-900 bg-red-950/30' },
+}
+
+function VoteBreakdown({ votes }: { votes: BillVote[] }) {
+  return (
+    <section className="mb-10">
+      <h2 className="font-mono text-[10px] tracking-widest text-ink-3 mb-4">POSITIONS & VOTES</h2>
+      <div className="space-y-2">
+        {votes.map((v) => {
+          const cfg = actionConfig[v.action]
+          const inner = (
+            <div className="flex items-start justify-between gap-4 px-4 py-3 bg-surface border border-border rounded hover:bg-surface-2 transition-colors group">
+              <div className="min-w-0">
+                <p className="text-sm font-medium text-ink group-hover:text-accent transition-colors">{v.politicianName}</p>
+                {v.politicianTitle && <p className="text-xs text-ink-3">{v.politicianTitle}</p>}
+                {v.note && <p className="text-xs text-ink-3 mt-1 italic">{v.note}</p>}
+              </div>
+              <span className={`font-mono text-[9px] px-2 py-0.5 rounded border shrink-0 mt-0.5 ${cfg.color}`}>
+                {cfg.label}
+              </span>
+            </div>
+          )
+          return (
+            <div key={v.politicianId}>
+              {v.politicianId ? (
+                <Link href={`/politicians/${v.politicianId}`}>{inner}</Link>
+              ) : inner}
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
 export default async function BillPage({
   params,
 }: {
@@ -127,7 +171,12 @@ export default async function BillPage({
 
       <section className="mb-8">
         <h2 className="font-mono text-[10px] tracking-widest text-ink-3 mb-3">SUMMARY</h2>
-        <p className="text-sm text-ink-2 leading-relaxed">{bill.summary}</p>
+        <div className="bg-surface border border-border rounded px-5 py-4">
+          <p className="text-sm text-ink-2 leading-relaxed">{bill.summary}</p>
+          {bill.aiExplanation && (
+            <AIExplanationDropdown text={bill.aiExplanation} />
+          )}
+        </div>
       </section>
 
       {bill.tags.length > 0 && (
@@ -143,6 +192,7 @@ export default async function BillPage({
         </div>
       )}
 
+      {bill.votes && bill.votes.length > 0 && <VoteBreakdown votes={bill.votes} />}
       <LegislativeHistory steps={bill.legislativeHistory} />
 
       <section className="mb-10">

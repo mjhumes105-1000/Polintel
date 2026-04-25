@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "source": "U.S. Bureau of Economic Analysis (BEA) — International Transactions Accounts",
+    "dataset": "ITA",
+    "indicators": {
+      "outward": "DiInvAssets",
+      "inward": "DiInvLiabs"
+    },
+    "fiscalYear": "2023",
+    "note": "Values in USD. Positive = net outflow (U.S. investing abroad) or net inflow (foreign investing in U.S.).",
+    "retrievedAt": "2026-04-25"
+  },
+  "countries": {
+    "mexico": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 8006000000,
+      "foreignFDIInUSUSD": 5945000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "canada": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 16819000000,
+      "foreignFDIInUSUSD": 72590000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "china": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 4135000000,
+      "foreignFDIInUSUSD": -259000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "germany": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 13526000000,
+      "foreignFDIInUSUSD": 52756000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "japan": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 5718000000,
+      "foreignFDIInUSUSD": 41180000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "south-korea": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 3377000000,
+      "foreignFDIInUSUSD": 9196000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "united-kingdom": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 7311000000,
+      "foreignFDIInUSUSD": -15439000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "vietnam": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": null,
+      "foreignFDIInUSUSD": null,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "india": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 5289000000,
+      "foreignFDIInUSUSD": 1490000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "taiwan": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 806000000,
+      "foreignFDIInUSUSD": 691000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "france": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 6434000000,
+      "foreignFDIInUSUSD": 16703000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "ireland": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": null,
+      "foreignFDIInUSUSD": null,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "switzerland": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": null,
+      "foreignFDIInUSUSD": null,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "italy": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 4223000000,
+      "foreignFDIInUSUSD": 2507000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    },
+    "netherlands": {
+      "fiscalYear": "2023",
+      "usFDIAbroadUSD": 32751000000,
+      "foreignFDIInUSUSD": 22061000000,
+      "usFDIAbroadIndicator": "DiInvAssets",
+      "foreignFDIInUSIndicator": "DiInvLiabs"
+    }
+  }
+}
