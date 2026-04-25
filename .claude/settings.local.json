@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git tag *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/politicians/gavin-newsom)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/explore)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(npx tsc *)",
+      "Bash(pnpm dev *)",
+      "Bash(pnpm exec *)",
+      "Bash(pnpm --filter @political-intel/web exec tsc --noEmit)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(xargs grep *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s \"https://api.open.fec.gov/v1/candidates/search/?q=Adam+Schiff&state=CA&office=S&election_year=2024&per_page=3&api_key=cf2SDUvIhdfne2h9aGf2ZPyhxKyqAfmmwsnJfbg3\")",
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const j=JSON.parse\\(d\\); j.results.forEach\\(r=>console.log\\(r.candidate_id, r.name, r.principal_committees?.map\\(c=>c.committee_id\\)\\)\\)\")",
+      "Bash(node -e \"process.stdin.resume\\(\\);let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(d\\);j.results.forEach\\(r=>console.log\\(r.candidate_id,r.name,JSON.stringify\\(r.principal_committees?.map\\(c=>c.committee_id\\)\\)\\)\\)}\\)\")",
+      "Bash(curl -s \"https://api.open.fec.gov/v1/schedules/schedule_a/?committee_id=C00343871&two_year_transaction_period=2024&per_page=5&sort=-contribution_receipt_amount&is_individual=true&api_key=cf2SDUvIhdfne2h9aGf2ZPyhxKyqAfmmwsnJfbg3\")",
+      "Bash(node -e \"process.stdin.resume\\(\\);let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(d\\);j.results.forEach\\(r=>console.log\\(r.contributor_name,'|','$'+r.contribution_receipt_amount,'|',r.contributor_employer\\)\\)}\\)\")"
+    ]
+  }
+}

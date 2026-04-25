@@ -96,7 +96,7 @@ function buildTimeline(data: CongressMemberData): TimelineEvent[] {
     date: `${electedYear}-11-01`,
     type: 'milestone',
     title: `Elected to ${data.chamber === 'Senate' ? 'U.S. Senate' : 'U.S. House'}`,
-    summary: `${data.name} was elected to ${data.chamber === 'Senate' ? 'the U.S. Senate' : `represent California's ${data.district ? `${data.district}${ordinal(data.district)} Congressional District` : 'district'} in the U.S. House of Representatives`} in ${electedYear}.`,
+    summary: `${data.name} was elected to ${data.chamber === 'Senate' ? 'the U.S. Senate' : `represent ${data.state}'s ${data.district ? `${data.district}${ordinal(data.district)} Congressional District` : 'district'} in the U.S. House of Representatives`} in ${electedYear}.`,
     sourceIds: ['congress-gov'],
     tags: ['election', 'milestone'],
   })
@@ -288,8 +288,8 @@ export function buildCongressProfile(data: CongressMemberData): PoliticianProfil
         title: data.currentTitle,
         jurisdiction:
           data.chamber === 'Senate'
-            ? 'California (Statewide)'
-            : `California's ${data.district}${ordinal(data.district!)} Congressional District`,
+            ? `${data.state} (Statewide)`
+            : `${data.state}'s ${data.district}${ordinal(data.district!)} Congressional District`,
         startDate: enriched?.currentTerm.start ?? `${data.sinceYear}-01-03`,
       },
       previousOffices: [],
@@ -315,7 +315,7 @@ export function buildCongressProfile(data: CongressMemberData): PoliticianProfil
         committees.some((c) => c.role !== 'Member')
           ? `Holds a leadership position (${committees.find((c) => c.role !== 'Member')?.role}) on ${committees.find((c) => c.role !== 'Member')?.name}, giving elevated policy influence.`
           : `Serves as a rank-and-file member of their assigned committees.`,
-        `Represents a ${data.party === 'D' ? 'reliably Democratic' : data.party === 'R' ? 'competitive-to-Republican' : 'swing'} district in California's congressional delegation.`,
+        `Represents a ${data.party === 'D' ? 'reliably Democratic' : data.party === 'R' ? 'competitive-to-Republican' : 'swing'} district in ${data.state}'s congressional delegation.`,
       ],
       whatIsUnresolved: [
         'Full voting record cross-referenced against stated policy positions pending.',

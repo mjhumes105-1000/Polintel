@@ -44,7 +44,7 @@ export const stateData: Record<string, StateInfo> = {
   Nebraska:       { name: 'Nebraska',       abbr: 'NE', houseSeats: 3,  nextGovElection: '2026', governor: { name: 'Jim Pillen',                party: 'R', since: '2023' } },
   Nevada:         { name: 'Nevada',         abbr: 'NV', houseSeats: 4,  nextGovElection: '2026', governor: { name: 'Joe Lombardo',              party: 'R', since: '2023' } },
   'New Hampshire':{ name: 'New Hampshire',  abbr: 'NH', houseSeats: 2,  nextGovElection: '2026', governor: { name: 'Kelly Ayotte',              party: 'R', since: '2025' } },
-  'New Jersey':   { name: 'New Jersey',     abbr: 'NJ', houseSeats: 12, nextGovElection: '2029', note: 'Governor data being updated for 2025 term.' },
+  'New Jersey':   { name: 'New Jersey',     abbr: 'NJ', houseSeats: 12, nextGovElection: '2029', governor: { name: 'Mikie Sherrill',              party: 'D', since: '2026' } },
   'New Mexico':   { name: 'New Mexico',     abbr: 'NM', houseSeats: 3,  nextGovElection: '2026', governor: { name: 'Michelle Lujan Grisham',   party: 'D', since: '2019' } },
   'New York':     { name: 'New York',       abbr: 'NY', houseSeats: 26, nextGovElection: '2026', governor: { name: 'Kathy Hochul',              party: 'D', since: '2021' } },
   'North Carolina':{ name: 'North Carolina',abbr: 'NC', houseSeats: 14, nextGovElection: '2028', governor: { name: 'Josh Stein',               party: 'D', since: '2025' } },

@@ -9,6 +9,10 @@ import { presidentialCandidates2028, type PresidentialCandidate } from '@/data/p
 import { SearchBar } from '@/components/ui/SearchBar'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { caMembers, caMembersByDistrict, caSenators, type CAMember } from '@/data/california-members'
+import { msMembers, msMembersByDistrict, msSenators, type StateMember as MSMember } from '@/data/ms-members'
+import { njMembers, njMembersByDistrict, njSenators, type StateMember as NJMember } from '@/data/nj-members'
+
+type AnyMember = CAMember | MSMember | NJMember
 
 const USMap = dynamic(() => import('@/components/map/USMap').then((m) => m.USMap), {
   ssr: false,
@@ -25,6 +29,30 @@ const CADistrictMap = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full aspect-[5/7] bg-surface border border-border rounded flex items-center justify-center">
+        <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
+      </div>
+    ),
+  }
+)
+
+const MSDistrictMap = dynamic(
+  () => import('@/components/map/MSDistrictMap').then((m) => m.MSDistrictMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[6/7] bg-surface border border-border rounded flex items-center justify-center">
+        <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
+      </div>
+    ),
+  }
+)
+
+const NJDistrictMap = dynamic(
+  () => import('@/components/map/NJDistrictMap').then((m) => m.NJDistrictMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[3/7] bg-surface border border-border rounded flex items-center justify-center">
         <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
       </div>
     ),
@@ -253,6 +281,7 @@ function StatePanel({ info, onClose, onDrilldown }: { info: StateInfo; onClose: 
             <span className="font-mono text-[10px] tracking-widest text-accent">VIEW CONGRESSIONAL DISTRICTS →</span>
           </button>
         )}
+
       </div>
 
       <div className="px-4 pb-3">
@@ -262,22 +291,32 @@ function StatePanel({ info, onClose, onDrilldown }: { info: StateInfo; onClose: 
   )
 }
 
-// ─── CA District Panel ────────────────────────────────────────────────────────
+// ─── Generic District Panel (CA / MS / NJ) ───────────────────────────────────
 
-function CADistrictPanel({
+function StateDistrictPanel({
+  stateName,
+  stateAbbr,
+  senators,
+  membersByDistrict,
+  districtCount,
   district,
   onBack,
 }: {
+  stateName: string
+  stateAbbr: string
+  senators: AnyMember[]
+  membersByDistrict: Record<number, AnyMember>
+  districtCount: number
   district: number | null
   onBack: () => void
 }) {
-  const member = district ? caMembersByDistrict[district] : null
+  const member = district ? membersByDistrict[district] : null
 
   return (
     <div className="bg-surface border border-border rounded overflow-hidden">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-surface-2">
         <div>
-          <p className="font-mono text-[10px] tracking-widest text-accent/70">CALIFORNIA</p>
+          <p className="font-mono text-[10px] tracking-widest text-accent/70">{stateAbbr}</p>
           <p className="text-sm font-semibold text-ink">
             {district ? `District ${district}` : 'Congressional Districts'}
           </p>
@@ -287,11 +326,10 @@ function CADistrictPanel({
         </button>
       </div>
 
-      {/* Senators always shown */}
       <div className="px-4 pt-4 pb-2">
         <p className="font-mono text-[10px] tracking-widest text-accent/60 mb-2">SENATORS</p>
         <div className="space-y-2">
-          {caSenators.map((s) => (
+          {senators.map((s) => (
             <MemberRow key={s.bioguideId} member={s} />
           ))}
         </div>
@@ -318,14 +356,13 @@ function CADistrictPanel({
         )}
       </div>
 
-      {/* District roster (scrollable) */}
       <div className="border-t border-border">
         <div className="px-4 py-2 bg-surface-2">
           <p className="font-mono text-[10px] tracking-widest text-accent/60">ALL DISTRICTS</p>
         </div>
         <div className="max-h-52 overflow-y-auto divide-y divide-border">
-          {Array.from({ length: 52 }, (_, i) => i + 1).map((d) => {
-            const m = caMembersByDistrict[d]
+          {Array.from({ length: districtCount }, (_, i) => i + 1).map((d) => {
+            const m = membersByDistrict[d]
             if (!m) return null
             return (
               <Link
@@ -354,7 +391,7 @@ function memberSlug(name: string) {
   return name.toLowerCase().replace(/[^a-z\s]/g, '').trim().replace(/\s+/g, '-')
 }
 
-function MemberRow({ member, large = false }: { member: CAMember; large?: boolean }) {
+function MemberRow({ member, large = false }: { member: AnyMember; large?: boolean }) {
   const slug = memberSlug(member.name)
   return (
     <Link href={`/politicians/${slug}`} className={`flex items-center gap-3 bg-surface-2 border border-border rounded px-3 hover:border-accent/40 hover:bg-surface transition-colors ${large ? 'py-3' : 'py-2'}`}>
@@ -383,6 +420,8 @@ function MemberRow({ member, large = false }: { member: CAMember; large?: boolea
 
 // ─── Main Explore Client ──────────────────────────────────────────────────────
 
+const DRILLDOWN_STATES = new Set(['California', 'Mississippi', 'New Jersey'])
+
 export function ExploreClient() {
   const [showPresidential, setShowPresidential] = useState(false)
   const [selectedState, setSelectedState] = useState<string | null>(null)
@@ -399,7 +438,6 @@ export function ExploreClient() {
     }
   }, [selectedState, drilldownState])
 
-  // The district shown in the panel = hovered (live preview) or last clicked
   const focusedDistrict = hoveredDistrict ?? selectedDistrict
 
   function handleStateClick(name: string) {
@@ -409,8 +447,8 @@ export function ExploreClient() {
     setHoveredDistrict(null)
   }
 
-  function handleDrilldownCA() {
-    setDrilldownState('California')
+  function handleDrilldown(state: string) {
+    setDrilldownState(state)
     setSelectedDistrict(null)
   }
 
@@ -454,133 +492,165 @@ export function ExploreClient() {
         />
       </div>
 
-      {/* CA District Drilldown — full-width standalone view */}
-      {drilldownState === 'California' && (
-        <div>
-          <div className="flex items-center gap-4 mb-5">
-            <button
-              onClick={handleBackToUS}
-              className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors border border-border hover:border-accent/40 rounded px-2.5 py-1.5"
-            >
-              ← BACK TO US MAP
-            </button>
-            <div>
-              <p className="font-mono text-[10px] tracking-widest text-accent/70">CALIFORNIA — 119TH CONGRESSIONAL DISTRICTS</p>
-              <p className="text-xs text-ink-3 mt-0.5">Hover to preview. Click to pin a district and view the representative's profile.</p>
-            </div>
-          </div>
+      {/* State District Drilldown — California, Mississippi, New Jersey */}
+      {drilldownState && DRILLDOWN_STATES.has(drilldownState) && (() => {
+        const isCA = drilldownState === 'California'
+        const isMS = drilldownState === 'Mississippi'
+        const senators = isCA ? caSenators : isMS ? msSenators : njSenators
+        const membersByDistrict = isCA ? caMembersByDistrict : isMS ? msMembersByDistrict : njMembersByDistrict
+        const districtCount = isCA ? 52 : isMS ? 4 : 12
+        const abbr = isCA ? 'CA' : isMS ? 'MS' : 'NJ'
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <div className="border border-border rounded overflow-hidden bg-surface">
-                <CADistrictMap
-                  selectedDistrict={selectedDistrict}
-                  onDistrictHover={setHoveredDistrict}
-                  onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+        return (
+          <div>
+            <div className="flex items-center gap-4 mb-5">
+              <button
+                onClick={handleBackToUS}
+                className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors border border-border hover:border-accent/40 rounded px-2.5 py-1.5"
+              >
+                ← BACK TO US MAP
+              </button>
+              <div>
+                <p className="font-mono text-[10px] tracking-widest text-accent/70">
+                  {drilldownState.toUpperCase()} — 119TH CONGRESSIONAL DISTRICTS
+                </p>
+                <p className="text-xs text-ink-3 mt-0.5">Hover to preview. Click to pin a district and view the representative's profile.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className={isCA || isMS ? 'lg:col-span-2' : 'lg:col-span-1'}>
+                <div className="border border-border rounded overflow-hidden bg-surface">
+                  {isCA && (
+                    <CADistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                  {isMS && (
+                    <MSDistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                  {!isCA && !isMS && (
+                    <NJDistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                </div>
+                <div className="flex items-center gap-5 mt-3 px-1">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-sm bg-[#1e4080] border border-[#5580c0]" />
+                    <span className="text-[10px] font-mono text-ink-4">Democrat</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-sm bg-[#5c1515] border border-[#a03030]" />
+                    <span className="text-[10px] font-mono text-ink-4">Republican</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-sm bg-[#3668c0] border border-[#5b90e0]" />
+                    <span className="text-[10px] font-mono text-ink-4">Selected</span>
+                  </div>
+                </div>
+              </div>
+
+              <div ref={panelRef} className={!isCA && !isMS ? 'lg:col-span-2' : ''}>
+                <StateDistrictPanel
+                  stateName={drilldownState}
+                  stateAbbr={abbr}
+                  senators={senators}
+                  membersByDistrict={membersByDistrict}
+                  districtCount={districtCount}
+                  district={focusedDistrict}
+                  onBack={handleBackToUS}
                 />
               </div>
-              <div className="flex items-center gap-5 mt-3 px-1">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#1e4080] border border-[#5580c0]" />
-                  <span className="text-[10px] font-mono text-ink-4">Democrat</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#5c1515] border border-[#a03030]" />
-                  <span className="text-[10px] font-mono text-ink-4">Republican</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#3668c0] border border-[#5b90e0]" />
-                  <span className="text-[10px] font-mono text-ink-4">Selected</span>
-                </div>
-              </div>
             </div>
 
-            <div ref={panelRef}>
-              <CADistrictPanel district={focusedDistrict} onBack={handleBackToUS} />
-            </div>
-          </div>
-
-          {/* Full delegation roster */}
-          <div className="mt-10">
-            {/* Senators */}
-            <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3">
-              U.S. SENATORS · CALIFORNIA
-            </p>
-            <div className="grid grid-cols-2 gap-3 mb-8">
-              {caSenators.map(s => (
-                <Link
-                  key={s.bioguideId}
-                  href={`/politicians/${memberSlug(s.name)}`}
-                  className="flex items-center gap-3 bg-surface border border-border rounded p-3 hover:border-accent/50 hover:bg-surface-2 transition-colors"
-                >
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-2 shrink-0">
-                    <Image
-                      src={s.photoUrl}
-                      alt={s.name}
-                      width={56}
-                      height={56}
-                      className="object-cover w-full h-full"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-ink">{s.name}</p>
-                    <p className="font-mono text-[9px] text-ink-4 mt-0.5">U.S. Senator · California</p>
-                    <span className={`inline-block mt-1.5 font-mono text-[8px] px-1.5 py-0.5 rounded border ${partyColor[s.party]}`}>
-                      {partyLabel[s.party].toUpperCase()}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* House members */}
-            <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3">
-              HOUSE DELEGATION · 52 MEMBERS
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
-              {Array.from({ length: 52 }, (_, i) => i + 1).map(d => {
-                const m = caMembersByDistrict[d]
-                if (!m) return null
-                const isActive = focusedDistrict === d
-                return (
+            <div className="mt-10">
+              <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3">
+                U.S. SENATORS · {drilldownState.toUpperCase()}
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {senators.map(s => (
                   <Link
-                    key={d}
-                    href={`/politicians/${memberSlug(m.name)}`}
-                    className={[
-                      'flex flex-col items-center gap-2 p-3 rounded border transition-colors',
-                      isActive
-                        ? 'border-accent/60 bg-accent/10'
-                        : 'border-border bg-surface hover:border-accent/40 hover:bg-surface-2',
-                    ].join(' ')}
+                    key={s.bioguideId}
+                    href={`/politicians/${memberSlug(s.name)}`}
+                    className="flex items-center gap-3 bg-surface border border-border rounded p-3 hover:border-accent/50 hover:bg-surface-2 transition-colors"
                   >
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-surface-2 shrink-0">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-2 shrink-0">
                       <Image
-                        src={m.photoUrl}
-                        alt={m.name}
-                        width={48}
-                        height={48}
+                        src={s.photoUrl}
+                        alt={s.name}
+                        width={56}
+                        height={56}
                         className="object-cover w-full h-full"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                       />
                     </div>
-                    <div className="w-full text-center">
-                      <p className="text-xs font-medium text-ink leading-tight line-clamp-2">{m.name}</p>
-                      <p className="font-mono text-[9px] text-ink-4 mt-0.5">District {d}</p>
-                      <span className={`inline-block mt-1 font-mono text-[8px] px-1.5 py-0.5 rounded border ${partyColor[m.party]}`}>
-                        {partyLabel[m.party].toUpperCase()}
+                    <div>
+                      <p className="text-sm font-semibold text-ink">{s.name}</p>
+                      <p className="font-mono text-[9px] text-ink-4 mt-0.5">U.S. Senator · {drilldownState}</p>
+                      <span className={`inline-block mt-1.5 font-mono text-[8px] px-1.5 py-0.5 rounded border ${partyColor[s.party]}`}>
+                        {partyLabel[s.party].toUpperCase()}
                       </span>
                     </div>
                   </Link>
-                )
-              })}
+                ))}
+              </div>
+
+              <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3">
+                HOUSE DELEGATION · {districtCount} MEMBERS
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
+                {Array.from({ length: districtCount }, (_, i) => i + 1).map(d => {
+                  const m = membersByDistrict[d]
+                  if (!m) return null
+                  const isActive = focusedDistrict === d
+                  return (
+                    <Link
+                      key={d}
+                      href={`/politicians/${memberSlug(m.name)}`}
+                      className={[
+                        'flex flex-col items-center gap-2 p-3 rounded border transition-colors',
+                        isActive
+                          ? 'border-accent/60 bg-accent/10'
+                          : 'border-border bg-surface hover:border-accent/40 hover:bg-surface-2',
+                      ].join(' ')}
+                    >
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-surface-2 shrink-0">
+                        <Image
+                          src={m.photoUrl}
+                          alt={m.name}
+                          width={48}
+                          height={48}
+                          className="object-cover w-full h-full"
+                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                        />
+                      </div>
+                      <div className="w-full text-center">
+                        <p className="text-xs font-medium text-ink leading-tight line-clamp-2">{m.name}</p>
+                        <p className="font-mono text-[9px] text-ink-4 mt-0.5">District {d}</p>
+                        <span className={`inline-block mt-1 font-mono text-[8px] px-1.5 py-0.5 rounded border ${partyColor[m.party]}`}>
+                          {m.party}
+                        </span>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+              <p className="text-[10px] text-ink-4 font-mono mt-4">
+                Source: congress.gov · 119th Congress
+              </p>
             </div>
-            <p className="text-[10px] text-ink-4 font-mono mt-4">
-              Source: congress.gov · 119th Congress
-            </p>
           </div>
-        </div>
-      )}
+        )
+      })()}
 
       {/* US Map section */}
       {!drilldownState && (
@@ -588,7 +658,7 @@ export function ExploreClient() {
           <div className="mb-5">
             <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1">CONGRESSIONAL & GUBERNATORIAL MAP</p>
             <p className="text-xs text-ink-3">
-              Click any state to view governor and congressional info. Click California for district-level view.
+              Click any state to view governor and congressional info. California, Mississippi, and New Jersey have district-level views.
             </p>
           </div>
 
@@ -597,10 +667,14 @@ export function ExploreClient() {
               <div className="border border-border rounded overflow-hidden bg-surface">
                 <USMap selectedState={selectedState} onStateClick={handleStateClick} />
               </div>
-              <div className="flex items-center gap-5 mt-3 px-1">
+              <div className="flex items-center gap-5 mt-3 px-1 flex-wrap">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-sm bg-[#0e2240] border border-[#1e5a9e]" />
+                  <span className="text-[10px] font-mono text-ink-4">District map available</span>
+                </div>
                 <div className="flex items-center gap-1.5">
                   <div className="w-3 h-3 rounded-sm bg-[#162040] border border-[#2d4f7e]" />
-                  <span className="text-[10px] font-mono text-ink-4">Has profile</span>
+                  <span className="text-[10px] font-mono text-ink-4">Governor profile</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <div className="w-3 h-3 rounded-sm bg-[#14162e] border border-[#252848]" />
@@ -618,7 +692,7 @@ export function ExploreClient() {
                 <StatePanel
                   info={selectedInfo}
                   onClose={() => setSelectedState(null)}
-                  onDrilldown={selectedState === 'California' ? handleDrilldownCA : undefined}
+                  onDrilldown={selectedState && DRILLDOWN_STATES.has(selectedState) ? () => handleDrilldown(selectedState) : undefined}
                 />
               ) : (
                 <div className="h-full min-h-[200px] border border-border rounded bg-surface flex flex-col items-center justify-center gap-2 text-center px-6">

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import type { PoliticianProfile, CandidacyStatus, TimelineEvent } from '@political-intel/types'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
+import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
 import { ProfileHeader } from '@/components/profile/ProfileHeader'
 import { BaselineCard } from '@/components/profile/BaselineCard'
 import { Timeline } from '@/components/profile/Timeline'
@@ -23,6 +25,8 @@ export const revalidate = 86400
 const politicians: Record<string, PoliticianProfile> = {
   'gavin-newsom': newsom,
   ...caDelegationProfiles,
+  ...msDelegationProfiles,
+  ...njDelegationProfiles,
 }
 
 export function generateStaticParams() {
