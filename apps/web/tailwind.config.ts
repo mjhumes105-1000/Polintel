@@ -6,31 +6,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#08091a',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
         surface: {
-          DEFAULT: '#0f1024',
-          2: '#14162e',
-          3: '#1a1c38',
+          DEFAULT: 'rgb(var(--color-surface) / <alpha-value>)',
+          2: 'rgb(var(--color-surface-2) / <alpha-value>)',
+          3: 'rgb(var(--color-surface-3) / <alpha-value>)',
         },
         border: {
-          DEFAULT: '#252848',
-          subtle: '#121428',
+          DEFAULT: 'rgb(var(--color-border) / <alpha-value>)',
+          subtle: 'rgb(var(--color-border-subtle) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: '#5b90e0',
-          muted: '#2d4f7e',
-          bright: '#7eaef5',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          muted: 'rgb(var(--color-accent-muted) / <alpha-value>)',
+          bright: 'rgb(var(--color-accent-bright) / <alpha-value>)',
         },
         flag: {
-          DEFAULT: '#e8920c',
-          muted: '#8a5206',
-          bg: '#180f02',
+          DEFAULT: 'rgb(var(--color-flag) / <alpha-value>)',
+          muted: 'rgb(var(--color-flag-muted) / <alpha-value>)',
+          bg: 'rgb(var(--color-flag-bg) / <alpha-value>)',
         },
         ink: {
-          DEFAULT: '#eef2ff',
-          2: '#b0bcd8',
-          3: '#6272a0',
-          4: '#323a5c',
+          DEFAULT: 'rgb(var(--color-ink) / <alpha-value>)',
+          2: 'rgb(var(--color-ink-2) / <alpha-value>)',
+          3: 'rgb(var(--color-ink-3) / <alpha-value>)',
+          4: 'rgb(var(--color-ink-4) / <alpha-value>)',
         },
         signal: {
           vote: '#3b82f6',

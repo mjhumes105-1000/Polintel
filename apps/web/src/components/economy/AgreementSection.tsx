@@ -1,7 +1,7 @@
 import type { TradeAgreement, AgreementStatus } from '@political-intel/types'
 
 const STATUS_STYLES: Record<AgreementStatus, string> = {
-  'in-force':    'text-teal-400 border-teal-900 bg-teal-950/30',
+  'in-force':    'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30',
   'negotiating': 'text-accent border-accent/40 bg-accent/5',
   'suspended':   'text-ink-3 border-border bg-surface-2',
   'none':        'text-ink-4 border-border',

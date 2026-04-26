@@ -27,9 +27,9 @@ const A = {
 } as const
 
 const B = {
-  text:   'text-teal-400',
-  textDim:'text-teal-400/70',
-  border: 'border-teal-700/50',
+  text:   'text-teal-600 dark:text-teal-400',
+  textDim:'text-teal-600/70 dark:text-teal-400/70',
+  border: 'border-teal-400/50 dark:border-teal-700/50',
   bar:    'bg-teal-600/55',
 } as const
 
@@ -208,8 +208,8 @@ function MetricsSection({ a, b }: { a: CountryProfile; b: CountryProfile }) {
             label="TRADE BALANCE"
             aVal={signedBalance(balA)}
             bVal={signedBalance(balB)}
-            aColor={balA < 0 ? 'text-flag' : 'text-teal-400'}
-            bColor={balB < 0 ? 'text-flag' : 'text-teal-400'}
+            aColor={balA < 0 ? 'text-flag' : 'text-teal-600 dark:text-teal-400'}
+            bColor={balB < 0 ? 'text-flag' : 'text-teal-600 dark:text-teal-400'}
             aNote={balA < 0 ? 'U.S. deficit' : balA > 0 ? 'U.S. surplus' : 'Balanced'}
             bNote={balB < 0 ? 'U.S. deficit' : balB > 0 ? 'U.S. surplus' : 'Balanced'}
           />
@@ -231,8 +231,8 @@ function MetricsSection({ a, b }: { a: CountryProfile; b: CountryProfile }) {
             label="TRADE AGREEMENT"
             aVal={a.agreement.status === 'in-force' ? a.agreement.name : 'None'}
             bVal={b.agreement.status === 'in-force' ? b.agreement.name : 'None'}
-            aColor={a.agreement.status === 'in-force' ? 'text-teal-400' : 'text-ink-4'}
-            bColor={b.agreement.status === 'in-force' ? 'text-teal-400' : 'text-ink-4'}
+            aColor={a.agreement.status === 'in-force' ? 'text-teal-600 dark:text-teal-400' : 'text-ink-4'}
+            bColor={b.agreement.status === 'in-force' ? 'text-teal-600 dark:text-teal-400' : 'text-ink-4'}
           />
         </div>
       </div>
@@ -252,12 +252,12 @@ function BalanceBar({
   const pct = maxAbs > 0 ? (Math.abs(balance) / maxAbs) * 100 : 0
   const isDeficit = balance < 0
   const barColor = isDeficit ? 'bg-flag/40' : 'bg-teal-600/50'
-  const valColor = isDeficit ? 'text-flag' : 'text-teal-400'
+  const valColor = isDeficit ? 'text-flag' : 'text-teal-600 dark:text-teal-400'
   const chipLabel = isDeficit ? 'DEFICIT' : balance === 0 ? 'BALANCED' : 'SURPLUS'
   const chipStyle = isDeficit
     ? 'text-flag border-flag-muted bg-flag-bg'
     : balance > 0
-    ? 'text-teal-400 border-teal-900 bg-teal-950/30'
+    ? 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30'
     : 'text-ink-3 border-border'
 
   return (
@@ -472,7 +472,7 @@ function AgreementCard({
   const ag = profile.agreement
   const tokens = side === 'a' ? A : B
   const statusStyle =
-    ag.status === 'in-force'    ? 'text-teal-400 border-teal-900 bg-teal-950/30' :
+    ag.status === 'in-force'    ? 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30' :
     ag.status === 'negotiating' ? 'text-accent border-accent/40 bg-accent/5' :
     ag.status === 'suspended'   ? 'text-ink-3 border-border bg-surface-2' :
                                   'text-ink-4 border-border'

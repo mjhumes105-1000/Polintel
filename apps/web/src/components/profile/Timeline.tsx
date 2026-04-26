@@ -56,8 +56,8 @@ interface EventCardProps {
 
 function VotePill({ vote }: { vote: 'yes' | 'no' | 'abstain' }) {
   const styles = {
-    yes: 'text-teal-400 border-teal-900 bg-teal-950/30',
-    no: 'text-red-400 border-red-900 bg-red-950/30',
+    yes: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30',
+    no: 'text-red-700 border-red-300 bg-red-100 dark:text-red-400 dark:border-red-900 dark:bg-red-950/30',
     abstain: 'text-ink-3 border-border bg-surface',
   }
   return (
@@ -72,8 +72,8 @@ function PassedPill({ passed }: { passed: boolean }) {
     <span
       className={`font-mono text-[9px] px-1.5 py-0.5 rounded border ${
         passed
-          ? 'text-teal-400 border-teal-900 bg-teal-950/30'
-          : 'text-red-400 border-red-900 bg-red-950/30'
+          ? 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30'
+          : 'text-red-700 border-red-300 bg-red-100 dark:text-red-400 dark:border-red-900 dark:bg-red-950/30'
       }`}
     >
       {passed ? 'PASSED' : 'FAILED'}
@@ -164,8 +164,8 @@ export function Timeline({ politician, liveEventCount = 0 }: TimelineProps) {
       <div className="flex items-center gap-3 mb-4">
         <h2 className="label-caps text-accent/70">TIMELINE</h2>
         {liveEventCount > 0 && (
-          <span className="flex items-center gap-1.5 font-mono text-[10px] tracking-widest text-teal-400 border border-teal-900 rounded px-2 py-0.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+          <span className="flex items-center gap-1.5 font-mono text-[10px] tracking-widest text-teal-700 border border-teal-300 dark:text-teal-400 dark:border-teal-900 rounded px-2 py-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 animate-pulse" />
             LIVE · {liveEventCount} EVENTS · 24H REFRESH
           </span>
         )}

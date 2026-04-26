@@ -61,7 +61,7 @@ export default async function CountryPage({
 
       {/* Back + breadcrumb */}
       <div className="flex items-center gap-3 mb-6">
-        <BackButton fallbackHref="/economy" label="ECONOMY" />
+        <BackButton href="/economy" label="ECONOMY" />
         <span className="text-ink-4 font-mono text-[10px]">/</span>
         <span className="font-mono text-[10px] text-ink-3">{profile.name.toUpperCase()}</span>
       </div>

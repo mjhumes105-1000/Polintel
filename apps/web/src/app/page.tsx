@@ -17,8 +17,8 @@ const allPoliticians = [newsom, ...Object.values(caDelegationProfiles)]
 
 const statusConfig: Record<string, { label: string; cls: string }> = {
   introduced:   { label: 'INTRODUCED',    cls: 'text-ink-3 border-border' },
-  'in-committee':{ label: 'IN COMMITTEE', cls: 'text-blue-400 border-blue-900' },
-  passed:       { label: 'PASSED',        cls: 'text-teal-400 border-teal-900' },
+  'in-committee':{ label: 'IN COMMITTEE', cls: 'text-blue-700 border-blue-300 dark:text-blue-400 dark:border-blue-900' },
+  passed:       { label: 'PASSED',        cls: 'text-teal-700 border-teal-300 dark:text-teal-400 dark:border-teal-900' },
   signed:       { label: 'SIGNED',        cls: 'text-accent border-accent-muted' },
   vetoed:       { label: 'VETOED',        cls: 'text-flag border-flag-muted' },
   failed:       { label: 'FAILED',        cls: 'text-ink-3 border-border' },
@@ -83,7 +83,7 @@ function EconomyTeaser() {
               <p className="font-mono text-[9px] text-ink-4">#{c.tradePartnerRank} partner</p>
             </div>
             <div className="text-right shrink-0">
-              <p className={`font-mono text-[10px] tabular-nums ${c.tradeBalanceUSD < 0 ? 'text-flag' : 'text-teal-400'}`}>
+              <p className={`font-mono text-[10px] tabular-nums ${c.tradeBalanceUSD < 0 ? 'text-flag' : 'text-teal-600 dark:text-teal-400'}`}>
                 {c.tradeBalanceUSD < 0 ? '−' : '+'}{formatBillions(Math.abs(c.tradeBalanceUSD))}
               </p>
               <p className="font-mono text-[9px] text-ink-4">balance</p>
@@ -158,7 +158,7 @@ function PresidentialTeaser() {
 }
 
 function CandidateMini({ candidate }: { candidate: typeof presidentialCandidates2028[0] }) {
-  const partyColor = candidate.party === 'D' ? 'text-accent' : candidate.party === 'R' ? 'text-red-400' : 'text-ink-3'
+  const partyColor = candidate.party === 'D' ? 'text-accent' : candidate.party === 'R' ? 'text-red-600 dark:text-red-400' : 'text-ink-3'
   return (
     <>
       {candidate.photoUrl ? (

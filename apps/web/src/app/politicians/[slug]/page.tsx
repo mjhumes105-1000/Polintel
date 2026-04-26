@@ -82,6 +82,12 @@ const statusColor: Record<CandidacyStatus, string> = {
   lost: 'text-ink-4 border-border',
 }
 
+const STATE_EXPLORE_HREF: Record<string, string> = {
+  California: '/explore?state=California',
+  Mississippi: '/explore?state=Mississippi',
+  'New Jersey': '/explore?state=New Jersey',
+}
+
 const GOVTRACK_SOURCE = {
   id: 'govtrack',
   label: 'GovTrack — Live Congressional Record',
@@ -151,7 +157,7 @@ export default async function PoliticianPage({
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div id="profile-header-sentinel" />
         <div className="mb-4">
-          <BackButton />
+          <BackButton href={STATE_EXPLORE_HREF[politician.state]} />
         </div>
         <ProfileHeader politician={enrichedPolitician} />
 

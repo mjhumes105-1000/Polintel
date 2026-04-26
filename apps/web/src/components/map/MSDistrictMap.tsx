@@ -4,14 +4,22 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { geoMercator, geoPath } from 'd3-geo'
 import type { Feature, FeatureCollection, Geometry } from 'geojson'
 import { msMembersByDistrict } from '@/data/ms-members'
+import { useTheme } from '@/hooks/useTheme'
 
 const W = 480
 const H = 560
 
 const PARTY_COLORS = {
-  D: { base: '#1e4080', stroke: '#4d77b8', hover: '#2a58a8', selected: '#3668c0' },
-  R: { base: '#6b1515', stroke: '#b04040', hover: '#8a2020', selected: '#9a2525' },
-  I: { base: '#1e3848', stroke: '#507888', hover: '#2a4858', selected: '#305868' },
+  dark: {
+    D: { base: '#1e4080', stroke: '#4d77b8', hover: '#2a58a8', selected: '#3668c0' },
+    R: { base: '#6b1515', stroke: '#b04040', hover: '#8a2020', selected: '#9a2525' },
+    I: { base: '#1e3848', stroke: '#507888', hover: '#2a4858', selected: '#305868' },
+  },
+  light: {
+    D: { base: '#5882c8', stroke: '#3a62a8', hover: '#6a94d8', selected: '#7aa4e8' },
+    R: { base: '#c05050', stroke: '#a03030', hover: '#d06060', selected: '#e07070' },
+    I: { base: '#6a7898', stroke: '#506080', hover: '#7a88a8', selected: '#8a98b8' },
+  },
 } as const
 
 interface Props {
@@ -28,6 +36,7 @@ export function MSDistrictMap({ selectedDistrict, onDistrictHover, onDistrictCli
   const [pan, setPan]               = useState<[number, number]>([0, 0])
   const dragRef = useRef<{ startX: number; startY: number; panX: number; panY: number } | null>(null)
   const didDrag = useRef(false)
+  const theme = useTheme()
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/data/ms-districts.json`)
@@ -79,8 +88,13 @@ export function MSDistrictMap({ selectedDistrict, onDistrictHover, onDistrictCli
   const zoomOut = () => setZoomFactor(z => Math.max(z / 1.7, 1))
   const reset   = () => { setZoomFactor(1); setPan([0, 0]) }
 
+  const mapBg      = theme === 'dark' ? '#080d1a' : '#c4cce0'
+  const loadingTxt = theme === 'dark' ? '#323a5c' : '#6070a0'
+  const selStroke  = theme === 'dark' ? '#5b90e0' : '#2563eb'
+  const colors     = PARTY_COLORS[theme]
+
   return (
-    <div className="relative bg-[#080d1a]">
+    <div className="relative" style={{ background: mapBg }}>
       <div className="absolute top-3 right-3 z-10 flex flex-col gap-1">
         {([['＋', zoomIn], ['－', zoomOut], ['⌂', reset]] as const).map(([label, fn]) => (
           <button key={label} onClick={fn as () => void}
@@ -98,9 +112,9 @@ export function MSDistrictMap({ selectedDistrict, onDistrictHover, onDistrictCli
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <rect width={W} height={H} fill="#080d1a" />
+        <rect width={W} height={H} fill={mapBg} />
         {loading && (
-          <text x={W / 2} y={H / 2} textAnchor="middle" fill="#323a5c" fontSize={10} fontFamily="monospace">
+          <text x={W / 2} y={H / 2} textAnchor="middle" fill={loadingTxt} fontSize={10} fontFamily="monospace">
             LOADING DISTRICTS…
           </text>
         )}
@@ -108,12 +122,12 @@ export function MSDistrictMap({ selectedDistrict, onDistrictHover, onDistrictCli
           const cdRaw  = (feature.properties?.CD119 as string) ?? '0'
           const num    = parseInt(cdRaw, 10)
           const member = msMembersByDistrict[num]
-          const party  = (member?.party ?? 'R') as keyof typeof PARTY_COLORS
-          const colors = PARTY_COLORS[party]
+          const party  = (member?.party ?? 'D') as keyof typeof colors
+          const c      = colors[party]
           const isSel  = selectedDistrict === num
           const isHov  = hovered === num
-          const fill        = isSel ? colors.selected : isHov ? colors.hover : colors.base
-          const stroke      = (isSel || isHov) ? '#5b90e0' : colors.stroke
+          const fill        = isSel ? c.selected : isHov ? c.hover : c.base
+          const stroke      = (isSel || isHov) ? selStroke : c.stroke
           const strokeWidth = isSel ? 1.5 : isHov ? 1 : 0.5
           const d = pathGen(feature as Feature<Geometry>)
           if (!d) return null

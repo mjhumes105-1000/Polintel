@@ -13,6 +13,9 @@ interface PoliticianPhotoProps {
 export function PoliticianPhoto({ name, photoUrl, size = 96, className = '' }: PoliticianPhotoProps) {
   const [failed, setFailed] = useState(false)
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+  const resolvedSrc = photoUrl?.startsWith('/') ? `${basePath}${photoUrl}` : photoUrl
+
   const initials = name
     .split(' ')
     .map((n) => n[0])
@@ -22,7 +25,7 @@ export function PoliticianPhoto({ name, photoUrl, size = 96, className = '' }: P
 
   const sizeClass = `w-[${size}px] h-[${size}px]`
 
-  if (!photoUrl || failed) {
+  if (!resolvedSrc || failed) {
     return (
       <div
         style={{ width: size, height: size }}
@@ -44,7 +47,7 @@ export function PoliticianPhoto({ name, photoUrl, size = 96, className = '' }: P
       className={`rounded overflow-hidden border border-border bg-surface-2 shrink-0 ${className}`}
     >
       <Image
-        src={photoUrl}
+        src={resolvedSrc}
         alt={name}
         width={size}
         height={size}

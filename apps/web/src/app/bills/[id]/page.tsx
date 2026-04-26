@@ -26,8 +26,8 @@ export async function generateMetadata({
 
 const statusConfig: Record<BillStatus, { label: string; className: string }> = {
   introduced: { label: 'INTRODUCED', className: 'text-ink-3 border-border bg-surface' },
-  'in-committee': { label: 'IN COMMITTEE', className: 'text-blue-400 border-blue-900 bg-blue-950' },
-  passed: { label: 'PASSED', className: 'text-teal-400 border-teal-900 bg-teal-950' },
+  'in-committee': { label: 'IN COMMITTEE', className: 'text-blue-700 border-blue-300 bg-blue-100 dark:text-blue-400 dark:border-blue-900 dark:bg-blue-950' },
+  passed: { label: 'PASSED', className: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950' },
   signed: { label: 'SIGNED INTO LAW', className: 'text-accent border-accent-muted bg-accent/5' },
   vetoed: { label: 'VETOED', className: 'text-flag border-flag-muted bg-flag-bg' },
   failed: { label: 'FAILED', className: 'text-ink-3 border-border bg-surface' },
@@ -104,7 +104,7 @@ function VoteBreakdown({ votes }: { votes: BillVote[] }) {
             </div>
           )
           return (
-            <div key={v.politicianId}>
+            <div key={v.politicianId || v.politicianName}>
               {v.politicianId ? (
                 <Link href={`/politicians/${v.politicianId}`}>{inner}</Link>
               ) : inner}
@@ -129,10 +129,10 @@ export default async function BillPage({
     <div className="max-w-3xl mx-auto px-6 py-10">
       <div className="mb-2">
         <Link
-          href="/explore"
+          href="/bills"
           className="font-mono text-[10px] tracking-widest text-ink-4 hover:text-ink-3 transition-colors"
         >
-          ← EXPLORE
+          ← BILLS
         </Link>
       </div>
 

@@ -10,7 +10,7 @@ export function BalanceChip({ balance, size = 'sm' }: Props) {
 
   if (balance > 0) {
     return (
-      <span className={`${base} text-teal-400 border-teal-900 bg-teal-950/30 shrink-0`}>
+      <span className={`${base} text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30 shrink-0`}>
         SURPLUS
       </span>
     )

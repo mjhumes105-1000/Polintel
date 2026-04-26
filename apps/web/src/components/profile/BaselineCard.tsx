@@ -121,14 +121,14 @@ function RoleDot({ role }: { role: string }) {
     role === 'Chair'
       ? 'bg-accent'
       : role === 'Ranking Member'
-      ? 'bg-teal-400'
+      ? 'bg-teal-600 dark:bg-teal-400'
       : 'bg-ink-4'
   return <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${color}`} />
 }
 
 function roleChipColor(role: string): string {
   if (role === 'Chair') return 'text-accent border-accent/40 bg-accent/10'
-  if (role === 'Ranking Member') return 'text-teal-400 border-teal-900/60 bg-teal-950/30'
+  if (role === 'Ranking Member') return 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900/60 dark:bg-teal-950/30'
   return 'text-ink-4 border-border bg-surface'
 }
 

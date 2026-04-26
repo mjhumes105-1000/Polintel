@@ -56,13 +56,13 @@ export function MetricsStrip({
         label="U.S. EXPORTS TO"
         value={formatBillions(usExportsUSD)}
         sub={`Goods, FY${fiscalYear}`}
-        color="text-teal-400"
+        color="text-teal-600 dark:text-teal-400"
       />
       <Cell
         label="TRADE BALANCE"
         value={signedBalance(tradeBalanceUSD)}
         sub={tradeBalanceUSD < 0 ? 'U.S. deficit' : tradeBalanceUSD > 0 ? 'U.S. surplus' : 'Balanced'}
-        color={tradeBalanceUSD < 0 ? 'text-flag' : tradeBalanceUSD > 0 ? 'text-teal-400' : 'text-ink-3'}
+        color={tradeBalanceUSD < 0 ? 'text-flag' : tradeBalanceUSD > 0 ? 'text-teal-600 dark:text-teal-400' : 'text-ink-3'}
       />
       {gdpUSD && (
         <Cell

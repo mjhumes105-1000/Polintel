@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useTheme } from '@/hooks/useTheme'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -62,7 +64,7 @@ const NJDistrictMap = dynamic(
 const partyLabel = { D: 'Democrat', R: 'Republican', I: 'Independent' }
 const partyColor = {
   D: 'text-accent border-accent/40 bg-accent/5',
-  R: 'text-red-400 border-red-900/60 bg-red-950/30',
+  R: 'text-red-700 border-red-300 bg-red-100 dark:text-red-400 dark:border-red-900/60 dark:bg-red-950/30',
   I: 'text-ink-3 border-border bg-surface-2',
 }
 const statusColor = {
@@ -74,7 +76,30 @@ const statusLabel = { exploring: 'EXPLORING', declared: 'DECLARED', withdrawn: '
 
 // ─── Presidential Seal ───────────────────────────────────────────────────────
 
+function star5(cx: number, cy: number, R: number, r: number) {
+  return Array.from({ length: 10 }, (_, i) => {
+    const rad = i % 2 === 0 ? R : r
+    const a = (i * Math.PI / 5) - Math.PI / 2
+    return `${(cx + rad * Math.cos(a)).toFixed(2)},${(cy + rad * Math.sin(a)).toFixed(2)}`
+  }).join(' ')
+}
+
 function PresidentialSeal({ active, onClick }: { active: boolean; onClick: () => void }) {
+  const theme = useTheme()
+  const isDark = theme === 'dark'
+
+  // Color palette — same blue family, swaps for light mode
+  const bg0      = isDark ? '#141830' : '#1a2448'
+  const bg1      = isDark ? '#08091a' : '#0f1630'
+  const ring     = isDark ? '#5b90e0' : '#7eaef5'
+  const eagle    = isDark ? '#8aaad4' : '#b8cce8'
+  const eagleHi  = isDark ? '#c0d4f0' : '#ddeaff'
+  const shBlue   = isDark ? '#1e3a78' : '#2a4a90'
+  const shRed    = '#9a2828'
+  const shSilver = isDark ? '#6a8ab8' : '#8aaad4'
+  const olive    = isDark ? '#4a7850' : '#5a9060'
+  const rimText  = isDark ? '#5b90e0' : '#7eaef5'
+
   return (
     <button
       onClick={onClick}
@@ -90,76 +115,142 @@ function PresidentialSeal({ active, onClick }: { active: boolean; onClick: () =>
         ].join(' ')}
       >
         <svg viewBox="0 0 200 200" className="w-full h-full" aria-hidden>
-          <circle cx="100" cy="100" r="99" fill="#0f1024" />
-          <circle cx="100" cy="100" r="96" fill="none" stroke="#252848" strokeWidth="1.5" />
-
-          {/* Rim text */}
           <defs>
+            <radialGradient id="sealBg" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stopColor={bg0} />
+              <stop offset="100%" stopColor={bg1} />
+            </radialGradient>
             <path id="topRim" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0" />
             <path id="botRim" d="M 100,100 m -80,0 a 80,80 0 0,0 160,0" />
+            <clipPath id="shieldClip">
+              <path d="M 91,97 L 109,97 L 110,108 Q 100,118 90,108 Z" />
+            </clipPath>
           </defs>
-          <text fontSize="7" fill="#5b90e0" fontFamily="monospace" letterSpacing="3" fillOpacity="0.9">
-            <textPath href="#topRim" startOffset="5%">PRESIDENTIAL CANDIDATES · 2028</textPath>
+
+          {/* Background */}
+          <circle cx="100" cy="100" r="99" fill="url(#sealBg)" />
+
+          {/* Border rings */}
+          <circle cx="100" cy="100" r="97" fill="none" stroke={ring} strokeWidth="1"   strokeOpacity="0.6" />
+          <circle cx="100" cy="100" r="93" fill="none" stroke={ring} strokeWidth="0.5" strokeOpacity="0.22" />
+
+          {/* Rim text */}
+          <text fontSize="7" fill={rimText} fontFamily="monospace" letterSpacing="3" fillOpacity="0.9">
+            <textPath href="#topRim" startOffset="4%">PRESIDENTIAL CANDIDATES · 2028</textPath>
           </text>
-          <text fontSize="7" fill="#5b90e0" fontFamily="monospace" letterSpacing="5" fillOpacity="0.5">
-            <textPath href="#botRim" startOffset="20%">UNITED STATES OF AMERICA</textPath>
+          <text fontSize="6.5" fill={rimText} fontFamily="monospace" letterSpacing="5" fillOpacity="0.45">
+            <textPath href="#botRim" startOffset="22%">UNITED STATES OF AMERICA</textPath>
           </text>
 
-          {/* 13 evenly-spaced stars on inner rim (r=88) */}
+          {/* 13 rim stars */}
           {Array.from({ length: 13 }, (_, i) => {
             const a = ((i * 360) / 13 - 90) * (Math.PI / 180)
             return (
-              <text key={i} x={100 + 88 * Math.cos(a)} y={100 + 88 * Math.sin(a) + 2.5}
-                textAnchor="middle" fontSize="5.5" fill="#5b90e0" fillOpacity="0.75">★</text>
+              <text key={i} x={100 + 84 * Math.cos(a)} y={100 + 84 * Math.sin(a) + 2.5}
+                textAnchor="middle" fontSize="5.5" fill={ring} fillOpacity="0.75">★</text>
             )
           })}
 
-          {/* White House silhouette — centered at (100, 115) */}
-          <g fill="#eef2ff" fillOpacity="0.93">
-            {/* Flagpole */}
-            <rect x="99" y="46" width="2" height="30" />
-            <polygon points="101,46 116,51 101,57" fill="#c0392b" fillOpacity="0.9" />
+          {/* ── Eagle ── */}
 
-            {/* Left wing */}
-            <rect x="22" y="112" width="30" height="22" />
-            <rect x="18" y="116" width="5" height="18" />
-            {/* Right wing */}
-            <rect x="148" y="112" width="30" height="22" />
-            <rect x="177" y="116" width="5" height="18" />
+          {/* Left wing */}
+          <path
+            d="M 93,95 C 73,82 43,85 14,102 C 28,108 54,107 78,107 C 87,107 92,102 93,95 Z"
+            fill={eagle} fillOpacity="0.92"
+          />
+          {/* Left wing upper highlight */}
+          <path
+            d="M 93,95 C 73,82 43,85 14,102 C 30,98 58,90 90,94"
+            fill="none" stroke={eagleHi} strokeWidth="0.8" strokeOpacity="0.5"
+          />
 
-            {/* Main facade body */}
-            <rect x="48" y="96" width="104" height="38" />
-            {/* Attic / cornice */}
-            <rect x="48" y="91" width="104" height="6" />
+          {/* Right wing */}
+          <path
+            d="M 107,95 C 127,82 157,85 186,102 C 172,108 146,107 122,107 C 113,107 108,102 107,95 Z"
+            fill={eagle} fillOpacity="0.92"
+          />
+          {/* Right wing upper highlight */}
+          <path
+            d="M 107,95 C 127,82 157,85 186,102 C 170,98 142,90 110,94"
+            fill="none" stroke={eagleHi} strokeWidth="0.8" strokeOpacity="0.5"
+          />
 
-            {/* Portico pediment */}
-            <polygon points="68,91 132,91 100,74" />
-            {/* Portico entablature */}
-            <rect x="68" y="87" width="64" height="5" />
-            {/* Portico columns (6) */}
-            {[71, 81, 91, 101, 111, 121].map((cx) => (
-              <rect key={cx} x={cx} y="77" width="4" height="16" fill="#eef2ff" fillOpacity="0.93" />
-            ))}
-            {/* Portico stylobate */}
-            <rect x="68" y="93" width="64" height="4" />
+          {/* Tail fan */}
+          <path
+            d="M 86,120 C 80,134 84,144 100,143 C 116,144 120,134 114,120 Z"
+            fill={eagle} fillOpacity="0.85"
+          />
+          {/* Tail feather lines */}
+          {[-8, -4, 0, 4, 8].map((x) => (
+            <line key={x}
+              x1={100 + x} y1={120}
+              x2={100 + x * 1.2} y2={142}
+              stroke={bg1} strokeWidth="0.75" strokeOpacity="0.5"
+            />
+          ))}
 
-            {/* Central door */}
-            <rect x="93" y="112" width="14" height="22" fill="#0a0f1e" fillOpacity="0.55" />
+          {/* Body */}
+          <ellipse cx="100" cy="108" rx="13" ry="15" fill={eagle} fillOpacity="0.95" />
 
-            {/* Windows — left of portico */}
-            <rect x="54" y="104" width="9" height="10" fill="#0a0f1e" fillOpacity="0.4" />
-            <rect x="66" y="104" width="8" height="10" fill="#0a0f1e" fillOpacity="0.4" />
-            {/* Windows — right of portico */}
-            <rect x="130" y="104" width="8" height="10" fill="#0a0f1e" fillOpacity="0.4" />
-            <rect x="141" y="104" width="9" height="10" fill="#0a0f1e" fillOpacity="0.4" />
+          {/* Neck */}
+          <path d="M 93,84 C 91,89 91,94 92,96 L 108,96 C 109,94 109,89 107,84 Z"
+            fill={eagle} fillOpacity="0.9" />
 
-            {/* Wing windows */}
-            <rect x="30" y="118" width="12" height="10" fill="#0a0f1e" fillOpacity="0.4" />
-            <rect x="158" y="118" width="12" height="10" fill="#0a0f1e" fillOpacity="0.4" />
+          {/* Head (white — bald eagle) */}
+          <circle cx="100" cy="75" r="11" fill={eagleHi} fillOpacity="0.95" />
 
-            {/* Ground / lawn line */}
-            <rect x="16" y="134" width="168" height="2.5" fillOpacity="0.4" />
+          {/* Eye */}
+          <circle cx="105" cy="73" r="2"   fill={bg1} fillOpacity="0.8" />
+          <circle cx="105.5" cy="72.5" r="0.7" fill={eagleHi} fillOpacity="0.9" />
+
+          {/* Beak */}
+          <path d="M 109,72 L 118,75 L 109,78 Q 111,75 109,72 Z"
+            fill={isDark ? '#c8a840' : '#d4b050'} fillOpacity="0.9" />
+
+          {/* ── Chest shield ── */}
+          {/* Shield outline */}
+          <path d="M 91,97 L 109,97 L 110,108 Q 100,118 90,108 Z"
+            fill={shBlue} fillOpacity="0.95" />
+          {/* Blue chief (top band) */}
+          <rect x="91" y="97" width="18" height="6" fill={shBlue} fillOpacity="1" />
+          {/* Vertical stripes (clipped to shield) */}
+          <g clipPath="url(#shieldClip)">
+            <rect x="91"   y="103" width="6" height="16" fill={shRed}    fillOpacity="0.9" />
+            <rect x="97"   y="103" width="6" height="16" fill={shSilver} fillOpacity="0.7" />
+            <rect x="103"  y="103" width="6" height="16" fill={shRed}    fillOpacity="0.9" />
           </g>
+          {/* Shield border */}
+          <path d="M 91,97 L 109,97 L 110,108 Q 100,118 90,108 Z"
+            fill="none" stroke={eagle} strokeWidth="0.75" strokeOpacity="0.6" />
+
+          {/* ── Left talon: arrows ── */}
+          <g stroke={eagle} strokeWidth="1.2" strokeOpacity="0.8">
+            <line x1="80" y1="119" x2="86" y2="129" />
+            <line x1="84" y1="117" x2="90" y2="127" />
+            <line x1="88" y1="115" x2="94" y2="125" />
+            {/* Arrowheads */}
+            <polygon points="80,119 77,123 83,122" fill={eagle} stroke="none" fillOpacity="0.8" />
+            <polygon points="84,117 81,121 87,120" fill={eagle} stroke="none" fillOpacity="0.8" />
+            <polygon points="88,115 85,119 91,118" fill={eagle} stroke="none" fillOpacity="0.8" />
+          </g>
+
+          {/* ── Right talon: olive branch ── */}
+          <path d="M 116,120 Q 124,126 120,134 Q 116,138 114,136"
+            fill="none" stroke={olive} strokeWidth="1.2" strokeOpacity="0.85" />
+          <circle cx="119" cy="122" r="2.2" fill={olive} fillOpacity="0.8" />
+          <circle cx="123" cy="127" r="2.2" fill={olive} fillOpacity="0.8" />
+          <circle cx="120" cy="132" r="2.2" fill={olive} fillOpacity="0.8" />
+
+          {/* 13 stars above eagle in arc */}
+          {Array.from({ length: 13 }, (_, i) => {
+            const a = (-145 + i * (110 / 12)) * (Math.PI / 180)
+            return (
+              <polygon key={i}
+                points={star5(100 + 52 * Math.cos(a), 100 + 52 * Math.sin(a), 4, 1.7)}
+                fill={ring} fillOpacity="0.85"
+              />
+            )
+          })}
         </svg>
       </div>
       <div className="text-center">
@@ -423,6 +514,7 @@ function MemberRow({ member, large = false }: { member: AnyMember; large?: boole
 const DRILLDOWN_STATES = new Set(['California', 'Mississippi', 'New Jersey'])
 
 export function ExploreClient() {
+  const searchParams = useSearchParams()
   const [showPresidential, setShowPresidential] = useState(false)
   const [selectedState, setSelectedState] = useState<string | null>(null)
   const [drilldownState, setDrilldownState] = useState<string | null>(null)
@@ -431,6 +523,16 @@ export function ExploreClient() {
   const panelRef = useRef<HTMLDivElement>(null)
 
   const selectedInfo = selectedState ? stateData[selectedState] ?? null : null
+
+  useEffect(() => {
+    const stateParam = searchParams.get('state')
+    if (stateParam) {
+      setSelectedState(stateParam)
+      if (DRILLDOWN_STATES.has(stateParam)) {
+        setDrilldownState(stateParam)
+      }
+    }
+  }, [searchParams])
 
   useEffect(() => {
     if ((selectedState || drilldownState) && panelRef.current) {
@@ -545,15 +647,15 @@ export function ExploreClient() {
                 </div>
                 <div className="flex items-center gap-5 mt-3 px-1">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-sm bg-[#1e4080] border border-[#5580c0]" />
+                    <div className="w-3 h-3 rounded-sm bg-[#5882c8] dark:bg-[#1e4080] border border-[#3a62a8] dark:border-[#5580c0]" />
                     <span className="text-[10px] font-mono text-ink-4">Democrat</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-sm bg-[#5c1515] border border-[#a03030]" />
+                    <div className="w-3 h-3 rounded-sm bg-[#c05050] dark:bg-[#5c1515] border border-[#a03030]" />
                     <span className="text-[10px] font-mono text-ink-4">Republican</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-sm bg-[#3668c0] border border-[#5b90e0]" />
+                    <div className="w-3 h-3 rounded-sm bg-[#7aa4e8] dark:bg-[#3668c0] border border-[#2563eb] dark:border-[#5b90e0]" />
                     <span className="text-[10px] font-mono text-ink-4">Selected</span>
                   </div>
                 </div>
@@ -669,19 +771,19 @@ export function ExploreClient() {
               </div>
               <div className="flex items-center gap-5 mt-3 px-1 flex-wrap">
                 <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#0e2240] border border-[#1e5a9e]" />
+                  <div className="w-3 h-3 rounded-sm bg-[#7e96c8] dark:bg-[#0e2240] border border-[#4060a0] dark:border-[#1e5a9e]" />
                   <span className="text-[10px] font-mono text-ink-4">District map available</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#162040] border border-[#2d4f7e]" />
+                  <div className="w-3 h-3 rounded-sm bg-[#a0b0d4] dark:bg-[#162040] border border-[#6070a8] dark:border-[#2d4f7e]" />
                   <span className="text-[10px] font-mono text-ink-4">Governor profile</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#14162e] border border-[#252848]" />
+                  <div className="w-3 h-3 rounded-sm bg-[#b8c4de] dark:bg-[#14162e] border border-[#8898c0] dark:border-[#252848]" />
                   <span className="text-[10px] font-mono text-ink-4">No profile yet</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-sm bg-[#1e2a50] border border-[#5b90e0]" />
+                  <div className="w-3 h-3 rounded-sm bg-[#5a7cb8] dark:bg-[#1e2a50] border border-[#2563eb] dark:border-[#5b90e0]" />
                   <span className="text-[10px] font-mono text-ink-4">Selected</span>
                 </div>
               </div>

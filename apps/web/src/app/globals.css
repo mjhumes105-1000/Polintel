@@ -3,6 +3,46 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode (default) — pale navy, same cool-blue family as dark */
+  :root {
+    --color-bg:             228 232 248;
+    --color-surface:        238 241 255;
+    --color-surface-2:      218 223 242;
+    --color-surface-3:      206 213 236;
+    --color-border:         162 172 210;
+    --color-border-subtle:  198 205 230;
+    --color-accent:         37 99 235;
+    --color-accent-muted:   147 197 253;
+    --color-accent-bright:  29 78 216;
+    --color-flag:           217 119 6;
+    --color-flag-muted:     146 64 14;
+    --color-flag-bg:        255 247 230;
+    --color-ink:            8 12 36;
+    --color-ink-2:          30 38 80;
+    --color-ink-3:          72 86 136;
+    --color-ink-4:          110 124 168;
+  }
+
+  /* Dark mode */
+  html.dark {
+    --color-bg:             8 9 26;
+    --color-surface:        15 16 36;
+    --color-surface-2:      20 22 46;
+    --color-surface-3:      26 28 56;
+    --color-border:         37 40 72;
+    --color-border-subtle:  18 20 40;
+    --color-accent:         91 144 224;
+    --color-accent-muted:   45 79 126;
+    --color-accent-bright:  126 174 245;
+    --color-flag:           232 146 12;
+    --color-flag-muted:     138 82 6;
+    --color-flag-bg:        24 15 2;
+    --color-ink:            238 242 255;
+    --color-ink-2:          176 188 216;
+    --color-ink-3:          98 114 160;
+    --color-ink-4:          50 58 92;
+  }
+
   html {
     @apply bg-bg text-ink;
   }

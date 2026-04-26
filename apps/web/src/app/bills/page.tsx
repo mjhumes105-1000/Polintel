@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 const statusConfig: Record<BillStatus, { label: string; cls: string }> = {
   introduced:    { label: 'INTRODUCED',    cls: 'text-ink-3 border-border' },
-  'in-committee':{ label: 'IN COMMITTEE',  cls: 'text-blue-400 border-blue-900 bg-blue-950/30' },
-  passed:        { label: 'PASSED',        cls: 'text-teal-400 border-teal-900 bg-teal-950/30' },
+  'in-committee':{ label: 'IN COMMITTEE',  cls: 'text-blue-700 border-blue-300 bg-blue-100 dark:text-blue-400 dark:border-blue-900 dark:bg-blue-950/30' },
+  passed:        { label: 'PASSED',        cls: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30' },
   signed:        { label: 'SIGNED',        cls: 'text-accent border-accent-muted bg-accent/5' },
   vetoed:        { label: 'VETOED',        cls: 'text-flag border-flag-muted bg-flag-bg' },
   failed:        { label: 'FAILED',        cls: 'text-ink-3 border-border' },

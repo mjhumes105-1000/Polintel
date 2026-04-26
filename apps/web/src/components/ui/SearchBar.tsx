@@ -141,11 +141,11 @@ const typeLabel: Record<Result['type'], string> = {
 
 const typeBadgeColor: Record<Result['type'], string> = {
   politician: 'text-accent/80 border-accent/30 bg-accent/5',
-  state: 'text-teal-400 border-teal-900 bg-teal-950',
-  candidate: 'text-violet-400 border-violet-900 bg-violet-950',
+  state: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950',
+  candidate: 'text-violet-700 border-violet-300 bg-violet-100 dark:text-violet-400 dark:border-violet-900 dark:bg-violet-950',
   bill: 'text-signal-bill border-signal-bill/30 bg-surface-2',
   committee: 'text-flag/80 border-flag-muted bg-flag-bg',
-  country: 'text-teal-400 border-teal-700/50 bg-teal-950/30',
+  country: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-700/50 dark:bg-teal-950/30',
 }
 
 interface SearchBarProps {

@@ -5,7 +5,7 @@ const SEVERITY_ORDER = { critical: 0, high: 1, moderate: 2, low: 3, none: 4 }
 
 const DIRECTION_STYLES: Record<string, string> = {
   inbound:  'text-flag/80 border-flag-muted',
-  outbound: 'text-teal-400/80 border-teal-900',
+  outbound: 'text-teal-600/80 border-teal-300 dark:text-teal-400/80 dark:border-teal-900',
   mutual:   'text-ink-3 border-border',
 }
 

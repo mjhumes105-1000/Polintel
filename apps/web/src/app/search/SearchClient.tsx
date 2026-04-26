@@ -65,8 +65,8 @@ function search(query: string): SearchResults {
 
 const statusColor: Record<string, string> = {
   introduced: 'text-ink-3 border-border',
-  'in-committee': 'text-blue-400 border-blue-900',
-  passed: 'text-teal-400 border-teal-900',
+  'in-committee': 'text-blue-700 border-blue-300 dark:text-blue-400 dark:border-blue-900',
+  passed: 'text-teal-700 border-teal-300 dark:text-teal-400 dark:border-teal-900',
   signed: 'text-accent border-accent-muted',
   vetoed: 'text-flag border-flag-muted',
   failed: 'text-ink-3 border-border',

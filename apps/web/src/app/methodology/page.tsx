@@ -18,21 +18,20 @@ export default function MethodologyPage() {
       </p>
 
       <div className="space-y-10">
-        <Section title="What we collect">
+        <Section title="What we cover">
           <p>
-            Each politician profile draws on publicly available primary sources:
+            The platform has four modules, each drawing on different primary source categories:
           </p>
-          <ul className="mt-3 space-y-1.5">
+          <ul className="mt-3 space-y-3">
             {[
-              'Official legislative records — bill text, vote histories, signing statements (via state and federal legislative information systems)',
-              'Campaign finance disclosures — from the FEC and state equivalents such as Cal-Access',
-              'Official government records — executive orders, press releases, budget documents',
-              'Court records where relevant and publicly accessible',
-              'Reporting from established news organizations, cited by publication and date',
-            ].map((item) => (
-              <li key={item} className="flex gap-2 text-sm text-ink-2">
+              ['Politician profiles', 'Legislative records, campaign finance disclosures, executive orders, court records, and reporting from established news organizations — each cited by source and date.'],
+              ['Bills & legislation', 'Federal bill text, sponsor information, recorded votes, and step-by-step legislative history via Congress.gov and the GPO. Each bill links directly to its primary legislative record.'],
+              ['Trade & economy', 'U.S. bilateral trade figures sourced from the U.S. Census Bureau Foreign Trade division and product-level import data from the USITC Harmonized Tariff Schedule. FTA status and foreign aid figures are drawn from USTR and USAID public datasets.'],
+              ['Congressional maps', 'District boundaries, delegation rosters, and committee assignments sourced from official congressional records and the Biographical Directory of the U.S. Congress.'],
+            ].map(([title, desc]) => (
+              <li key={title} className="flex gap-2 text-sm text-ink-2">
                 <span className="text-ink-4 mt-0.5 shrink-0">–</span>
-                <span>{item}</span>
+                <span><strong className="text-ink">{title}:</strong> {desc}</span>
               </li>
             ))}
           </ul>
@@ -59,22 +58,25 @@ export default function MethodologyPage() {
 
         <Section title="How AI is used">
           <p>
-            AI is used in two ways on this platform:
+            AI appears in two clearly labeled places on this platform:
           </p>
-          <ol className="mt-3 space-y-2">
+          <ol className="mt-3 space-y-3">
             <li className="flex gap-2 text-sm text-ink-2">
               <span className="font-mono text-ink-4 shrink-0">01</span>
               <span>
-                <strong className="text-ink">Organization.</strong> Structured data models shape how evidence
-                is collected, tagged, and displayed. AI helps surface patterns across a body of evidence.
+                <strong className="text-ink">Plain-language bill explanations.</strong> Each legislation
+                page includes a collapsible &ldquo;Plain-language explanation&rdquo; section that translates
+                the bill&apos;s legal and procedural content into accessible terms. These are AI-generated
+                and clearly marked as such. They do not introduce facts beyond what is in the bill record.
               </span>
             </li>
             <li className="flex gap-2 text-sm text-ink-2">
               <span className="font-mono text-ink-4 shrink-0">02</span>
               <span>
-                <strong className="text-ink">Record Assessment.</strong> The AI-generated editorial section
-                at the bottom of each profile synthesizes the displayed evidence into a structured interpretation.
-                It is explicitly not a statement of fact.
+                <strong className="text-ink">Record Assessment.</strong> Each politician profile ends
+                with an AI-generated editorial section that synthesizes the displayed evidence into a
+                structured interpretation. It is explicitly not a statement of fact, and is preceded
+                by a disclaimer to that effect.
               </span>
             </li>
           </ol>
@@ -86,7 +88,7 @@ export default function MethodologyPage() {
 
         <Section title="The Record Assessment">
           <p>
-            Every profile ends with a Record Assessment divided into three sections:
+            Every politician profile ends with a Record Assessment divided into three sections:
           </p>
           <ul className="mt-3 space-y-2">
             {[
@@ -109,6 +111,26 @@ export default function MethodologyPage() {
           </div>
         </Section>
 
+        <Section title="Trade data sources and methodology">
+          <p>
+            Trade figures reflect annual totals for the most recent completed calendar year available
+            from the U.S. Census Bureau Foreign Trade division. Import and export values are reported
+            in U.S. dollars on a Census basis (imports on a customs value basis; exports on an
+            f.a.s. basis). Trade balance is exports minus imports — a negative number indicates a
+            U.S. trade deficit with that partner.
+          </p>
+          <p className="mt-3">
+            Top import and export categories are derived from USITC Harmonized Tariff Schedule
+            chapter-level data. FTA (free trade agreement) status reflects agreements currently in
+            force as published by the USTR. Aid figures are drawn from USAID and State Department
+            public reports and reflect the most recently available full fiscal year.
+          </p>
+          <p className="mt-3">
+            Trade data is retrieved periodically and stamped with a retrieval date. Figures may
+            not reflect revisions published by the Census Bureau after that date.
+          </p>
+        </Section>
+
         <Section title="Source standards and limitations">
           <p>
             Every source is displayed with the publishing organization, date, and a direct link to
@@ -116,8 +138,8 @@ export default function MethodologyPage() {
             paywalls or change over time.
           </p>
           <p className="mt-3">
-            This platform is not comprehensive. We cover major documented events, not every vote
-            or statement. Omission of an event does not imply that event did not occur.
+            This platform is not comprehensive. We cover major documented events and key legislation,
+            not every vote or statement. Omission of an event does not imply that event did not occur.
           </p>
           <p className="mt-3">
             Data accuracy is tied to the retrieval dates shown on each source. Records are updated

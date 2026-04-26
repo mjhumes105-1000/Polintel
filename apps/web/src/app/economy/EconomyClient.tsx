@@ -72,7 +72,7 @@ function balanceStatement(c: CountrySummary): string {
 function BalanceChip({ balance }: { balance: number }) {
   if (balance >= 0) {
     return (
-      <span className="font-mono text-[9px] px-1.5 py-0.5 rounded border text-teal-400 border-teal-900 bg-teal-950/30 shrink-0">
+      <span className="font-mono text-[9px] px-1.5 py-0.5 rounded border text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950/30 shrink-0">
         SURPLUS
       </span>
     )
@@ -103,7 +103,7 @@ function AidChip({ amount }: { amount: number }) {
 function BalanceValue({ balance }: { balance: number }) {
   const text = (balance >= 0 ? '+' : '−') + formatBillions(Math.abs(balance))
   return (
-    <span className={`font-mono tabular-nums ${balance >= 0 ? 'text-teal-400' : 'text-flag'}`}>
+    <span className={`font-mono tabular-nums ${balance >= 0 ? 'text-teal-600 dark:text-teal-400' : 'text-flag'}`}>
       {text}
     </span>
   )
@@ -139,7 +139,7 @@ function GlobalMetricsBar() {
       label: 'FTA PARTNERS',
       value: String(ftaCountries),
       sub: `of ${countries.length} tracked`,
-      color: 'text-teal-400',
+      color: 'text-teal-600 dark:text-teal-400',
     },
     {
       label: 'U.S. AID OUTFLOWS',
@@ -712,7 +712,7 @@ function Controls({
         {surplusTotal > 0 && (
           <>
             <span className="text-ink-4 text-[9px]">·</span>
-            <span className="font-mono text-[9px] text-teal-400">
+            <span className="font-mono text-[9px] text-teal-600 dark:text-teal-400">
               SURPLUS {formatBillions(surplusTotal)}
             </span>
           </>

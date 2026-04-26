@@ -34,8 +34,8 @@ export function AlertCapture({ politicianId, politicianName }: AlertCaptureProps
 
   if (status === 'success') {
     return (
-      <div className="flex items-center gap-3 px-4 py-3 bg-surface border border-teal-900 rounded mb-8">
-        <span className="text-teal-400 text-sm">✓</span>
+      <div className="flex items-center gap-3 px-4 py-3 bg-surface border border-teal-300 dark:border-teal-900 rounded mb-8">
+        <span className="text-teal-600 dark:text-teal-400 text-sm">✓</span>
         <p className="text-sm text-ink-2">
           You&apos;re on the list. We&apos;ll notify you when{' '}
           <span className="text-ink">{politicianName}</span> votes.
@@ -69,7 +69,7 @@ export function AlertCapture({ politicianId, politicianName }: AlertCaptureProps
         </div>
       </div>
       {status === 'error' && (
-        <p className="mt-1.5 text-xs text-red-400 font-mono">{errorMsg}</p>
+        <p className="mt-1.5 text-xs text-red-600 dark:text-red-400 font-mono">{errorMsg}</p>
       )}
     </form>
   )
