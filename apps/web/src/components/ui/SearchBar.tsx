@@ -8,12 +8,14 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
+import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
 import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
 
-const politicians = [newsom, ...Object.values(caDelegationProfiles)]
+const politicians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles)]
 
 interface Result {
   type: 'politician' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'

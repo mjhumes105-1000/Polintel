@@ -7,6 +7,8 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { SearchBar } from '@/components/ui/SearchBar'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
+import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
 import { allCongressMembers, type CongressMember } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
@@ -14,7 +16,7 @@ import type { PoliticianProfile } from '@political-intel/types'
 import type { Bill } from '@political-intel/types'
 import type { Committee } from '@/data/committees'
 
-const allPoliticians = [newsom, ...Object.values(caDelegationProfiles)]
+const allPoliticians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles)]
 
 type ResultType = 'politician' | 'bill' | 'committee'
 
