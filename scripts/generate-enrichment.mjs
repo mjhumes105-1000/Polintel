@@ -13,7 +13,7 @@ const dataDir = resolve(root, 'apps/web/src/data/legislators')
 
 const targetStates = process.argv.slice(2).length > 0
   ? process.argv.slice(2)
-  : ['MS', 'NJ']
+  : ['MS', 'NJ', 'FL', 'TX', 'NY']
 
 const legislators = JSON.parse(readFileSync(resolve(dataDir, 'legislators-current.json'), 'utf8'))
 const socialMedia = JSON.parse(readFileSync(resolve(dataDir, 'legislators-social-media.json'), 'utf8'))
@@ -172,7 +172,7 @@ for (const m of MANUAL_MEMBERS) {
   }
 }
 
-const outPath = resolve(dataDir, 'ms-nj-enrichment.json')
+const outPath = resolve(dataDir, 'non-ca-enrichment.json')
 writeFileSync(outPath, JSON.stringify(result, null, 2))
 console.log(`Wrote ${Object.keys(result).length} entries to ${outPath}`)
 for (const [id, entry] of Object.entries(result)) {

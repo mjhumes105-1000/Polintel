@@ -6,6 +6,9 @@ import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
 import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
 import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
+import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
+import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
+import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
 import { ProfileHeader } from '@/components/profile/ProfileHeader'
 import { BaselineCard } from '@/components/profile/BaselineCard'
 import { Timeline } from '@/components/profile/Timeline'
@@ -27,6 +30,9 @@ const politicians: Record<string, PoliticianProfile> = {
   ...caDelegationProfiles,
   ...msDelegationProfiles,
   ...njDelegationProfiles,
+  ...flDelegationProfiles,
+  ...txDelegationProfiles,
+  ...nyDelegationProfiles,
 }
 
 export function generateStaticParams() {

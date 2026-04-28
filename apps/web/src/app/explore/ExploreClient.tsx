@@ -13,8 +13,11 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { caMembers, caMembersByDistrict, caSenators, type CAMember } from '@/data/california-members'
 import { msMembers, msMembersByDistrict, msSenators, type StateMember as MSMember } from '@/data/ms-members'
 import { njMembers, njMembersByDistrict, njSenators, type StateMember as NJMember } from '@/data/nj-members'
+import { flMembers, flMembersByDistrict, flSenators, type StateMember as FLMember } from '@/data/fl-members'
+import { txMembers, txMembersByDistrict, txSenators, type StateMember as TXMember } from '@/data/tx-members'
+import { nyMembers, nyMembersByDistrict, nySenators, type StateMember as NYMember } from '@/data/ny-members'
 
-type AnyMember = CAMember | MSMember | NJMember
+type AnyMember = CAMember | MSMember | NJMember | FLMember | TXMember | NYMember
 
 const USMap = dynamic(() => import('@/components/map/USMap').then((m) => m.USMap), {
   ssr: false,
@@ -55,6 +58,42 @@ const NJDistrictMap = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full aspect-[3/7] bg-surface border border-border rounded flex items-center justify-center">
+        <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
+      </div>
+    ),
+  }
+)
+
+const FLDistrictMap = dynamic(
+  () => import('@/components/map/FLDistrictMap').then((m) => m.FLDistrictMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[5/4] bg-surface border border-border rounded flex items-center justify-center">
+        <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
+      </div>
+    ),
+  }
+)
+
+const TXDistrictMap = dynamic(
+  () => import('@/components/map/TXDistrictMap').then((m) => m.TXDistrictMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[7/8] bg-surface border border-border rounded flex items-center justify-center">
+        <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
+      </div>
+    ),
+  }
+)
+
+const NYDistrictMap = dynamic(
+  () => import('@/components/map/NYDistrictMap').then((m) => m.NYDistrictMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[7/6] bg-surface border border-border rounded flex items-center justify-center">
         <p className="font-mono text-[10px] tracking-widest text-ink-4">LOADING DISTRICTS…</p>
       </div>
     ),
@@ -511,7 +550,7 @@ function MemberRow({ member, large = false }: { member: AnyMember; large?: boole
 
 // ─── Main Explore Client ──────────────────────────────────────────────────────
 
-const DRILLDOWN_STATES = new Set(['California', 'Mississippi', 'New Jersey'])
+const DRILLDOWN_STATES = new Set(['California', 'Mississippi', 'New Jersey', 'Florida', 'Texas', 'New York'])
 
 export function ExploreClient() {
   const searchParams = useSearchParams()
@@ -598,10 +637,14 @@ export function ExploreClient() {
       {drilldownState && DRILLDOWN_STATES.has(drilldownState) && (() => {
         const isCA = drilldownState === 'California'
         const isMS = drilldownState === 'Mississippi'
-        const senators = isCA ? caSenators : isMS ? msSenators : njSenators
-        const membersByDistrict = isCA ? caMembersByDistrict : isMS ? msMembersByDistrict : njMembersByDistrict
-        const districtCount = isCA ? 52 : isMS ? 4 : 12
-        const abbr = isCA ? 'CA' : isMS ? 'MS' : 'NJ'
+        const isNJ = drilldownState === 'New Jersey'
+        const isFL = drilldownState === 'Florida'
+        const isTX = drilldownState === 'Texas'
+        const isNY = drilldownState === 'New York'
+        const senators = isCA ? caSenators : isMS ? msSenators : isNJ ? njSenators : isFL ? flSenators : isTX ? txSenators : nySenators
+        const membersByDistrict = isCA ? caMembersByDistrict : isMS ? msMembersByDistrict : isNJ ? njMembersByDistrict : isFL ? flMembersByDistrict : isTX ? txMembersByDistrict : nyMembersByDistrict
+        const districtCount = isCA ? 52 : isMS ? 4 : isNJ ? 12 : isFL ? 28 : isTX ? 38 : 26
+        const abbr = isCA ? 'CA' : isMS ? 'MS' : isNJ ? 'NJ' : isFL ? 'FL' : isTX ? 'TX' : 'NY'
 
         return (
           <div>
@@ -621,7 +664,7 @@ export function ExploreClient() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className={isCA || isMS ? 'lg:col-span-2' : 'lg:col-span-1'}>
+              <div className={isCA || isMS || isFL || isTX ? 'lg:col-span-2' : 'lg:col-span-1'}>
                 <div className="border border-border rounded overflow-hidden bg-surface">
                   {isCA && (
                     <CADistrictMap
@@ -637,8 +680,29 @@ export function ExploreClient() {
                       onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
                     />
                   )}
-                  {!isCA && !isMS && (
+                  {isNJ && (
                     <NJDistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                  {isFL && (
+                    <FLDistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                  {isTX && (
+                    <TXDistrictMap
+                      selectedDistrict={selectedDistrict}
+                      onDistrictHover={setHoveredDistrict}
+                      onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
+                    />
+                  )}
+                  {isNY && (
+                    <NYDistrictMap
                       selectedDistrict={selectedDistrict}
                       onDistrictHover={setHoveredDistrict}
                       onDistrictClick={(d) => setSelectedDistrict((prev) => prev === d ? null : d)}
@@ -661,7 +725,7 @@ export function ExploreClient() {
                 </div>
               </div>
 
-              <div ref={panelRef} className={!isCA && !isMS ? 'lg:col-span-2' : ''}>
+              <div ref={panelRef} className={isNJ || isNY ? 'lg:col-span-2' : ''}>
                 <StateDistrictPanel
                   stateName={drilldownState}
                   stateAbbr={abbr}
@@ -760,7 +824,7 @@ export function ExploreClient() {
           <div className="mb-5">
             <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1">CONGRESSIONAL & GUBERNATORIAL MAP</p>
             <p className="text-xs text-ink-3">
-              Click any state to view governor and congressional info. California, Mississippi, and New Jersey have district-level views.
+              Click any state to view governor and congressional info. California, Mississippi, New Jersey, Florida, Texas, and New York have district-level views.
             </p>
           </div>
 
@@ -801,7 +865,7 @@ export function ExploreClient() {
                   <p className="font-mono text-[10px] tracking-widest text-ink-4">SELECT A STATE</p>
                   <p className="text-xs text-ink-3 leading-relaxed">
                     Click any state to view its governor, congressional seats, and upcoming elections.
-                    {' '}California has district-level detail.
+                    {' '}CA, MS, NJ, FL, TX, and NY have district-level detail.
                   </p>
                 </div>
               )}

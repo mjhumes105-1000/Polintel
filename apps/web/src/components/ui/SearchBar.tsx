@@ -10,12 +10,15 @@ import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
 import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
 import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
+import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
+import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
+import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
 import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
 
-const politicians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles)]
+const politicians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
 
 interface Result {
   type: 'politician' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'

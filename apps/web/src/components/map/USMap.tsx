@@ -6,7 +6,7 @@ import { useTheme } from '@/hooks/useTheme'
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json'
 
-const DISTRICT_STATES = new Set(['California', 'Mississippi', 'New Jersey'])
+const DISTRICT_STATES = new Set(['California', 'Mississippi', 'New Jersey', 'Florida', 'Texas', 'New York'])
 
 const COLORS = {
   dark: {
