@@ -157,15 +157,32 @@ function MetricRow({
   bNote?: string
 }) {
   return (
-    <div className="grid grid-cols-[1fr_10rem_1fr] items-start gap-2 py-3 border-b border-border last:border-0">
-      <div className="text-right">
-        <p className={`font-mono text-sm tabular-nums leading-tight ${aColor ?? 'text-ink-2'}`}>{aVal}</p>
-        {aNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{aNote}</p>}
+    <div className="py-3 border-b border-border last:border-0">
+      {/* Desktop: 3-column symmetrical layout */}
+      <div className="hidden sm:grid grid-cols-[1fr_10rem_1fr] items-start gap-2">
+        <div className="text-right">
+          <p className={`font-mono text-sm tabular-nums leading-tight ${aColor ?? 'text-ink-2'}`}>{aVal}</p>
+          {aNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{aNote}</p>}
+        </div>
+        <p className="font-mono text-[9px] tracking-wider text-ink-4 text-center self-start pt-0.5">{label}</p>
+        <div>
+          <p className={`font-mono text-sm tabular-nums leading-tight ${bColor ?? 'text-ink-2'}`}>{bVal}</p>
+          {bNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{bNote}</p>}
+        </div>
       </div>
-      <p className="font-mono text-[9px] tracking-wider text-ink-4 text-center self-start pt-0.5">{label}</p>
-      <div>
-        <p className={`font-mono text-sm tabular-nums leading-tight ${bColor ?? 'text-ink-2'}`}>{bVal}</p>
-        {bNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{bNote}</p>}
+      {/* Mobile: label above, two values side by side */}
+      <div className="sm:hidden">
+        <p className="font-mono text-[9px] tracking-wider text-ink-4 mb-2">{label}</p>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <p className={`font-mono text-sm tabular-nums leading-tight ${aColor ?? 'text-ink-2'}`}>{aVal}</p>
+            {aNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{aNote}</p>}
+          </div>
+          <div>
+            <p className={`font-mono text-sm tabular-nums leading-tight ${bColor ?? 'text-ink-2'}`}>{bVal}</p>
+            {bNote && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{bNote}</p>}
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -181,10 +198,18 @@ function MetricsSection({ a, b }: { a: CountryProfile; b: CountryProfile }) {
     <section className="mb-10">
       <SectionLabel>KEY METRICS — FY{a.currentTrade.fiscalYear}</SectionLabel>
       <div className="bg-surface border border-border rounded">
-        <div className="grid grid-cols-[1fr_10rem_1fr] gap-2 px-4 py-2.5 border-b border-border bg-surface-2 rounded-t">
-          <p className={`text-right font-mono text-[10px] ${A.text}`}>{a.flagEmoji} {a.name.toUpperCase()}</p>
-          <span />
-          <p className={`font-mono text-[10px] ${B.text}`}>{b.flagEmoji} {b.name.toUpperCase()}</p>
+        <div className="px-4 py-2.5 border-b border-border bg-surface-2 rounded-t">
+          {/* Desktop */}
+          <div className="hidden sm:grid grid-cols-[1fr_10rem_1fr] gap-2">
+            <p className={`text-right font-mono text-[10px] ${A.text}`}>{a.flagEmoji} {a.name.toUpperCase()}</p>
+            <span />
+            <p className={`font-mono text-[10px] ${B.text}`}>{b.flagEmoji} {b.name.toUpperCase()}</p>
+          </div>
+          {/* Mobile */}
+          <div className="sm:hidden flex items-center justify-between">
+            <p className={`font-mono text-[10px] ${A.text}`}>{a.flagEmoji} {a.name.toUpperCase()}</p>
+            <p className={`font-mono text-[10px] ${B.text}`}>{b.flagEmoji} {b.name.toUpperCase()}</p>
+          </div>
         </div>
         <div className="px-4">
           <MetricRow
@@ -637,11 +662,11 @@ function AidCard({
         <p className="font-mono text-xl text-ink tabular-nums">{formatBillions(aid.totalUSD)}</p>
       </div>
       {breakdown.length > 0 && (
-        <div className="grid grid-cols-3 gap-1.5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
           {breakdown.map(({ label, val }) => (
-            <div key={label} className="bg-surface-2 rounded p-2 text-center">
-              <p className="font-mono text-[8px] text-ink-4 mb-0.5">{label}</p>
-              <p className="font-mono text-xs text-ink-2 tabular-nums">{formatBillions(val!)}</p>
+            <div key={label} className="bg-surface-2 rounded p-2 sm:text-center flex sm:flex-col items-center sm:items-center justify-between sm:justify-center gap-2">
+              <p className="font-mono text-[9px] text-ink-4">{label}</p>
+              <p className="font-mono text-sm text-ink-2 tabular-nums">{formatBillions(val!)}</p>
             </div>
           ))}
         </div>

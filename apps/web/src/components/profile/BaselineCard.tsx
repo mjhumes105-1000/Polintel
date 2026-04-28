@@ -20,7 +20,7 @@ export function BaselineCard({ politician }: BaselineCardProps) {
       <h2 className="label-caps text-accent/70 mb-4">
         OVERVIEW
       </h2>
-      <div className="grid grid-cols-3 gap-px bg-border rounded overflow-hidden border border-border">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded overflow-hidden border border-border">
         <StatCell
           label="Current Office"
           value={baselineCard.currentOffice.title}

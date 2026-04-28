@@ -147,7 +147,7 @@ function PresidentialSeal({ active, onClick }: { active: boolean; onClick: () =>
     >
       <div
         className={[
-          'relative w-40 h-40 rounded-full transition-all duration-300',
+          'relative w-28 h-28 sm:w-40 sm:h-40 rounded-full transition-all duration-300',
           active
             ? 'ring-2 ring-accent ring-offset-2 ring-offset-bg shadow-[0_0_32px_rgba(91,144,224,0.25)]'
             : 'hover:shadow-[0_0_20px_rgba(91,144,224,0.15)]',

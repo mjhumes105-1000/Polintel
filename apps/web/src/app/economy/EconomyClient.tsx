@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { countries, GLOBAL_SUMMARY, formatBillions, type CountrySummary } from '@/data/economy/countries'
 import { CompareButtonPill, CompareButtonInline, CompareButtonIcon } from '@/components/economy/CompareButton'
 import { track } from '@/lib/analytics'
+import { BudgetView } from './BudgetView'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -631,15 +632,16 @@ function Controls({
 }) {
   return (
     <div className="space-y-3 mb-5">
-      <div className="flex items-center gap-3 flex-wrap">
-        {/* Balance filter */}
-        <div className="flex items-center gap-0.5 bg-surface border border-border rounded p-0.5">
+      {/* Row 1: filters + view toggle */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {/* Balance filter — scrollable on mobile */}
+        <div className="flex items-center gap-0.5 bg-surface border border-border rounded p-0.5 overflow-x-auto shrink-0">
           {FILTERS.map((f) => (
             <button
               key={f.id}
               onClick={() => onFilter(f.id)}
               className={[
-                'font-mono text-[9px] tracking-widest px-2.5 py-1.5 rounded transition-colors',
+                'font-mono text-[9px] tracking-widest px-2.5 py-1.5 rounded transition-colors whitespace-nowrap',
                 filter === f.id
                   ? 'bg-accent/15 text-accent border border-accent/40'
                   : 'text-ink-3 hover:text-ink-2 border border-transparent',
@@ -650,35 +652,8 @@ function Controls({
           ))}
         </div>
 
-        {/* Region */}
-        <select
-          value={region}
-          onChange={(e) => onRegion(e.target.value)}
-          className="font-mono text-[9px] text-ink-2 bg-surface border border-border rounded px-2.5 py-2 hover:border-accent/40 focus:outline-none focus:border-accent transition-colors"
-        >
-          {REGIONS.map((r) => (
-            <option key={r} value={r}>{r}</option>
-          ))}
-        </select>
-
-        {/* Sort (shown only in card view) */}
-        {view === 'cards' && (
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-[9px] text-ink-4">SORT</span>
-            <select
-              value={sortKey}
-              onChange={(e) => onSort(e.target.value as SortKey)}
-              className="font-mono text-[9px] text-ink-2 bg-surface border border-border rounded px-2.5 py-2 hover:border-accent/40 focus:outline-none focus:border-accent transition-colors"
-            >
-              {SORT_OPTIONS.map((o) => (
-                <option key={o.key} value={o.key}>{o.label}</option>
-              ))}
-            </select>
-          </div>
-        )}
-
-        {/* View toggle */}
-        <div className="flex items-center gap-0.5 bg-surface border border-border rounded p-0.5 ml-auto">
+        {/* View toggle — pushed right */}
+        <div className="flex items-center gap-0.5 bg-surface border border-border rounded p-0.5 ml-auto shrink-0">
           {(['cards', 'table'] as ViewMode[]).map((v) => (
             <button
               key={v}
@@ -694,6 +669,36 @@ function Controls({
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Row 2: region + sort selects */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {/* Region */}
+        <select
+          value={region}
+          onChange={(e) => onRegion(e.target.value)}
+          className="font-mono text-[9px] text-ink-2 bg-surface border border-border rounded px-2.5 py-2 hover:border-accent/40 focus:outline-none focus:border-accent transition-colors"
+        >
+          {REGIONS.map((r) => (
+            <option key={r} value={r}>{r}</option>
+          ))}
+        </select>
+
+        {/* Sort (card view only) */}
+        {view === 'cards' && (
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[9px] text-ink-4">SORT</span>
+            <select
+              value={sortKey}
+              onChange={(e) => onSort(e.target.value as SortKey)}
+              className="font-mono text-[9px] text-ink-2 bg-surface border border-border rounded px-2.5 py-2 hover:border-accent/40 focus:outline-none focus:border-accent transition-colors"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.key} value={o.key}>{o.label}</option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
 
       {/* Summary row */}
@@ -724,7 +729,10 @@ function Controls({
 
 // ─── Main Client ──────────────────────────────────────────────────────────────
 
+type Tab = 'trade' | 'budget'
+
 export function EconomyClient() {
+  const [tab, setTab] = useState<Tab>('trade')
   const [filter, setFilter] = useState<Filter>('all')
   const [region, setRegion] = useState('All Regions')
   const [sortKey, setSortKey] = useState<SortKey>('rank')
@@ -778,104 +786,132 @@ export function EconomyClient() {
     <div className="max-w-5xl mx-auto px-6 py-10">
 
       {/* Page header */}
-      <div className="mb-8">
+      <div className="mb-6">
         <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1.5">
           ECONOMIC INTELLIGENCE
         </p>
-        <h1 className="text-2xl font-semibold text-ink mb-2">U.S. Economic Exposure</h1>
+        <h1 className="text-2xl font-semibold text-ink mb-2">U.S. Economy</h1>
         <p className="text-sm text-ink-3 leading-relaxed max-w-2xl">
-          Bilateral trade flows, tariff exposure, investment positions, and aid outflows —
-          mapped across the United States' top trading partners.
+          {tab === 'trade'
+            ? 'Bilateral trade flows, tariff exposure, investment positions, and aid outflows — mapped across the United States’ top trading partners.'
+            : 'Federal revenue and spending breakdown — where the money comes from and where it goes.'}
         </p>
       </div>
 
-      {/* Global metrics */}
-      <GlobalMetricsBar />
-
-      {/* Search */}
-      <div className="mb-8">
-        <p className="font-mono text-[10px] tracking-widest text-ink-4 mb-2">FIND A COUNTRY</p>
-        <CountrySearchBar onSearch={setSearchQuery} />
+      {/* Tab switcher */}
+      <div className="flex items-center gap-0.5 bg-surface border border-border rounded p-0.5 mb-8 w-fit">
+        {([
+          { id: 'trade' as Tab, label: 'TRADE' },
+          { id: 'budget' as Tab, label: 'BUDGET' },
+        ]).map(({ id, label }) => (
+          <button
+            key={id}
+            onClick={() => setTab(id)}
+            className={[
+              'font-mono text-[10px] tracking-widest px-5 py-2 rounded transition-colors',
+              tab === id
+                ? 'bg-accent/15 text-accent border border-accent/40'
+                : 'text-ink-3 hover:text-ink-2 border border-transparent',
+            ].join(' ')}
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
-      {/* Featured spotlight (hidden when filtering) */}
-      {showFeatured && (
-        <div className="mb-10">
-          <div className="flex items-baseline justify-between mb-3">
-            <p className="font-mono text-[10px] tracking-widest text-accent/70">
-              TOP TRADING PARTNERS
-            </p>
-            <span className="font-mono text-[9px] text-ink-4">Largest bilateral relationships by volume</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {featured.map((c) => (
-              <FeaturedCard key={c.slug} country={c} />
-            ))}
-          </div>
-        </div>
-      )}
+      {tab === 'budget' ? (
+        <BudgetView />
+      ) : (
+        <>
+          {/* Global metrics */}
+          <GlobalMetricsBar />
 
-      {/* All partners section */}
-      <div>
-        <div className="flex items-baseline justify-between mb-4">
-          <p className="font-mono text-[10px] tracking-widest text-accent/70">
-            {showFeatured ? 'ALL PARTNERS' : 'SEARCH RESULTS'}
-          </p>
-        </div>
-
-        <Controls
-          filter={filter}
-          region={region}
-          sortKey={sortKey}
-          sortDir={sortDir}
-          view={view}
-          onFilter={setFilter}
-          onRegion={setRegion}
-          onSort={handleSort}
-          onView={setView}
-          resultCount={sorted.length}
-          deficitTotal={deficitTotal}
-          surplusTotal={surplusTotal}
-        />
-
-        {sorted.length === 0 ? (
-          <div className="border border-border rounded px-6 py-12 text-center">
-            <p className="font-mono text-[10px] tracking-widest text-ink-4 mb-2">
-              NO PARTNERS MATCH THIS FILTER
-            </p>
-            <button
-              onClick={() => { setFilter('all'); setRegion('All Regions'); setSearchQuery('') }}
-              className="font-mono text-[9px] text-accent hover:text-accent-bright transition-colors"
-            >
-              CLEAR FILTERS
-            </button>
+          {/* Search */}
+          <div className="mb-8">
+            <p className="font-mono text-[10px] tracking-widest text-ink-4 mb-2">FIND A COUNTRY</p>
+            <CountrySearchBar onSearch={setSearchQuery} />
           </div>
-        ) : view === 'table' ? (
-          <div className="overflow-x-auto">
-            <CountryTable
-              data={sorted}
+
+          {/* Featured spotlight (hidden when filtering) */}
+          {showFeatured && (
+            <div className="mb-10">
+              <div className="flex items-baseline justify-between mb-3">
+                <p className="font-mono text-[10px] tracking-widest text-accent/70">
+                  TOP TRADING PARTNERS
+                </p>
+                <span className="font-mono text-[9px] text-ink-4">Largest bilateral relationships by volume</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {featured.map((c) => (
+                  <FeaturedCard key={c.slug} country={c} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* All partners section */}
+          <div>
+            <div className="flex items-baseline justify-between mb-4">
+              <p className="font-mono text-[10px] tracking-widest text-accent/70">
+                {showFeatured ? 'ALL PARTNERS' : 'SEARCH RESULTS'}
+              </p>
+            </div>
+
+            <Controls
+              filter={filter}
+              region={region}
               sortKey={sortKey}
               sortDir={sortDir}
+              view={view}
+              onFilter={setFilter}
+              onRegion={setRegion}
               onSort={handleSort}
+              onView={setView}
+              resultCount={sorted.length}
+              deficitTotal={deficitTotal}
+              surplusTotal={surplusTotal}
             />
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {sorted.map((c) => (
-              <CountryCard key={c.slug} country={c} />
-            ))}
-          </div>
-        )}
-      </div>
 
-      {/* Compare CTA */}
-      <CompareCallout />
+            {sorted.length === 0 ? (
+              <div className="border border-border rounded px-6 py-12 text-center">
+                <p className="font-mono text-[10px] tracking-widest text-ink-4 mb-2">
+                  NO PARTNERS MATCH THIS FILTER
+                </p>
+                <button
+                  onClick={() => { setFilter('all'); setRegion('All Regions'); setSearchQuery('') }}
+                  className="font-mono text-[9px] text-accent hover:text-accent-bright transition-colors"
+                >
+                  CLEAR FILTERS
+                </button>
+              </div>
+            ) : view === 'table' ? (
+              <div className="overflow-x-auto">
+                <CountryTable
+                  data={sorted}
+                  sortKey={sortKey}
+                  sortDir={sortDir}
+                  onSort={handleSort}
+                />
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {sorted.map((c) => (
+                  <CountryCard key={c.slug} country={c} />
+                ))}
+              </div>
+            )}
+          </div>
 
-      {/* Source footer */}
-      <p className="font-mono text-[10px] text-ink-4 mt-8">
-        Source: U.S. Census Bureau Foreign Trade Division · USTR · USAID GreenBook ·
-        FY{GLOBAL_SUMMARY.dataYear} data. Country detail pages in progress.
-      </p>
+          {/* Compare CTA */}
+          <CompareCallout />
+
+          {/* Source footer */}
+          <p className="font-mono text-[10px] text-ink-4 mt-8">
+            Source: U.S. Census Bureau Foreign Trade Division · USTR · USAID GreenBook ·
+            FY{GLOBAL_SUMMARY.dataYear} data. Country detail pages in progress.
+          </p>
+        </>
+      )}
     </div>
   )
 }

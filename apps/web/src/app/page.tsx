@@ -288,7 +288,7 @@ export default function HomePage() {
         <p className="font-mono text-[10px] tracking-widest text-accent mb-3">
           POLITICAL INTELLIGENCE PLATFORM
         </p>
-        <h1 className="text-3xl font-semibold text-ink tracking-tight mb-4 max-w-xl">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-ink tracking-tight mb-4 max-w-xl">
           The public record, organized.
         </h1>
         <p className="text-ink-2 text-base leading-relaxed max-w-2xl mb-6">
