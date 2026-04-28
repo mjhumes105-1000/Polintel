@@ -1,0 +1,1881 @@
+{
+  "W000437": {
+    "bioguide": "W000437",
+    "govtrack": 400432,
+    "officialName": "Roger F. Wicker",
+    "birthday": "1951-07-05",
+    "gender": "M",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2025-01-03",
+      "end": "2031-01-03",
+      "state": "MS",
+      "district": null,
+      "party": "Republican",
+      "url": "https://www.wicker.senate.gov",
+      "phone": "202-224-6253",
+      "office": "425 Russell Senate Office Building",
+      "address": "425 Russell Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/W/W000437.jpg",
+    "committees": [
+      {
+        "thomasId": "SSAS",
+        "name": "Senate Committee on Armed Services",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "SSAS14",
+        "name": "Airland",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 7,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS21",
+        "name": "Cybersecurity",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 6,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS20",
+        "name": "Emerging Threats and Capabilities",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 8,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS17",
+        "name": "Personnel",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 6,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS15",
+        "name": "Readiness and Management Support",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 7,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS13",
+        "name": "Seapower",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 6,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSAS16",
+        "name": "Strategic Forces",
+        "parentName": "Senate Committee on Armed Services",
+        "type": "senate",
+        "url": "http://www.armed-services.senate.gov/",
+        "rank": 7,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "SSCM",
+        "name": "Senate Committee on Commerce, Science, and Transportation",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM34",
+        "name": "Telecommunications and Media",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM36",
+        "name": "Coast Guard, Maritime, and Fisheries",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM38",
+        "name": "Surface Transportation, Freight, Pipelines, and Safety",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV",
+        "name": "Senate Committee on Environment and Public Works",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV09",
+        "name": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV10",
+        "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSEV08",
+        "name": "Transportation and Infrastructure",
+        "parentName": "Senate Committee on Environment and Public Works",
+        "type": "senate",
+        "url": "http://www.epw.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSRA",
+        "name": "Senate Committee on Rules and Administration",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.rules.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SLIN",
+        "name": "Senate Select Committee on Intelligence",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.intelligence.senate.gov/",
+        "rank": 11,
+        "title": "Ex Officio"
+      },
+      {
+        "thomasId": "JCSE",
+        "name": "Commission on Security and Cooperation in Europe",
+        "parentName": null,
+        "type": "joint",
+        "url": "http://www.csce.gov/",
+        "rank": 1,
+        "title": "Cochairman"
+      }
+    ],
+    "social": {
+      "twitter": "SenatorWicker",
+      "facebook": "SenatorWicker",
+      "youtube": "SenatorWicker",
+      "youtube_id": "UCIlKHiTjSkcQP_knBcXHWSg",
+      "instagram": "senatorwicker",
+      "instagram_id": 367948073,
+      "twitter_id": "264219447"
+    }
+  },
+  "P000034": {
+    "bioguide": "P000034",
+    "govtrack": 400308,
+    "officialName": "Frank Pallone, Jr.",
+    "birthday": "1951-10-30",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 6,
+      "party": "Democrat",
+      "url": "https://pallone.house.gov",
+      "phone": "202-225-4671",
+      "office": "2107 Rayburn House Office Building",
+      "address": "2107 Rayburn House Office Building Washington DC 20515-3006"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000034.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      }
+    ],
+    "social": {
+      "twitter": "FrankPallone",
+      "facebook": "repfrankpallone",
+      "youtube": "repfrankpallone",
+      "youtube_id": "UCN0_wn9hs1LI3UKkji2PP2A",
+      "twitter_id": "31801993",
+      "instagram": "repfrankpallone"
+    }
+  },
+  "S000522": {
+    "bioguide": "S000522",
+    "govtrack": 400380,
+    "officialName": "Christopher H. Smith",
+    "birthday": "1953-03-04",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 4,
+      "party": "Republican",
+      "url": "https://chrissmith.house.gov",
+      "phone": "202-225-3765",
+      "office": "2373 Rayburn House Office Building",
+      "address": "2373 Rayburn House Office Building Washington DC 20515-3004"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/S/S000522.jpg",
+    "committees": [
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA16",
+        "name": "Africa",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSFA07",
+        "name": "Western Hemisphere",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 2,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "RepChrisSmith",
+      "youtube": "USRepChrisSmith",
+      "youtube_id": "UCtCNUDo3-I1gsd_03ppDfZg",
+      "instagram": "repchrissmith"
+    }
+  },
+  "T000193": {
+    "bioguide": "T000193",
+    "govtrack": 400402,
+    "officialName": "Bennie G. Thompson",
+    "birthday": "1948-01-28",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "MS",
+      "district": 2,
+      "party": "Democrat",
+      "url": "https://benniethompson.house.gov",
+      "phone": "202-225-5876",
+      "office": "2466 Rayburn House Office Building",
+      "address": "2466 Rayburn House Office Building Washington DC 20515-2402"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/T/T000193.jpg",
+    "committees": [
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      }
+    ],
+    "social": {
+      "twitter": "BennieGThompson",
+      "facebook": "CongressmanBennieGThompson",
+      "youtube": "RepBennieThompson",
+      "youtube_id": "UCzt2pBxh0dI24kYrWretXRw",
+      "instagram": "benniegthompson",
+      "instagram_id": 347410575,
+      "twitter_id": "82453460"
+    }
+  },
+  "B001288": {
+    "bioguide": "B001288",
+    "govtrack": 412598,
+    "officialName": "Cory A. Booker",
+    "birthday": "1969-04-27",
+    "gender": "M",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2021-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": null,
+      "party": "Democrat",
+      "url": "https://www.booker.senate.gov",
+      "phone": "202-224-3224",
+      "office": "306 Hart Senate Office Building",
+      "address": "306 Hart Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/B/B001288.jpg",
+    "committees": [
+      {
+        "thomasId": "SSAF",
+        "name": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF13",
+        "name": "Commodities, Derivatives, Risk Management, and Trade",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSAF16",
+        "name": "Food and Nutrition, Specialty Crops, Organics, and Research",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF17",
+        "name": "Livestock, Dairy, Poultry, and Food Safety",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSFR",
+        "name": "Senate Committee on Foreign Relations",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.foreign.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSFR09",
+        "name": "Africa and Global Health Policy",
+        "parentName": "Senate Committee on Foreign Relations",
+        "type": "senate",
+        "url": "http://www.foreign.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSFR01",
+        "name": "Europe and Regional Security Cooperation",
+        "parentName": "Senate Committee on Foreign Relations",
+        "type": "senate",
+        "url": "http://www.foreign.senate.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "SSFR07",
+        "name": "Near East, South Asia, Central Asia, and Counterterrorism",
+        "parentName": "Senate Committee on Foreign Relations",
+        "type": "senate",
+        "url": "http://www.foreign.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSSB",
+        "name": "Senate Committee on Small Business and Entrepreneurship",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.sbc.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU",
+        "name": "Senate Committee on the Judiciary",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU01",
+        "name": "Antitrust, Competition Policy, and Consumer Rights",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSJU22",
+        "name": "Crime and Counterterrorism",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU04",
+        "name": "Border Security and Immigration",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSJU21",
+        "name": "the Constitution",
+        "parentName": "Senate Committee on the Judiciary",
+        "type": "senate",
+        "url": "http://www.judiciary.senate.gov/",
+        "rank": 4,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "SenBooker",
+      "twitter_id": "2167097881",
+      "youtube": "SenCoryBooker",
+      "youtube_id": "UC6FlymqNS1VettnVZa7goPA",
+      "facebook": "SenatorCoryBooker",
+      "instagram": "corybooker"
+    }
+  },
+  "N000188": {
+    "bioguide": "N000188",
+    "govtrack": 412606,
+    "officialName": "Donald Norcross",
+    "birthday": "1958-12-13",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 1,
+      "party": "Democrat",
+      "url": "https://norcross.house.gov",
+      "phone": "202-225-6501",
+      "office": "2427 Rayburn House Office Building",
+      "address": "2427 Rayburn House Office Building Washington DC 20515-3001"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/N/N000188.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSED",
+        "name": "House Committee on Education and Workforce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS25",
+        "name": "Tactical Air and Land Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSAS29",
+        "name": "Strategic Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSED13",
+        "name": "Higher Education and Workforce Development",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSED02",
+        "name": "Health, Employment, Labor, and Pensions",
+        "parentName": "House Committee on Education and Workforce",
+        "type": "house",
+        "url": "https://edlabor.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS28",
+        "name": "Seapower and Projection Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 2,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "DonaldNorcrossNJ",
+      "twitter": "DonaldNorcross",
+      "twitter_id": "3122099613",
+      "instagram": "donald_norcross",
+      "youtube_id": "UC7kXK_PyDiOT8YrdP0jYZHw"
+    }
+  },
+  "W000822": {
+    "bioguide": "W000822",
+    "govtrack": 412644,
+    "officialName": "Bonnie Watson Coleman",
+    "birthday": "1945-02-06",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 12,
+      "party": "Democrat",
+      "url": "https://watsoncoleman.house.gov",
+      "phone": "202-225-5801",
+      "office": "168 Cannon House Office Building",
+      "address": "168 Cannon House Office Building Washington DC 20515-3012"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/W/W000822.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 15,
+        "title": null
+      },
+      {
+        "thomasId": "HSBU",
+        "name": "House Committee on the Budget",
+        "parentName": null,
+        "type": "house",
+        "url": "https://budget.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP07",
+        "name": "Labor, Health and Human Services, Education, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP20",
+        "name": "Transportation, Housing and Urban Development, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepBonnie",
+      "facebook": "RepBonnie",
+      "youtube_id": "UCrxEaX0VKZKwg3930du2D5A",
+      "twitter_id": "2968451607",
+      "instagram": "repbonnie"
+    }
+  },
+  "K000388": {
+    "bioguide": "K000388",
+    "govtrack": 412673,
+    "officialName": "Trent Kelly",
+    "birthday": "1966-03-01",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "MS",
+      "district": 1,
+      "party": "Republican",
+      "url": "https://trentkelly.house.gov",
+      "phone": "202-225-4306",
+      "office": "2243 Rayburn House Office Building",
+      "address": "2243 Rayburn House Office Building Washington DC 20515-2401"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000388.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAG",
+        "name": "House Committee on Agriculture",
+        "parentName": null,
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG",
+        "name": "House Permanent Select Committee on Intelligence",
+        "parentName": null,
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG15",
+        "name": "Forestry and Horticulture",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAG29",
+        "name": "Livestock, Dairy, and Poultry",
+        "parentName": "House Committee on Agriculture",
+        "type": "house",
+        "url": "https://agriculture.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS26",
+        "name": "Intelligence and Special Operations",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS28",
+        "name": "Seapower and Projection Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "HLIG01",
+        "name": "Central Intelligence Agency",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG02",
+        "name": "National Security Agency and Cyber",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 2,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "reptrentkelly",
+      "twitter": "RepTrentKelly",
+      "twitter_id": "3317799825",
+      "instagram": "reptrentkelly",
+      "youtube_id": "UCtDrz-8tdg4ZgOAQHToSWaQ"
+    }
+  },
+  "G000583": {
+    "bioguide": "G000583",
+    "govtrack": 412714,
+    "officialName": "Josh Gottheimer",
+    "birthday": "1975-03-08",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 5,
+      "party": "Democrat",
+      "url": "https://gottheimer.house.gov",
+      "phone": "202-225-4465",
+      "office": "106 Cannon House Office Building",
+      "address": "106 Cannon House Office Building Washington DC 20515-3005"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000583.jpg",
+    "committees": [
+      {
+        "thomasId": "HLIG",
+        "name": "House Permanent Select Committee on Intelligence",
+        "parentName": null,
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA",
+        "name": "House Committee on Financial Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 13,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA10",
+        "name": "National Security, Illicit Finance, and International Financial Institutions",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 2,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA21",
+        "name": "Digital Assets, Financial Technology, and Artificial Intelligence",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSBA16",
+        "name": "Capital Markets",
+        "parentName": "House Committee on Financial Services",
+        "type": "house",
+        "url": "https://financialservices.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG04",
+        "name": "Defense Intelligence and Overhead Architecture",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HLIG02",
+        "name": "National Security Agency and Cyber",
+        "parentName": "House Permanent Select Committee on Intelligence",
+        "type": "house",
+        "url": "https://intelligence.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      }
+    ],
+    "social": {
+      "facebook": "RepJoshG",
+      "twitter": "RepJoshG",
+      "twitter_id": "815310506596691968",
+      "instagram": "RepJoshG"
+    }
+  },
+  "H001079": {
+    "bioguide": "H001079",
+    "govtrack": 412743,
+    "officialName": "Cindy Hyde-Smith",
+    "birthday": "1959-05-10",
+    "gender": "F",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2021-01-03",
+      "end": "2027-01-03",
+      "state": "MS",
+      "district": null,
+      "party": "Republican",
+      "url": "https://www.hydesmith.senate.gov",
+      "phone": "202-224-5054",
+      "office": "528 Hart Senate Office Building",
+      "address": "528 Hart Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/H/H001079.jpg",
+    "committees": [
+      {
+        "thomasId": "SSAF",
+        "name": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF13",
+        "name": "Commodities, Derivatives, Risk Management, and Trade",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "SSAF14",
+        "name": "Conservation, Forestry, Natural Resources, and Biotechnology",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSAF17",
+        "name": "Livestock, Dairy, Poultry, and Food Safety",
+        "parentName": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "type": "senate",
+        "url": "http://www.agriculture.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP",
+        "name": "Senate Committee on Appropriations",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP01",
+        "name": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP22",
+        "name": "Energy and Water Development",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP14",
+        "name": "Department of Homeland Security",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP18",
+        "name": "Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP19",
+        "name": "Military Construction, Veterans Affairs, and Related Agencies",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "SSAP24",
+        "name": "Transportation, Housing and Urban Development, and Related Agencies",
+        "parentName": "Senate Committee on Appropriations",
+        "type": "senate",
+        "url": "http://www.appropriations.senate.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "SSEG",
+        "name": "Senate Committee on Energy and Natural Resources",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG01",
+        "name": "Energy",
+        "parentName": "Senate Committee on Energy and Natural Resources",
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSEG03",
+        "name": "Public Lands, Forests, and Mining",
+        "parentName": "Senate Committee on Energy and Natural Resources",
+        "type": "senate",
+        "url": "http://www.energy.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "SSRA",
+        "name": "Senate Committee on Rules and Administration",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.rules.senate.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "JSLC",
+        "name": "Joint Committee of Congress on the Library",
+        "parentName": null,
+        "type": "joint",
+        "url": "https://cha.house.gov/jointcommittees/joint-committee-library",
+        "rank": 3,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "SenHydeSmith",
+      "twitter_id": "983348251972816896",
+      "youtube_id": "UCJHxkJhGST0NTlkzJHWV03Q",
+      "instagram": "sencindyhydesmith",
+      "facebook": "SenatorCindyHydeSmith"
+    }
+  },
+  "G000591": {
+    "bioguide": "G000591",
+    "govtrack": 412793,
+    "officialName": "Michael Guest",
+    "birthday": "1970-02-04",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "MS",
+      "district": 3,
+      "party": "Republican",
+      "url": "https://guest.house.gov",
+      "phone": "202-225-5031",
+      "office": "450 Cannon House Office Building",
+      "address": "450 Cannon House Office Building Washington DC 20515-2403"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/G/G000591.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAP",
+        "name": "House Committee on Appropriations",
+        "parentName": null,
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 23,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSSO",
+        "name": "House Committee on Ethics",
+        "parentName": null,
+        "type": "house",
+        "url": "https://ethics.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSHM11",
+        "name": "Border Security and Enforcement",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "HSAP15",
+        "name": "Homeland Security",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP10",
+        "name": "Energy and Water Development and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 6,
+        "title": null
+      },
+      {
+        "thomasId": "HSAP18",
+        "name": "Military Construction, Veterans Affairs, and Related Agencies",
+        "parentName": "House Committee on Appropriations",
+        "type": "house",
+        "url": "https://appropriations.house.gov/",
+        "rank": 3,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepMichaelGuest",
+      "twitter_id": "1081243468327018496",
+      "facebook": "RepMichaelGuest"
+    }
+  },
+  "V000133": {
+    "bioguide": "V000133",
+    "govtrack": 412796,
+    "officialName": "Jefferson Van Drew",
+    "birthday": "1953-02-23",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 2,
+      "party": "Republican",
+      "url": "https://vandrew.house.gov",
+      "phone": "202-225-6572",
+      "office": "2447 Rayburn House Office Building",
+      "address": "2447 Rayburn House Office Building Washington DC 20515-3002"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/V/V000133.jpg",
+    "committees": [
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU",
+        "name": "House Committee on the Judiciary",
+        "parentName": null,
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW07",
+        "name": "Coast Guard and Maritime Transportation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU01",
+        "name": "Immigration Integrity, Security, and Enforcement",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSJU13",
+        "name": "Oversight",
+        "parentName": "House Committee on the Judiciary",
+        "type": "house",
+        "url": "https://judiciary.house.gov/",
+        "rank": 1,
+        "title": "Chair"
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 11,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "Congressman_JVD",
+      "twitter_id": "1468677099594698757",
+      "facebook": "CongressmanJVD",
+      "instagram": "jeffvandrew",
+      "youtube": "UCc5AGO_bQLeiv313Bbr35fg"
+    }
+  },
+  "K000394": {
+    "bioguide": "K000394",
+    "govtrack": 412797,
+    "officialName": "Andy Kim",
+    "birthday": "1982-07-12",
+    "gender": "M",
+    "currentTerm": {
+      "type": "sen",
+      "start": "2025-01-03",
+      "end": "2031-01-03",
+      "state": "NJ",
+      "district": null,
+      "party": "Democrat",
+      "url": "https://www.kim.senate.gov",
+      "phone": "202-224-4744",
+      "office": "520 Hart Senate Office Building",
+      "address": "520 Hart Senate Office Building Washington DC 20510"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000394.jpg",
+    "committees": [
+      {
+        "thomasId": "SSBK",
+        "name": "Senate Committee on Banking, Housing, and Urban Affairs",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://banking.senate.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "SSBK08",
+        "name": "Financial Institutions and Consumer Protection",
+        "parentName": "Senate Committee on Banking, Housing, and Urban Affairs",
+        "type": "senate",
+        "url": "http://banking.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSBK05",
+        "name": "National Security and International Trade and Finance",
+        "parentName": "Senate Committee on Banking, Housing, and Urban Affairs",
+        "type": "senate",
+        "url": "http://banking.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SSBK04",
+        "name": "Securities, Insurance, and Investment",
+        "parentName": "Senate Committee on Banking, Housing, and Urban Affairs",
+        "type": "senate",
+        "url": "http://banking.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM",
+        "name": "Senate Committee on Commerce, Science, and Transportation",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 12,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM33",
+        "name": "Aviation, Space, and Innovation",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM34",
+        "name": "Telecommunications and Media",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "SSCM38",
+        "name": "Surface Transportation, Freight, Pipelines, and Safety",
+        "parentName": "Senate Committee on Commerce, Science, and Transportation",
+        "type": "senate",
+        "url": "http://www.commerce.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSHR",
+        "name": "Senate Committee on Health, Education, Labor, and Pensions",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.help.senate.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "SSHR09",
+        "name": "Education and the American Family",
+        "parentName": "Senate Committee on Health, Education, Labor, and Pensions",
+        "type": "senate",
+        "url": "http://www.help.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSHR12",
+        "name": "Primary Health and Retirement Security",
+        "parentName": "Senate Committee on Health, Education, Labor, and Pensions",
+        "type": "senate",
+        "url": "http://www.help.senate.gov/",
+        "rank": 7,
+        "title": null
+      },
+      {
+        "thomasId": "SSGA",
+        "name": "Senate Committee on Homeland Security and Governmental Affairs",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.hsgac.senate.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "SSGA01",
+        "name": "Permanent Subcommittee on Investigations",
+        "parentName": "Senate Committee on Homeland Security and Governmental Affairs",
+        "type": "senate",
+        "url": "http://www.hsgac.senate.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "SSGA20",
+        "name": "Disaster Management, District of Columbia, and Census",
+        "parentName": "Senate Committee on Homeland Security and Governmental Affairs",
+        "type": "senate",
+        "url": "http://www.hsgac.senate.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "SPAG",
+        "name": "Senate Special Committee on Aging",
+        "parentName": null,
+        "type": "senate",
+        "url": "http://www.aging.senate.gov/",
+        "rank": 5,
+        "title": null
+      }
+    ],
+    "social": {
+      "facebook": "SenatorAndyKim",
+      "instagram": "SenatorAndyKim"
+    }
+  },
+  "E000235": {
+    "bioguide": "E000235",
+    "govtrack": 456911,
+    "officialName": "Mike Ezell",
+    "birthday": "1959-04-06",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "MS",
+      "district": 4,
+      "party": "Republican",
+      "url": "https://ezell.house.gov",
+      "phone": "202-225-5772",
+      "office": "443 Cannon House Office Building",
+      "address": "443 Cannon House Office Building Washington DC 20515-2404"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/E/E000235.jpg",
+    "committees": [
+      {
+        "thomasId": "HSII",
+        "name": "House Committee on Natural Resources",
+        "parentName": null,
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 18,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 20,
+        "title": null
+      },
+      {
+        "thomasId": "HSII06",
+        "name": "Energy and Mineral Resources",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSII13",
+        "name": "Water, Wildlife and Fisheries",
+        "parentName": "House Committee on Natural Resources",
+        "type": "house",
+        "url": "https://naturalresources.house.gov/",
+        "rank": 10,
+        "title": "Vice Chair"
+      },
+      {
+        "thomasId": "HSPW07",
+        "name": "Coast Guard and Maritime Transportation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 1,
+        "title": "Chairman"
+      },
+      {
+        "thomasId": "HSPW13",
+        "name": "Economic Development, Public Buildings, and Emergency Management",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 2,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepEzell",
+      "twitter_id": "1602788004749344768",
+      "facebook": "repezell",
+      "instagram": "repmikeezell",
+      "youtube": "UCseRXy2_n4j97lndfkQ_hAw"
+    }
+  },
+  "K000398": {
+    "bioguide": "K000398",
+    "govtrack": 456917,
+    "officialName": "Thomas H. Kean, Jr.",
+    "birthday": "1968-09-05",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 7,
+      "party": "Republican",
+      "url": "https://kean.house.gov",
+      "phone": "202-225-5361",
+      "office": "251 Cannon House Office Building",
+      "address": "251 Cannon House Office Building Washington DC 20515-3007"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/K/K000398.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 26,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA",
+        "name": "House Committee on Foreign Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 16,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA19",
+        "name": "South and Central Asia",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF17",
+        "name": "Commerce, Manufacturing, and Trade",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF14",
+        "name": "Health",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 16,
+        "title": null
+      },
+      {
+        "thomasId": "HSFA13",
+        "name": "Middle East and North Africa",
+        "parentName": "House Committee on Foreign Affairs",
+        "type": "house",
+        "url": "https://foreignaffairs.house.gov/",
+        "rank": 6,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "CongressmanKean",
+      "twitter_id": "1607422757670641665",
+      "facebook": "CongressmanKean",
+      "instagram": "congressmankean"
+    }
+  },
+  "M001226": {
+    "bioguide": "M001226",
+    "govtrack": 456918,
+    "officialName": "Robert Menendez",
+    "birthday": "1985-07-12",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 8,
+      "party": "Democrat",
+      "url": "https://menendez.house.gov",
+      "phone": "202-225-7919",
+      "office": "2453 Rayburn House Office Building",
+      "address": "2453 Rayburn House Office Building Washington DC 20515-3008"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001226.jpg",
+    "committees": [
+      {
+        "thomasId": "HSIF",
+        "name": "House Committee on Energy and Commerce",
+        "parentName": null,
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 21,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF03",
+        "name": "Energy",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF18",
+        "name": "Environment",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSIF16",
+        "name": "Communications and Technology",
+        "parentName": "House Committee on Energy and Commerce",
+        "type": "house",
+        "url": "https://energycommerce.house.gov/",
+        "rank": 10,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepMenendez",
+      "twitter_id": "1603468242852397057",
+      "facebook": "repmenendez",
+      "instagram": "repmenendez"
+    }
+  },
+  "M001229": {
+    "bioguide": "M001229",
+    "govtrack": 456962,
+    "officialName": "LaMonica McIver",
+    "birthday": "1986-06-20",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 10,
+      "party": "Democrat",
+      "url": "https://mciver.house.gov",
+      "phone": "202-225-3436",
+      "office": "426 Cannon House Office Building",
+      "address": "426 Cannon House Office Building Washington DC 20515-3010"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001229.jpg",
+    "committees": [
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 9,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM",
+        "name": "House Committee on Small Business",
+        "parentName": null,
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM22",
+        "name": "Innovation, Entrepreneurship, and Workforce Development",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 5,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM24",
+        "name": "Oversight, Investigations, and Regulations",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSSM27",
+        "name": "Economic Growth, Tax, and Capital Access",
+        "parentName": "House Committee on Small Business",
+        "type": "house",
+        "url": "https://smallbusiness.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSHM07",
+        "name": "Transportation and Maritime Security",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 1,
+        "title": "Ranking Member"
+      },
+      {
+        "thomasId": "HSHM08",
+        "name": "Cybersecurity and Infrastructure Protection",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 3,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepLaMonica",
+      "facebook": "RepLaMonica",
+      "instagram": "replamonica"
+    }
+  },
+  "C001136": {
+    "bioguide": "C001136",
+    "govtrack": 457008,
+    "officialName": "Herbert C. Conaway, Jr.",
+    "birthday": "1963-01-30",
+    "gender": "M",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 3,
+      "party": "Democrat",
+      "url": "https://conaway.house.gov",
+      "phone": "202-225-4765",
+      "office": "1022 Longworth House Office Building",
+      "address": "1022 Longworth House Office Building Washington DC 20515-3003"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/C/C001136.jpg",
+    "committees": [
+      {
+        "thomasId": "HSAS",
+        "name": "House Committee on Armed Services",
+        "parentName": null,
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 27,
+        "title": null
+      },
+      {
+        "thomasId": "HSVR",
+        "name": "House Committee on Veterans' Affairs",
+        "parentName": null,
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 10,
+        "title": null
+      },
+      {
+        "thomasId": "HSVR08",
+        "name": "Oversight and Investigations",
+        "parentName": "House Committee on Veterans' Affairs",
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 3,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS25",
+        "name": "Tactical Air and Land Forces",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 8,
+        "title": null
+      },
+      {
+        "thomasId": "HSVR03",
+        "name": "Health",
+        "parentName": "House Committee on Veterans' Affairs",
+        "type": "house",
+        "url": "https://veterans.house.gov/",
+        "rank": 4,
+        "title": null
+      },
+      {
+        "thomasId": "HSAS35",
+        "name": "Cyber, Information Technologies, and Innovation",
+        "parentName": "House Committee on Armed Services",
+        "type": "house",
+        "url": "https://armedservices.house.gov/",
+        "rank": 9,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepHerbConaway"
+    }
+  },
+  "P000621": {
+    "bioguide": "P000621",
+    "govtrack": 457009,
+    "officialName": "Nellie Pou",
+    "birthday": "1956-05-20",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 9,
+      "party": "Democrat",
+      "url": "https://pou.house.gov",
+      "phone": "202-225-5751",
+      "office": "1007 Longworth House Office Building",
+      "address": "1007 Longworth House Office Building Washington DC 20515-3009"
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/P/P000621.jpg",
+    "committees": [
+      {
+        "thomasId": "HSPW",
+        "name": "House Committee on Transportation and Infrastructure",
+        "parentName": null,
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 26,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM",
+        "name": "House Committee on Homeland Security",
+        "parentName": null,
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 12,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW05",
+        "name": "Aviation",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 11,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW02",
+        "name": "Water Resources and Environment",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 13,
+        "title": null
+      },
+      {
+        "thomasId": "HSPW12",
+        "name": "Highways and Transit",
+        "parentName": "House Committee on Transportation and Infrastructure",
+        "type": "house",
+        "url": "https://transportation.house.gov/",
+        "rank": 14,
+        "title": null
+      },
+      {
+        "thomasId": "HSHM05",
+        "name": "Counterterrorism and Intelligence",
+        "parentName": "House Committee on Homeland Security",
+        "type": "house",
+        "url": "https://homeland.house.gov/",
+        "rank": 5,
+        "title": null
+      }
+    ],
+    "social": {
+      "twitter": "RepNelliePou",
+      "facebook": "CAOHouseofReps",
+      "instagram": "housecreativeservices"
+    }
+  },
+  "M001246": {
+    "bioguide": "M001246",
+    "govtrack": null,
+    "officialName": "Analilia Mejia",
+    "birthday": "1979-01-01",
+    "gender": "F",
+    "currentTerm": {
+      "type": "rep",
+      "start": "2025-01-03",
+      "end": "2027-01-03",
+      "state": "NJ",
+      "district": 11,
+      "party": "Democrat",
+      "url": "https://mejia.house.gov",
+      "phone": "202-225-5034",
+      "office": null,
+      "address": null
+    },
+    "photoUrl": "https://bioguide.congress.gov/bioguide/photo/M/M001246.jpg",
+    "committees": [],
+    "social": {
+      "twitter": "RepMejia",
+      "instagram": "repanaliliamejia"
+    }
+  }
+}
