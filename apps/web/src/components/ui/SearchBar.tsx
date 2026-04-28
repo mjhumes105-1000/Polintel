@@ -8,6 +8,7 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
@@ -15,10 +16,11 @@ import { countries } from '@/data/economy/countries'
 const politicians = [newsom, ...Object.values(caDelegationProfiles)]
 
 interface Result {
-  type: 'politician' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
+  type: 'politician' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
   label: string
   sub: string
   href?: string
+  isExternal?: boolean
   stateKey?: string
   photoUrl?: string
   flagEmoji?: string
@@ -44,6 +46,26 @@ function getResults(query: string): Result[] {
         photoUrl: p.photoUrl,
       })
     }
+  }
+
+  for (const m of allCongressMembers) {
+    if (
+      m.name.toLowerCase().includes(q) ||
+      m.title.toLowerCase().includes(q) ||
+      m.state.toLowerCase().includes(q) ||
+      (m.party === 'D' && 'democrat'.startsWith(q)) ||
+      (m.party === 'R' && 'republican'.startsWith(q))
+    ) {
+      results.push({
+        type: 'member',
+        label: m.name,
+        sub: m.title,
+        href: `https://bioguide.congress.gov/search/bio/${m.bioguide}`,
+        isExternal: true,
+        photoUrl: `https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`,
+      })
+    }
+    if (results.length >= 6) break
   }
 
   for (const c of presidentialCandidates2028) {
@@ -132,6 +154,7 @@ function getResults(query: string): Result[] {
 
 const typeLabel: Record<Result['type'], string> = {
   politician: 'PROFILE',
+  member: 'CONGRESS',
   state: 'STATE',
   candidate: 'CANDIDATE',
   bill: 'BILL',
@@ -141,6 +164,7 @@ const typeLabel: Record<Result['type'], string> = {
 
 const typeBadgeColor: Record<Result['type'], string> = {
   politician: 'text-accent/80 border-accent/30 bg-accent/5',
+  member: 'text-ink-3 border-border bg-surface-2',
   state: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950',
   candidate: 'text-violet-700 border-violet-300 bg-violet-100 dark:text-violet-400 dark:border-violet-900 dark:bg-violet-950',
   bill: 'text-signal-bill border-signal-bill/30 bg-surface-2',
@@ -273,7 +297,11 @@ export function SearchBar({
 
                 return (
                   <li key={i} className={i > 0 ? 'border-t border-border' : ''}>
-                    {r.href ? (
+                    {r.href && r.isExternal ? (
+                      <a href={r.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                        {inner}
+                      </a>
+                    ) : r.href ? (
                       <Link href={r.href} onClick={() => setOpen(false)}>
                         {inner}
                       </Link>
