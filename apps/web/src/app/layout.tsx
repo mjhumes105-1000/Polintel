@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="theme-init" strategy="beforeInteractive">{`
           (function(){
             var t=localStorage.getItem('theme');
-            var dark=t==='dark'||(t===null&&!window.matchMedia('(prefers-color-scheme: light)').matches);
+            var dark=t!=='light';
             if(dark)document.documentElement.classList.add('dark');
           })()
         `}</Script>
