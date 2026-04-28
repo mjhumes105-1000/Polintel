@@ -1,4 +1,15 @@
-import type { Bill } from '@political-intel/types'
+import type { Bill, BillStatus } from '@political-intel/types'
+import statusData from './status-overrides.json'
+
+// Apply daily-refreshed status overrides at build time
+function applyStatusOverrides(bills: Bill[]): Bill[] {
+  const overrides = statusData.overrides as Record<string, { status: BillStatus; statusDate: string }>
+  if (!overrides || Object.keys(overrides).length === 0) return bills
+  return bills.map((b) => {
+    const o = overrides[b.id]
+    return o ? { ...b, status: o.status, statusDate: o.statusDate } : b
+  })
+}
 
 // ─── Signed into Law ─────────────────────────────────────────────────────────
 
@@ -1249,7 +1260,7 @@ export const proAct: Bill = {
   ],
 }
 
-export const allBills: Bill[] = [
+export const allBills: Bill[] = applyStatusOverrides([
   // In process (most recent activity first)
   farmBill2026,
   dhsAppropriations2026,
@@ -1281,7 +1292,7 @@ export const allBills: Bill[] = [
   // Introduced — no floor vote
   medicareForAll,
   raiseTheWageAct,
-]
+])
 
 export const billsById: Record<string, Bill> = Object.fromEntries(
   allBills.map((b) => [b.slug, b])

@@ -1,4 +1,4 @@
-name: Daily Economy Data Refresh
+name: Daily Data Refresh
 
 on:
   schedule:
@@ -33,6 +33,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Fetch bill status from Congress.gov
+        run: node scripts/fetch-bills-status.mjs
+        env:
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+
       - name: Fetch Census trade data
         run: node scripts/fetch-census-data.mjs
         env:
@@ -50,10 +55,10 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add apps/web/src/data/economy/
+          git add apps/web/src/data/bills/status-overrides.json apps/web/src/data/economy/
           if git diff --cached --quiet; then
-            echo "No economy data changes — skipping deploy."
+            echo "No data changes — skipping deploy."
           else
-            git commit -m "chore: daily economy data refresh $(date -u +%Y-%m-%d)"
+            git commit -m "chore: daily data refresh $(date -u +%Y-%m-%d)"
             git push
           fi
