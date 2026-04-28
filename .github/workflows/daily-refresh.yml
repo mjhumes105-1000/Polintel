@@ -1,0 +1,59 @@
+name: Daily Economy Data Refresh
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 9 AM UTC daily
+  workflow_dispatch:        # allow manual trigger
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch Census trade data
+        run: node scripts/fetch-census-data.mjs
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+
+      - name: Fetch USITC tariff data
+        run: node scripts/fetch-hts-tariff-data.mjs
+
+      - name: Fetch BEA investment data
+        run: node scripts/fetch-bea-investment-data.mjs
+        env:
+          BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add apps/web/src/data/economy/
+          if git diff --cached --quiet; then
+            echo "No economy data changes — skipping deploy."
+          else
+            git commit -m "chore: daily economy data refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi
