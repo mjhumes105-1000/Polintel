@@ -159,11 +159,13 @@ function PresidentialTeaser() {
 
 function CandidateMini({ candidate }: { candidate: typeof presidentialCandidates2028[0] }) {
   const partyColor = candidate.party === 'D' ? 'text-accent' : candidate.party === 'R' ? 'text-red-600 dark:text-red-400' : 'text-ink-3'
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+  const photoSrc = candidate.photoUrl?.startsWith('/') ? `${basePath}${candidate.photoUrl}` : candidate.photoUrl
   return (
     <>
-      {candidate.photoUrl ? (
+      {photoSrc ? (
         <div className="relative w-10 h-10 rounded-full overflow-hidden bg-surface-3 shrink-0">
-          <Image src={candidate.photoUrl} alt={candidate.name} width={40} height={40} className="object-cover w-full h-full" />
+          <Image src={photoSrc} alt={candidate.name} width={40} height={40} className="object-cover w-full h-full" />
         </div>
       ) : (
         <div className="w-10 h-10 rounded-full bg-surface-3 border border-border flex items-center justify-center shrink-0">
