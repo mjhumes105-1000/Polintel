@@ -848,6 +848,407 @@ export const taxCutsAndJobsAct: Bill = {
   ],
 }
 
+// ─── In Committee / Stalled ───────────────────────────────────────────────────
+
+export const kidsOnlineSafetyAct: Bill = {
+  id: 'kids-online-safety-act-2024',
+  slug: 'kids-online-safety-act-2024',
+  number: 'S. 1409',
+  title: 'Kids Online Safety Act (KOSA)',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'in-committee',
+  statusDate: '2024-07-30',
+  sponsor: {
+    name: 'Richard Blumenthal',
+    title: 'U.S. Senator',
+    party: 'Democratic Party',
+    state: 'Connecticut',
+  },
+  summary:
+    'The Kids Online Safety Act passed the Senate 91–3 on July 30, 2024 — one of the most bipartisan votes of the 118th Congress — imposing a "duty of care" on social media platforms to prevent harms to minors and requiring default safety settings for users under 17. Despite Senate passage, the House did not bring it to a floor vote before the 118th Congress adjourned, killing the bill. It must be reintroduced in the 119th Congress to advance.',
+  detail:
+    "KOSA would have required social media platforms to take reasonable steps to prevent and mitigate harms to minors — including depression, anxiety, eating disorders, substance abuse, and sexual exploitation — arising from platform features like infinite scroll, push notifications, and algorithmic amplification. The bill required platforms to provide minors with privacy settings that are maximally protective by default, tools to limit addictive features, and opt-out mechanisms for certain algorithmic recommendations. It also restricted platforms from collecting data on minors without parental consent and required parental supervision tools. The 91–3 Senate vote — with virtually every senator from both parties voting yes — reflected rare consensus on the urgency of children's online safety after years of congressional hearings featuring Big Tech executives. Speaker Mike Johnson chose not to bring the bill to a House floor vote, citing First Amendment concerns raised by some tech-libertarian Republicans and civil liberties groups (including the ACLU, which unusually opposed the bill, arguing it could lead platforms to over-censor LGBTQ+ content to avoid liability). The bill died when the 118th Congress adjourned in January 2025 and must be reintroduced to advance.",
+  aiExplanation:
+    "KOSA is the bill that passed the Senate 91–3 and still never became law — which tells you something important about how Congress works.\n\nWhat it does: It would make social media companies legally responsible — with a 'duty of care' — for harms their platforms cause to minors. Platforms would have to turn off algorithmically addictive features by default for users under 17, provide parental controls, and limit data collection on minors.\n\nWhy 91–3 in the Senate but dead in the House: Speaker Johnson declined to bring it to the House floor. The opposition came from an unusual coalition: tech-libertarian Republicans who worry about government regulating speech, and civil liberties groups (including the ACLU) who argued platforms would over-censor LGBTQ+ content, mental health discussions, and other material to avoid liability rather than make careful distinctions.\n\nThe ACLU opposition was particularly significant — it gave House Republicans political cover to oppose a kids-safety bill without looking like they were siding with Big Tech. The argument: 'We're not protecting Big Tech, we're protecting free speech and LGBTQ+ youth.'\n\nThe First Amendment debate: The core tension is that a duty-of-care for harmful content requires platforms to make editorial judgments about what's harmful — which starts to look like compelled speech or government-mandated censorship, depending on how you frame it. Courts have been divided on whether similar state-level laws are constitutional.\n\nStatus: Died in January 2025. Will need to be reintroduced in the 119th Congress.",
+  legislativeHistory: [
+    { date: '2023-05-02', event: 'Introduced in U.S. Senate by Sens. Blumenthal (D-CT) and Blackburn (R-TN)' },
+    { date: '2023-07-27', event: 'Senate Commerce Committee approves KOSA 23–4 — strong bipartisan support' },
+    { date: '2024-07-30', event: 'Passed U.S. Senate', notes: 'Vote: 91–3 · One of the most bipartisan votes of the 118th Congress' },
+    { date: '2024-12-20', event: 'House adjourns without bringing KOSA to the floor — bill dies at end of 118th Congress' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Richard Blumenthal', politicianTitle: 'U.S. Senator (D-CT)', action: 'sponsored', note: 'Lead Democratic sponsor; had held years of Big Tech hearings as Judiciary Subcommittee Chair' },
+    { politicianId: '', politicianName: 'Marsha Blackburn', politicianTitle: 'U.S. Senator (R-TN)', action: 'yes', note: 'Lead Republican co-sponsor; framed as protecting children from Big Tech harm' },
+    { politicianId: '', politicianName: 'Mike Johnson', politicianTitle: 'Speaker of the U.S. House (R-LA)', action: 'opposed', note: 'Declined to schedule a House floor vote; cited First Amendment and civil liberties concerns' },
+    { politicianId: '', politicianName: 'Rand Paul', politicianTitle: 'U.S. Senator (R-KY)', action: 'no', note: 'One of only 3 senators to vote no; argued the bill would harm free speech and was unconstitutional' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['AI', 'Technology', 'Online Safety', 'Child Protection', 'Social Media', '118th Congress'],
+  sources: [
+    {
+      id: 'kosa-congress',
+      label: 'S. 1409 — Kids Online Safety Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1409',
+      publisher: 'Congress.gov',
+      publishedAt: '2023-05-02',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const medicareForAll: Bill = {
+  id: 'medicare-for-all-act-2023',
+  slug: 'medicare-for-all-act-2023',
+  number: 'S. 1655',
+  title: 'Medicare for All Act of 2023',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'introduced',
+  statusDate: '2023-05-17',
+  sponsor: {
+    name: 'Bernie Sanders',
+    title: 'U.S. Senator',
+    party: 'Independent',
+    state: 'Vermont',
+  },
+  summary:
+    'The Medicare for All Act would establish a universal single-payer health insurance system — eliminating private health insurance and covering all U.S. residents for medical, dental, vision, mental health, and long-term care with no premiums, deductibles, or co-pays. Introduced by Sen. Bernie Sanders and 15 co-sponsors in May 2023, the bill has never received a floor vote in either chamber. It is reintroduced every Congress and serves as the progressive benchmark for universal healthcare.',
+  detail:
+    "Medicare for All would expand the existing Medicare program to cover every U.S. resident — replacing employer-sponsored insurance, individual market plans, Medicaid, and CHIP with a single federal insurance system. Under the bill, there would be no premiums, deductibles, or co-pays. The federal government would negotiate all drug prices. Private insurance that duplicates Medicare benefits would be prohibited. The transition would occur over four years. The bill's financing has been a persistent political obstacle: Sanders has proposed funding it through a combination of a 4% income tax on households earning over $29,000, a 7.5% payroll tax on employers, progressive income and wealth taxes, and eliminating what households and businesses currently spend on premiums. Independent analyses have placed the 10-year cost between $30 trillion and $40 trillion in new federal spending, offset by eliminating current private insurance spending. The bill has never had the votes to pass either chamber. Senate filibuster rules would require 60 votes for cloture; the bill has typically had 15–20 Senate co-sponsors. The House companion bill has had up to 120 co-sponsors. No Democratic president — including Barack Obama or Joe Biden — has endorsed the bill, though both expressed general support for the goal of universal coverage.",
+  aiExplanation:
+    "Medicare for All is the most ambitious healthcare proposal in American politics — and the one that consistently fails to advance despite broad public support in polling.\n\nWhat it actually does: Replaces your current insurance (employer, marketplace, or Medicaid) with a federal program that covers everyone. No premiums, no deductibles, no co-pays, no networks. Doctor can't refuse because you're 'out of network' — there is no network, just Medicare. Covers dental, vision, mental health, and long-term care that current Medicare doesn't.\n\nThe cost question: The bill would cost the federal government an estimated $30–40 trillion over 10 years in new spending. But Americans currently spend roughly $4 trillion per year on healthcare — $52 trillion over 10 years — through premiums, deductibles, copays, taxes for existing programs, and employer costs. The question isn't whether healthcare costs money; it's whether replacing private insurance with a single federal system reduces total spending.\n\nThe opposition: Insurance companies and hospitals oppose it (hospitals fear lower reimbursement rates — Medicare pays less than private insurance). Some unions oppose it (they negotiated good insurance as a benefit). Republicans oppose it as government takeover. Many Democrats support the goal but fear the politics of a multi-trillion-dollar federal expansion.\n\nThe political reality: The bill has never had close to the votes to pass. It's been introduced every Congress for decades. It functions primarily as a position-staking bill — co-sponsoring it signals where a Democrat stands in the progressive-moderate spectrum.",
+  legislativeHistory: [
+    { date: '2017-09-13', event: 'Sanders introduces Medicare for All in Senate for first time with 16 co-sponsors' },
+    { date: '2021-04-28', event: 'House companion bill introduced with 112 co-sponsors — most in history' },
+    { date: '2023-05-17', event: 'Reintroduced in 118th Congress with 15 Senate co-sponsors' },
+    { date: '2023-05-17', event: 'Senate HELP Committee holds hearing — first committee hearing in Senate history · No floor vote scheduled' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'sponsored', note: 'Has championed single-payer healthcare for his entire Senate career' },
+    { politicianId: '', politicianName: 'Elizabeth Warren', politicianTitle: 'U.S. Senator (D-MA)', action: 'yes', note: 'Co-sponsor; endorsed Medicare for All during her 2020 presidential campaign before proposing a transition plan' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'U.S. Senator (D-WV)', action: 'no', note: 'Has consistently opposed Medicare for All and single-payer healthcare' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Opposes as government takeover of healthcare; has used the bill to attack Democratic candidates' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Healthcare', 'Medicare', 'Public Health', 'Universal Coverage', '118th Congress'],
+  sources: [
+    {
+      id: 'medicare-for-all-congress',
+      label: 'S. 1655 — Medicare for All Act of 2023 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1655',
+      publisher: 'Congress.gov',
+      publishedAt: '2023-05-17',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const raiseTheWageAct: Bill = {
+  id: 'raise-the-wage-act-2025',
+  slug: 'raise-the-wage-act-2025',
+  number: 'H.R. 1010',
+  title: 'Raise the Wage Act of 2025',
+  jurisdiction: 'U.S. Congress',
+  session: '119th Congress',
+  status: 'introduced',
+  statusDate: '2025-02-06',
+  sponsor: {
+    name: 'Bobby Scott',
+    title: 'U.S. Representative',
+    party: 'Democratic Party',
+    state: 'Virginia',
+  },
+  summary:
+    'The Raise the Wage Act would increase the federal minimum wage from $7.25 per hour — unchanged since 2009 — to $17 per hour by 2029, through annual step-up increases, then index future increases to the median wage. It would also phase out the tipped minimum wage ($2.13/hr) and subminimum wage for workers with disabilities. Introduced in the 119th Congress by Rep. Bobby Scott (D-VA) with Senate companion legislation from Sen. Bernie Sanders, it has no path to a floor vote under the current Republican majority.',
+  detail:
+    "The federal minimum wage of $7.25 per hour has not been increased since July 24, 2009 — the longest period without an increase since the minimum wage was established in 1938. Adjusted for inflation, the federal minimum wage has lost approximately 40% of its purchasing power since its 1968 peak. Thirty states and Washington D.C. have set their own minimum wages above the federal floor. The Congressional Budget Office estimated a previous version of this bill (at $15) would lift 900,000 people out of poverty while reducing employment by 1.4 million — a finding that illustrates the central economic debate around minimum wage increases. The Raise the Wage Act has passed the House twice in recent years (2021, during the pandemic relief debate, it was stripped from the reconciliation bill by the Senate Parliamentarian) but has never passed the Senate. Under the current Republican majority in both chambers, the bill has no prospect of a floor vote. However, it serves as the Democratic position and is reintroduced each Congress to maintain legislative standing and signal policy priorities.",
+  aiExplanation:
+    "The federal minimum wage hasn't changed since 2009 — $7.25 per hour. That's the longest stretch in the program's history. This bill would change that.\n\nThe math: $7.25/hr × 40 hrs × 52 weeks = $15,080/year before taxes. The federal poverty line for a single adult is approximately $14,580. A full-time minimum wage worker earns just above the poverty line — before housing, food, transportation, or healthcare.\n\nThe adjustment for inflation: If the 1968 minimum wage had kept pace with inflation, it would be about $13–14 per hour today. If it had kept pace with productivity growth, it would be around $24 per hour.\n\nThe jobs debate: The CBO estimated a $15 minimum wage would reduce employment by about 1.4 million workers while lifting 900,000 out of poverty and raising wages for 17 million. This reflects the standard economic tradeoff: higher minimum wages help low-wage workers who keep their jobs; some workers may lose jobs or hours. Empirical research is divided on how significant the employment effect is — many studies find minimal effects, especially in high-cost-of-living areas.\n\nWhy it hasn't passed: The Senate filibuster requires 60 votes. Democrats tried to include it in the 2021 American Rescue Plan via reconciliation, but the Senate Parliamentarian ruled it violated reconciliation rules (the Byrd Rule, which prohibits provisions that are 'merely incidental' to fiscal matters). Since then, Republicans have controlled the House and/or Senate, blocking any floor vote.\n\nState minimum wages: Since Congress hasn't acted, states have. California: $16/hr. New York: $16/hr. Washington: $16.28/hr. Florida: $14/hr (rising to $15 in 2026 via 2020 ballot measure).",
+  legislativeHistory: [
+    { date: '2021-01-26', event: 'Previous version introduced in 117th Congress; passed House 231–199 as part of COVID relief' },
+    { date: '2021-02-25', event: 'Senate Parliamentarian rules $15 minimum wage cannot be included in reconciliation bill' },
+    { date: '2021-03-05', event: 'Senate vote to override Parliamentarian ruling fails 42–58 — 8 Democrats vote no' },
+    { date: '2025-02-06', event: 'Reintroduced in 119th Congress by Rep. Bobby Scott (D-VA) with Sen. Bernie Sanders Senate companion' },
+    { date: '2025-04-01', event: 'No floor vote scheduled under Republican majority — bill remains in committee' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Bobby Scott', politicianTitle: 'U.S. Representative (D-VA)', action: 'sponsored', note: 'Ranking member of House Education and Workforce Committee; champion of minimum wage legislation for over a decade' },
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'yes', note: 'Senate companion bill sponsor; has called for $17–20 minimum wage' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'Former U.S. Senator (D-WV)', action: 'no', note: 'Voted against overriding the Senate Parliamentarian in 2021; supported a lower $11/hr increase' },
+    { politicianId: '', politicianName: 'Mike Johnson', politicianTitle: 'Speaker of the U.S. House (R-LA)', action: 'opposed', note: 'Has not scheduled a vote; argues wage floors should be set by states, not the federal government' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Workers', 'Minimum Wage', 'Labor', '119th Congress'],
+  sources: [
+    {
+      id: 'raise-wage-congress',
+      label: 'H.R. 1010 — Raise the Wage Act of 2025 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/119th-congress/house-bill/1010',
+      publisher: 'Congress.gov',
+      publishedAt: '2025-02-06',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── Vetoed ───────────────────────────────────────────────────────────────────
+
+export const sab121Override: Bill = {
+  id: 'sab121-override-2024',
+  slug: 'sab121-override-2024',
+  number: 'H.J.Res. 109',
+  title: 'Joint Resolution Disapproving SEC Staff Accounting Bulletin 121',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'vetoed',
+  statusDate: '2024-05-31',
+  sponsor: {
+    name: 'Mike Flood',
+    title: 'U.S. Representative',
+    party: 'Republican Party',
+    state: 'Nebraska',
+  },
+  summary:
+    'H.J.Res. 109 would have overturned SEC Staff Accounting Bulletin 121, which required banks and financial institutions to list customer-held cryptocurrency as liabilities on their balance sheets — effectively preventing most banks from offering crypto custody services. The resolution passed the House 228–182 and the Senate 60–38 with significant bipartisan support, but President Biden vetoed it May 31, 2024. Congress did not attempt an override. The rule remains in effect.',
+  detail:
+    "SAB 121, issued by the SEC's Office of the Chief Accountant in March 2022, required any entity that holds cryptocurrency on behalf of customers to recognize those holdings as a liability on its balance sheet — and record a corresponding asset. This is an unusual accounting treatment (most custodied assets aren't recognized as assets/liabilities of the custodian) and has the practical effect of increasing the capital that banks must hold against crypto custody activities. The result: most major U.S. banks have refused to offer crypto custody, citing SAB 121's capital cost impact. Critics argued this effectively locked customers into crypto-native custodians without traditional banking protections — the exact opposite of investor safety. Congress used the Congressional Review Act to pass a resolution of disapproval, which requires only a simple majority in both chambers. The 60–38 Senate vote — clearing the 60-vote threshold with 11 Democratic senators voting yes — was a striking display of bipartisan support for crypto-friendly policy. Biden's veto followed pressure from banking regulators (who favored the rule) and progressive Democrats who were skeptical of crypto deregulation. The veto was sustained; Congress did not attempt an override. With the new Trump administration in 2025, the SEC rescinded SAB 121 in January 2025, rendering the rule moot — though the political battle illustrated the extent to which crypto had become a bipartisan regulatory flashpoint.",
+  aiExplanation:
+    "This is a deep-in-the-weeds accounting rule fight that reveals a lot about crypto regulation politics.\n\nSAB 121 in plain English: The SEC said 'if you hold someone's Bitcoin for them, you have to count it as a debt you owe them on your balance sheet.' Banks hate this because it means they have to hold extra capital against crypto holdings — making it expensive to offer crypto custody. Most major banks stopped offering crypto custody because of this rule.\n\nWhy that matters: If you want to hold Bitcoin through your bank (instead of a crypto exchange), you can't — because of this accounting rule. Critics said this pushed people toward less regulated crypto custodians, creating more risk, not less. Basically: a rule designed to protect people may have done the opposite by keeping banks out.\n\nThe Congressional Review Act play: Congress can overturn agency rules with a simple majority resolution (no 60-vote threshold in the Senate under CRA procedures). 60 senators — including 11 Democrats — voted yes. That's a remarkable bipartisan majority on a crypto issue.\n\nWhy Biden vetoed it: The SEC and bank regulators argued SAB 121 provided necessary investor protection. Progressive Democrats worried about legitimizing crypto deregulation. Biden sided with regulators.\n\nThe denouement: The Trump administration's SEC rescinded SAB 121 in January 2025, eliminating the rule through regulatory action. So the veto prevented one path to overturning the rule, but the same result was achieved differently 8 months later. Banks can now offer crypto custody.",
+  legislativeHistory: [
+    { date: '2024-05-08', event: 'Passed U.S. House of Representatives', notes: 'Vote: 228–182 · Bipartisan · 21 Democrats voted yes' },
+    { date: '2024-05-16', event: 'Passed U.S. Senate', notes: 'Vote: 60–38 · Bipartisan · 11 Democrats voted yes' },
+    { date: '2024-05-31', event: 'Vetoed by President Biden · White House cited regulatory consistency and investor protection' },
+    { date: '2025-01-23', event: 'Trump SEC rescinds SAB 121 via regulatory action — overturns the rule without legislation' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'vetoed', note: 'Vetoed May 31, 2024; cited support for SEC regulatory oversight of digital assets' },
+    { politicianId: '', politicianName: 'Mike Flood', politicianTitle: 'U.S. Representative (R-NE)', action: 'sponsored', note: 'Lead sponsor; argued SAB 121 forced crypto activity into less regulated shadow banking' },
+    { politicianId: '', politicianName: 'Cynthia Lummis', politicianTitle: 'U.S. Senator (R-WY)', action: 'yes', note: 'Senate champion for crypto-friendly regulation; owns Bitcoin personally' },
+    { politicianId: '', politicianName: 'Chuck Schumer', politicianTitle: 'Senate Majority Leader (D-NY)', action: 'yes', note: 'Voted yes — one of 11 Democrats to support the resolution' },
+    { politicianId: '', politicianName: 'Elizabeth Warren', politicianTitle: 'U.S. Senator (D-MA)', action: 'no', note: 'Led Democratic opposition; has consistently pushed for stricter crypto regulation' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Cryptocurrency', 'Financial Regulation', 'Technology', 'SEC', '118th Congress'],
+  sources: [
+    {
+      id: 'sab121-congress',
+      label: 'H.J.Res. 109 — SAB 121 Disapproval Resolution (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/house-joint-resolution/109',
+      publisher: 'Congress.gov',
+      publishedAt: '2024-05-31',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── Failed ───────────────────────────────────────────────────────────────────
+
+export const americanHealthCareAct: Bill = {
+  id: 'american-health-care-act-2017',
+  slug: 'american-health-care-act-2017',
+  number: 'H.R. 1628',
+  title: 'American Health Care Act of 2017',
+  jurisdiction: 'U.S. Congress',
+  session: '115th Congress',
+  status: 'failed',
+  statusDate: '2017-07-28',
+  sponsor: {
+    name: 'Paul Ryan',
+    title: 'U.S. Representative (Speaker)',
+    party: 'Republican Party',
+    state: 'Wisconsin',
+  },
+  summary:
+    'The American Health Care Act was the Republican effort to repeal and replace the Affordable Care Act — a core campaign promise since 2010. It passed the House 217–213 in May 2017, but failed in the Senate when three Republican senators voted no: Susan Collins, Lisa Murkowski, and John McCain, whose dramatic late-night thumbs-down on the floor on July 28, 2017 became one of the most iconic moments in recent Senate history. The ACA remains in effect.',
+  detail:
+    "The AHCA represented seven years of Republican promises to repeal the Affordable Care Act, which had been a rallying point for the Tea Party movement, primary challenges, and successive Republican majorities. The bill would have repealed the ACA's individual mandate, phased out Medicaid expansion, converted Medicaid to a block grant program (capping federal spending), and replaced ACA income-based subsidies with age-based tax credits. The Congressional Budget Office estimated the bill would reduce the federal deficit by $119 billion over 10 years while causing 23 million people to lose health insurance coverage. The House passage was narrow — the original version failed to get a floor vote in March 2017 after Speaker Ryan pulled it for lack of votes. A second version passed May 4, 2017, with last-minute amendments to secure conservative holdouts. In the Senate, three separate approaches failed: a full repeal bill, a repeal-and-replace bill, and a 'skinny repeal' meant to go to conference. The skinny repeal — which would have eliminated only the individual mandate — failed 49–51 on July 28, 2017. John McCain returned from brain cancer surgery to cast the decisive no vote, raising a thumbs-down gesture on the Senate floor at 1:30 AM that was immediately recognized as historic. Collins and Murkowski had opposed all three versions. The defeat ended the Republican legislative effort to repeal the ACA and permanently entrenched it as law.",
+  aiExplanation:
+    "This is one of the most consequential legislative failures in recent history — and the story of how it failed is as important as what the bill would have done.\n\nThe ACA repeal promise: Republicans ran against the Affordable Care Act every election cycle from 2010 to 2016 — winning the House (2010), Senate (2014), and presidency (2016) in part on that promise. When unified Republican government finally arrived, actually repealing it proved impossible.\n\nWhy it was hard: The ACA, whatever its flaws, had become the mechanism through which 20+ million people got insurance. Taking that away — with no guarantee of replacement — is politically catastrophic. The CBO's '23 million lose coverage' score attached to every Republican version made the bill radioactive.\n\nThe three failure modes:\n1. March 2017: Full repeal bill pulled before floor vote — Freedom Caucus wanted more repeal; moderates wanted less\n2. May 2017: AHCA passed House 217–213 (after changes to win conservatives, losing moderates)\n3. Senate: All three Senate versions failed. 'Skinny repeal' was the last attempt — a minimal bill meant only to go to conference. It failed 49–51.\n\nThe McCain moment: John McCain had been diagnosed with brain cancer two weeks earlier. He flew to Washington against doctor's advice. At 1:30 AM, with the chamber quiet and the count tied, McCain walked to the well of the Senate and turned his thumb down. Senate erupted. Cameras caught Majority Leader McConnell's visible anguish. The ACA was saved.\n\nThe aftermath: The ACA remains law. Republicans have not attempted another repeal since.",
+  legislativeHistory: [
+    { date: '2017-03-24', event: 'House floor vote canceled — Speaker Ryan pulls bill for lack of Republican votes' },
+    { date: '2017-05-04', event: 'Passed U.S. House of Representatives (amended version)', notes: 'Vote: 217–213 · Zero Democratic votes · 20 Republicans voted no' },
+    { date: '2017-07-25', event: 'Senate vote to proceed to debate — John McCain casts deciding yes vote (51–50) to begin debate, surprising colleagues' },
+    { date: '2017-07-26', event: 'Full repeal bill fails 45–55 in Senate — 7 Republicans vote no' },
+    { date: '2017-07-27', event: 'Repeal-and-replace bill fails 43–57 in Senate — 9 Republicans vote no' },
+    { date: '2017-07-28', event: 'Skinny repeal fails 49–51 · John McCain, Susan Collins, and Lisa Murkowski vote no · ACA repeal effort ends' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'John McCain', politicianTitle: 'U.S. Senator (R-AZ)', action: 'no', note: 'Returned from brain cancer surgery to cast the decisive no vote at 1:30 AM — his thumbs-down gesture became one of the most iconic moments in Senate history' },
+    { politicianId: '', politicianName: 'Susan Collins', politicianTitle: 'U.S. Senator (R-ME)', action: 'no', note: 'Opposed all three Senate versions; cited CBO coverage losses and Medicaid cuts' },
+    { politicianId: '', politicianName: 'Lisa Murkowski', politicianTitle: 'U.S. Senator (R-AK)', action: 'no', note: 'Voted no on all three versions; expressed concern about Medicaid cuts and Planned Parenthood defunding' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Majority Leader (R-KY)', action: 'yes', note: 'Managed three failed Senate floor votes; drafted the Senate versions behind closed doors with a small working group' },
+    { politicianId: '', politicianName: 'Paul Ryan', politicianTitle: 'Speaker of the U.S. House (R-WI)', action: 'sponsored', note: 'Primary architect; navigated the bill through a House passage on his second attempt' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Healthcare', 'ACA', 'Medicaid', 'Public Health', '115th Congress'],
+  sources: [
+    {
+      id: 'ahca-congress',
+      label: 'H.R. 1628 — American Health Care Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/115th-congress/house-bill/1628',
+      publisher: 'Congress.gov',
+      publishedAt: '2017-07-28',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const forThePeopleAct: Bill = {
+  id: 'for-the-people-act-2021',
+  slug: 'for-the-people-act-2021',
+  number: 'H.R. 1',
+  title: 'For the People Act of 2021',
+  jurisdiction: 'U.S. Congress',
+  session: '117th Congress',
+  status: 'failed',
+  statusDate: '2021-06-22',
+  sponsor: {
+    name: 'John Sarbanes',
+    title: 'U.S. Representative',
+    party: 'Democratic Party',
+    state: 'Maryland',
+  },
+  summary:
+    'The For the People Act — the most comprehensive voting rights and elections reform bill in decades — would have established automatic voter registration nationwide, expanded early and mail-in voting, restored voting rights for people with felony convictions, required disclosure of dark money donors, restricted partisan gerrymandering, and established independent redistricting commissions. It passed the House 220–210 but failed Senate cloture 50–50 on June 22, 2021 when all 50 Republicans and Joe Manchin voted against advancing debate.',
+  detail:
+    "H.R. 1 / S.1 was Democrats' first major legislative priority of the 117th Congress and represented the most ambitious federal elections legislation since the Voting Rights Act of 1965. The bill had over 800 pages of provisions covering four major areas: voting access (automatic registration, expanded early voting, no-excuse absentee ballots, restoration of felony voting rights), campaign finance (dark money disclosure, public campaign matching funds, restructuring the FEC), ethics (presidential tax return disclosure, STOCK Act enhancements), and redistricting (independent commissions in all states). It passed the House 220–210 without a single Republican vote. In the Senate, the filibuster required 60 votes for cloture. Majority Leader Schumer brought it to a floor vote despite knowing it would fail, to put every senator on record. The cloture vote failed 50–50: all 50 Republicans voted no, and Joe Manchin joined them (he had issued a Washington Post op-ed the week before announcing his opposition, citing lack of bipartisan support). Manchin's opposition also doomed the Freedom to Vote Act — his proposed compromise version with narrower provisions. Senate Democrats needed 60 votes to break the filibuster, and did not attempt to eliminate the filibuster despite pressure from President Biden and progressive members. The John Lewis Voting Rights Advancement Act, which would have restored the preclearance formula struck down by the Supreme Court in Shelby County v. Holder (2013), also failed in the Senate.",
+  aiExplanation:
+    "The For the People Act was Democrats' attempt to set national floor standards for elections — and the bill that showed the limits of what 50-50 Senate control could accomplish.\n\nWhat it would have done (selected provisions):\n- Automatic voter registration: Every eligible citizen gets registered when they interact with a government agency (DMV, Social Security) unless they opt out\n- Same-day registration at polling places\n- Minimum 15 days of early voting, including weekends\n- No-excuse absentee voting in all states\n- Re-enfranchisement: Voting rights restored to people with felony convictions upon release from prison\n- Redistricting: States required to use independent commissions — removing line-drawing from partisan legislatures\n- Dark money: Groups spending $10,000+ on elections must disclose donors\n- Presidential ethics: Candidates required to disclose 10 years of tax returns (aimed at Trump)\n\nWhy it failed: The Senate filibuster. Democrats had exactly 50 votes — not 60. Joe Manchin wouldn't vote yes without Republican support, and no Republicans would vote yes. Manchin also wouldn't vote to eliminate the filibuster to pass it with 50 votes. That's the math.\n\nThe Manchin op-ed: The day before the Senate vote, Manchin published a Washington Post op-ed explaining his opposition — saying election laws shouldn't pass on party-line votes without bipartisan support. Democrats viewed it as a betrayal; Manchin said it was principle.\n\nThe context: Multiple Republican-led states were passing new restrictions on voting access following the 2020 election — Georgia, Florida, Texas, and others. Democrats argued the federal bill was necessary to counteract state-level restrictions. Republicans argued the states were making reasonable adjustments to election administration.",
+  legislativeHistory: [
+    { date: '2021-01-04', event: 'Introduced as first bill of 117th Congress (H.R. 1) by Rep. John Sarbanes' },
+    { date: '2021-03-03', event: 'Passed U.S. House of Representatives', notes: 'Vote: 220–210 · Zero Republican votes · 1 Democrat voted no' },
+    { date: '2021-06-15', event: 'Joe Manchin publishes Washington Post op-ed opposing H.R. 1/S.1' },
+    { date: '2021-06-22', event: 'Senate cloture vote fails', notes: 'Vote: 50–50 · All 50 Republicans + Joe Manchin vote no · 60 votes needed' },
+    { date: '2021-11-03', event: 'Freedom to Vote Act (Manchin compromise version) also fails Senate cloture — same 50–50 result' },
+    { date: '2022-01-19', event: 'Final attempt to change filibuster rules fails — Manchin and Sinema vote against filibuster reform' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'U.S. Senator (D-WV)', action: 'no', note: 'Cast the decisive Democratic no vote; published op-ed arguing election law changes must have bipartisan support' },
+    { politicianId: '', politicianName: 'John Sarbanes', politicianTitle: 'U.S. Representative (D-MD)', action: 'sponsored', note: 'Lead sponsor; had championed democracy reform legislation for years' },
+    { politicianId: '', politicianName: 'Chuck Schumer', politicianTitle: 'Senate Majority Leader (D-NY)', action: 'yes', note: 'Forced the floor vote knowing it would fail — to put every senator on record' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Led unified Republican opposition; called it a federal takeover of elections' },
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'yes', note: 'Strong supporter; argued the bill was necessary to counteract Republican state-level voting restrictions' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Voting Rights', 'Elections', 'Voter Access', 'Campaign Finance', 'Gerrymandering', '117th Congress'],
+  sources: [
+    {
+      id: 'for-the-people-act-congress',
+      label: 'H.R. 1 — For the People Act of 2021 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/117th-congress/house-bill/1',
+      publisher: 'Congress.gov',
+      publishedAt: '2021-06-22',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const bipartisanBorderSecurityAct2024: Bill = {
+  id: 'bipartisan-border-security-act-2024',
+  slug: 'bipartisan-border-security-act-2024',
+  number: 'S. 4361',
+  title: 'Bipartisan Border Security and Immigration Reform Act of 2024',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'failed',
+  statusDate: '2024-02-07',
+  sponsor: {
+    name: 'James Lankford',
+    title: 'U.S. Senator',
+    party: 'Republican Party',
+    state: 'Oklahoma',
+  },
+  summary:
+    'A bipartisan Senate deal negotiated over four months by Sens. James Lankford (R-OK), Chris Murphy (D-CT), and Kyrsten Sinema (I-AZ) that would have imposed the most significant restrictions on the U.S. asylum system in decades, funded emergency border management, and provided Ukraine/Israel aid. The motion to proceed failed 49–50 on February 7, 2024 — after Donald Trump publicly urged Senate Republicans to kill it, saying a border deal would hurt his presidential campaign. All but four Republicans voted no.',
+  detail:
+    "The bill emerged from months of secret negotiations as Republican senators demanded border security provisions in exchange for approving Ukraine supplemental aid. Lankford, widely respected as a conservative on immigration, led the Republican side; Murphy represented Democrats; Sinema added a swing-state independent perspective. The resulting bill was the most substantive bipartisan immigration deal in decades: it would have empowered the executive branch to 'shut down' the southern border when illegal crossings exceeded 5,000 per day (using an emergency authority); imposed tighter standards for granting asylum; eliminated the practice of releasing most asylum seekers on 'parole' to await court hearings; dramatically expedited immigration court proceedings; and provided $20 billion in supplemental border security funding. The deal was announced February 4. That same week, Trump publicly called on Senate Republicans to reject it, arguing that allowing Biden to 'fix' the border would remove a major campaign issue. Within 24 hours, Republican co-sponsors began withdrawing. On February 7, the vote to proceed failed 49–50: 43 Republicans voted no, joined by Republican-aligned senators, while only 4 Republicans (Lisa Murkowski, Susan Collins, Mitt Romney, and James Lankford himself) voted yes. The episode was widely covered as an example of a presidential candidate directing Congress to block legislation for electoral reasons. The border deal's failure revived the Ukraine-only approach, which eventually passed in April 2024 as the National Security Supplemental.",
+  aiExplanation:
+    "This is the bill that was killed before most people could read it — and the story of why tells you a lot about modern congressional dysfunction.\n\nWhat the bill would have done:\n- Emergency border closure: If illegal crossings exceeded 5,000/day (a threshold that was frequently exceeded in 2023), the executive could effectively shut down the border to new asylum claims\n- Tighter asylum standards: Raised the bar to pass initial 'credible fear' screening from ~15% to ~50% likelihood of winning asylum\n- Parole reform: Eliminated broad use of parole (releasing asylum seekers while they await hearings) — the mechanism Republicans had criticized throughout Biden's presidency\n- Expedited courts: Funded 100+ new immigration judges to cut the backlog from 3+ million cases\n\nWhy conservatives should have liked it: This was the most restrictive asylum regime Democrats had ever agreed to — negotiated by one of the most conservative immigration Republicans in the Senate.\n\nWhy it failed: Donald Trump publicly told Republicans to kill it. His argument: if Biden 'fixed' the border before the election, Republicans lose their best issue. Within 24 hours of Trump's public opposition, the Republican coalition collapsed. Senators who had been involved in negotiations distanced themselves.\n\nThe Lankford fallout: Lankford, who had spent months on the deal, faced primary threats in Oklahoma and was widely attacked by right-wing media. He later said he had 'made mistakes' in negotiating the bill — a remarkable self-criticism after spending months on it.\n\nThe broader lesson: A bipartisan deal negotiated by a conservative Republican failed because the opposition party's presidential nominee told his party not to solve the problem they'd been campaigning against for four years.",
+  legislativeHistory: [
+    { date: '2023-10-19', event: 'Senate begins bipartisan negotiations — Lankford, Murphy, Sinema appointed as leads' },
+    { date: '2024-02-04', event: 'Bipartisan text released — 370-page bill published for review' },
+    { date: '2024-02-05', event: 'Trump publicly calls on Senate Republicans to reject the deal — Republican support collapses within 24 hours' },
+    { date: '2024-02-07', event: 'Cloture vote on motion to proceed fails', notes: 'Vote: 49–50 · 43 Republicans vote no · Only 4 Republicans (Murkowski, Collins, Romney, Lankford) vote yes' },
+    { date: '2024-02-07', event: 'McConnell announces he opposes the bill — ending any chance of passage' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'James Lankford', politicianTitle: 'U.S. Senator (R-OK)', action: 'yes', note: 'Lead Republican negotiator; one of only 4 Republicans to vote yes; faced significant backlash and primary threats' },
+    { politicianId: '', politicianName: 'Chris Murphy', politicianTitle: 'U.S. Senator (D-CT)', action: 'yes', note: 'Lead Democratic negotiator; accepted more restrictive asylum standards than most Democrats wanted' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Ultimately voted no after Trump opposition; had initially signaled openness to a deal' },
+    { politicianId: '', politicianName: 'Donald Trump', politicianTitle: 'Republican Presidential Candidate', action: 'opposed', note: 'Publicly urged Senate Republicans to reject the bill; said resolving the border crisis would cost Republicans an election issue' },
+    { politicianId: '', politicianName: 'Mitt Romney', politicianTitle: 'U.S. Senator (R-UT)', action: 'yes', note: 'One of 4 Republicans to vote yes; called Trump\'s opposition "a new low in political chicanery"' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Immigration', 'Border Security', 'Asylum', 'Bipartisan', '118th Congress'],
+  sources: [
+    {
+      id: 'border-deal-2024-congress',
+      label: 'S. 4361 — Bipartisan Border Security and Immigration Reform Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/senate-bill/4361',
+      publisher: 'Congress.gov',
+      publishedAt: '2024-02-07',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const proAct: Bill = {
+  id: 'pro-act-2021',
+  slug: 'pro-act-2021',
+  number: 'H.R. 842',
+  title: 'Protecting the Right to Organize (PRO) Act of 2021',
+  jurisdiction: 'U.S. Congress',
+  session: '117th Congress',
+  status: 'failed',
+  statusDate: '2021-03-09',
+  sponsor: {
+    name: 'Bobby Scott',
+    title: 'U.S. Representative',
+    party: 'Democratic Party',
+    state: 'Virginia',
+  },
+  summary:
+    'The PRO Act — the most significant labor and union rights legislation since the National Labor Relations Act of 1935 — would have banned right-to-work laws, made it dramatically harder for employers to misclassify workers as independent contractors, reinstated workers\' right to secondary boycotts and strikes, and strengthened penalties for employers who fire workers for organizing. It passed the House 225–206 but never received a Senate floor vote, failing to overcome the 60-vote filibuster threshold.',
+  detail:
+    "The PRO Act addressed decades of legislative and regulatory changes that unions argue have systematically weakened workers' organizing rights. The bill's most consequential provisions: it would have overridden state right-to-work laws (currently in 27 states), which allow workers in unionized workplaces to opt out of paying union dues; it would have adopted a strict 'ABC test' (similar to California's AB5) to classify workers as employees rather than contractors, covering gig economy workers; it would have reinstated the right to secondary boycotts (boycotts of companies doing business with a struck company, banned since 1947); it would have required binding arbitration when union contracts aren't reached within 90 days; and it would have imposed personal liability on corporate executives who illegally fire workers for organizing. The bill passed the House along near-party-line vote. In the Senate, it faced the same structural problem as other Democratic priorities: 60 votes required for cloture, not achievable without substantial Republican support. No Republican voted yes in either chamber. Union membership in the U.S. has declined from 35% of the workforce in the 1950s to approximately 10% today; supporters argued the PRO Act was necessary to reverse that decline. Opponents — including the Chamber of Commerce and most Republican senators — argued it would destroy the gig economy, undermine business flexibility, and impose union control on workers who don't want it.",
+  aiExplanation:
+    "The PRO Act is labor law's biggest proposed overhaul since FDR — and the clearest illustration of what's changed in workplace rights over 80 years.\n\nThe gap: Union membership peaked at ~35% of American workers in the mid-1950s. Today it's about 10%. Real wages for non-college workers have barely risen in 40 years. Labor economists debate causation, but one consistent finding: as unionization has declined, so has workers' share of economic gains.\n\nWhat the PRO Act would have changed:\n\n1. Right-to-work: 27 states let workers in a union shop opt out of dues. The PRO Act would have overridden those state laws — requiring everyone in a union workplace to pay dues (or their equivalent). Unions call it 'free rider' problem; opponents call it forced association.\n\n2. Gig worker reclassification: The bill's ABC test would have required companies like Uber, Lyft, DoorDash, and Amazon to prove their contractors are truly independent — not just employees without benefits. California passed a similar law (AB5) in 2019; gig companies spent $200M on a ballot measure to exempt themselves.\n\n3. Secondary boycotts: Workers could picket or boycott companies doing business with a struck employer — banned since the Taft-Hartley Act of 1947. This is a major tool unions had in the 1930s-40s.\n\n4. Firing penalties: Currently, employers who illegally fire workers for organizing face only back pay minus any earnings during the period. The PRO Act would have added civil penalties and personal liability for executives — stronger deterrence.\n\nWhy it failed: The 60-vote Senate filibuster. Zero Republicans supported it.",
+  legislativeHistory: [
+    { date: '2021-02-04', event: 'Introduced by Rep. Bobby Scott (D-VA)' },
+    { date: '2021-03-09', event: 'Passed U.S. House of Representatives', notes: 'Vote: 225–206 · 5 Republicans voted yes · 2 Democrats voted no' },
+    { date: '2021-06-10', event: 'Senate fails to advance companion bill — filibuster threshold not reached · No Republicans support cloture' },
+    { date: '2023-03-01', event: 'Reintroduced in 118th Congress — same result, no Senate floor vote' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Bobby Scott', politicianTitle: 'Chair, House Education and Labor Committee (D-VA)', action: 'sponsored', note: 'Lead champion of labor rights legislation in the House' },
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'yes', note: 'Strongly endorsed the PRO Act; called himself "the most pro-union president" in American history' },
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'yes', note: 'Senate champion; held hearings; called the decline of unions the central cause of income inequality' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Led Republican opposition; argued it would destroy flexible work and impose union control on unwilling workers' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'U.S. Senator (D-WV)', action: 'no', note: 'Did not support overriding state right-to-work laws; his opposition removed any possibility of 60 votes' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Workers', 'Labor', 'Unions', 'Minimum Wage', '117th Congress'],
+  sources: [
+    {
+      id: 'pro-act-congress',
+      label: 'H.R. 842 — Protecting the Right to Organize Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/117th-congress/house-bill/842',
+      publisher: 'Congress.gov',
+      publishedAt: '2021-03-09',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
 export const allBills: Bill[] = [
   // In process (most recent activity first)
   farmBill2026,
@@ -864,13 +1265,22 @@ export const allBills: Bill[] = [
   takeItDownAct,
   lakenRiley,
   // 118th Congress (2023–2024)
+  kidsOnlineSafetyAct,
   faaReauthorization2024,
   nationalSecuritySupplemental2024,
+  sab121Override,
+  bipartisanBorderSecurityAct2024,
   // 117th Congress (2021–2022)
   inflationReductionAct,
   americanRescuePlan,
+  proAct,
+  forThePeopleAct,
   // 115th Congress (2017–2018)
   taxCutsAndJobsAct,
+  americanHealthCareAct,
+  // Introduced — no floor vote
+  medicareForAll,
+  raiseTheWageAct,
 ]
 
 export const billsById: Record<string, Bill> = Object.fromEntries(
