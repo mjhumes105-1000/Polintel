@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SearchBar } from '@/components/ui/SearchBar'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
+import { CandidatePhoto } from '@/components/ui/CandidatePhoto'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
 import { allBills } from '@/data/bills'
@@ -159,19 +160,9 @@ function PresidentialTeaser() {
 
 function CandidateMini({ candidate }: { candidate: typeof presidentialCandidates2028[0] }) {
   const partyColor = candidate.party === 'D' ? 'text-accent' : candidate.party === 'R' ? 'text-red-600 dark:text-red-400' : 'text-ink-3'
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
-  const photoSrc = candidate.photoUrl?.startsWith('/') ? `${basePath}${candidate.photoUrl}` : candidate.photoUrl
   return (
     <>
-      {photoSrc ? (
-        <div className="relative w-10 h-10 rounded-full overflow-hidden bg-surface-3 shrink-0">
-          <Image src={photoSrc} alt={candidate.name} width={40} height={40} className="object-cover w-full h-full" />
-        </div>
-      ) : (
-        <div className="w-10 h-10 rounded-full bg-surface-3 border border-border flex items-center justify-center shrink-0">
-          <span className="font-mono text-[10px] text-ink-4">{candidate.name.charAt(0)}</span>
-        </div>
-      )}
+      <CandidatePhoto name={candidate.name} photoUrl={candidate.photoUrl} />
       <div className="min-w-0 w-full">
         <p className="text-xs font-medium text-ink leading-tight line-clamp-2">{candidate.name}</p>
         <p className={`font-mono text-[9px] mt-0.5 ${partyColor}`}>
