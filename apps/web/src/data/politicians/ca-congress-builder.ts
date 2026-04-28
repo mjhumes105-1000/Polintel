@@ -69,6 +69,21 @@ export interface PreviousOffice {
   endDate?: string
 }
 
+export interface KeyVote {
+  title: string
+  year: number
+  month?: number
+  summary: string
+  position?: 'For' | 'Against' | 'Present' | 'Not Voting'
+}
+
+export interface KeyBill {
+  title: string
+  year: number
+  month?: number
+  summary: string
+}
+
 export interface CongressMemberData {
   bioguideId: string
   slug: string
@@ -84,8 +99,12 @@ export interface CongressMemberData {
   committees: CommitteeAssignment[]
   keyMilestones?: KeyMilestone[]
   topSectors?: TopSector[]
+  /** @deprecated Use keyVotes instead for richer multi-vote support */
   notableVote?: { title: string; year: number; summary: string }
+  /** @deprecated Use keyBills instead for richer multi-bill support */
   notableBill?: { title: string; year: number; summary: string }
+  keyVotes?: KeyVote[]
+  keyBills?: KeyBill[]
   previousOffices?: PreviousOffice[]
   recordAssessment?: {
     whatTheRecordShows?: string[]
@@ -136,6 +155,21 @@ function buildTimeline(data: CongressMemberData): TimelineEvent[] {
     })
   }
 
+  if (data.keyVotes) {
+    data.keyVotes.forEach((v, i) => {
+      const month = String(v.month ?? 6).padStart(2, '0')
+      events.push({
+        id: `vote-${data.bioguideId}-kv${i}`,
+        date: `${v.year}-${month}-01`,
+        type: 'vote',
+        title: v.position ? `${v.position}: ${v.title}` : v.title,
+        summary: v.summary,
+        sourceIds: ['congress-gov'],
+        tags: ['vote', 'legislation'],
+      })
+    })
+  }
+
   if (data.notableBill) {
     events.push({
       id: `bill-${data.bioguideId}-1`,
@@ -146,6 +180,22 @@ function buildTimeline(data: CongressMemberData): TimelineEvent[] {
       sourceIds: ['congress-gov'],
       tags: ['legislation'],
       billCategory: 'sponsored',
+    })
+  }
+
+  if (data.keyBills) {
+    data.keyBills.forEach((b, i) => {
+      const month = String(b.month ?? 3).padStart(2, '0')
+      events.push({
+        id: `bill-${data.bioguideId}-kb${i}`,
+        date: `${b.year}-${month}-01`,
+        type: 'bill',
+        title: b.title,
+        summary: b.summary,
+        sourceIds: ['congress-gov'],
+        tags: ['legislation'],
+        billCategory: 'sponsored',
+      })
     })
   }
 
