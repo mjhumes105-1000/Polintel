@@ -62,6 +62,13 @@ export interface TopSector {
   percentage: number
 }
 
+export interface PreviousOffice {
+  title: string
+  jurisdiction: string
+  startDate: string
+  endDate?: string
+}
+
 export interface CongressMemberData {
   bioguideId: string
   slug: string
@@ -79,6 +86,12 @@ export interface CongressMemberData {
   topSectors?: TopSector[]
   notableVote?: { title: string; year: number; summary: string }
   notableBill?: { title: string; year: number; summary: string }
+  previousOffices?: PreviousOffice[]
+  recordAssessment?: {
+    whatTheRecordShows?: string[]
+    whatWeObserve?: string[]
+    whatIsUnresolved?: string[]
+  }
 }
 
 function ordinal(n: number): string {
@@ -292,7 +305,7 @@ export function buildCongressProfile(data: CongressMemberData): PoliticianProfil
             : `${data.state}'s ${data.district}${ordinal(data.district!)} Congressional District`,
         startDate: enriched?.currentTerm.start ?? `${data.sinceYear}-01-03`,
       },
-      previousOffices: [],
+      previousOffices: data.previousOffices ?? [],
       party: data.party === 'D' ? 'Democratic' : data.party === 'R' ? 'Republican' : 'Independent',
       birthDate: birthday,
       yearsInPublicService: yearsInService,
@@ -301,8 +314,8 @@ export function buildCongressProfile(data: CongressMemberData): PoliticianProfil
     timeline: buildTimeline(data),
     funding: buildFunding(data),
     recordAssessment: {
-      generatedAt: '2026-04-19',
-      whatTheRecordShows: [
+      generatedAt: '2026-04-27',
+      whatTheRecordShows: data.recordAssessment?.whatTheRecordShows ?? [
         `${data.name} has served in the ${data.chamber} since ${data.sinceYear}.`,
         committees.length > 0
           ? `Sits on ${committees.map((c) => c.name).join(', ')}.`
@@ -311,13 +324,13 @@ export function buildCongressProfile(data: CongressMemberData): PoliticianProfil
           ? `Notable vote: ${data.notableVote.title} (${data.notableVote.year}).`
           : `Voting record consistent with ${data.party === 'D' ? 'Democratic' : 'Republican'} caucus positions.`,
       ],
-      whatWeObserve: [
+      whatWeObserve: data.recordAssessment?.whatWeObserve ?? [
         committees.some((c) => c.role !== 'Member')
           ? `Holds a leadership position (${committees.find((c) => c.role !== 'Member')?.role}) on ${committees.find((c) => c.role !== 'Member')?.name}, giving elevated policy influence.`
           : `Serves as a rank-and-file member of their assigned committees.`,
         `Represents a ${data.party === 'D' ? 'reliably Democratic' : data.party === 'R' ? 'competitive-to-Republican' : 'swing'} district in ${data.state}'s congressional delegation.`,
       ],
-      whatIsUnresolved: [
+      whatIsUnresolved: data.recordAssessment?.whatIsUnresolved ?? [
         'Full voting record cross-referenced against stated policy positions pending.',
         'Independent campaign finance analysis not yet complete.',
       ],
