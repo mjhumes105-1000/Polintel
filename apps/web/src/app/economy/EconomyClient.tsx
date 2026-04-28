@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { countries, GLOBAL_SUMMARY, formatBillions, type CountrySummary } from '@/data/economy/countries'
 import { CompareButtonPill, CompareButtonInline, CompareButtonIcon } from '@/components/economy/CompareButton'
@@ -732,12 +732,12 @@ export function EconomyClient() {
   const [view, setView] = useState<ViewMode>('cards')
   const [searchQuery, setSearchQuery] = useState('')
 
-  const featured = FEATURED_SLUGS
-    .map((slug) => countries.find((c) => c.slug === slug))
-    .filter(Boolean) as CountrySummary[]
+  const featured = useMemo(
+    () => FEATURED_SLUGS.map((slug) => countries.find((c) => c.slug === slug)).filter(Boolean) as CountrySummary[],
+    []
+  )
 
-  // Non-featured countries used in the grid/table (after search + filter)
-  const filtered = countries.filter((c) => {
+  const filtered = useMemo(() => countries.filter((c) => {
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       if (!c.name.toLowerCase().includes(q) && !c.region.toLowerCase().includes(q)) return false
@@ -750,25 +750,27 @@ export function EconomyClient() {
       (filter === 'aid' && c.aidRecipient)
     const matchRegion = region === 'All Regions' || c.region === region
     return matchFilter && matchRegion
-  })
+  }), [filter, region, searchQuery])
 
-  const sorted = sortCountries(filtered, sortKey, sortDir)
+  const sorted = useMemo(() => sortCountries(filtered, sortKey, sortDir), [filtered, sortKey, sortDir])
 
-  const deficitTotal = filtered.reduce(
-    (s, c) => s + (c.tradeBalanceUSD < 0 ? c.tradeBalanceUSD : 0), 0
+  const deficitTotal = useMemo(
+    () => filtered.reduce((s, c) => s + (c.tradeBalanceUSD < 0 ? c.tradeBalanceUSD : 0), 0),
+    [filtered]
   )
-  const surplusTotal = filtered.reduce(
-    (s, c) => s + (c.tradeBalanceUSD > 0 ? c.tradeBalanceUSD : 0), 0
+  const surplusTotal = useMemo(
+    () => filtered.reduce((s, c) => s + (c.tradeBalanceUSD > 0 ? c.tradeBalanceUSD : 0), 0),
+    [filtered]
   )
 
-  function handleSort(key: SortKey) {
+  const handleSort = useCallback((key: SortKey) => {
     if (key === sortKey) {
       setSortDir((d) => (d === 'desc' ? 'asc' : 'desc'))
     } else {
       setSortKey(key)
       setSortDir('desc')
     }
-  }
+  }, [sortKey])
 
   const showFeatured = !searchQuery && filter === 'all' && region === 'All Regions'
 
