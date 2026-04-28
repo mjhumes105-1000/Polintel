@@ -518,7 +518,12 @@ function StateDistrictPanel({
 }
 
 function memberSlug(name: string) {
-  return name.toLowerCase().replace(/[^a-z\s]/g, '').trim().replace(/\s+/g, '-')
+  return name
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // strip diacritics (á→a, etc.)
+    .toLowerCase()
+    .replace(/[^a-z\s-]/g, '') // keep letters, spaces, hyphens (e.g. Ocasio-Cortez stays intact)
+    .trim()
+    .replace(/\s+/g, '-')
 }
 
 function MemberRow({ member, large = false }: { member: AnyMember; large?: boolean }) {
