@@ -535,11 +535,325 @@ export const farmBill2026: Bill = {
   ],
 }
 
+// ─── Voter Rights ─────────────────────────────────────────────────────────────
+
+export const saveAct: Bill = {
+  id: 'save-act-2025',
+  slug: 'save-act-2025',
+  number: 'H.R. 22',
+  title: 'Safeguard American Voter Eligibility (SAVE) Act',
+  jurisdiction: 'U.S. Congress',
+  session: '119th Congress',
+  status: 'passed',
+  statusDate: '2025-04-09',
+  sponsor: {
+    name: 'Bryan Steil',
+    title: 'U.S. Representative',
+    party: 'Republican Party',
+    state: 'Wisconsin',
+  },
+  summary:
+    'The SAVE Act requires applicants to provide documentary proof of U.S. citizenship — such as a passport or birth certificate — when registering to vote in federal elections. It passed the House 220–208 on April 9, 2025, largely along party lines. The bill has faced intense opposition in the Senate, where it requires 60 votes to overcome a filibuster; as of late April 2026, it has not been brought to a Senate floor vote.',
+  detail:
+    "The SAVE Act amends the National Voter Registration Act of 1993 to require election officials to obtain proof of citizenship before registering anyone to vote in federal elections. Supporters argue the measure closes a gap in existing law, which requires applicants to attest to citizenship under penalty of perjury but does not require documentary proof. They contend non-citizen voting, while rare, is a real phenomenon that erodes public confidence in elections. Opponents — including election administrators from both parties — argue the bill would create significant barriers to registration. They note that roughly 21.3 million American citizens lack readily accessible proof-of-citizenship documents; that states already verify citizenship through Social Security Administration and DMV database cross-checks; and that documented instances of non-citizen voting are vanishingly rare. The bill's future in the Senate is uncertain. The 60-vote cloture threshold requires at least 10 Democratic senators to support it, which appears politically unlikely given the level of Democratic opposition. The bill represents the most significant federal voter registration legislation in decades, and its path forward may depend on whether Republican leadership chooses to force a floor vote that Democrats would likely block.",
+  aiExplanation:
+    "The SAVE Act changes one thing: to register to vote in a federal election, you'd have to show a document proving you're a U.S. citizen — like a passport, birth certificate, or naturalization certificate.\n\nRight now, you sign a form attesting you're a citizen under penalty of perjury — and election officials run database checks through the Social Security Administration and DMVs. The SAVE Act says that's not enough; you need paper proof.\n\nThe key disagreement:\n- Proponents say: non-citizens can currently register by signing a form and not being caught. The documentary requirement creates a stronger check.\n- Opponents say: roughly 1 in 10 U.S. citizens lack easy access to passports or birth certificates (disproportionately older, lower-income, rural, and minority Americans). Those people could effectively lose their right to register.\n\nWhat the data shows: Non-citizen voting does happen, but it's extremely rare — researchers consistently find cases in the dozens to hundreds, not thousands or millions. Election security advocates and election administrators disagree sharply on whether the risk justifies the access tradeoff.\n\nThe politics: This is a clean partisan split. Republicans frame it as election integrity; Democrats frame it as voter suppression. The bill passed the House 220–208, nearly party-line. In the Senate, it needs 60 votes — a threshold that requires bipartisan support the bill does not currently appear to have.",
+  legislativeHistory: [
+    { date: '2025-01-03', event: 'Introduced by Rep. Bryan Steil (R-WI), Chair of the House Administration Committee' },
+    { date: '2025-02-12', event: 'House Administration Committee votes to advance the bill' },
+    { date: '2025-04-09', event: 'Passed U.S. House of Representatives', notes: 'Vote: 220–208 · Near party-line vote · 2 Democrats voted yes' },
+    { date: '2025-04-10', event: 'Received in the Senate, referred to Senate Rules and Administration Committee' },
+    { date: '2026-04-27', event: 'Senate floor vote not yet scheduled — filibuster threshold requires 60 votes' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Bryan Steil', politicianTitle: 'Chair, House Administration Committee (R-WI)', action: 'sponsored', note: 'Lead sponsor; framed as closing a loophole in existing voter registration law' },
+    { politicianId: '', politicianName: 'Mike Johnson', politicianTitle: 'Speaker of the U.S. House (R-LA)', action: 'yes', note: 'Strongly supported; listed SAVE Act as a first-100-days priority' },
+    { politicianId: '', politicianName: 'Hakeem Jeffries', politicianTitle: 'House Minority Leader (D-NY)', action: 'no', note: 'Led Democratic opposition; said bill would create barriers for millions of eligible citizens' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'Former U.S. Senator (I-WV)', action: 'no', note: 'Left Senate before this vote, but had previously blocked Democratic voting bills — illustrating the bipartisan complexity of election legislation' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Voting Rights', 'Voter ID', 'Elections', 'Citizenship', '119th Congress'],
+  sources: [
+    {
+      id: 'save-act-congress',
+      label: 'H.R. 22 — SAVE Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/119th-congress/house-bill/22',
+      publisher: 'Congress.gov',
+      publishedAt: '2025-01-03',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── National Security ────────────────────────────────────────────────────────
+
+export const nationalSecuritySupplemental2024: Bill = {
+  id: 'national-security-supplemental-2024',
+  slug: 'national-security-supplemental-2024',
+  number: 'H.R. 8034',
+  title: '21st Century Peace through Strength Act',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'signed',
+  statusDate: '2024-04-24',
+  sponsor: {
+    name: 'Mike Johnson',
+    title: 'U.S. Representative (Speaker)',
+    party: 'Republican Party',
+    state: 'Louisiana',
+  },
+  summary:
+    'The 21st Century Peace through Strength Act provided $95.34 billion in supplemental national security funding — $61.4 billion for Ukraine, $26.4 billion for Israel, and $8.1 billion for Indo-Pacific allies and Taiwan — along with a provision forcing ByteDance to divest TikTok or face a U.S. ban. The House passed it 311–112 on April 20, 2024; the Senate cleared it 79–18 on April 23; President Biden signed it April 24, 2024. The vote came after months of delay caused by House Republican opposition to Ukraine aid.',
+  detail:
+    "The supplemental appropriations package resolved one of the longest legislative impasses of the 118th Congress. Speaker Johnson had refused to bring a Senate-passed foreign aid bill to the House floor since October 2023, under pressure from a faction of House Republicans who opposed further Ukraine funding and demanded border security conditions be attached. After six months of standoff — during which Ukrainian forces faced ammunition and equipment shortages — Johnson ultimately brought a restructured package to the House floor divided into four separate bills voted on in sequence: Ukraine assistance, Israel assistance, Indo-Pacific security, and a legislative package that included the TikTok divestiture provision and REPO Act (allowing seizure of frozen Russian sovereign assets for Ukraine). The final package passed 311–112, a remarkably large bipartisan majority, with more Democrats than Republicans voting yes on the Ukraine component. The TikTok provision was attached strategically to the must-pass foreign aid package, accelerating its progress after years of stalled legislation. The bill did not include the border security provisions that House conservatives had demanded as conditions for Ukraine aid — a key concession by Johnson that cost him politically with his right flank.",
+  aiExplanation:
+    "This is the bill that broke the six-month Ukraine aid logjam — and bundled in the TikTok ban along the way.\n\nThe Ukraine stalemate: The Senate passed a $95B aid package in February 2024, but Speaker Johnson wouldn't bring it to a House floor vote. Conservative Republicans, led by figures like Marjorie Taylor Greene and Thomas Massie, opposed more Ukraine funding and wanted border security measures as a condition. For six months, Ukraine ran short on ammunition and air defense interceptors while Congress deadlocked.\n\nWhat broke the logjam: Johnson ultimately separated the bill into four distinct votes — Ukraine, Israel, Indo-Pacific/Taiwan, and a policy package — which let members vote for or against each component. This allowed Republicans who opposed Ukraine aid to vote no on that component while the overall package passed.\n\nThe TikTok provision: Bundled into the policy package was a requirement that ByteDance (TikTok's Chinese parent company) divest TikTok within 9 months or face a U.S. ban. Attaching it to must-pass foreign aid was deliberate — it had been stalled separately for years.\n\nThe vote math: 311–112 in the House, with Democrats providing most of the votes for the Ukraine component. Johnson's ability to pass it required accepting Democratic support over conservative Republican opposition — a significant political risk that drew criticism from his right flank.\n\nCost breakdown: $61.4B Ukraine (weapons, ammunition, economic support), $26.4B Israel (air defense, weapons, humanitarian aid for Gaza), $8.1B Indo-Pacific (Taiwan security, submarine deal support), $9.15B humanitarian aid.",
+  legislativeHistory: [
+    { date: '2024-02-13', event: 'Senate passes $95.3B supplemental package', notes: 'Vote: 70–29 · Bipartisan · House Republicans block floor vote' },
+    { date: '2024-04-17', event: 'Speaker Johnson announces restructured House package — four separate bills' },
+    { date: '2024-04-20', event: 'Passed U.S. House of Representatives', notes: 'Vote: 311–112 · Ukraine component: mostly Democratic votes · Israel component: bipartisan · TikTok provision included' },
+    { date: '2024-04-23', event: 'Passed U.S. Senate', notes: 'Vote: 79–18 · Strong bipartisan majority' },
+    { date: '2024-04-24', event: 'Signed by President Biden · P.L. 118-50 · Aid shipments to Ukraine resume within days' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'signed', note: 'Signed April 24, 2024; had urgently requested the aid package since October 2023' },
+    { politicianId: '', politicianName: 'Mike Johnson', politicianTitle: 'Speaker of the U.S. House (R-LA)', action: 'yes', note: 'Brought the bill to the floor despite opposition from his right flank; faced a motion to vacate that was defeated May 8, 2024' },
+    { politicianId: '', politicianName: 'Marjorie Taylor Greene', politicianTitle: 'U.S. Representative (R-GA)', action: 'no', note: 'Led opposition to Ukraine aid; filed motion to vacate against Johnson after the vote' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'U.S. Senate Minority Leader (R-KY)', action: 'yes', note: 'Championed Ukraine aid; had secured the February Senate package that Johnson initially blocked' },
+    { politicianId: '', politicianName: 'Rand Paul', politicianTitle: 'U.S. Senator (R-KY)', action: 'no', note: 'Voted no on Ukraine aid; has consistently opposed all Ukraine supplemental funding' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['National Security', 'Military Aid', 'Ukraine', 'Israel', 'Taiwan', 'Foreign Policy', '118th Congress'],
+  sources: [
+    {
+      id: 'hr8034-congress',
+      label: 'H.R. 8034 — 21st Century Peace through Strength Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/house-bill/8034',
+      publisher: 'Congress.gov',
+      publishedAt: '2024-04-20',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── Workers & Citizens ───────────────────────────────────────────────────────
+
+export const faaReauthorization2024: Bill = {
+  id: 'faa-reauthorization-2024',
+  slug: 'faa-reauthorization-2024',
+  number: 'H.R. 3935',
+  title: 'FAA Reauthorization Act of 2024',
+  jurisdiction: 'U.S. Congress',
+  session: '118th Congress',
+  status: 'signed',
+  statusDate: '2024-05-16',
+  sponsor: {
+    name: 'Sam Graves',
+    title: 'U.S. Representative',
+    party: 'Republican Party',
+    state: 'Missouri',
+  },
+  summary:
+    'The FAA Reauthorization Act of 2024 extends Federal Aviation Administration authority through September 30, 2028, and includes sweeping changes to airline safety oversight following high-profile Boeing incidents. The House passed it 387–26 and the Senate by voice vote; President Biden signed it May 16, 2024 as Public Law 118-63. The law strengthens Boeing manufacturing oversight, increases minimum pilot training hours for co-pilots, expands air traveler protections, and raises the FAA safety whistleblower program.',
+  detail:
+    "The five-year FAA reauthorization came during a period of intense scrutiny of Boeing following the January 2024 door plug blowout on an Alaska Airlines 737 Max 9 — an incident that prompted congressional investigations, FAA production caps, and the resignation of Boeing's CEO. The legislation's safety provisions reflect the political pressure created by these incidents. On pilot training, the bill addresses a longstanding debate about the 1,500-hour rule for airline pilots: it maintains the requirement but strengthens the quality standards for those hours. The airline passenger rights provisions formalize certain DOT consumer protection rules that had previously been administrative policy, including automatic cash refunds for delayed/canceled flights (rather than travel vouchers). For workers, the bill includes provisions on pilot and flight attendant scheduling, fatigue management, and mental health access. The whistleblower protections are particularly significant: they expand the Office of Special Counsel's jurisdiction over FAA safety employees who report violations, following evidence that Boeing employees who raised manufacturing concerns faced retaliation. The four-year period (through 2028) is shorter than many stakeholders wanted — lobbyists typically push for five-year reauthorizations — reflecting unresolved debates over slot regulations at congested airports and drone integration rules.",
+  aiExplanation:
+    "Every few years, Congress has to reauthorize the FAA — essentially renewing its authority to regulate aviation, fund airports, and enforce safety standards. Without reauthorization, the FAA can still operate but loses certain authorities and funding mechanisms. This one was five years overdue (the prior authorization expired in 2023 after a series of short extensions).\n\nThe Boeing context: The January 2024 Alaska Airlines door plug blowout — where a door panel literally blew off mid-flight at 16,000 feet — put Boeing and the FAA under a microscope. Passengers survived, but it was the kind of incident that turns aviation safety into front-page news. The reauthorization process was already underway, but the Boeing incident shaped what made it in.\n\nWhat it does for passengers:\n- Automatic cash refunds for canceled or significantly delayed flights (not just vouchers)\n- Enhanced refund requirements for checked baggage fees when bags are lost or significantly delayed\n- Better notification requirements for flight disruptions\n- Restrictions on family separation fees (airlines can't charge extra to seat families together)\n\nWhat it does for workers:\n- Stronger fatigue management rules for pilots and flight attendants\n- Mental health access requirements for aviation workers\n- Expanded whistleblower protections for employees who report safety concerns\n\nWhat it does for Boeing oversight:\n- Strengthens FAA's authority to oversee Boeing's quality management system\n- Increases criminal penalties for falsifying safety records\n- New inspection and audit requirements for high-production-rate aircraft",
+  legislativeHistory: [
+    { date: '2023-07-20', event: 'Prior FAA authorization expires; Congress begins operating on short-term extensions' },
+    { date: '2024-01-05', event: 'Alaska Airlines 737 Max 9 door plug blowout — intensifies pressure for safety provisions' },
+    { date: '2024-05-01', event: 'House Transportation and Infrastructure Committee reports out bipartisan bill' },
+    { date: '2024-05-13', event: 'Passed U.S. House of Representatives', notes: 'Vote: 387–26 · Overwhelming bipartisan majority' },
+    { date: '2024-05-15', event: 'Passed U.S. Senate by voice vote' },
+    { date: '2024-05-16', event: 'Signed by President Biden · P.L. 118-63 · FAA authorized through September 2028' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'signed', note: 'Signed May 16, 2024; highlighted passenger protections and Boeing safety measures' },
+    { politicianId: '', politicianName: 'Sam Graves', politicianTitle: 'Chair, House Transportation Committee (R-MO)', action: 'sponsored', note: 'Led House-side negotiations through a years-long process complicated by Boeing incidents' },
+    { politicianId: '', politicianName: 'Maria Cantwell', politicianTitle: 'Chair, Senate Commerce Committee (D-WA)', action: 'yes', note: 'Led Senate side; pushed hardest for Boeing oversight and whistleblower protections' },
+    { politicianId: '', politicianName: 'Ted Cruz', politicianTitle: 'U.S. Senator (R-TX)', action: 'yes', note: 'Ranking member on Senate Commerce; worked with Cantwell on bipartisan package' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Transportation', 'Aviation', 'Workers', 'Boeing', 'Airline Safety', 'Bipartisan', '118th Congress'],
+  sources: [
+    {
+      id: 'hr3935-congress',
+      label: 'H.R. 3935 — FAA Reauthorization Act of 2024 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/118th-congress/house-bill/3935',
+      publisher: 'Congress.gov',
+      publishedAt: '2024-05-16',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+export const americanRescuePlan: Bill = {
+  id: 'american-rescue-plan-2021',
+  slug: 'american-rescue-plan-2021',
+  number: 'H.R. 1319',
+  title: 'American Rescue Plan Act of 2021',
+  jurisdiction: 'U.S. Congress',
+  session: '117th Congress',
+  status: 'signed',
+  statusDate: '2021-03-11',
+  sponsor: {
+    name: 'John Yarmuth',
+    title: 'U.S. Representative',
+    party: 'Democratic Party',
+    state: 'Kentucky',
+  },
+  summary:
+    '$1.9 trillion in COVID-19 relief and economic stimulus passed via budget reconciliation on a party-line vote — 219–212 in the House and 50–49 in the Senate. The law sent $1,400 direct payments to most Americans, expanded the Child Tax Credit to $3,000–$3,600 per child, extended $300/week supplemental unemployment through September 2021, provided $350 billion in state and local government aid, $130 billion for K-12 school reopening, and extended ACA premium subsidies. Signed by President Biden on March 11, 2021.',
+  detail:
+    "The American Rescue Plan was the third major COVID relief bill, following the CARES Act (March 2020, $2.2T, bipartisan 96–0 in the Senate) and the Consolidated Appropriations Act of 2020 (December 2020, $900B, bipartisan). By contrast, the ARPA passed with zero Republican votes in either chamber — a deliberate choice by Democrats to use reconciliation to move quickly without negotiating with the minority. The $1,400 direct payments built on the $1,200 (CARES) and $600 (CAA 2020) prior checks, reaching eligible adults earning under $75,000. The enhanced Child Tax Credit — temporarily raising the credit to $3,000–$3,600 and making it fully refundable and monthly — was the most significant child poverty intervention in decades; the Census Bureau later reported it cut child poverty nearly in half in 2021. The ACA subsidy expansion, extended through the end of 2021, was later extended through the Inflation Reduction Act. State and local government aid ($350B) prevented mass layoffs of teachers, firefighters, police, and other public sector workers. Critics argued the bill was too large for an economy already recovering, and some economists — including Larry Summers — warned it would contribute to inflation. Inflation did rise significantly through 2021–2022; debate over whether the ARPA was a primary cause continues among economists.",
+  aiExplanation:
+    "The American Rescue Plan was the $1.9 trillion 'third check' bill — the Democrats' first major legislative achievement after taking unified control of Congress and the White House in January 2021.\n\nWhat you probably remember: The $1,400 direct payments (added to the $600 check from December 2020, bringing the combined total to $2,000 — a figure Biden had promised during the Georgia Senate runoffs).\n\nWhat mattered more long-term:\n\nThe Child Tax Credit expansion: The ARPA temporarily changed the CTC from a $2,000-per-child annual credit into a monthly payment of $250–$300 per child. It also made it fully refundable, meaning the poorest families who earned too little to owe taxes could receive it. The Census Bureau reported it cut the child poverty rate from 9.7% to 5.2% in 2021 — the lowest ever recorded. The expansion expired in December 2021, and child poverty rates rose again in 2022.\n\nState and local government aid ($350B): This prevented states and cities from having to lay off hundreds of thousands of teachers, police officers, firefighters, and transit workers. Many states used surplus funds to cut taxes or build reserves — which later became politically controversial.\n\nThe inflation debate: The ARPA was passed when the economy was already recovering faster than expected. Critics — including some Democratic economists like Larry Summers — argued the $1.9T injection into a supply-constrained economy would stoke inflation. Inflation did reach 9% in 2022. Proponents argue global supply chain disruptions and energy price spikes were the primary drivers, and that the benefits to working families and children outweighed the inflation risk. The debate remains unresolved.",
+  legislativeHistory: [
+    { date: '2021-02-24', event: 'House Budget Committee approves bill on party-line vote' },
+    { date: '2021-02-27', event: 'Passed U.S. House of Representatives', notes: 'Vote: 219–212 · Zero Republican votes · 2 Democrats voted no' },
+    { date: '2021-03-06', event: 'Passed U.S. Senate with amendments (reconciliation)', notes: 'Vote: 50–49 · Zero Republican votes · All 50 Democratic senators voted yes' },
+    { date: '2021-03-10', event: 'Passed U.S. House of Representatives (amended version)', notes: 'Vote: 220–211 · Zero Republican votes' },
+    { date: '2021-03-11', event: 'Signed by President Biden · P.L. 117-2 · $1,400 payments began within days' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'signed', note: 'Signed March 11, 2021; called it "a giant step forward in defeating this pandemic"' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'U.S. Senator (D-WV)', action: 'yes', note: 'Voted yes after negotiating changes to unemployment supplement amount ($300 vs. $400) and income eligibility thresholds' },
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'yes', note: 'Supported; served as Budget Committee Chair and managed the reconciliation process' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Led unified Republican opposition; called it "borrowed money dropped from helicopters"' },
+    { politicianId: '', politicianName: 'Susan Collins', politicianTitle: 'U.S. Senator (R-ME)', action: 'no', note: 'Had offered a $618B bipartisan alternative; voted no on the final ARPA as too large and poorly targeted' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Healthcare', 'Workers', 'COVID-19', 'ACA', 'Stimulus', 'Child Tax Credit', '117th Congress'],
+  sources: [
+    {
+      id: 'arpa-congress',
+      label: 'H.R. 1319 — American Rescue Plan Act of 2021 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/117th-congress/house-bill/1319',
+      publisher: 'Congress.gov',
+      publishedAt: '2021-03-11',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── Healthcare ───────────────────────────────────────────────────────────────
+
+export const inflationReductionAct: Bill = {
+  id: 'inflation-reduction-act-2022',
+  slug: 'inflation-reduction-act-2022',
+  number: 'H.R. 5376',
+  title: 'Inflation Reduction Act of 2022',
+  jurisdiction: 'U.S. Congress',
+  session: '117th Congress',
+  status: 'signed',
+  statusDate: '2022-08-16',
+  sponsor: {
+    name: 'John Yarmuth',
+    title: 'U.S. Representative',
+    party: 'Democratic Party',
+    state: 'Kentucky',
+  },
+  summary:
+    'The Inflation Reduction Act authorizes the federal government to negotiate Medicare prescription drug prices directly with pharmaceutical companies for the first time in history, extends ACA premium subsidies through 2025, invests $369 billion in climate and clean energy programs, and imposes a new 15% corporate alternative minimum tax on companies with over $1 billion in profits. Passed the Senate 51–50 (VP Harris tie-breaker) and House 220–207 on a party-line reconciliation vote; signed August 16, 2022.',
+  detail:
+    "The Inflation Reduction Act is the largest climate investment in U.S. history and the first major Medicare drug pricing reform in two decades. Its passage was the result of 18 months of failed negotiation — the IRA was the stripped-down remnant of President Biden's Build Back Better framework, which collapsed in December 2021 when Joe Manchin announced he could not support it. The IRA emerged from secret negotiations between Manchin and Senate Majority Leader Chuck Schumer announced July 27, 2022 — a surprise that caught most of Washington off guard. Medicare drug pricing reform: Beginning in 2026, Medicare can negotiate prices on a small set of drugs annually (10 drugs in year one, expanding over time). In August 2023, the first 10 drugs were announced; the negotiated prices, set to take effect in 2026, represent reductions of 38–79% from existing prices for drugs including Eliquis, Jardiance, Ozempic, and others. Climate provisions: $369 billion in tax credits and investments for electric vehicles, home energy efficiency, wind and solar production, and climate resilience — structured primarily as tax credits rather than direct spending to survive reconciliation rules. Kyrsten Sinema negotiated elimination of carried interest reform (which Manchin wanted) and changes to the corporate minimum tax to protect pass-through income treatment for private equity.",
+  aiExplanation:
+    "The Inflation Reduction Act's name was arguably its most controversial feature — economists debated whether it would actually reduce inflation (the Congressional Budget Office found a minimal near-term impact on inflation). The more accurate framing: the IRA is a healthcare and climate bill that Democrats could pass through reconciliation.\n\nThe drug pricing piece: For the first time since Medicare Part D was created in 2003, Medicare can negotiate drug prices directly. Previously, the law explicitly prohibited this. Medicare has 64 million enrollees but was legally required to pay whatever price drug companies set.\n\nHow it works: Starting 2026, Medicare can negotiate on 10 drugs annually. The negotiated prices apply only to Medicare, not commercial insurance. Companies that refuse to negotiate face an excise tax. The first 10 drugs announced in August 2023 included some of the top-selling drugs in Medicare — Eliquis (blood thinner), Jardiance (diabetes), Ozempic (diabetes/GLP-1), Xarelto (blood thinner). Negotiated prices take effect January 1, 2026.\n\nThe ACA piece: The ACA premium subsidies that had been enhanced by the American Rescue Plan were set to expire in 2022. The IRA extended them through 2025 (later extended again through 2025 by the Inflation Reduction Act itself; the Biden administration pushed for permanence). Without these subsidies, an estimated 3 million people would lose coverage or face premium spikes.\n\nThe climate piece: $369B in tax credits — for electric vehicles, home efficiency upgrades, utility-scale solar and wind, battery storage, clean hydrogen, and climate resilience. Structured as 10-year credits to survive reconciliation rules.\n\nThe politics: This bill was widely declared dead multiple times. It passed via reconciliation (no filibuster) on a 51-50 vote with VP Harris breaking the tie. Zero Republicans voted yes. Manchin's negotiation shaped every major provision.",
+  legislativeHistory: [
+    { date: '2021-09-15', event: 'Senate Finance Committee passes Build Back Better provisions — predecessors to IRA' },
+    { date: '2021-12-19', event: 'Build Back Better framework collapses — Manchin announces he cannot support $1.75T package' },
+    { date: '2022-07-27', event: 'Schumer-Manchin deal announced — $369B climate, drug pricing, ACA subsidies' },
+    { date: '2022-08-07', event: 'Passed U.S. Senate (reconciliation)', notes: 'Vote: 51–50 · VP Harris casting tie-breaker · All 50 Democrats voted yes · All 50 Republicans voted no' },
+    { date: '2022-08-12', event: 'Passed U.S. House of Representatives', notes: 'Vote: 220–207 · Zero Republican votes' },
+    { date: '2022-08-16', event: 'Signed by President Biden · P.L. 117-169' },
+    { date: '2023-08-29', event: 'First 10 Medicare drugs selected for price negotiation — prices to take effect 2026' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Joe Biden', politicianTitle: 'President of the United States', action: 'signed', note: 'Signed August 16, 2022; called it "the most important legislation in a generation"' },
+    { politicianId: '', politicianName: 'Joe Manchin', politicianTitle: 'U.S. Senator (D-WV)', action: 'yes', note: 'Negotiated the deal secretly with Schumer; his support was essential and came as a surprise to most of Washington' },
+    { politicianId: '', politicianName: 'Kyrsten Sinema', politicianTitle: 'U.S. Senator (D-AZ)', action: 'yes', note: 'Voted yes after securing elimination of carried interest tax reform and modifications to the corporate minimum tax' },
+    { politicianId: '', politicianName: 'Bernie Sanders', politicianTitle: 'U.S. Senator (I-VT)', action: 'yes', note: 'Supported despite calling it "inadequate" on climate — said it was far better than nothing' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Minority Leader (R-KY)', action: 'no', note: 'Led unified Republican opposition; argued the bill would raise taxes during a period of high inflation' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Healthcare', 'Drug Pricing', 'Medicare', 'Climate', 'ACA', 'Tax Policy', '117th Congress'],
+  sources: [
+    {
+      id: 'ira-congress',
+      label: 'H.R. 5376 — Inflation Reduction Act of 2022 (Congress.gov)',
+      url: 'https://www.congress.gov/bill/117th-congress/house-bill/5376',
+      publisher: 'Congress.gov',
+      publishedAt: '2022-08-16',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
+// ─── Tax & Budget ─────────────────────────────────────────────────────────────
+
+export const taxCutsAndJobsAct: Bill = {
+  id: 'tax-cuts-and-jobs-act-2017',
+  slug: 'tax-cuts-and-jobs-act-2017',
+  number: 'H.R. 1',
+  title: 'Tax Cuts and Jobs Act of 2017',
+  jurisdiction: 'U.S. Congress',
+  session: '115th Congress',
+  status: 'signed',
+  statusDate: '2017-12-22',
+  sponsor: {
+    name: 'Kevin Brady',
+    title: 'U.S. Representative',
+    party: 'Republican Party',
+    state: 'Texas',
+  },
+  summary:
+    'The Tax Cuts and Jobs Act is the most sweeping revision of the U.S. tax code since the Tax Reform Act of 1986. It permanently cut the corporate income tax rate from 35% to 21%, created a 20% pass-through income deduction (Sec. 199A), doubled the standard deduction, capped the state and local tax (SALT) deduction at $10,000, and made temporary individual tax cuts set to expire in 2025. The Senate passed it 51–48; the House 224–201; President Trump signed it December 22, 2017. The "One Big Beautiful Bill Act" (2025) extends most expiring provisions.',
+  detail:
+    "The TCJA was the first major tax overhaul in three decades and the signature legislative achievement of Trump's first term. The corporate rate cut — from 35% to 21% — was permanent and the most significant change in the bill. It made the U.S. corporate rate competitive with international peers (the global average is approximately 23%). The pass-through deduction (Sec. 199A) created a 20% deduction on qualified business income for sole proprietors, partnerships, and S-corps — a provision that significantly benefited small business owners and real estate developers. The individual provisions were made temporary — set to expire after 2025 — to comply with Senate reconciliation rules that prohibit legislation from adding to the deficit beyond the 10-year budget window. The SALT cap ($10,000 deduction limit on state and local taxes) hit high-income residents in high-tax states like California, New York, and New Jersey particularly hard, creating an unlikely political alliance between GOP moderates in those states and Democrats who had long opposed the bill overall. The bill passed entirely without Democratic support, making it a purely partisan achievement. The Treasury Department projected the full cost at $1.5 trillion over 10 years before growth effects; critics said it was more. The expiration of the individual provisions in 2025 created the central fiscal debate of the 119th Congress, with the One Big Beautiful Bill Act (OBBB) proposed to extend most of them permanently.",
+  aiExplanation:
+    "The Tax Cuts and Jobs Act is the reason you pay the federal taxes you pay today — and why the 119th Congress is fighting over whether to extend it.\n\nThe two-speed design:\n- Corporate changes: Permanent. The 35% → 21% corporate rate cut doesn't expire. Companies can plan around it.\n- Individual changes: Temporary. They expire December 31, 2025. Congress set it up this way to reduce the official 10-year cost and comply with Senate rules.\n\nThe individual cuts that expire: Lower marginal rates across all brackets, doubled standard deduction ($6,500 → $13,000 for singles; $13,000 → $26,000 for couples), higher child tax credit ($1,000 → $2,000), and others. If they expire as scheduled, most Americans see their taxes go up in 2026.\n\nThe SALT fight: The $10,000 cap on state and local tax deductions was a backdoor tax increase on upper-middle-class homeowners in high-tax states. A couple with $30,000 in property taxes and state income taxes used to deduct all of it; after TCJA they can only deduct $10,000. This hit blue-state Republicans hardest and created the SALT caucus — members who have made repealing the cap a condition of their vote on subsequent legislation.\n\nWhat happened to the economy? GDP grew 2.5%+ in 2018–2019. Corporate investment increased. But wages didn't rise as dramatically as proponents projected; corporations largely used the windfall for stock buybacks rather than wage increases. The deficit increased substantially before COVID, though attributing causation is contested.\n\nThe 2025 expiration: This is the central fiscal issue of the 119th Congress. The 'One Big Beautiful Bill Act' passed by the House in 2025 extends most individual provisions permanently and adds new ones. The Joint Committee on Taxation estimates extending all provisions costs approximately $3.5 trillion over 10 years.",
+  legislativeHistory: [
+    { date: '2017-11-02', event: 'H.R. 1 introduced by Chairman Kevin Brady (R-TX)' },
+    { date: '2017-11-16', event: 'Passed U.S. House of Representatives', notes: 'Vote: 227–205 · Zero Democratic votes · 13 Republicans voted no (mostly from high-SALT states)' },
+    { date: '2017-12-02', event: 'Passed U.S. Senate (first version, reconciliation)', notes: 'Vote: 51–49 · Zero Democratic votes · Bob Corker (R-TN) only Republican no' },
+    { date: '2017-12-19', event: 'Passed U.S. House (final version after conference)' },
+    { date: '2017-12-20', event: 'Passed U.S. Senate (final version)', notes: 'Vote: 51–48 · All Republicans yes · All Democrats no' },
+    { date: '2017-12-22', event: 'Signed by President Trump · P.L. 115-97 · Corporate rate cut effective January 1, 2018' },
+    { date: '2025-12-31', event: 'Individual tax provisions scheduled to expire — extended by One Big Beautiful Bill Act of 2025' },
+  ],
+  votes: [
+    { politicianId: '', politicianName: 'Donald Trump', politicianTitle: 'President of the United States', action: 'signed', note: 'Signed December 22, 2017; called it a "giant, beautiful, massive, the biggest ever in our country, tax cut"' },
+    { politicianId: '', politicianName: 'Kevin Brady', politicianTitle: 'Chair, House Ways and Means Committee (R-TX)', action: 'sponsored', note: 'Lead architect of the legislation; chaired Ways and Means for the drafting process' },
+    { politicianId: '', politicianName: 'Mitch McConnell', politicianTitle: 'Senate Majority Leader (R-KY)', action: 'yes', note: 'Managed the Senate floor process; completing a major Republican tax bill was a priority of his tenure' },
+    { politicianId: '', politicianName: 'Bob Corker', politicianTitle: 'U.S. Senator (R-TN)', action: 'no', note: 'Only Republican Senate no vote on the first version; cited deficit concerns; later voted yes on final version' },
+    { politicianId: '', politicianName: 'Chuck Schumer', politicianTitle: 'Senate Minority Leader (D-NY)', action: 'no', note: 'Led unified Democratic opposition; argued it was a giveaway to corporations and the wealthy that would explode the deficit' },
+  ],
+  relatedPoliticianIds: [],
+  tags: ['Tax Policy', 'TCJA', 'Budget', 'Corporate Tax', 'Pass-Through', 'SALT', '115th Congress'],
+  sources: [
+    {
+      id: 'tcja-congress',
+      label: 'H.R. 1 — Tax Cuts and Jobs Act (Congress.gov)',
+      url: 'https://www.congress.gov/bill/115th-congress/house-bill/1',
+      publisher: 'Congress.gov',
+      publishedAt: '2017-12-22',
+      retrievedAt: '2026-04-25',
+      type: 'legislative-record',
+    },
+  ],
+}
+
 export const allBills: Bill[] = [
   // In process (most recent activity first)
   farmBill2026,
   dhsAppropriations2026,
-  // Signed into law (newest first)
+  // Signed or passed — 119th Congress
+  saveAct,
   fisaReauthorization2026,
   consolidatedAppropriations2026,
   ndaaFy2026,
@@ -549,6 +863,14 @@ export const allBills: Bill[] = [
   obbb,
   takeItDownAct,
   lakenRiley,
+  // 118th Congress (2023–2024)
+  faaReauthorization2024,
+  nationalSecuritySupplemental2024,
+  // 117th Congress (2021–2022)
+  inflationReductionAct,
+  americanRescuePlan,
+  // 115th Congress (2017–2018)
+  taxCutsAndJobsAct,
 ]
 
 export const billsById: Record<string, Bill> = Object.fromEntries(
