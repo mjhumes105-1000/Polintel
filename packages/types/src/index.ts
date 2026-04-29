@@ -1,3 +1,5 @@
+export * from './ask-bear'
+
 export type SourceType =
   | 'official-government'
   | 'legislative-record'
