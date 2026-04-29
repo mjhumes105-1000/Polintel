@@ -190,16 +190,38 @@ export function ExploreClient() {
         </div>
         {showPresidential && (
           <div>
-            <p className="font-mono text-[10px] tracking-widest text-accent/70 text-center mb-5">
-              2028 PRESIDENTIAL — CANDIDATES &amp; EXPLORATORY
+            <p className="font-mono text-[10px] tracking-widest text-accent/70 text-center mb-6">
+              2028 PRESIDENTIAL FIELD — CANDIDATES &amp; EXPLORATORY
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-              {presidentialCandidates2028.map((c) => (
-                <CandidateCard key={c.name} candidate={c} />
-              ))}
+
+            {/* Republicans */}
+            <div className="mb-6">
+              <p className="font-mono text-[9px] tracking-widest text-red-500 dark:text-red-400 mb-3 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-red-500 dark:bg-red-400" />
+                REPUBLICAN
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {presidentialCandidates2028.filter(c => c.party === 'R').map((c) => (
+                  <CandidateCard key={c.name} candidate={c} />
+                ))}
+              </div>
             </div>
+
+            {/* Democrats */}
+            <div className="mb-5">
+              <p className="font-mono text-[9px] tracking-widest text-accent mb-3 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+                DEMOCRAT
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {presidentialCandidates2028.filter(c => c.party === 'D').map((c) => (
+                  <CandidateCard key={c.name} candidate={c} />
+                ))}
+              </div>
+            </div>
+
             <p className="text-[11px] text-ink-4 text-center font-mono">
-              Profiles are added as candidacies develop. Chain of command view — coming soon.
+              Profiles are added as candidacies develop. Last updated April 2026.
             </p>
           </div>
         )}
