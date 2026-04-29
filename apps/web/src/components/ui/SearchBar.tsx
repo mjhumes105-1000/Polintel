@@ -7,19 +7,15 @@ import { stateData } from '@/data/states'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
-import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
-import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
-import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
-import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
-import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
+import { memberSlug } from '@/components/map/CongressionalMapSection'
 import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
 
-const fullProfiles = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const fullProfiles = [newsom, ...Object.values(allDelegationProfiles)]
 const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
 interface Result {
@@ -83,8 +79,7 @@ function getResults(query: string): Result[] {
       type: 'member',
       label: m.name,
       sub: m.title,
-      href: `https://bioguide.congress.gov/search/bio/${m.bioguide}`,
-      isExternal: true,
+      href: `/politicians/${memberSlug(m.name)}`,
       photoUrl: `https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`,
       score: s - 1, // members rank below profile entries at same name score
     })

@@ -3,16 +3,11 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect, useMemo, Suspense } from 'react'
 import Link from 'next/link'
-import { CongressionalMapSection } from '@/components/map/CongressionalMapSection'
+import { CongressionalMapSection, memberSlug } from '@/components/map/CongressionalMapSection'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { SearchBar } from '@/components/ui/SearchBar'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
-import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
-import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
-import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
-import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
-import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { allCongressMembers, type CongressMember } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
@@ -21,7 +16,7 @@ import type { PoliticianProfile } from '@political-intel/types'
 import type { Bill } from '@political-intel/types'
 import type { Committee } from '@/data/committees'
 
-const fullProfiles = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const fullProfiles = [newsom, ...Object.values(allDelegationProfiles)]
 const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
 type ResultType = 'politician' | 'bill' | 'committee'
@@ -255,11 +250,9 @@ function SearchResultsView({ query }: { query: string }) {
           <SectionHeader label="CONGRESS MEMBERS" count={members.length} />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {members.map(m => (
-              <a
+              <Link
                 key={m.bioguide}
-                href={`https://bioguide.congress.gov/search/bio/${m.bioguide}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/politicians/${memberSlug(m.name)}`}
                 className="flex items-center gap-3 px-4 py-3 bg-surface border border-border rounded hover:border-accent hover:bg-surface-2 transition-colors group"
               >
                 <PoliticianPhoto
@@ -274,7 +267,7 @@ function SearchResultsView({ query }: { query: string }) {
                 <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border shrink-0 ${partyColor[m.party] ?? ''}`}>
                   {partyLabel[m.party] ?? m.party}
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
           {members.length === 30 && (
