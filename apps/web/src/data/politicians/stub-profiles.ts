@@ -9,12 +9,30 @@ function stubRecord(): PoliticianProfile['recordAssessment'] {
 }
 
 export const stubProfileSlugs = new Set([
+  // Former presidents / major national figures
   'donald-trump',
   'joe-biden',
   'kamala-harris',
   'barack-obama',
+  // 2028 presidential field — Republicans
   'ron-desantis',
+  'jd-vance',
+  'marco-rubio',
+  'tom-cotton',
+  'glenn-youngkin',
+  'nikki-haley',
+  'brian-kemp',
+  // 2028 presidential field — Democrats
+  'gavin-newsom',
+  'gretchen-whitmer',
+  'josh-shapiro',
+  'jb-pritzker',
+  'andy-beshear',
+  'wes-moore',
+  'pete-buttigieg',
 ])
+
+// ── Former Presidents / Vice Presidents ────────────────────────────────────────
 
 const donaldTrump: PoliticianProfile = {
   id: 'donald-trump',
@@ -43,7 +61,7 @@ const joeBiden: PoliticianProfile = {
   name: 'Joe Biden',
   currentTitle: 'Former President of the United States',
   state: 'Delaware',
-  bio: 'Joe Biden served as the 46th President of the United States from January 2021 to January 2025, and as the 47th Vice President under President Barack Obama from 2009 to 2017. He previously served as a U.S. Senator from Delaware for 36 years. He is a member of the Democratic Party.',
+  bio: 'Joe Biden served as the 46th President of the United States from January 2021 to January 2025, and as the 47th Vice President under President Barack Obama from 2009 to 2017. He previously served as a U.S. Senator from Delaware for 36 years.',
   photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/440px-Joe_Biden_presidential_portrait.jpg',
   sources: [stubSource('whitehouse-biden', 'The White House — President Biden Archives', 'https://bidenwhitehouse.archives.gov', 'National Archives')],
   baselineCard: {
@@ -95,7 +113,7 @@ const barackObama: PoliticianProfile = {
   name: 'Barack Obama',
   currentTitle: 'Former President of the United States',
   state: 'Illinois',
-  bio: 'Barack Obama served as the 44th President of the United States from 2009 to 2017, the first African American to hold the office. He previously served as a U.S. Senator from Illinois and as an Illinois State Senator. He is a member of the Democratic Party.',
+  bio: 'Barack Obama served as the 44th President of the United States from 2009 to 2017, the first African American to hold the office. He previously served as a U.S. Senator from Illinois and as an Illinois State Senator.',
   photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg',
   sources: [stubSource('obama-archives', 'Obama White House Archives', 'https://obamawhitehouse.archives.gov', 'National Archives')],
   baselineCard: {
@@ -114,13 +132,15 @@ const barackObama: PoliticianProfile = {
   recordAssessment: stubRecord(),
 }
 
+// ── 2028 Republicans ───────────────────────────────────────────────────────────
+
 const ronDeSantis: PoliticianProfile = {
   id: 'ron-desantis',
   slug: 'ron-desantis',
   name: 'Ron DeSantis',
   currentTitle: 'Governor of Florida',
   state: 'Florida',
-  bio: 'Ron DeSantis has served as Governor of Florida since January 2019 and was re-elected in 2022. He previously represented Florida\'s 6th congressional district in the U.S. House from 2013 to 2018. He is a member of the Republican Party.',
+  bio: 'Ron DeSantis has served as Governor of Florida since January 2019 and was re-elected in 2022 by 19 points. He previously represented Florida\'s 6th congressional district in the U.S. House from 2013 to 2018. He ran in the 2024 Republican presidential primary before suspending his campaign.',
   photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ron_DeSantis_official_portrait_%28cropped%29.jpg/440px-Ron_DeSantis_official_portrait_%28cropped%29.jpg',
   sources: [stubSource('desantis-fl', 'Office of the Governor — State of Florida', 'https://www.flgov.com', 'Office of the Governor, State of Florida')],
   baselineCard: {
@@ -138,10 +158,312 @@ const ronDeSantis: PoliticianProfile = {
   recordAssessment: stubRecord(),
 }
 
+const jdVance: PoliticianProfile = {
+  id: 'jd-vance',
+  slug: 'jd-vance',
+  name: 'JD Vance',
+  currentTitle: '50th Vice President of the United States',
+  state: 'Ohio',
+  bio: 'JD Vance is the 50th Vice President of the United States, inaugurated in January 2025. He previously served as U.S. Senator from Ohio (2023–2025), elected on a populist economic platform. He is the author of Hillbilly Elegy and a leading figure in the nationalist wing of the Republican Party.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Official_portrait_of_Vice_President_JD_Vance.jpg/440px-Official_portrait_of_Vice_President_JD_Vance.jpg',
+  sources: [stubSource('whitehouse-vance', 'The White House — Vice President JD Vance', 'https://www.whitehouse.gov/administration/vice-president/', 'The White House')],
+  baselineCard: {
+    currentOffice: { title: '50th Vice President of the United States', jurisdiction: 'Federal', startDate: '2025-01-20' },
+    previousOffices: [
+      { title: 'U.S. Senator from Ohio', jurisdiction: 'Ohio', startDate: '2023-01-03', endDate: '2025-01-19' },
+    ],
+    party: 'Republican',
+    birthDate: '1984-08-02',
+    yearsInPublicService: 4,
+    sourceIds: ['whitehouse-vance'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const marcoRubio: PoliticianProfile = {
+  id: 'marco-rubio',
+  slug: 'marco-rubio',
+  name: 'Marco Rubio',
+  currentTitle: 'U.S. Secretary of State',
+  state: 'Florida',
+  bio: 'Marco Rubio is the 72nd U.S. Secretary of State, confirmed in January 2025. He previously served as U.S. Senator from Florida from 2011 to 2025 and was a candidate in the 2016 Republican presidential primary. He is a senior member of the Senate Intelligence Committee and Senate Foreign Relations Committee.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Marco_Rubio_official_Senate_photo.jpg/440px-Marco_Rubio_official_Senate_photo.jpg',
+  sources: [stubSource('state-rubio', 'U.S. Department of State — Secretary Marco Rubio', 'https://www.state.gov', 'U.S. Department of State')],
+  baselineCard: {
+    currentOffice: { title: 'U.S. Secretary of State', jurisdiction: 'Federal', startDate: '2025-01-21' },
+    previousOffices: [
+      { title: 'U.S. Senator from Florida', jurisdiction: 'Florida', startDate: '2011-01-05', endDate: '2025-01-20' },
+    ],
+    party: 'Republican',
+    birthDate: '1971-05-28',
+    yearsInPublicService: 16,
+    sourceIds: ['state-rubio'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const nikkiHaley: PoliticianProfile = {
+  id: 'nikki-haley',
+  slug: 'nikki-haley',
+  name: 'Nikki Haley',
+  currentTitle: 'Former U.S. Ambassador to the United Nations',
+  state: 'South Carolina',
+  bio: 'Nikki Haley served as U.S. Ambassador to the United Nations from 2017 to 2018 and as Governor of South Carolina from 2011 to 2017. She ran in the 2024 Republican presidential primary, outlasting all other Trump challengers before suspending her campaign in March 2024.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Nikki_Haley_official_photo_%282017%29.jpg/440px-Nikki_Haley_official_photo_%282017%29.jpg',
+  sources: [stubSource('haley-bio', 'Nikki Haley — Official Biography', 'https://nikkihaley.com', 'NikkiHaley.com')],
+  baselineCard: {
+    currentOffice: { title: 'Private Citizen / Political Figure', jurisdiction: 'National', startDate: '2024-03-06' },
+    previousOffices: [
+      { title: 'U.S. Ambassador to the United Nations', jurisdiction: 'Federal', startDate: '2017-01-27', endDate: '2018-12-31' },
+      { title: 'Governor of South Carolina', jurisdiction: 'South Carolina', startDate: '2011-01-12', endDate: '2017-01-24' },
+    ],
+    party: 'Republican',
+    birthDate: '1972-01-20',
+    yearsInPublicService: 14,
+    sourceIds: ['haley-bio'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const glennYoungkin: PoliticianProfile = {
+  id: 'glenn-youngkin',
+  slug: 'glenn-youngkin',
+  name: 'Glenn Youngkin',
+  currentTitle: 'Former Governor of Virginia',
+  state: 'Virginia',
+  bio: 'Glenn Youngkin served as Governor of Virginia from 2022 to 2026, winning a closely-watched election in 2021 that was seen as a bellwether for Republican electoral strategy in competitive suburban districts. He is a former private equity executive and co-CEO of The Carlyle Group.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Glenn_Youngkin_official_photo.jpg/440px-Glenn_Youngkin_official_photo.jpg',
+  sources: [stubSource('youngkin-va', 'Office of the Governor of Virginia', 'https://www.governor.virginia.gov', 'Commonwealth of Virginia')],
+  baselineCard: {
+    currentOffice: { title: 'Former Governor of Virginia', jurisdiction: 'Virginia', startDate: '2026-01-15' },
+    previousOffices: [
+      { title: 'Governor of Virginia', jurisdiction: 'Virginia', startDate: '2022-01-15', endDate: '2026-01-15' },
+    ],
+    party: 'Republican',
+    birthDate: '1966-12-09',
+    yearsInPublicService: 4,
+    sourceIds: ['youngkin-va'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const brianKemp: PoliticianProfile = {
+  id: 'brian-kemp',
+  slug: 'brian-kemp',
+  name: 'Brian Kemp',
+  currentTitle: 'Former Governor of Georgia',
+  state: 'Georgia',
+  bio: 'Brian Kemp served as Governor of Georgia from 2019 to 2027, winning re-election in 2022 despite opposition from former President Trump. He is known for his refusal to overturn Georgia\'s 2020 presidential election results, drawing sustained criticism from Trump and primary challenges that he defeated decisively.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Brian_Kemp_official_portrait.jpg/440px-Brian_Kemp_official_portrait.jpg',
+  sources: [stubSource('kemp-ga', 'Office of the Governor of Georgia', 'https://gov.georgia.gov', 'State of Georgia')],
+  baselineCard: {
+    currentOffice: { title: 'Former Governor of Georgia', jurisdiction: 'Georgia', startDate: '2027-01-13' },
+    previousOffices: [
+      { title: 'Governor of Georgia', jurisdiction: 'Georgia', startDate: '2019-01-14', endDate: '2027-01-13' },
+      { title: 'Georgia Secretary of State', jurisdiction: 'Georgia', startDate: '2010-11-08', endDate: '2019-01-14' },
+    ],
+    party: 'Republican',
+    birthDate: '1963-11-02',
+    yearsInPublicService: 17,
+    sourceIds: ['kemp-ga'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+// ── 2028 Democrats ─────────────────────────────────────────────────────────────
+
+const gavinnewsom: PoliticianProfile = {
+  id: 'gavin-newsom',
+  slug: 'gavin-newsom',
+  name: 'Gavin Newsom',
+  currentTitle: 'Governor of California',
+  state: 'California',
+  bio: 'Gavin Newsom has served as Governor of California since January 2019 and was re-elected in 2022. He previously served as Lieutenant Governor of California and as Mayor of San Francisco. He has positioned himself as a leading national Democratic voice and vocal opponent of the Trump administration.',
+  photoUrl: '/politicians/gavin-newsom.jpg',
+  sources: [stubSource('newsom-ca', 'Office of the Governor of California', 'https://www.gov.ca.gov', 'State of California')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of California', jurisdiction: 'California', startDate: '2019-01-07' },
+    previousOffices: [
+      { title: 'Lieutenant Governor of California', jurisdiction: 'California', startDate: '2011-01-10', endDate: '2019-01-07' },
+      { title: 'Mayor of San Francisco', jurisdiction: 'California', startDate: '2004-01-08', endDate: '2011-01-10' },
+    ],
+    party: 'Democratic',
+    birthDate: '1967-10-10',
+    yearsInPublicService: 22,
+    sourceIds: ['newsom-ca'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const gretchenWhitmer: PoliticianProfile = {
+  id: 'gretchen-whitmer',
+  slug: 'gretchen-whitmer',
+  name: 'Gretchen Whitmer',
+  currentTitle: 'Governor of Michigan',
+  state: 'Michigan',
+  bio: 'Gretchen Whitmer has served as Governor of Michigan since January 2019 and was re-elected in 2022 by more than 10 points in a critical swing state. She previously served as a state senator and minority leader. She gained national prominence during the COVID-19 pandemic and has since become a leading figure in the Democratic Party.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Gretchen_Whitmer_official_portrait_%28cropped%29.jpg/440px-Gretchen_Whitmer_official_portrait_%28cropped%29.jpg',
+  sources: [stubSource('whitmer-mi', 'Office of the Governor of Michigan', 'https://www.michigan.gov/whitmer', 'State of Michigan')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of Michigan', jurisdiction: 'Michigan', startDate: '2019-01-01' },
+    previousOffices: [
+      { title: 'Michigan Senate Minority Leader', jurisdiction: 'Michigan', startDate: '2011-01-01', endDate: '2015-01-01' },
+    ],
+    party: 'Democratic',
+    birthDate: '1971-08-23',
+    yearsInPublicService: 20,
+    sourceIds: ['whitmer-mi'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const joshShapiro: PoliticianProfile = {
+  id: 'josh-shapiro',
+  slug: 'josh-shapiro',
+  name: 'Josh Shapiro',
+  currentTitle: 'Governor of Pennsylvania',
+  state: 'Pennsylvania',
+  bio: 'Josh Shapiro has served as Governor of Pennsylvania since January 2023, winning the 2022 race in the nation\'s largest swing state by 14 points. He previously served as Pennsylvania Attorney General from 2017 to 2023 and as a state representative. He is widely regarded as one of the Democratic Party\'s most promising national figures.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Josh_Shapiro_official_portrait.jpg/440px-Josh_Shapiro_official_portrait.jpg',
+  sources: [stubSource('shapiro-pa', 'Office of the Governor of Pennsylvania', 'https://www.governor.pa.gov', 'Commonwealth of Pennsylvania')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of Pennsylvania', jurisdiction: 'Pennsylvania', startDate: '2023-01-17' },
+    previousOffices: [
+      { title: 'Attorney General of Pennsylvania', jurisdiction: 'Pennsylvania', startDate: '2017-01-17', endDate: '2023-01-17' },
+    ],
+    party: 'Democratic',
+    birthDate: '1973-06-23',
+    yearsInPublicService: 15,
+    sourceIds: ['shapiro-pa'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const jbPritzker: PoliticianProfile = {
+  id: 'jb-pritzker',
+  slug: 'jb-pritzker',
+  name: 'J.B. Pritzker',
+  currentTitle: 'Governor of Illinois',
+  state: 'Illinois',
+  bio: 'J.B. Pritzker has served as Governor of Illinois since January 2019 and was re-elected in 2022 by 12 points. He is a billionaire heir to the Hyatt hotel fortune and a major Democratic donor. He has been a leading voice on abortion rights and LGBTQ+ protections and a persistent critic of the Trump administration.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/JB_Pritzker_official_portrait.jpg/440px-JB_Pritzker_official_portrait.jpg',
+  sources: [stubSource('pritzker-il', 'Office of the Governor of Illinois', 'https://gov.illinois.gov', 'State of Illinois')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of Illinois', jurisdiction: 'Illinois', startDate: '2019-01-14' },
+    previousOffices: [],
+    party: 'Democratic',
+    birthDate: '1965-01-19',
+    yearsInPublicService: 7,
+    sourceIds: ['pritzker-il'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const andyBeshear: PoliticianProfile = {
+  id: 'andy-beshear',
+  slug: 'andy-beshear',
+  name: 'Andy Beshear',
+  currentTitle: 'Governor of Kentucky',
+  state: 'Kentucky',
+  bio: 'Andy Beshear has served as Governor of Kentucky since December 2019 and was re-elected in 2023 in one of the nation\'s most Republican-leaning states, making his win one of the most closely watched off-year results in the country. His ability to win in Trump country has drawn national Democratic attention.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andy_Beshear_official_portrait.jpg/440px-Andy_Beshear_official_portrait.jpg',
+  sources: [stubSource('beshear-ky', 'Office of the Governor of Kentucky', 'https://governor.ky.gov', 'Commonwealth of Kentucky')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of Kentucky', jurisdiction: 'Kentucky', startDate: '2019-12-10' },
+    previousOffices: [
+      { title: 'Attorney General of Kentucky', jurisdiction: 'Kentucky', startDate: '2016-01-04', endDate: '2019-12-10' },
+    ],
+    party: 'Democratic',
+    birthDate: '1977-11-29',
+    yearsInPublicService: 10,
+    sourceIds: ['beshear-ky'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const wesMoore: PoliticianProfile = {
+  id: 'wes-moore',
+  slug: 'wes-moore',
+  name: 'Wes Moore',
+  currentTitle: 'Governor of Maryland',
+  state: 'Maryland',
+  bio: 'Wes Moore has served as Governor of Maryland since January 2023, becoming the state\'s first Black governor and only the third Black governor elected in U.S. history. He is a U.S. Army combat veteran, Rhodes Scholar, and bestselling author. His biography and policy record have made him one of the most discussed potential national candidates in the Democratic Party.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Wes_Moore_official_portrait.jpg/440px-Wes_Moore_official_portrait.jpg',
+  sources: [stubSource('moore-md', 'Office of the Governor of Maryland', 'https://governor.maryland.gov', 'State of Maryland')],
+  baselineCard: {
+    currentOffice: { title: 'Governor of Maryland', jurisdiction: 'Maryland', startDate: '2023-01-18' },
+    previousOffices: [],
+    party: 'Democratic',
+    birthDate: '1978-10-15',
+    yearsInPublicService: 3,
+    sourceIds: ['moore-md'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
+const peteButtigieg: PoliticianProfile = {
+  id: 'pete-buttigieg',
+  slug: 'pete-buttigieg',
+  name: 'Pete Buttigieg',
+  currentTitle: 'Former U.S. Secretary of Transportation',
+  state: 'Indiana',
+  bio: 'Pete Buttigieg served as the 19th U.S. Secretary of Transportation from February 2021 to January 2025, overseeing the largest infrastructure investment in U.S. history under the Bipartisan Infrastructure Law. He previously ran in the 2020 Democratic presidential primary, winning the Iowa caucuses, and served as Mayor of South Bend, Indiana.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Pete_Buttigieg_official_portrait.jpg/440px-Pete_Buttigieg_official_portrait.jpg',
+  sources: [stubSource('buttigieg-bio', 'Pete Buttigieg — Official Biography', 'https://www.peteforamerica.com', 'PeteForAmerica.com')],
+  baselineCard: {
+    currentOffice: { title: 'Former U.S. Secretary of Transportation', jurisdiction: 'Federal', startDate: '2025-01-20' },
+    previousOffices: [
+      { title: 'U.S. Secretary of Transportation', jurisdiction: 'Federal', startDate: '2021-02-03', endDate: '2025-01-20' },
+      { title: 'Mayor of South Bend, Indiana', jurisdiction: 'Indiana', startDate: '2012-01-01', endDate: '2020-01-01' },
+    ],
+    party: 'Democratic',
+    birthDate: '1982-01-19',
+    yearsInPublicService: 13,
+    sourceIds: ['buttigieg-bio'],
+  },
+  timeline: [],
+  funding: [],
+  recordAssessment: stubRecord(),
+}
+
 export const stubProfiles: Record<string, PoliticianProfile> = {
   'donald-trump': donaldTrump,
   'joe-biden': joeBiden,
   'kamala-harris': kamalaHarris,
   'barack-obama': barackObama,
   'ron-desantis': ronDeSantis,
+  'jd-vance': jdVance,
+  'marco-rubio': marcoRubio,
+  'nikki-haley': nikkiHaley,
+  'glenn-youngkin': glennYoungkin,
+  'brian-kemp': brianKemp,
+  'gavin-newsom': gavinnewsom,
+  'gretchen-whitmer': gretchenWhitmer,
+  'josh-shapiro': joshShapiro,
+  'jb-pritzker': jbPritzker,
+  'andy-beshear': andyBeshear,
+  'wes-moore': wesMoore,
+  'pete-buttigieg': peteButtigieg,
 }
