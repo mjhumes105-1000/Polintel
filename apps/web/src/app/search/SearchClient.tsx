@@ -203,7 +203,7 @@ function SearchResultsView({ query }: { query: string }) {
           <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1">FIND YOUR REPRESENTATIVE</p>
           <p className="text-xs text-ink-3">Click a state to see its governor and congressional delegation. CA, FL, MS, NJ, NY, and TX have district-level maps.</p>
         </div>
-        <CongressionalMapSection />
+        <CongressionalMapSection readStateFromUrl syncStateToUrl />
       </div>
     )
   }

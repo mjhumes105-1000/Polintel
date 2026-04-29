@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -296,8 +296,10 @@ function StateDistrictPanel({
   )
 }
 
-export function CongressionalMapSection({ readStateFromUrl = false }: { readStateFromUrl?: boolean }) {
+export function CongressionalMapSection({ readStateFromUrl = false, syncStateToUrl = false }: { readStateFromUrl?: boolean; syncStateToUrl?: boolean }) {
   const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
   const [selectedState, setSelectedState] = useState<string | null>(null)
   const [drilldownState, setDrilldownState] = useState<string | null>(null)
   const [hoveredDistrict, setHoveredDistrict] = useState<number | null>(null)
@@ -314,6 +316,18 @@ export function CongressionalMapSection({ readStateFromUrl = false }: { readStat
       setDrilldownState(stateParam)
     }
   }, [searchParams, readStateFromUrl])
+
+  function updateUrl(stateKey: string | null) {
+    if (!syncStateToUrl) return
+    const params = new URLSearchParams(searchParams.toString())
+    if (stateKey) {
+      params.set('state', stateKey)
+    } else {
+      params.delete('state')
+    }
+    const qs = params.toString()
+    router.replace(qs ? `${pathname}?${qs}` : pathname)
+  }
 
   useEffect(() => {
     if ((selectedState || drilldownState) && panelRef.current) {
@@ -349,11 +363,13 @@ export function CongressionalMapSection({ readStateFromUrl = false }: { readStat
     setDrilldownState(null)
     setSelectedDistrict(null)
     setHoveredDistrict(null)
+    updateUrl(name)
   }
 
   function handleDrilldown(state: string) {
     setDrilldownState(state)
     setSelectedDistrict(null)
+    updateUrl(state)
   }
 
   function handleBackToUS() {
@@ -361,6 +377,7 @@ export function CongressionalMapSection({ readStateFromUrl = false }: { readStat
     setSelectedState(null)
     setSelectedDistrict(null)
     setHoveredDistrict(null)
+    updateUrl(null)
   }
 
   // ── District drilldown view ──────────────────────────────────────────────────
