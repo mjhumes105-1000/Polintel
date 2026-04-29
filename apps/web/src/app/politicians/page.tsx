@@ -4,23 +4,13 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
-import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
-import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
-import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
-import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
-import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import type { PoliticianProfile } from '@political-intel/types'
 
 const fullProfiles: PoliticianProfile[] = [
   newsom,
-  ...Object.values(caDelegationProfiles),
-  ...Object.values(msDelegationProfiles),
-  ...Object.values(njDelegationProfiles),
-  ...Object.values(flDelegationProfiles),
-  ...Object.values(txDelegationProfiles),
-  ...Object.values(nyDelegationProfiles),
+  ...Object.values(allDelegationProfiles),
 ]
 
 const allProfiles: PoliticianProfile[] = [
@@ -207,8 +197,8 @@ export default function PoliticiansDirectoryPage() {
         <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1.5">DIRECTORY</p>
         <h1 className="text-2xl font-semibold text-ink mb-2">Politicians</h1>
         <p className="text-sm text-ink-3 leading-relaxed max-w-2xl">
-          {allProfiles.length} politicians tracked — {fullProfiles.length} with full public-record profiles,{' '}
-          {Object.keys(stubProfiles).length} in progress. Browse by chamber, state, or party.
+          {allProfiles.length} politicians tracked — {fullProfiles.length} with full public-record profiles covering all 50 states and territories.
+          Browse by chamber, state, or party.
         </p>
       </div>
 

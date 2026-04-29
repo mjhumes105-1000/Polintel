@@ -4,12 +4,7 @@ import { SearchBar } from '@/components/ui/SearchBar'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { CandidatePhoto } from '@/components/ui/CandidatePhoto'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
-import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
-import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
-import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
-import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
-import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries, GLOBAL_SUMMARY } from '@/data/economy/countries'
@@ -19,16 +14,8 @@ import type { Bill, PoliticianProfile } from '@political-intel/types'
 
 const allFullProfiles: PoliticianProfile[] = [
   newsom,
-  ...Object.values(caDelegationProfiles),
-  ...Object.values(msDelegationProfiles),
-  ...Object.values(njDelegationProfiles),
-  ...Object.values(flDelegationProfiles),
-  ...Object.values(txDelegationProfiles),
-  ...Object.values(nyDelegationProfiles),
+  ...Object.values(allDelegationProfiles),
 ]
-
-// For stats strip, just show the count of full profiles
-const allPoliticians = [newsom, ...Object.values(caDelegationProfiles)]
 
 // Recently updated — sorted by most recent source retrieval date
 const recentlyUpdatedProfiles = [...allFullProfiles]
@@ -55,7 +42,7 @@ const statusConfig: Record<string, { label: string; cls: string }> = {
 
 function StatsStrip() {
   const cells = [
-    { label: 'POLITICIANS TRACKED', value: `${allFullProfiles.length}+`, sub: 'Federal & state' },
+    { label: 'POLITICIANS TRACKED', value: `${allFullProfiles.length}`, sub: 'All 50 states + territories' },
     { label: 'BILLS IN RECORD',    value: String(allBills.length),       sub: 'With full context' },
     { label: 'COMMITTEES',         value: String(committees.length),     sub: 'With jurisdiction detail' },
     { label: 'TRADE PARTNERS',     value: String(countries.length),      sub: `FY${GLOBAL_SUMMARY.dataYear} data` },
@@ -288,17 +275,23 @@ function RecentlyUpdatedSection() {
 
 // ─── Featured profiles ────────────────────────────────────────────────────────
 
+// A hand-picked cross-section of recognizable members from different states/chambers
+const FEATURED_SLUGS = [
+  'chuck-schumer', 'mitch-mcconnell', 'hakeem-jeffries', 'mike-johnson',
+  'bernie-sanders', 'elizabeth-warren', 'ted-cruz', 'marco-rubio',
+  'alexandria-ocasio-cortez', 'nancy-pelosi',
+]
+
 function ProfilesSection() {
-  const delegation = Object.values(caDelegationProfiles)
-    .filter((p) => p.photoUrl)
-    .slice(0, 5)
+  const profileMap = Object.fromEntries(allFullProfiles.map(p => [p.slug, p]))
+  const featured = FEATURED_SLUGS.map(s => profileMap[s]).filter(Boolean)
 
   return (
     <section className="mb-16">
       <div className="flex items-baseline justify-between mb-4">
         <p className="font-mono text-[10px] tracking-widest text-accent/70">PROFILES</p>
         <Link href="/politicians" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
-          ALL POLITICIANS →
+          ALL {allFullProfiles.length} POLITICIANS →
         </Link>
       </div>
 
@@ -324,10 +317,10 @@ function ProfilesSection() {
         </span>
       </Link>
 
-      {/* Delegation grid */}
-      {delegation.length > 0 && (
+      {/* Cross-country grid */}
+      {featured.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mt-2">
-          {delegation.map((p) => (
+          {featured.map((p) => (
             <Link
               key={p.slug}
               href={`/politicians/${p.slug}`}
@@ -344,7 +337,7 @@ function ProfilesSection() {
       )}
 
       <p className="font-mono text-[10px] text-ink-4 mt-3">
-        {allFullProfiles.length}+ full profiles tracked ·{' '}
+        {allFullProfiles.length} full profiles — all 50 states + territories ·{' '}
         <Link href="/politicians" className="text-accent/70 hover:text-accent transition-colors">
           Browse all politicians →
         </Link>
