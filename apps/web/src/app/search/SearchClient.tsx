@@ -3,13 +3,12 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect, useMemo, Suspense } from 'react'
 import Link from 'next/link'
-import { CongressionalMapSection, memberSlug } from '@/components/map/CongressionalMapSection'
+import { CongressionalMapSection } from '@/components/map/CongressionalMapSection'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { SearchBar } from '@/components/ui/SearchBar'
 import newsom from '@/data/politicians/gavin-newsom'
 import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
-import { allCongressMembers, type CongressMember } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import type { PoliticianProfile } from '@political-intel/types'
@@ -19,11 +18,8 @@ import type { Committee } from '@/data/committees'
 const fullProfiles = [newsom, ...Object.values(allDelegationProfiles)]
 const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
-type ResultType = 'politician' | 'bill' | 'committee'
-
 interface SearchResults {
   politicians: PoliticianProfile[]
-  members: CongressMember[]
   bills: Bill[]
   committees: Committee[]
 }
@@ -41,19 +37,9 @@ function scorePolitician(p: PoliticianProfile, q: string): number {
   return 0
 }
 
-function scoreMember(m: CongressMember, q: string): number {
-  const name = m.name.toLowerCase()
-  if (name === q) return 9
-  if (name.startsWith(q)) return 7
-  if (name.includes(q)) return 5
-  if (m.title.toLowerCase().includes(q)) return 2
-  if (m.state.toLowerCase().includes(q)) return 1
-  return 0
-}
-
 function runSearch(query: string): SearchResults {
   const q = query.toLowerCase().trim()
-  if (!q) return { politicians: [], members: [], bills: [], committees: [] }
+  if (!q) return { politicians: [], bills: [], committees: [] }
 
   const politicians = allPoliticians
     .map(p => ({ p, s: scorePolitician(p, q) }))
@@ -65,13 +51,6 @@ function runSearch(query: string): SearchResults {
       return b.s - a.s || bStub - aStub
     })
     .map(({ p }) => p)
-
-  const members = allCongressMembers
-    .map(m => ({ m, s: scoreMember(m, q) }))
-    .filter(({ s }) => s > 0)
-    .sort((a, b) => b.s - a.s)
-    .map(({ m }) => m)
-    .slice(0, 30)
 
   const bills = allBills.filter(b =>
     b.title.toLowerCase().includes(q) ||
@@ -87,7 +66,7 @@ function runSearch(query: string): SearchResults {
     c.jurisdiction.some(j => j.toLowerCase().includes(q))
   )
 
-  return { politicians, members, bills, committees: matchedCommittees }
+  return { politicians, bills, committees: matchedCommittees }
 }
 
 const statusColor: Record<string, string> = {
@@ -102,13 +81,6 @@ const statusLabel: Record<string, string> = {
   introduced: 'INTRODUCED', 'in-committee': 'IN COMMITTEE',
   passed: 'PASSED', signed: 'SIGNED', vetoed: 'VETOED', failed: 'FAILED',
 }
-
-const partyColor: Record<string, string> = {
-  D: 'text-accent border-accent/40 bg-accent/5',
-  R: 'text-red-700 border-red-300 bg-red-50 dark:text-red-400 dark:border-red-900/60 dark:bg-red-950/30',
-  I: 'text-ink-3 border-border bg-surface-2',
-}
-const partyLabel: Record<string, string> = { D: 'DEM', R: 'REP', I: 'IND' }
 
 function SectionHeader({ label, count }: { label: string; count: number }) {
   return (
@@ -190,11 +162,11 @@ function EmptyState({ query }: { query: string }) {
 }
 
 function SearchResultsView({ query }: { query: string }) {
-  const { politicians, members, bills, committees: matchedCommittees } = useMemo(
+  const { politicians, bills, committees: matchedCommittees } = useMemo(
     () => runSearch(query),
     [query]
   )
-  const total = politicians.length + members.length + bills.length + matchedCommittees.length
+  const total = politicians.length + bills.length + matchedCommittees.length
 
   if (!query.trim()) {
     return (
@@ -242,37 +214,6 @@ function SearchResultsView({ query }: { query: string }) {
               </Link>
             ))}
           </div>
-        </section>
-      )}
-
-      {members.length > 0 && (
-        <section>
-          <SectionHeader label="CONGRESS MEMBERS" count={members.length} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {members.map(m => (
-              <Link
-                key={m.bioguide}
-                href={`/politicians/${memberSlug(m.name)}`}
-                className="flex items-center gap-3 px-4 py-3 bg-surface border border-border rounded hover:border-accent hover:bg-surface-2 transition-colors group"
-              >
-                <PoliticianPhoto
-                  name={m.name}
-                  photoUrl={`https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`}
-                  size={36}
-                />
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-ink group-hover:text-accent transition-colors truncate">{m.name}</p>
-                  <p className="text-xs text-ink-3 truncate">{m.title}</p>
-                </div>
-                <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded border shrink-0 ${partyColor[m.party] ?? ''}`}>
-                  {partyLabel[m.party] ?? m.party}
-                </span>
-              </Link>
-            ))}
-          </div>
-          {members.length === 30 && (
-            <p className="text-xs text-ink-4 mt-2 font-mono">Showing top 30 — refine your search for more precise results.</p>
-          )}
         </section>
       )}
 
