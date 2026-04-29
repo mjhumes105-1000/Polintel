@@ -27,7 +27,7 @@ function loadKey(name) {
 }
 
 const BEA_API_KEY = loadKey('BEA_API_KEY')
-if (!BEA_API_KEY) { console.error('BEA_API_KEY not found'); process.exit(1) }
+if (!BEA_API_KEY) { console.warn('BEA_API_KEY not set — skipping BEA investment data refresh'); process.exit(0) }
 
 const BASE = `https://apps.bea.gov/api/data?UserID=${BEA_API_KEY}&ResultFormat=JSON`
 
