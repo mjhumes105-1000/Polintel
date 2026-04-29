@@ -427,8 +427,8 @@ export default function HomePage() {
         </h1>
         <p className="text-ink-2 text-base leading-relaxed max-w-2xl mb-6">
           Votes, statements, campaign funding, and trade exposure — pulled from primary sources,
-          cited, and interpreted without partisan framing.{' '}
-          <span className="text-amber-400/90">For journalists, researchers, and citizens who want the receipts.</span>
+          cited clearly, and organized without partisan framing.{' '}
+          <span className="text-amber-400/90">See the record. Trace the evidence. Decide for yourself.</span>
         </p>
         <SearchBar
           placeholder="Search politicians, bills, countries, committees…"
