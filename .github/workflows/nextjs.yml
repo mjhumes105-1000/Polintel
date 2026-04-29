@@ -48,6 +48,7 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /Polintel
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+          STATIC_EXPORT: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

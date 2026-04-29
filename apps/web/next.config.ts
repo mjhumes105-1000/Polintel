@@ -3,7 +3,9 @@ import type { NextConfig } from 'next'
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Only static-export for GitHub Pages (CI sets STATIC_EXPORT=true).
+  // Locally and on Vercel, output is omitted so API routes work.
+  output: process.env.STATIC_EXPORT === 'true' ? 'export' : undefined,
   trailingSlash: true,
   basePath,
   transpilePackages: ['@political-intel/types'],
