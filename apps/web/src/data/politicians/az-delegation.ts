@@ -1,0 +1,605 @@
+import type { PoliticianProfile } from '@political-intel/types'
+import { buildCongressProfile, type CongressMemberData } from './ca-congress-builder'
+
+const memberData: CongressMemberData[] = [
+  // ── U.S. SENATORS ─────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'G000574',
+    slug: 'ruben-gallego',
+    name: 'Ruben Gallego',
+    party: 'D',
+    chamber: 'Senate',
+    state: 'Arizona',
+    currentTitle: 'U.S. Senator from Arizona',
+    bio: 'Ruben Gallego was elected to the U.S. Senate from Arizona in 2024, having previously served five terms in the House representing the Phoenix area. A Marine Corps combat veteran of the Iraq War and Harvard graduate, he ran as an independent-minded Democrat and flipped the seat held by Kyrsten Sinema. He serves on the Banking, Homeland Security, and Veterans\' Affairs Committees, and is a leading voice on military policy, immigration, and Latino political representation.',
+    sinceYear: 2015,
+    committees: [
+      { slug: 'jcse', name: 'Commission on Security and Cooperation in Europe', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssga', name: 'Senate Committee on Homeland Security and Governmental Affairs', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssva', name: 'Senate Committee on Veterans\' Affairs', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssbk', name: 'Senate Committee on Banking, Housing, and Urban Affairs', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'National Defense Authorization Act FY2024',
+        year: 2023,
+        month: 12,
+        position: 'For',
+        summary: 'As a House Armed Services Committee member before his Senate election, Gallego was a leading voice on the NDAA, supporting provisions for military family housing improvements and opposing efforts to inject culture-war provisions into the defense bill. His Marine veteran background gave him credibility in cross-aisle defense debates.',
+      },
+      {
+        title: 'Bipartisan Border Security Framework',
+        year: 2024,
+        month: 2,
+        position: 'For',
+        summary: 'Supported the bipartisan border security legislation negotiated by Sens. Lankford, Murphy, and Sinema, arguing it would strengthen the immigration system while preserving humanitarian protections. His support put him at odds with some progressive activists but reflected his Arizona constituency\'s concerns about border management.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Voted against the Laken Riley Act, arguing the mandatory detention requirement lacked due process protections and would overburden local law enforcement. While supporting immigration enforcement, Gallego distinguished between targeted enforcement and what he characterized as broad mandatory detention with insufficient judicial oversight.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill, arguing its deep Medicaid cuts would strip healthcare coverage from hundreds of thousands of Arizonans and roll back clean energy incentives that have spurred job growth in the Phoenix metro area. As a member of the Senate Banking and Veterans\' Affairs Committees, Gallego also warned the bill\'s fiscal provisions would harm veterans\' services and working-class Arizona families.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'DESERVE Act — Military Benefits for Non-Citizen Service Members',
+        year: 2021,
+        month: 3,
+        summary: 'Championed legislation ensuring non-citizen service members who are honorably discharged receive full veterans\' benefits and expedited citizenship pathways. Gallego, who served alongside immigrants in the Marines, argued it was unconscionable that those who risked their lives for America faced barriers to the benefits they earned.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'K000377',
+    slug: 'mark-kelly',
+    name: 'Mark Kelly',
+    party: 'D',
+    chamber: 'Senate',
+    state: 'Arizona',
+    currentTitle: 'U.S. Senator from Arizona',
+    bio: 'Mark Kelly has served as U.S. Senator from Arizona since winning a 2020 special election. A retired Navy captain and NASA astronaut who flew four Space Shuttle missions, he is married to former Rep. Gabby Giffords and has been one of the Senate\'s most prominent advocates for gun safety legislation. He serves on the Intelligence, Environment and Public Works, and Aging Committees, and focuses on water, veterans\' issues, and the Arizona economy.',
+    sinceYear: 2020,
+    committees: [
+      { slug: 'spag', name: 'Senate Special Committee on Aging', chamber: 'Senate', role: 'Member' },
+      { slug: 'jsec', name: 'Joint Economic Committee', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssev', name: 'Senate Committee on Environment and Public Works', chamber: 'Senate', role: 'Member' },
+      { slug: 'slin', name: 'Senate Select Committee on Intelligence', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Bipartisan Safer Communities Act',
+        year: 2022,
+        month: 6,
+        position: 'For',
+        summary: 'Voted for the first significant gun safety legislation in nearly 30 years, which tightened background checks for young gun buyers, funded mental health programs, and clarified the "boyfriend loophole" in domestic violence firearms laws. Kelly, whose wife Gabby Giffords was critically wounded in a 2011 mass shooting, was a leading architect of the bipartisan deal.',
+      },
+      {
+        title: 'Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'For',
+        summary: 'Voted for the Inflation Reduction Act, emphasizing provisions addressing the Colorado River drought crisis and funding water conservation infrastructure critical to Arizona\'s agricultural and municipal water supply. Kelly negotiated water-related provisions in the bill with Sen. Kyrsten Sinema.',
+      },
+      {
+        title: 'Bipartisan Border Security Framework',
+        year: 2024,
+        month: 2,
+        position: 'For',
+        summary: 'Was an original co-sponsor of the bipartisan border security legislation, which would have tightened asylum processing standards and given the president emergency authority to limit crossings. Kelly, who represents one of the leading border states, argued the status quo was untenable and the bill represented necessary compromise.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill, warning that its Medicaid cuts and rollback of water infrastructure funding would devastate Arizona families already grappling with the Colorado River water crisis. As a member of the Environment and Public Works and Intelligence Committees, Kelly argued the bill eliminated hard-won conservation investments critical to Arizona\'s long-term water security.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Drought PREP Act',
+        year: 2022,
+        month: 5,
+        summary: 'Introduced legislation creating a federal drought preparedness program to proactively manage water scarcity in the Western United States. With Arizona facing historic water shortages on the Colorado River, Kelly made water security a signature issue and used his Environment and Public Works seat to advance both short-term conservation measures and long-term infrastructure investment.',
+      },
+      {
+        title: 'Bipartisan Safer Communities Act',
+        year: 2022,
+        month: 6,
+        summary: 'Co-authored the landmark bipartisan gun safety legislation alongside Sens. Murphy, Cornyn, and Sinema, representing the most significant federal gun legislation in a generation. Kelly leveraged his personal connection to gun violence — through his wife Gabby Giffords — and his reputation as a moderate to bring skeptical Republicans into the coalition.',
+      },
+    ],
+  },
+
+  // ── HOUSE ─────────────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'S001183',
+    slug: 'david-schweikert',
+    name: 'David Schweikert',
+    party: 'R',
+    chamber: 'House',
+    district: 1,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 1st District',
+    bio: 'David Schweikert has represented Arizona in Congress since 2011, currently serving the 1st District covering north Scottsdale and the northeast Phoenix suburbs. A former Maricopa County Treasurer and real estate professional, he is an economics-focused legislator who serves on the House Ways and Means Committee and chairs the Joint Economic Committee. Schweikert was reprimanded by the House in 2020 following an Ethics Committee investigation into campaign finance violations.',
+    sinceYear: 2011,
+    committees: [
+      { slug: 'jsec', name: 'Joint Economic Committee', chamber: 'House', role: 'Chair' },
+      { slug: 'hswm', name: 'House Committee on Ways and Means', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Tax Cuts and Jobs Act',
+        year: 2017,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for the 2017 Tax Cuts and Jobs Act, which reduced the corporate tax rate from 35% to 21% and restructured individual income tax brackets. As an economics-focused member of the Ways and Means Committee, Schweikert was a leading advocate for the bill\'s business investment provisions.',
+      },
+      {
+        title: 'Against Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'Against',
+        summary: 'Voted against the Inflation Reduction Act, arguing its drug pricing provisions and corporate minimum tax would reduce economic investment and harm Arizona\'s growing healthcare and technology sectors. Schweikert has consistently prioritized fiscal discipline and low-tax policy as his central legislative focus.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, supporting its tax cut extensions and deficit reduction provisions. Schweikert has been one of Congress\'s most vocal advocates for addressing the long-term federal debt and used the reconciliation process to advance fiscal reform.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, championing its extension of the 2017 tax cuts and structural spending reforms as essential steps toward long-term fiscal sustainability. As Chair of the Joint Economic Committee and a Ways and Means member, Schweikert argued the bill\'s pro-growth tax provisions would benefit Arizona\'s 1st District economy and help address the federal debt trajectory he has long warned is unsustainable.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Long-Term Budget Deficit Reduction Framework',
+        year: 2023,
+        month: 9,
+        summary: 'Introduced a comprehensive framework for addressing the federal government\'s long-term fiscal trajectory, combining entitlement reform proposals, discretionary spending caps, and economic growth incentives. As a Joint Economic Committee member and Ways and Means seat-holder, Schweikert has made the debt and deficit his signature issue.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'C001132',
+    slug: 'elijah-crane',
+    name: 'Elijah Crane',
+    party: 'R',
+    chamber: 'House',
+    district: 2,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 2nd District',
+    bio: 'Elijah Crane has represented Arizona\'s 2nd Congressional District — covering a large swath of rural northeastern Arizona including Flagstaff and Yuma — since 2023. A Navy SEAL veteran who served over a decade in special operations forces, he ran as an outsider conservative focused on border security, government accountability, and military affairs. He serves on the Homeland Security and Oversight Committees and has been a vocal member of the House Freedom Caucus.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hshm', name: 'House Committee on Homeland Security', chamber: 'House', role: 'Member' },
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against Kevin McCarthy as Speaker — Motion to Vacate',
+        year: 2023,
+        month: 10,
+        position: 'For',
+        summary: 'Was one of eight Republicans who voted to remove Kevin McCarthy as Speaker of the House, a defining act in his freshman term. As a Freedom Caucus member, Crane objected to McCarthy\'s spending deal with Democrats and his management of the House floor — a vote that demonstrated his willingness to defy House Republican leadership in his first year.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act mandating federal detention of undocumented immigrants charged with violent crimes. Border security has been Crane\'s signature issue — the 2nd District spans more than 50 miles of the U.S.-Mexico border — and he has been among the most vocal members on immigration enforcement.',
+      },
+      {
+        title: 'Against Ukraine Aid Package',
+        year: 2024,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the $61 billion Ukraine supplemental aid package, arguing the funds should be redirected to border security and that the U.S. could not afford unlimited overseas commitments. Crane opposed the measure as part of his broader "America First" foreign policy stance.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, enthusiastically backing its border security funding and immigration enforcement provisions as a representative of a district that spans over 50 miles of the U.S.-Mexico border. As a member of the Homeland Security Committee, Crane argued the bill\'s border wall funding and detention capacity expansions were overdue investments for Arizona\'s 2nd District communities.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Border Security Force Multiplier Act',
+        year: 2023,
+        month: 8,
+        summary: 'Introduced legislation deploying National Guard personnel to assist Customs and Border Protection in the 2nd District\'s expansive border sectors. Crane drew on his military background to design a force structure model that he argued would immediately increase enforcement capacity without waiting for new agent hiring cycles.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'A000381',
+    slug: 'yassamin-ansari',
+    name: 'Yassamin Ansari',
+    party: 'D',
+    chamber: 'House',
+    district: 3,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 3rd District',
+    bio: 'Yassamin Ansari has represented Arizona\'s 3rd Congressional District — covering southwest Phoenix — since 2025. A former Phoenix City Council member born in Iran, she is the first Iranian-American woman elected to Congress. She serves on the Natural Resources and Oversight Committees and focuses on environmental justice, housing affordability, and immigration reform for a district with a large Latino and immigrant-origin population.',
+    sinceYear: 2025,
+    committees: [
+      { slug: 'hsii', name: 'House Committee on Natural Resources', chamber: 'House', role: 'Member' },
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, arguing Medicaid cuts and SNAP reductions would devastate the working-class communities of the 3rd District where poverty rates exceed the national average. Ansari was a vocal critic of the bill\'s environmental rollbacks, which she argued would worsen pollution in Phoenix neighborhoods already burdened by poor air quality.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Voted against the Laken Riley Act, arguing the mandatory detention provisions were overbroad and would harm immigrant families in her district. As the first Iranian-American woman in Congress and a representative of a heavily immigrant-origin district, Ansari has been a consistent critic of punitive immigration enforcement measures.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill, arguing its Medicaid cuts and SNAP reductions would devastate southwest Phoenix\'s working-class communities where poverty rates significantly exceed the national average. As a member of the Natural Resources Committee, Ansari also opposed the bill\'s rollback of clean energy investments, warning it would worsen air quality in 3rd District neighborhoods already disproportionately burdened by industrial pollution.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Environmental Justice for Phoenix Communities Act',
+        year: 2025,
+        month: 4,
+        summary: 'Introduced legislation directing EPA funding to address legacy pollution and industrial contamination in Phoenix\'s lower-income west side neighborhoods. The 3rd District includes communities near industrial facilities with elevated rates of respiratory illness, and Ansari made environmental justice a centerpiece of her 2024 campaign.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'S001211',
+    slug: 'greg-stanton',
+    name: 'Greg Stanton',
+    party: 'D',
+    chamber: 'House',
+    district: 4,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 4th District',
+    bio: 'Greg Stanton has represented Arizona\'s 4th Congressional District — east Phoenix and east valley suburbs including Tempe and Scottsdale — since 2019. A former two-term Mayor of Phoenix and deputy Maricopa County Attorney, he serves on the House Foreign Affairs, Transportation and Infrastructure, and China Competition Committees. He is known as a pragmatic Democrat focused on economic development, water policy, and the Arizona innovation economy.',
+    sinceYear: 2019,
+    committees: [
+      { slug: 'hszs', name: 'House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party', chamber: 'House', role: 'Member' },
+      { slug: 'hsfa', name: 'House Committee on Foreign Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hspw', name: 'House Committee on Transportation and Infrastructure', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Infrastructure Investment and Jobs Act',
+        year: 2021,
+        month: 11,
+        position: 'For',
+        summary: 'Voted for the bipartisan infrastructure law, drawing on his background as Phoenix mayor to highlight the district\'s pressing needs in transit, broadband, and water infrastructure. As a former city executive, Stanton understood the federal funding mechanisms at stake and championed transit investment for the Valley Metro light rail system.',
+      },
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for the CHIPS and Science Act, celebrating its direct impact on Arizona — Taiwan Semiconductor Manufacturing Company (TSMC) announced a massive $40 billion fab complex in Phoenix, creating thousands of high-paying manufacturing jobs in the 4th District\'s metro area. Stanton called it one of the most consequential bills for Arizona\'s economy in decades.',
+      },
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, citing Medicaid cuts and reductions to water infrastructure programs critical to the Colorado River water crisis. Stanton argued the bill\'s rollback of clean energy incentives would undermine Arizona\'s growing solar and semiconductor industries.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill, warning that its Medicaid cuts and elimination of clean energy tax credits would harm both Arizona\'s healthcare system and the solar and semiconductor industries driving economic growth in the 4th District. As a member of the Transportation and Infrastructure Committee and former Phoenix mayor, Stanton argued the bill\'s water infrastructure funding reductions were particularly reckless given the ongoing Colorado River crisis threatening the Phoenix region\'s water supply.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Colorado River Water Security Act',
+        year: 2023,
+        month: 6,
+        summary: 'Introduced legislation providing federal resources to accelerate Colorado River conservation agreements among Arizona, California, Nevada, and other basin states. Arizona faces the most acute water vulnerability among lower-basin states given its heavy reliance on Lake Mead allocations for Phoenix-area municipalities and agriculture.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'B001302',
+    slug: 'andy-biggs',
+    name: 'Andy Biggs',
+    party: 'R',
+    chamber: 'House',
+    district: 5,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 5th District',
+    bio: 'Andy Biggs has represented Arizona\'s 5th Congressional District — east Phoenix suburbs including Mesa, Gilbert, and Chandler — since 2017. A former Arizona State Senate President and founder of the House Freedom Caucus, he is one of the most conservative members of Congress and a leading voice on immigration enforcement, judicial selection, and limiting federal executive authority. He has been a frequent critic of both Republican and Democratic leadership when he views them as insufficiently conservative.',
+    sinceYear: 2017,
+    committees: [
+      { slug: 'hsju', name: 'House Committee on the Judiciary', chamber: 'House', role: 'Member' },
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against Kevin McCarthy as Speaker — Motion to Vacate',
+        year: 2023,
+        month: 10,
+        position: 'For',
+        summary: 'Voted to remove Kevin McCarthy as Speaker of the House, having previously challenged McCarthy\'s initial Speaker bid in January 2023. Biggs was the original nominator of Jim Jordan as a McCarthy alternative and has been a consistent thorn in mainstream House Republican leadership, which he views as too accommodating of Democratic spending priorities.',
+      },
+      {
+        title: 'Against Ukraine Aid Package',
+        year: 2024,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the $61 billion Ukraine aid package, arguing the funds were needed at the U.S.-Mexico border rather than overseas. Biggs has been one of the most vocal opponents of continued Ukraine funding, framing the issue as a choice between American security and foreign entanglements.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act and was an early co-sponsor, having championed mandatory detention provisions for undocumented immigrants in various legislative vehicles throughout his congressional career. Immigration enforcement has been his signature issue.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, supporting its sweeping border security provisions and deep cuts to what he characterizes as wasteful federal spending. As a founding member of the House Freedom Caucus and a Judiciary Committee member, Biggs argued the bill\'s immigration enforcement funding and spending reductions aligned with the fiscal and immigration priorities he has championed throughout his congressional career representing the east Phoenix suburbs.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'American Sovereignty Restoration Act',
+        year: 2023,
+        month: 2,
+        summary: 'Reintroduced legislation to withdraw the United States from the United Nations, a longstanding conservative goal that Biggs has championed across multiple Congresses. The bill reflects his "America First" foreign policy philosophy and skepticism of international organizations constraining U.S. sovereignty.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'C001133',
+    slug: 'juan-ciscomani',
+    name: 'Juan Ciscomani',
+    party: 'R',
+    chamber: 'House',
+    district: 6,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 6th District',
+    bio: 'Juan Ciscomani has represented Arizona\'s 6th Congressional District — Tucson\'s eastern suburbs and southeast Arizona — since 2023. Born in Mexico and raised in Tucson, he is a Republican of Mexican descent who previously served as a senior advisor to Gov. Doug Ducey. He serves on the House Appropriations and Veterans\' Affairs Committees and focuses on border security, water resources, and veterans\' services for a district that includes significant military and veterans communities around Fort Huachuca.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hsvr', name: 'House Committee on Veterans\' Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hsap', name: 'House Committee on Appropriations', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Fiscal Responsibility Act of 2023',
+        year: 2023,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the bipartisan debt ceiling deal, supporting it as a necessary step to avoid default while securing spending caps. As an Appropriations Committee member, Ciscomani helped implement the spending limits that followed and worked to protect military and veterans program funding for Fort Huachuca.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act, reflecting the 6th District\'s position as a border district where immigration enforcement is a central constituent concern. Ciscomani has sought to be a Republican voice on immigration who acknowledges both enforcement needs and the district\'s deep cultural and economic ties to Mexico.',
+      },
+      {
+        title: 'Military Construction and Veterans Affairs Appropriations',
+        year: 2024,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for the military construction and veterans affairs appropriations bill, securing continued funding for Fort Huachuca\'s intelligence and cyber training missions. Fort Huachuca is one of the 6th District\'s largest employers and a centerpiece of Ciscomani\'s appropriations work.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, supporting its border security provisions and tax cut extensions as priorities for southeastern Arizona\'s 6th District. As an Appropriations Committee member, Ciscomani worked to ensure the bill\'s defense spending maintained funding for Fort Huachuca\'s critical intelligence and cyber training missions while backing the border security investments his district\'s constituents have long demanded.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Arizona Water Rights and Conservation provisions',
+        year: 2023,
+        month: 10,
+        summary: 'Worked through the Appropriations Committee to secure federal funding for groundwater conservation programs and Gila River water delivery infrastructure in southeastern Arizona. The 6th District faces acute groundwater depletion, and Ciscomani has pursued a long-term water security agenda through his appropriations seat.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'G000606',
+    slug: 'adelita-s-grijalva',
+    name: 'Adelita S. Grijalva',
+    party: 'D',
+    chamber: 'House',
+    district: 7,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 7th District',
+    bio: 'Adelita Grijalva has represented Arizona\'s 7th Congressional District — Tucson and southwest Arizona — since 2025, succeeding her father Raúl Grijalva who represented the seat for over two decades. A former Pima County Board of Supervisors member, she serves on the Natural Resources and Education and Workforce Committees, carrying forward the family legacy of advocacy for public lands, Indigenous communities, and working families in one of Arizona\'s most diverse and border-adjacent districts.',
+    sinceYear: 2025,
+    committees: [
+      { slug: 'hsii', name: 'House Committee on Natural Resources', chamber: 'House', role: 'Member' },
+      { slug: 'hsed', name: 'House Committee on Education and Workforce', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, arguing its cuts to Medicaid, SNAP, and education programs would harm the 7th District\'s working-class and Indigenous communities. Grijalva also opposed provisions rolling back federal land protections that her father had championed for decades through the Natural Resources Committee.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Voted against the Laken Riley Act, arguing the mandatory detention provisions would harm immigrant families in a district with deep cross-border community ties and a large undocumented population. The 7th District shares extensive border with Mexico and Grijalva has emphasized a humane approach to immigration enforcement.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill, arguing its cuts to Medicaid and SNAP would cause severe harm to Tucson\'s working-class and Indigenous communities who depend on those programs. As a member of the Natural Resources Committee, Grijalva was particularly vocal in opposing the bill\'s rollback of federal land protections across Arizona\'s borderlands — conservation priorities her father championed for decades that she vowed to defend.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Sonoran Desert Protection Act',
+        year: 2025,
+        month: 4,
+        summary: 'Introduced legislation protecting additional acres of the Sonoran Desert from mining and energy development, building on conservation work begun by her father Raúl Grijalva during his tenure as Natural Resources Committee chair. The 7th District contains ecologically sensitive borderlands that are also migration corridors for both wildlife and people.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'H001098',
+    slug: 'abraham-j-hamadeh',
+    name: 'Abraham J. Hamadeh',
+    party: 'R',
+    chamber: 'House',
+    district: 8,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 8th District',
+    bio: 'Abraham Hamadeh has represented Arizona\'s 8th Congressional District — the northwest Phoenix suburbs and Peoria area — since 2025. A former Maricopa County prosecutor who narrowly lost the 2022 Arizona Attorney General race, he is a Republican of Lebanese descent who ran on a platform of election integrity, border security, and public safety. He serves on the Veterans\' Affairs and Armed Services Committees.',
+    sinceYear: 2025,
+    committees: [
+      { slug: 'hsvr', name: 'House Committee on Veterans\' Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hsas', name: 'House Committee on Armed Services', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act as one of his first official votes in Congress, fulfilling a campaign promise to crack down on illegal immigration. As a former prosecutor, Hamadeh emphasized the law enforcement rationale for mandatory detention of undocumented individuals charged with violent crimes.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, supporting its tax cut extensions and border security provisions. Hamadeh campaigned on fiscal conservatism and immigration enforcement, and the bill aligned with both priorities.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, backing its tax cuts and robust border security spending as priorities for the northwest Phoenix suburbs of the 8th District. As a member of the Armed Services and Veterans\' Affairs Committees, Hamadeh highlighted the bill\'s defense provisions while drawing on his background as a former Maricopa County prosecutor to argue that increased immigration enforcement funding would improve public safety for Arizona communities.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Election Integrity and Voter Verification provisions',
+        year: 2025,
+        month: 3,
+        summary: 'Introduced legislation strengthening documentary proof of citizenship requirements for federal voter registration, drawing on his 2022 attorney general campaign experience challenging close election results in Arizona. Election integrity has been Hamadeh\'s signature issue since his narrow loss in that race.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'G000565',
+    slug: 'paul-a-gosar',
+    name: 'Paul A. Gosar',
+    party: 'R',
+    chamber: 'House',
+    district: 9,
+    state: 'Arizona',
+    currentTitle: 'U.S. Representative, Arizona 9th District',
+    bio: 'Paul Gosar has served in the U.S. House since 2011, currently representing Arizona\'s 9th District covering rural western Arizona and the Prescott area. A dentist by training, he is among the most conservative members of Congress and a founding member of the House Freedom Caucus. He was censured by the House in November 2021 following the posting of an animated video depicting violence against Rep. Alexandria Ocasio-Cortez. He serves on the Natural Resources and Oversight Committees and focuses on public lands, federal land transfers, and anti-immigration enforcement.',
+    sinceYear: 2011,
+    committees: [
+      { slug: 'hsii', name: 'House Committee on Natural Resources', chamber: 'House', role: 'Member' },
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'House Censure Resolution',
+        year: 2021,
+        month: 11,
+        position: 'Against',
+        summary: 'The House voted 223–207 to censure Gosar and strip him of his committee assignments following his posting of an animated video depicting violence against Rep. Ocasio-Cortez. Gosar rejected the censure as a politically motivated attack on free speech and was restored to committee assignments by House Republicans after they regained the majority in 2023.',
+      },
+      {
+        title: 'Against Ukraine Aid Package',
+        year: 2024,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the $61 billion Ukraine supplemental aid package, arguing the funds were needed at the southern border and that continued Ukrainian aid represented a blank check without clear strategic objectives. Gosar has been one of Congress\'s most vocal opponents of U.S. involvement in the Ukraine conflict.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act and has championed mandatory detention of undocumented immigrants across multiple legislative vehicles throughout his congressional career. Immigration enforcement is Gosar\'s primary legislative focus.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation bill, strongly supporting its border security provisions and the rollback of federal land restrictions that he has long argued are unconstitutional overreach into western states\' rights. As a member of the Natural Resources Committee representing rural western Arizona\'s 9th District, Gosar emphasized the bill\'s provisions reducing federal impediments to energy development and facilitating land transfers to state and local governments.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Federal Land Freedom Act',
+        year: 2023,
+        month: 4,
+        summary: 'Championed legislation facilitating the transfer of federally owned lands to state and local governments in the West, reflecting his longstanding belief that western states should control the vast federal land holdings within their borders. Arizona contains millions of acres of federal land, and Gosar has made this issue a signature cause through his Natural Resources Committee work.',
+      },
+    ],
+  },
+]
+
+export const azDelegationProfiles: Record<string, PoliticianProfile> = Object.fromEntries(
+  memberData.map((d) => [d.slug, buildCongressProfile(d)])
+)

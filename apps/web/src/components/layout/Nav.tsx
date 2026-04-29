@@ -6,12 +6,13 @@ import { useState } from 'react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const NAV_LINKS = [
-  { href: '/explore', label: 'Explore' },
+  { href: '/politicians', label: 'Politicians' },
   { href: '/bills', label: 'Bills' },
-  { href: '/search', label: 'Search' },
-  { href: '/compare', label: 'Compare' },
   { href: '/economy', label: 'Economy' },
+  { href: '/compare', label: 'Compare' },
+  { href: '/search', label: 'Search' },
   { href: '/methodology', label: 'Methodology' },
+  { href: '/about', label: 'About' },
 ]
 
 export function Nav() {

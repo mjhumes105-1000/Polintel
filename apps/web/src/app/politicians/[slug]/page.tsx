@@ -3,12 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { PoliticianProfile, CandidacyStatus, TimelineEvent } from '@political-intel/types'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
-import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
-import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
-import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
-import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
-import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
+import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { ProfileHeader } from '@/components/profile/ProfileHeader'
 import { BaselineCard } from '@/components/profile/BaselineCard'
 import { Timeline } from '@/components/profile/Timeline'
@@ -17,6 +13,7 @@ import { RecordAssessment } from '@/components/profile/RecordAssessment'
 import { StickyProfileHeader } from '@/components/profile/StickyProfileHeader'
 import { BackButton } from '@/components/ui/BackButton'
 import { AlertCapture } from '@/components/profile/AlertCapture'
+import { StubProfilePage } from '@/components/profile/StubProfilePage'
 import { getLegislator } from '@/data/legislators'
 import { fetchLiveTimeline } from '@/lib/fetchLiveTimeline'
 import { fetchFECDonors } from '@/lib/fetchFECDonors'
@@ -25,14 +22,14 @@ import { NewsFeed } from '@/components/profile/NewsFeed'
 
 export const revalidate = 86400
 
-const politicians: Record<string, PoliticianProfile> = {
+const fullProfiles: Record<string, PoliticianProfile> = {
   'gavin-newsom': newsom,
-  ...caDelegationProfiles,
-  ...msDelegationProfiles,
-  ...njDelegationProfiles,
-  ...flDelegationProfiles,
-  ...txDelegationProfiles,
-  ...nyDelegationProfiles,
+  ...allDelegationProfiles,
+}
+
+const politicians: Record<string, PoliticianProfile> = {
+  ...fullProfiles,
+  ...stubProfiles,
 }
 
 export function generateStaticParams() {
@@ -112,6 +109,11 @@ export default async function PoliticianPage({
   const politician = politicians[slug]
   if (!politician) notFound()
 
+  // Render minimal stub page for profiles not yet fully researched
+  if (stubProfileSlugs.has(slug)) {
+    return <StubProfilePage politician={politician} />
+  }
+
   // Fetch live timeline events from GovTrack (cached for 24h via revalidate)
   const enriched = getLegislator(politician.id)
   const chamber = enriched?.currentTerm?.type === 'sen' ? 'Senate' : 'House'
@@ -157,15 +159,25 @@ export default async function PoliticianPage({
     ],
   }
 
+  const backHref = STATE_EXPLORE_HREF[politician.state] ?? '/politicians'
+
   return (
     <>
       <StickyProfileHeader politician={enrichedPolitician} />
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div id="profile-header-sentinel" />
         <div className="mb-4">
-          <BackButton href={STATE_EXPLORE_HREF[politician.state]} />
+          <BackButton href={backHref} />
         </div>
         <ProfileHeader politician={enrichedPolitician} />
+
+        {/* Compare With button */}
+        <Link
+          href={`/compare?a=${politician.slug}`}
+          className="group inline-flex items-center gap-2 mb-6 px-4 py-2 bg-surface border border-border rounded hover:border-accent hover:bg-surface-2 transition-colors text-xs font-mono text-ink-3 hover:text-accent"
+        >
+          Compare {politician.name.split(' ').pop()} with →
+        </Link>
 
         {enrichedPolitician.candidacy && (
           <Link

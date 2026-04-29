@@ -79,6 +79,12 @@ export type EventMap = {
   'economy.upgrade.clicked': {
     trigger: string
   }
+  'economy.waitlist.submit': {
+    trigger: string
+  }
+  'economy.waitlist.clicked': {
+    trigger: string
+  }
 }
 
 export type EventName = keyof EventMap

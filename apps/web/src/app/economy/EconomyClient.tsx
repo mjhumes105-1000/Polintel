@@ -790,11 +790,16 @@ export function EconomyClient() {
         <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1.5">
           ECONOMIC INTELLIGENCE
         </p>
-        <h1 className="text-2xl font-semibold text-ink mb-2">U.S. Economy</h1>
+        <div className="flex items-baseline gap-4 flex-wrap mb-2">
+          <h1 className="text-2xl font-semibold text-ink">U.S. Economy</h1>
+          <span className="font-mono text-[9px] text-ink-4 border border-border rounded px-1.5 py-0.5">
+            Last updated: FY{GLOBAL_SUMMARY.dataYear} data
+          </span>
+        </div>
         <p className="text-sm text-ink-3 leading-relaxed max-w-2xl">
-          {tab === 'trade'
-            ? 'Bilateral trade flows, tariff exposure, investment positions, and aid outflows — mapped across the United States’ top trading partners.'
-            : 'Federal revenue and spending breakdown — where the money comes from and where it goes.'}
+          {tab === "trade"
+            ? "Bilateral trade flows, tariff exposure, investment positions, and aid outflows — mapped across the United States’ top trading partners."
+            : "Federal revenue and spending breakdown — where the money comes from and where it goes."}
         </p>
       </div>
 

@@ -1,0 +1,501 @@
+import type { PoliticianProfile } from '@political-intel/types'
+import { buildCongressProfile, type CongressMemberData } from './ca-congress-builder'
+
+const memberData: CongressMemberData[] = [
+  // ── U.S. SENATORS ─────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'M000355',
+    slug: 'mitch-mcconnell',
+    name: 'Mitch McConnell',
+    party: 'R',
+    chamber: 'Senate',
+    state: 'Kentucky',
+    currentTitle: 'U.S. Senator from Kentucky',
+    bio: 'Mitch McConnell has served as U.S. Senator from Kentucky since 1985, making him one of the longest-serving senators in American history. He served as Senate Majority Leader from 2015 to 2021 and as Minority Leader from 2021 to 2025, cementing his legacy as one of the most consequential legislative leaders of the modern era. McConnell is widely credited with reshaping the federal judiciary by confirming three Supreme Court justices during the Trump administration. In the 119th Congress he chairs the Senate Committee on Rules and Administration.',
+    sinceYear: 1985,
+    committees: [
+      { slug: 'ssra', name: 'Senate Committee on Rules and Administration', chamber: 'Senate', role: 'Chair' },
+      { slug: 'jspr', name: 'Joint Committee on Printing', chamber: 'Senate', role: 'Chair' },
+      { slug: 'jslc', name: 'Joint Committee of Congress on the Library', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssaf', name: 'Senate Committee on Agriculture, Nutrition, and Forestry', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Confirmation of Justice Amy Coney Barrett',
+        year: 2020,
+        month: 10,
+        position: 'For',
+        summary: 'McConnell shepherded the confirmation of Justice Amy Coney Barrett to the Supreme Court just eight days before the 2020 presidential election, completing his strategy to fill the seat left by Justice Ruth Bader Ginsburg. The 52–48 party-line vote was the culmination of McConnell\'s years-long effort to reshape the federal judiciary with conservative jurists.',
+      },
+      {
+        title: 'Against Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'Against',
+        summary: 'McConnell led unified Republican opposition to the Inflation Reduction Act, arguing it raised taxes on businesses during a period of economic stress and represented excessive government intervention in energy markets. He characterized the bill\'s Medicare drug negotiation provisions as government price-setting that would chill pharmaceutical innovation.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act, the first bill signed into law in the 119th Congress, mandating ICE detention of undocumented immigrants charged with violent or theft-related crimes. McConnell had championed stricter immigration enforcement as a top Republican priority throughout his leadership tenure.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, having leveraged his decades of Senate procedural mastery to advance the bill through as Chair of the Senate Rules and Administration Committee. McConnell argued the legislation\'s tax cut extensions and spending restraint were essential for Kentucky\'s economy and represented the culmination of the fiscal agenda he had championed for four decades.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'CARES Act',
+        year: 2020,
+        month: 3,
+        summary: 'McConnell was the principal architect of the $2.2 trillion CARES Act, the largest economic relief package in American history, passed in response to the COVID-19 pandemic. He negotiated the bill\'s landmark provisions including direct payments, expanded unemployment insurance, and the Paycheck Protection Program for small businesses, securing overwhelming bipartisan passage.',
+      },
+      {
+        title: 'Bipartisan Safer Communities Act',
+        year: 2022,
+        month: 6,
+        summary: 'McConnell was instrumental in brokering the first significant federal gun safety legislation in nearly three decades, helping to assemble the bipartisan Senate coalition that passed the bill. The law enhanced background checks for younger gun buyers, incentivized red flag laws, and closed the so-called "boyfriend loophole" in domestic violence firearms restrictions.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'P000603',
+    slug: 'rand-paul',
+    name: 'Rand Paul',
+    party: 'R',
+    chamber: 'Senate',
+    state: 'Kentucky',
+    currentTitle: 'U.S. Senator from Kentucky',
+    bio: 'Rand Paul has represented Kentucky in the U.S. Senate since 2011 and is the Senate\'s most prominent libertarian voice. An ophthalmologist by training, he is the son of former Representative Ron Paul and carries forward a libertarian tradition of skepticism toward government spending, foreign military interventions, and surveillance programs. He chairs the Senate Committee on Homeland Security and Governmental Affairs and is known for using Senate procedure — including filibuster and holds — to delay legislation he opposes.',
+    sinceYear: 2011,
+    committees: [
+      { slug: 'ssga', name: 'Senate Committee on Homeland Security and Governmental Affairs', chamber: 'Senate', role: 'Chair' },
+      { slug: 'sshr', name: 'Senate Committee on Health, Education, Labor, and Pensions', chamber: 'Senate', role: 'Member' },
+      { slug: 'sssb', name: 'Senate Committee on Small Business and Entrepreneurship', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssfr', name: 'Senate Committee on Foreign Relations', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against USA FREEDOM Act Reauthorization',
+        year: 2020,
+        month: 5,
+        position: 'Against',
+        summary: 'Paul led the opposition to reauthorization of the USA FREEDOM Act, arguing the surveillance authorities it permitted — particularly collection of phone metadata — represented an unconstitutional violation of Americans\' Fourth Amendment rights. He forced a brief expiration of the surveillance program before a modified version passed.',
+      },
+      {
+        title: 'Against Ukraine Aid Package',
+        year: 2024,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the $61 billion Ukraine supplemental aid package, arguing it added to a reckless national debt and that the United States was bearing a disproportionate share of the burden for European security. Paul had previously blocked Ukraine aid packages using Senate holds and procedural maneuvers on multiple occasions.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Paul was one of only two Republican senators to vote against the Laken Riley Act, citing civil liberties concerns about mandatory detention without due process. He argued the bill\'s detention mandate conflicted with constitutional protections and that immigration enforcement should focus on criminal prosecution rather than administrative detention.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, citing its spending reductions and tax cut extensions as a meaningful — if insufficient — step toward the fiscal responsibility he has demanded from his Homeland Security and Governmental Affairs Committee chairmanship. Paul had pushed for deeper cuts to entitlement spending, but ultimately supported the bill as the most significant reduction in federal outlays passed in years.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'REINS Act',
+        year: 2023,
+        month: 2,
+        summary: 'Paul has been the Senate\'s leading champion of the Regulations from the Executive in Need of Scrutiny Act, which would require Congress to affirmatively approve major new federal regulations before they take effect. He argues the bill is necessary to restore the constitutional balance between the legislative and executive branches by ending the delegation of lawmaking authority to unelected agency officials.',
+      },
+      {
+        title: 'Audit the Fed legislation',
+        year: 2021,
+        month: 1,
+        summary: 'Paul has introduced legislation in every Congress since his election requiring a full, independent audit of the Federal Reserve\'s monetary policy decisions — a cause he inherited from his father. He argues the Fed\'s opacity enables monetary policies that devalue savings and disproportionately harm working-class Americans.',
+      },
+    ],
+  },
+
+  // ── HOUSE ─────────────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'C001108',
+    slug: 'james-comer',
+    name: 'James Comer',
+    party: 'R',
+    chamber: 'House',
+    district: 1,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 1st District',
+    bio: 'James Comer has represented Kentucky\'s 1st Congressional District since 2017 and chairs the House Committee on Oversight and Government Reform. A farmer and former Kentucky Agriculture Commissioner, he has used the Oversight Committee\'s investigative powers to probe the Biden administration and the Biden family\'s business dealings. His western Kentucky district encompasses the Purchase region, the coal country of western Appalachia, and key agricultural communities.',
+    sinceYear: 2016,
+    committees: [
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Chair' },
+      { slug: 'hsed', name: 'House Committee on Education and Workforce', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Fiscal Responsibility Act of 2023',
+        year: 2023,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the bipartisan debt ceiling deal, which suspended the debt limit through January 2025 and imposed discretionary spending caps in exchange for avoiding default. Comer supported the bill as a necessary first step in fiscal discipline, though he acknowledged it did not go as far as conservative members desired.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, which extended the 2017 tax cuts, imposed Medicaid work requirements, and cut domestic spending. Comer championed the bill\'s SNAP reforms and government efficiency provisions, consistent with his Oversight Committee work.',
+      },
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act mandating ICE detention of undocumented immigrants charged with violent crimes. Comer had spent years highlighting immigration enforcement failures in his Oversight Committee work and viewed the bill as a necessary corrective.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, highlighting its government efficiency and spending reduction provisions as the legislative complement to his Oversight Committee investigative work. Comer argued the bill\'s Medicaid work requirements and SNAP reforms would reduce waste and better target benefits to Kentuckians in genuine need across the 1st District\'s rural coal and agricultural communities.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Biden Family Investigation — Oversight Committee Reports',
+        year: 2023,
+        month: 11,
+        summary: 'As Oversight Committee Chair, Comer led a sweeping investigation into the business dealings of President Biden\'s family, publishing multiple interim reports alleging influence-peddling schemes. The investigation became one of the defining oversight efforts of the 118th Congress, though it did not result in formal impeachment proceedings against the President himself.',
+      },
+      {
+        title: 'REINS Act — Oversight Provisions',
+        year: 2023,
+        month: 3,
+        summary: 'Championed regulatory rollback legislation through the Oversight Committee, advancing measures to require congressional approval of major agency rules. Comer argued that unchecked regulatory growth by the executive branch was a primary driver of economic burden on Kentucky\'s farmers and small businesses.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'G000558',
+    slug: 'brett-guthrie',
+    name: 'Brett Guthrie',
+    party: 'R',
+    chamber: 'House',
+    district: 2,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 2nd District',
+    bio: 'Brett Guthrie has represented Kentucky\'s 2nd Congressional District since 2009 and chairs the House Committee on Energy and Commerce — one of the broadest committees in Congress, covering health, energy, telecommunications, and consumer protection. A West Point graduate and former Army officer, he holds an MBA from Yale. His Bowling Green-based district is home to major automotive and manufacturing employers, and he has used the Energy and Commerce gavel to shape healthcare policy and energy regulation.',
+    sinceYear: 2009,
+    committees: [
+      { slug: 'hsif', name: 'House Committee on Energy and Commerce', chamber: 'House', role: 'Chair' },
+    ],
+    keyVotes: [
+      {
+        title: 'American Health Care Act',
+        year: 2017,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican bill to repeal and replace the Affordable Care Act, which passed the House 217–213 before failing in the Senate. Guthrie supported the bill\'s Medicaid reforms and market-based insurance provisions, arguing the ACA\'s mandates and regulations were unsustainable.',
+      },
+      {
+        title: 'One Big Beautiful Bill — Energy and Commerce Provisions',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, having helped shape its Energy and Commerce provisions as committee chair. Guthrie\'s committee-drafted sections reformed Medicaid, reduced clean energy subsidies, and expanded domestic energy production authorizations.',
+      },
+      {
+        title: 'National Defense Authorization Act FY2025',
+        year: 2024,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for the NDAA FY2025, supporting provisions important to Fort Knox in his district and maintaining defense industrial partnerships with Kentucky\'s automotive sector. He backed provisions expanding domestic manufacturing requirements for defense components.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, having shaped its healthcare and energy provisions through his chairmanship of the House Energy and Commerce Committee. Guthrie emphasized the bill\'s Medicaid restructuring and domestic energy production expansions as delivering meaningful reform for Kentucky\'s 2nd District, home to Bowling Green\'s major automotive manufacturing employers who benefit from stable energy costs and a leaner regulatory environment.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Lower Costs, More Transparency Act',
+        year: 2023,
+        month: 12,
+        summary: 'Championed bipartisan health care price transparency legislation through the Energy and Commerce Committee, requiring hospitals, insurance plans, and pharmacy benefit managers to disclose costs and pricing data. The bill aimed to give consumers and employers better information to compare health care costs — a priority Guthrie pursued through multiple Congresses.',
+      },
+      {
+        title: 'American Broadband Deployment Act',
+        year: 2023,
+        month: 6,
+        summary: 'Introduced legislation to streamline federal permitting for broadband infrastructure deployment, cutting regulatory barriers that slow rural internet expansion. Kentucky has significant rural broadband gaps, and Guthrie used his Energy and Commerce position to advance deployment acceleration as a complement to federal funding programs.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'M001220',
+    slug: 'morgan-mcgarvey',
+    name: 'Morgan McGarvey',
+    party: 'D',
+    chamber: 'House',
+    district: 3,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 3rd District',
+    bio: 'Morgan McGarvey has represented Kentucky\'s 3rd Congressional District — encompassing Louisville — since 2023, succeeding the retiring John Yarmuth. A former Kentucky state senator who served as Senate Minority Leader, he is the only Democrat in Kentucky\'s congressional delegation. McGarvey focuses on healthcare access, workers\' rights, and economic development for Louisville\'s diverse urban community, and sits on the House Small Business, Veterans\' Affairs, and Budget Committees.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hssm', name: 'House Committee on Small Business', chamber: 'House', role: 'Member' },
+      { slug: 'hsvr', name: 'House Committee on Veterans\' Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hsbu', name: 'House Committee on the Budget', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, arguing the Medicaid work requirements and SNAP cuts would harm Louisville\'s working families and veterans. McGarvey highlighted that tens of thousands of Kentuckians rely on expanded Medicaid through the ACA and that the bill\'s cuts would create health coverage gaps across the district.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Voted against the Laken Riley Act, arguing it established mandatory detention without adequate due process protections and would strain local law enforcement resources. McGarvey expressed concern that the bill conflated immigration status with criminality in ways that would harm immigrant communities in Louisville.',
+      },
+      {
+        title: 'American Rescue Plan Act',
+        year: 2021,
+        month: 3,
+        position: 'For',
+        summary: 'Supported the $1.9 trillion COVID-19 relief package as a state senator and vocal advocate during his predecessor John Yarmuth\'s tenure, then carried those priorities into his House service. As a member since 2023, he has continued supporting robust pandemic recovery investments for Louisville\'s communities hardest hit by the economic downturn.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'Against',
+        summary: 'Voted against the FY2026 budget reconciliation bill as the only Democrat in Kentucky\'s congressional delegation, arguing Medicaid cuts would strip healthcare from hundreds of thousands of Kentuckians who gained coverage under the ACA\'s Medicaid expansion. McGarvey, a member of the House Budget Committee, called the bill a betrayal of Louisville\'s working families and veterans who rely on the programs being slashed to finance tax cuts for the wealthy.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Louisville Veterans Healthcare Access Act',
+        year: 2024,
+        month: 5,
+        summary: 'Introduced legislation improving VA healthcare access for veterans in Louisville and surrounding rural counties, targeting long wait times and gaps in mental health services. McGarvey drew on his Veterans\' Affairs Committee work to identify systemic VA access failures and proposed targeted funding and staffing solutions.',
+      },
+      {
+        title: 'Small Business Workforce Development provisions',
+        year: 2023,
+        month: 9,
+        summary: 'Advanced legislation through the Small Business Committee expanding workforce training partnerships between community colleges and Louisville-area manufacturers. The bill targeted the skilled labor shortage affecting Kentucky\'s growing automotive and logistics sectors, connecting small businesses with SBA-backed apprenticeship and training programs.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'M001184',
+    slug: 'thomas-massie',
+    name: 'Thomas Massie',
+    party: 'R',
+    chamber: 'House',
+    district: 4,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 4th District',
+    bio: 'Thomas Massie has represented Kentucky\'s 4th Congressional District since 2012 and is the House\'s leading libertarian-leaning Republican. An MIT-educated engineer and inventor, he operates a farm in Lewis County and is known for casting lone dissenting votes on legislation — including his own party\'s priorities — when he believes they violate constitutional principles. He sits on the Transportation and Infrastructure and Judiciary Committees and is one of the most independently-minded members of Congress.',
+    sinceYear: 2012,
+    committees: [
+      { slug: 'hspw', name: 'House Committee on Transportation and Infrastructure', chamber: 'House', role: 'Member' },
+      { slug: 'hsju', name: 'House Committee on the Judiciary', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against CARES Act',
+        year: 2020,
+        month: 3,
+        position: 'Against',
+        summary: 'Massie was the only member to attempt to block the $2.2 trillion CARES Act by demanding a recorded vote rather than a voice vote, forcing members to return to Washington during the pandemic. He argued the bill\'s deficit spending was fiscally irresponsible and that the bill lacked sufficient safeguards against waste. His effort drew public condemnation from President Trump but earned praise from fiscal conservatives.',
+      },
+      {
+        title: 'Against Fiscal Responsibility Act',
+        year: 2023,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the bipartisan debt ceiling deal, arguing it did not cut spending sufficiently and simply delayed the inevitable fiscal reckoning. Massie was consistent with his opposition to any debt ceiling increases without meaningful spending reductions — a position he has held since first entering Congress.',
+      },
+      {
+        title: 'Against Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'Against',
+        summary: 'Voted against the Laken Riley Act, one of only a handful of Republicans to do so, citing due process concerns with mandatory detention provisions. Massie argued the bill created detention without adequate judicial review, conflicting with his consistent constitutional absolutism on civil liberties issues.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, viewing its spending reductions and mandatory program reforms as a rare legislative step toward the fiscal restraint he has demanded from his Transportation and Infrastructure and Judiciary Committee seats. Massie, an MIT-trained engineer and Lewis County farmer, argued the bill\'s cuts were long overdue and that Kentucky\'s families deserved a government that lived within its means.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Free Speech Fairness Act',
+        year: 2023,
+        month: 4,
+        summary: 'Introduced legislation removing restrictions on clergy and tax-exempt organizations endorsing political candidates from the pulpit — the so-called "Johnson Amendment" repeal. Massie argued the current law unconstitutionally restricts free speech by conditioning tax exemption on political silence, a position he has advocated through multiple Congresses.',
+      },
+      {
+        title: 'Audit the Fed — House companion legislation',
+        year: 2023,
+        month: 1,
+        summary: 'Introduced the Federal Reserve Transparency Act in the House, requiring a full Government Accountability Office audit of the Federal Reserve\'s monetary policy decisions and open market operations. The bill has passed the House multiple times but never cleared the Senate, and Massie reintroduces it each Congress as a signature issue.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'R000395',
+    slug: 'harold-rogers',
+    name: 'Harold Rogers',
+    party: 'R',
+    chamber: 'House',
+    district: 5,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 5th District',
+    bio: 'Harold Rogers has represented Kentucky\'s 5th Congressional District since 1981, making him one of the longest-serving members of the House of Representatives. Known as the "Prince of Pork" for his ability to direct federal appropriations to eastern Kentucky, he chaired the House Appropriations Committee from 2011 to 2016 and remains a senior member. His Appalachian district faces severe economic challenges from the long decline of coal mining, and Rogers has championed economic diversification and the UNITE anti-drug coalition to combat the region\'s opioid crisis.',
+    sinceYear: 1981,
+    committees: [
+      { slug: 'hsap', name: 'House Committee on Appropriations', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Bipartisan Infrastructure Investment and Jobs Act',
+        year: 2021,
+        month: 11,
+        position: 'For',
+        summary: 'Rogers was one of thirteen House Republicans who voted for the bipartisan infrastructure law, citing the $1.2 trillion bill\'s transformative potential for eastern Kentucky\'s roads, bridges, broadband, and water infrastructure. The Appalachian Regional Commission received significant funding increases, a priority Rogers had championed for decades.',
+      },
+      {
+        title: 'FY2023 Omnibus Appropriations Act',
+        year: 2022,
+        month: 12,
+        position: 'For',
+        summary: 'As a senior Appropriations member, Rogers voted for the bipartisan omnibus spending bill, which included significant funding for eastern Kentucky flood disaster recovery following catastrophic 2022 flooding that killed 43 people and displaced thousands. He secured emergency supplemental appropriations specifically for the disaster-affected 5th District communities.',
+      },
+      {
+        title: 'SUPPORT for Patients and Communities Act',
+        year: 2018,
+        month: 10,
+        position: 'For',
+        summary: 'Voted for the comprehensive opioid response legislation, one of the most significant federal anti-addiction measures in a generation. Rogers had spent over a decade building the UNITE coalition to combat drug addiction in Appalachian Kentucky and viewed the bill as a culmination of that advocacy, including provisions expanding treatment access and strengthening prescription monitoring.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, using his senior Appropriations Committee position to secure continued opioid treatment and Appalachian infrastructure funding within the bill\'s overall spending framework. Rogers argued the bill\'s tax cut extensions and spending efficiency measures would benefit eastern Kentucky\'s communities without sacrificing the targeted federal investments the region depends on for economic recovery.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'SOAR Act — Shaping Our Appalachian Region',
+        year: 2014,
+        month: 1,
+        summary: 'Rogers co-founded SOAR, a public-private economic development initiative for eastern Kentucky, and authored federal legislation to support it, targeting diversification away from coal dependency into technology, tourism, and advanced manufacturing. The effort has attracted hundreds of millions in investment to the region over the following decade.',
+      },
+      {
+        title: 'Eastern Kentucky RAIN (Reconnecting Appalachian Infrastructure for the Next Generation)',
+        year: 2022,
+        month: 8,
+        summary: 'Led the effort to secure major federal disaster recovery and infrastructure investment for eastern Kentucky following the devastating July 2022 floods, working through his Appropriations Committee connections to secure hundreds of millions for road, bridge, and water system reconstruction across the 5th District.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'B001282',
+    slug: 'andy-barr',
+    name: 'Andy Barr',
+    party: 'R',
+    chamber: 'House',
+    district: 6,
+    state: 'Kentucky',
+    currentTitle: 'U.S. Representative, Kentucky 6th District',
+    bio: 'Andy Barr has represented Kentucky\'s 6th Congressional District — home to Lexington and the Bluegrass horse country — since 2013. He sits on the House Financial Services Committee and the House Foreign Affairs Committee, and is a member of the China competition select committee. A University of Kentucky Law graduate, Barr has focused on financial regulation, China policy, and trade issues that affect Kentucky\'s thoroughbred horse industry and bourbon sector.',
+    sinceYear: 2013,
+    committees: [
+      { slug: 'hszs', name: 'House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party', chamber: 'House', role: 'Member' },
+      { slug: 'hsba', name: 'House Committee on Financial Services', chamber: 'House', role: 'Member' },
+      { slug: 'hsfa', name: 'House Committee on Foreign Affairs', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against Dodd-Frank Rollback Amendments',
+        year: 2018,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the Economic Growth, Regulatory Relief, and Consumer Protection Act, which rolled back some Dodd-Frank banking regulations for community and regional banks. Barr, as a Financial Services Committee member, argued the original regulations imposed excessive compliance costs on smaller banks that serve Kentucky communities and stifled credit availability.',
+      },
+      {
+        title: 'Biosimilars legislation — Financial Services China decoupling',
+        year: 2023,
+        month: 3,
+        position: 'For',
+        summary: 'Voted for legislation on the China Competition select committee restricting Chinese investment in U.S. financial markets and limiting American capital flows into sensitive Chinese technology sectors. Barr has been a consistent advocate for financial decoupling from China, arguing that U.S. capital markets should not fund the Chinese military-industrial complex.',
+      },
+      {
+        title: 'Against Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'Against',
+        summary: 'Voted against the Inflation Reduction Act, arguing the bill\'s corporate minimum tax and clean energy mandates would raise costs for Kentucky businesses and undermine the coal and natural gas industries that remain significant employers in his district\'s surrounding region. He also objected to Medicare drug price negotiation provisions.',
+      },
+      {
+        title: 'FY2026 Budget Reconciliation',
+        year: 2026,
+        month: 4,
+        position: 'For',
+        summary: 'Voted for the FY2026 budget reconciliation package, highlighting the rollback of clean energy mandates and financial regulatory relief as critical to Lexington\'s horse industry and Kentucky\'s bourbon and financial services sectors. Barr, through his Financial Services Committee seat, emphasized the bill\'s deregulatory provisions as protecting the community banks and regional lenders that finance the Bluegrass Region\'s agricultural economy.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Horse Racing Integrity and Safety Act implementation provisions',
+        year: 2022,
+        month: 6,
+        summary: 'Worked to ensure effective implementation of the Horse Racing Integrity and Safety Act, which created a national anti-doping authority for thoroughbred racing — a signature issue for Kentucky\'s Lexington-centered horse industry. Barr has been a consistent advocate for maintaining the integrity and competitiveness of thoroughbred racing, which generates billions in economic activity in his district.',
+      },
+      {
+        title: 'Financial Services Cyber Resilience Act',
+        year: 2023,
+        month: 9,
+        summary: 'Introduced legislation strengthening cybersecurity requirements for financial institutions and harmonizing the patchwork of federal and state cyber regulations that banks must navigate. Barr argued that duplicative regulatory frameworks impose unnecessary compliance costs while leaving systemic gaps that sophisticated adversaries — particularly China-linked hackers — can exploit.',
+      },
+    ],
+  },
+]
+
+export const kyDelegationProfiles: Record<string, PoliticianProfile> =
+  Object.fromEntries(memberData.map(d => [d.slug, buildCongressProfile(d)]))

@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect, useMemo, Suspense } from 'react'
 import Link from 'next/link'
+import { CongressionalMapSection } from '@/components/map/CongressionalMapSection'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { SearchBar } from '@/components/ui/SearchBar'
 import newsom from '@/data/politicians/gavin-newsom'
@@ -12,6 +13,7 @@ import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
 import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
 import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
 import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { allCongressMembers, type CongressMember } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
@@ -19,7 +21,8 @@ import type { PoliticianProfile } from '@political-intel/types'
 import type { Bill } from '@political-intel/types'
 import type { Committee } from '@/data/committees'
 
-const allPoliticians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const fullProfiles = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
 type ResultType = 'politician' | 'bill' | 'committee'
 
@@ -30,11 +33,26 @@ interface SearchResults {
   committees: Committee[]
 }
 
-function score(text: string, q: string): number {
-  const t = text.toLowerCase()
-  if (t === q) return 3
-  if (t.startsWith(q)) return 2
-  if (t.includes(q)) return 1
+// Scoring: exact match > starts-with > includes; name match > role/state match
+function scorePolitician(p: PoliticianProfile, q: string): number {
+  const name = p.name.toLowerCase()
+  if (name === q) return 10
+  if (name.startsWith(q)) return 8
+  if (name.includes(q)) return 6
+  if (p.currentTitle.toLowerCase().includes(q)) return 3
+  if (p.state.toLowerCase().includes(q)) return 2
+  if (p.baselineCard.party.toLowerCase().includes(q)) return 1
+  if (p.bio?.toLowerCase().includes(q)) return 1
+  return 0
+}
+
+function scoreMember(m: CongressMember, q: string): number {
+  const name = m.name.toLowerCase()
+  if (name === q) return 9
+  if (name.startsWith(q)) return 7
+  if (name.includes(q)) return 5
+  if (m.title.toLowerCase().includes(q)) return 2
+  if (m.state.toLowerCase().includes(q)) return 1
   return 0
 }
 
@@ -43,25 +61,21 @@ function runSearch(query: string): SearchResults {
   if (!q) return { politicians: [], members: [], bills: [], committees: [] }
 
   const politicians = allPoliticians
-    .filter(p =>
-      p.name.toLowerCase().includes(q) ||
-      p.currentTitle.toLowerCase().includes(q) ||
-      p.state.toLowerCase().includes(q) ||
-      p.baselineCard.party.toLowerCase().includes(q) ||
-      p.bio?.toLowerCase().includes(q)
-    )
-    .sort((a, b) => score(b.name, q) - score(a.name, q))
+    .map(p => ({ p, s: scorePolitician(p, q) }))
+    .filter(({ s }) => s > 0)
+    .sort((a, b) => {
+      // Full profiles rank above stubs at same score
+      const aStub = stubProfileSlugs.has(a.p.slug) ? 0 : 1
+      const bStub = stubProfileSlugs.has(b.p.slug) ? 0 : 1
+      return b.s - a.s || bStub - aStub
+    })
+    .map(({ p }) => p)
 
   const members = allCongressMembers
-    .filter(m =>
-      m.name.toLowerCase().includes(q) ||
-      m.title.toLowerCase().includes(q) ||
-      m.state.toLowerCase().includes(q) ||
-      (m.party === 'D' && 'democrat'.includes(q)) ||
-      (m.party === 'R' && 'republican'.includes(q)) ||
-      (m.party === 'I' && 'independent'.includes(q))
-    )
-    .sort((a, b) => score(b.name, q) - score(a.name, q))
+    .map(m => ({ m, s: scoreMember(m, q) }))
+    .filter(({ s }) => s > 0)
+    .sort((a, b) => b.s - a.s)
+    .map(({ m }) => m)
     .slice(0, 30)
 
   const bills = allBills.filter(b =>
@@ -110,7 +124,77 @@ function SectionHeader({ label, count }: { label: string; count: number }) {
   )
 }
 
-function SearchResults({ query }: { query: string }) {
+function EmptyState({ query }: { query: string }) {
+  const [email, setEmail] = useState('')
+  const [sent, setSent] = useState(false)
+
+  async function handleNotify(e: React.FormEvent) {
+    e.preventDefault()
+    try {
+      await fetch(process.env.NEXT_PUBLIC_ALERT_ENDPOINT ?? '/api/alerts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, politicianId: query.toLowerCase().replace(/\s+/g, '-'), politicianName: query, source: 'search-empty', notificationType: 'profile-added' }),
+      })
+    } catch { /* static site — fall through */ }
+    setSent(true)
+  }
+
+  return (
+    <div className="py-16 px-4 text-center max-w-md mx-auto">
+      <p className="font-mono text-[10px] tracking-widest text-ink-4 mb-2">NO RESULTS</p>
+      <p className="text-base text-ink mb-1">
+        We don&apos;t have a full profile for <span className="font-medium">&ldquo;{query}&rdquo;</span> yet.
+      </p>
+      <p className="text-sm text-ink-3 mb-8 leading-relaxed">
+        Our research process requires verifying every claim against a public source before publication.
+      </p>
+
+      {sent ? (
+        <div className="mb-8 px-4 py-3 bg-surface border border-teal-800 rounded text-sm text-ink-2">
+          ✓ You&apos;ll be notified when a matching profile is added.
+        </div>
+      ) : (
+        <form onSubmit={handleNotify} className="mb-8">
+          <p className="text-xs text-ink-3 mb-3 font-mono tracking-wide">GET NOTIFIED WHEN THIS PROFILE IS ADDED</p>
+          <div className="flex gap-2">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              className="flex-1 bg-surface border border-border rounded px-3 py-2 text-sm text-ink placeholder:text-ink-4 focus:outline-none focus:border-accent/50 transition-colors"
+            />
+            <button
+              type="submit"
+              className="shrink-0 px-4 py-2 bg-accent text-bg text-sm font-mono rounded hover:bg-accent/90 transition-colors"
+            >
+              Notify me
+            </button>
+          </div>
+        </form>
+      )}
+
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <Link
+          href="/politicians"
+          className="px-4 py-2 bg-surface border border-border rounded text-xs font-mono text-ink-3 hover:text-accent hover:border-accent transition-colors"
+        >
+          BROWSE ALL POLITICIANS →
+        </Link>
+        <Link
+          href="/bills"
+          className="px-4 py-2 bg-surface border border-border rounded text-xs font-mono text-ink-3 hover:text-accent hover:border-accent transition-colors"
+        >
+          SEARCH BILLS →
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+function SearchResultsView({ query }: { query: string }) {
   const { politicians, members, bills, committees: matchedCommittees } = useMemo(
     () => runSearch(query),
     [query]
@@ -119,23 +203,23 @@ function SearchResults({ query }: { query: string }) {
 
   if (!query.trim()) {
     return (
-      <div className="text-center py-20">
-        <p className="text-ink-3 text-sm">Enter a search term above to get started.</p>
+      <div className="mt-4">
+        <div className="mb-8 pb-8 border-b border-border">
+          <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1">FIND YOUR REPRESENTATIVE</p>
+          <p className="text-xs text-ink-3">Click a state to see its governor and congressional delegation. CA, FL, MS, NJ, NY, and TX have district-level maps.</p>
+        </div>
+        <CongressionalMapSection />
       </div>
     )
   }
 
   if (total === 0) {
-    return (
-      <div className="text-center py-20">
-        <p className="text-ink-2 text-sm mb-1">No results for <span className="text-ink font-medium">"{query}"</span></p>
-        <p className="text-ink-3 text-xs">Try searching by name, bill number, committee name, or topic.</p>
-      </div>
-    )
+    return <EmptyState query={query} />
   }
 
   return (
     <div className="space-y-10">
+      {/* Profiles always first */}
       {politicians.length > 0 && (
         <section>
           <SectionHeader label="PROFILES" count={politicians.length} />
@@ -151,9 +235,15 @@ function SearchResults({ query }: { query: string }) {
                   <p className="text-sm font-medium text-ink group-hover:text-accent transition-colors truncate">{p.name}</p>
                   <p className="text-xs text-ink-3 truncate">{p.currentTitle}</p>
                 </div>
-                <span className="font-mono text-[9px] px-1.5 py-0.5 rounded border text-accent/80 border-accent/30 bg-accent/5 shrink-0">
-                  PROFILE
-                </span>
+                {stubProfileSlugs.has(p.slug) ? (
+                  <span className="font-mono text-[9px] px-1.5 py-0.5 rounded border text-amber-600 border-amber-800/60 bg-amber-950/20 shrink-0">
+                    IN PROGRESS
+                  </span>
+                ) : (
+                  <span className="font-mono text-[9px] px-1.5 py-0.5 rounded border text-accent/80 border-accent/30 bg-accent/5 shrink-0">
+                    PROFILE
+                  </span>
+                )}
               </Link>
             ))}
           </div>
@@ -256,7 +346,7 @@ function SearchPageInner() {
   }, [searchParams])
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-10">
+    <div className="max-w-6xl mx-auto px-6 py-10">
       <h1 className="text-2xl font-semibold text-ink mb-6">Search</h1>
 
       <div className="mb-8">
@@ -268,7 +358,7 @@ function SearchPageInner() {
         />
       </div>
 
-      <SearchResults query={query} />
+      <SearchResultsView query={query} />
     </div>
   )
 }

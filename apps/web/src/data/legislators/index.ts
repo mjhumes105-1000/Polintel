@@ -1,11 +1,7 @@
 import type { EnrichedLegislator, EnrichmentMap } from './types'
-import caEnrichmentRaw from './ca-enrichment.json'
-import nonCaEnrichmentRaw from './non-ca-enrichment.json'
+import allEnrichmentRaw from './all-enrichment.json'
 
-export const caEnrichment: EnrichmentMap = caEnrichmentRaw as EnrichmentMap
-export const nonCaEnrichment: EnrichmentMap = nonCaEnrichmentRaw as EnrichmentMap
-
-const allEnrichment: EnrichmentMap = { ...caEnrichment, ...nonCaEnrichment }
+const allEnrichment: EnrichmentMap = allEnrichmentRaw as EnrichmentMap
 
 export function getLegislator(bioguide: string): EnrichedLegislator | null {
   return allEnrichment[bioguide] ?? null

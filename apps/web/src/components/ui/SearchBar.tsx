@@ -13,15 +13,17 @@ import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
 import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
 import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
 import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
+import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
 
-const politicians = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const fullProfiles = [newsom, ...Object.values(caDelegationProfiles), ...Object.values(msDelegationProfiles), ...Object.values(njDelegationProfiles), ...Object.values(flDelegationProfiles), ...Object.values(txDelegationProfiles), ...Object.values(nyDelegationProfiles)]
+const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
 interface Result {
-  type: 'politician' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
+  type: 'politician' | 'politician-stub' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
   label: string
   sub: string
   href?: string
@@ -29,6 +31,15 @@ interface Result {
   stateKey?: string
   photoUrl?: string
   flagEmoji?: string
+  score: number
+}
+
+function scoreStr(text: string, q: string): number {
+  const t = text.toLowerCase()
+  if (t === q) return 10
+  if (t.startsWith(q)) return 8
+  if (t.includes(q)) return 5
+  return 0
 }
 
 function getResults(query: string): Result[] {
@@ -36,43 +47,51 @@ function getResults(query: string): Result[] {
   if (!q) return []
   const results: Result[] = []
 
-  for (const p of politicians) {
-    if (
-      p.name.toLowerCase().includes(q) ||
-      p.state.toLowerCase().includes(q) ||
-      p.currentTitle.toLowerCase().includes(q) ||
-      p.baselineCard.party.toLowerCase().includes(q)
-    ) {
-      results.push({
-        type: 'politician',
-        label: p.name,
-        sub: p.currentTitle,
-        href: `/politicians/${p.slug}`,
-        photoUrl: p.photoUrl,
-      })
-    }
+  // Politicians — always checked first, scored by name match strength
+  for (const p of allPoliticians) {
+    const nameScore = scoreStr(p.name, q)
+    const roleScore = p.currentTitle.toLowerCase().includes(q) ? 3 : 0
+    const stateScore = p.state.toLowerCase().includes(q) ? 2 : 0
+    const partyScore = p.baselineCard.party.toLowerCase().includes(q) ? 1 : 0
+    const s = nameScore || roleScore || stateScore || partyScore
+    if (!s) continue
+    const isStub = stubProfileSlugs.has(p.slug)
+    results.push({
+      type: isStub ? 'politician-stub' : 'politician',
+      label: p.name,
+      sub: p.currentTitle,
+      href: `/politicians/${p.slug}`,
+      photoUrl: p.photoUrl,
+      // Full profiles rank above stubs at the same score
+      score: s + (isStub ? 0 : 0.5),
+    })
   }
 
+  // Congress members — second tier
+  let memberCount = 0
   for (const m of allCongressMembers) {
-    if (
-      m.name.toLowerCase().includes(q) ||
-      m.title.toLowerCase().includes(q) ||
-      m.state.toLowerCase().includes(q) ||
+    const nameScore = scoreStr(m.name, q)
+    const roleScore = m.title.toLowerCase().includes(q) ? 2 : 0
+    const stateScore = m.state.toLowerCase().includes(q) ? 1 : 0
+    const partyScore =
       (m.party === 'D' && 'democrat'.startsWith(q)) ||
       (m.party === 'R' && 'republican'.startsWith(q))
-    ) {
-      results.push({
-        type: 'member',
-        label: m.name,
-        sub: m.title,
-        href: `https://bioguide.congress.gov/search/bio/${m.bioguide}`,
-        isExternal: true,
-        photoUrl: `https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`,
-      })
-    }
-    if (results.length >= 6) break
+        ? 1 : 0
+    const s = nameScore || roleScore || stateScore || partyScore
+    if (!s) continue
+    results.push({
+      type: 'member',
+      label: m.name,
+      sub: m.title,
+      href: `https://bioguide.congress.gov/search/bio/${m.bioguide}`,
+      isExternal: true,
+      photoUrl: `https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`,
+      score: s - 1, // members rank below profile entries at same name score
+    })
+    if (++memberCount >= 3) break
   }
 
+  // Presidential candidates without profiles
   for (const c of presidentialCandidates2028) {
     if (!c.profileSlug && (
       c.name.toLowerCase().includes(q) ||
@@ -84,10 +103,12 @@ function getResults(query: string): Result[] {
         label: c.name,
         sub: `${c.currentTitle} · 2028 Presidential`,
         href: undefined,
+        score: 4,
       })
     }
   }
 
+  // Bills — lower priority than politician entries
   for (const bill of allBills) {
     if (
       bill.title.toLowerCase().includes(q) ||
@@ -100,11 +121,12 @@ function getResults(query: string): Result[] {
         label: bill.title,
         sub: `${bill.number} · ${bill.jurisdiction}`,
         href: `/bills/${bill.slug}`,
+        score: 2,
       })
     }
-    if (results.length >= 8) break
   }
 
+  // Committees
   for (const committee of committees) {
     if (
       committee.name.toLowerCase().includes(q) ||
@@ -116,11 +138,12 @@ function getResults(query: string): Result[] {
         label: committee.name,
         sub: `${committee.chamber} Committee`,
         href: `/committees/${committee.slug}`,
+        score: 2,
       })
     }
-    if (results.length >= 8) break
   }
 
+  // Countries / economy
   for (const country of countries) {
     if (
       country.name.toLowerCase().includes(q) ||
@@ -132,11 +155,12 @@ function getResults(query: string): Result[] {
         sub: `${country.region} · #${country.tradePartnerRank} U.S. trade partner`,
         href: `/economy/${country.slug}`,
         flagEmoji: country.flagEmoji,
+        score: 2,
       })
     }
-    if (results.length >= 8) break
   }
 
+  // States
   for (const [key, info] of Object.entries(stateData)) {
     if (
       info.name.toLowerCase().includes(q) ||
@@ -149,16 +173,20 @@ function getResults(query: string): Result[] {
         sub: info.governor ? `Gov. ${info.governor.name} · ${info.governor.party === 'D' ? 'Democrat' : 'Republican'}` : 'Governor data updating',
         href: `/explore`,
         stateKey: key,
+        score: 1,
       })
     }
-    if (results.length >= 8) break
   }
 
-  return results.slice(0, 8)
+  // Sort by score descending, then return top 8
+  return results
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 8)
 }
 
 const typeLabel: Record<Result['type'], string> = {
   politician: 'PROFILE',
+  'politician-stub': 'IN PROGRESS',
   member: 'CONGRESS',
   state: 'STATE',
   candidate: 'CANDIDATE',
@@ -169,6 +197,7 @@ const typeLabel: Record<Result['type'], string> = {
 
 const typeBadgeColor: Record<Result['type'], string> = {
   politician: 'text-accent/80 border-accent/30 bg-accent/5',
+  'politician-stub': 'text-amber-600 border-amber-800/60 bg-amber-950/20',
   member: 'text-ink-3 border-border bg-surface-2',
   state: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950',
   candidate: 'text-violet-700 border-violet-300 bg-violet-100 dark:text-violet-400 dark:border-violet-900 dark:bg-violet-950',
@@ -264,9 +293,17 @@ export function SearchBar({
         <div className="absolute z-50 mt-1 w-full bg-surface border border-border rounded shadow-2xl overflow-hidden">
           {results.length === 0 ? (
             <div className="px-4 py-3">
-              <p className="text-xs text-ink-3">
+              <p className="text-xs text-ink-3 mb-0.5">
                 No results for <span className="text-ink-2">&ldquo;{query}&rdquo;</span>
               </p>
+              {navigateOnSubmit && (
+                <button
+                  onClick={handleSubmit as unknown as React.MouseEventHandler}
+                  className="text-[10px] font-mono text-accent/70 hover:text-accent transition-colors"
+                >
+                  SEARCH ALL &amp; GET NOTIFIED →
+                </button>
+              )}
             </div>
           ) : (
             <ul>

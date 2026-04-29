@@ -1,15 +1,84 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { track } from '@/lib/analytics'
 
 const BENEFITS = [
-  'Save comparisons and revisit them anytime',
   'Export trade data to CSV or PDF',
-  'Set exposure alerts for countries you track',
   'View historical trend charts (5-year)',
+  'Save comparisons and revisit them anytime',
+  'Set exposure alerts for countries you track',
   'Generate AI-drafted policy briefings',
 ]
+
+function ProWaitlistForm({ trigger }: { trigger?: string }) {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setStatus('loading')
+    track('economy.waitlist.submit', { trigger: trigger ?? 'unknown' })
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_ALERT_ENDPOINT ?? '/api/alerts'
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.toLowerCase().trim(),
+          politicianId: 'pro-waitlist',
+          politicianName: 'Pro Waitlist',
+          notificationType: 'pro-launch',
+          source: trigger ?? 'upgrade-modal',
+          createdAt: new Date().toISOString(),
+        }),
+      })
+    } catch { /* static site — fall through */ }
+    // Persist intent client-side regardless of API availability
+    try {
+      const stored = JSON.parse(localStorage.getItem('poliintel_waitlist') ?? '[]')
+      if (!stored.includes(email.toLowerCase().trim())) {
+        localStorage.setItem('poliintel_waitlist', JSON.stringify([...stored, email.toLowerCase().trim()]))
+      }
+    } catch { /* storage unavailable */ }
+    setStatus('success')
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="flex items-center gap-2 px-4 py-3 bg-teal-950/30 border border-teal-800 rounded">
+        <span className="text-teal-400 text-sm shrink-0">✓</span>
+        <p className="text-sm text-ink-2">
+          You&apos;re on the list. We&apos;ll notify you when Pro launches.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        className="w-full bg-bg border border-border rounded px-3 py-2.5 text-sm text-ink placeholder:text-ink-4 focus:outline-none focus:border-accent/50 transition-colors"
+      />
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        onClick={() => track('economy.waitlist.clicked', { trigger: trigger ?? 'unknown' })}
+        className="w-full text-center font-mono text-[10px] tracking-widest py-2.5 rounded bg-accent/15 border border-accent/40 text-accent hover:bg-accent/25 disabled:opacity-50 transition-colors font-semibold"
+      >
+        {status === 'loading' ? '…' : 'JOIN PRO WAITLIST →'}
+      </button>
+      <p className="text-center font-mono text-[9px] text-ink-4">
+        Free tier stays fully open — no credit card required.
+      </p>
+    </form>
+  )
+}
 
 export function UpgradeModal({
   open,
@@ -20,7 +89,6 @@ export function UpgradeModal({
   onClose: () => void
   trigger?: string
 }) {
-  // Lock body scroll while open
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
     return () => { document.body.style.overflow = '' }
@@ -76,18 +144,11 @@ export function UpgradeModal({
             ))}
           </ul>
 
-          {/* CTA */}
-          <a
-            href="/upgrade"
-            onClick={() => track('economy.upgrade.clicked', { trigger: trigger ?? 'unknown' })}
-            className="w-full text-center font-mono text-[10px] tracking-widest py-2.5 rounded bg-accent text-bg hover:bg-accent-bright transition-colors font-semibold"
-          >
-            UPGRADE TO PRO →
-          </a>
-
-          <p className="text-center font-mono text-[9px] text-ink-4">
-            Free tier remains fully open — public data, compare tool, all country profiles.
-          </p>
+          {/* Waitlist CTA */}
+          <div className="border-t border-border pt-4">
+            <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-3">GET NOTIFIED WHEN PRO LAUNCHES</p>
+            <ProWaitlistForm trigger={trigger} />
+          </div>
         </div>
       </div>
     </div>

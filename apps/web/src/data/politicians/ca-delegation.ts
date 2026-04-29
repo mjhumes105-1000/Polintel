@@ -24,6 +24,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Schiff voted against confirming Pete Hegseth as Secretary of Defense in January 2025, citing concerns about Hegseth\'s qualifications and conduct — one of his first significant Senate floor votes.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Schiff, a member of the Senate Judiciary Committee, voted against the FY2026 reconciliation package, warning that its Medicaid cuts would strip healthcare from millions of Californians and that gutting clean energy incentives would undermine his state\'s climate leadership.' },
+    ],
     notableBill: {
       title: 'Protecting Democracy Act',
       year: 2025,
@@ -56,6 +59,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Padilla strongly opposed Republican budget reconciliation proposals in 2025 that would have cut Medicaid funding, warning that millions of Californians — including many in immigrant communities — depend on the program for healthcare coverage.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Padilla, a member of both the Senate Judiciary and Intelligence Committees, opposed the FY2026 reconciliation bill, arguing that proposed Medicaid cuts would devastate immigrant communities and low-income families across California who rely on the program for basic healthcare.' },
+    ],
     notableBill: {
       title: 'Dream and Promise Act',
       year: 2023,
@@ -92,6 +98,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'LaMalfa voted against the IRA, opposing its climate spending provisions and arguing they would raise energy costs for rural Californians.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'LaMalfa, a member of the House Agriculture and Natural Resources Committees, backed the FY2026 reconciliation package, emphasizing its tax relief for Northern California\'s farming and timber communities and its rollback of costly environmental regulations that he argued stifled rural economies.' },
+    ],
     notableBill: {
       title: 'Forest Management and Wildfire Prevention Act',
       year: 2023,
@@ -130,6 +139,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Huffman strongly supported the IRA\'s historic investment in clean energy, calling it the most significant climate legislation in American history.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Huffman, Ranking Member of the House Natural Resources Committee, voted against the FY2026 reconciliation bill, warning that its rollback of clean energy tax credits would devastate California\'s renewable energy sector and that proposed cuts to public lands protections threatened his North Coast district\'s forests and watersheds.' },
+    ],
     topSectors: [
       { category: 'Environmental Groups', amount: 380000, percentage: 35 },
       { category: 'Individual Contributors', amount: 490000, percentage: 45 },
@@ -163,6 +175,9 @@ const memberData: CongressMemberData[] = [
       year: 2023,
       summary: 'Kiley joined the House Freedom Caucus bloc in opposing government funding stopgaps, demanding deeper spending cuts.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Kiley, a member of the House Agriculture Committee, supported the FY2026 reconciliation bill as a long-overdue effort to reduce federal spending and eliminate regulatory burdens on California\'s rural agricultural communities, highlighting border security provisions he said would reduce strain on Northern California law enforcement.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 920000, percentage: 58 },
       { category: 'Small-Dollar Donors', amount: 480000, percentage: 30 },
@@ -195,6 +210,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Thompson supported the IRA\'s Medicare drug negotiation provisions, a longtime Ways & Means priority.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Thompson, a senior Ways & Means Committee member, voted against the FY2026 reconciliation bill, arguing that its proposed changes to Medicare drug pricing protections would raise prescription costs for seniors in his Napa Valley district and that its tax provisions disproportionately benefited the wealthy over working families.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 850000, percentage: 50 },
       { category: 'Wine & Agriculture Interests', amount: 340000, percentage: 20 },
@@ -223,6 +241,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'McClintock opposed the CHIPS Act as corporate welfare, maintaining his consistent opposition to targeted industrial subsidies regardless of national security framing.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'McClintock, a House Natural Resources and Judiciary Committee member, enthusiastically backed the FY2026 reconciliation bill, calling it a critical step toward fiscal discipline and praising provisions that would reduce federal land-use restrictions burdening Sierra Nevada timber operators in his district.' },
+    ],
     notableBill: {
       title: 'Protecting Access to Public Lands Act',
       year: 2023,
@@ -261,6 +282,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Bera supported the $61 billion Ukraine aid package, arguing that democratic allies must be sustained against authoritarian aggression.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Bera, a physician and House Foreign Affairs and Science Committee member, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would harm the diverse Sacramento-area communities in his district and that gutting pandemic preparedness funding undermined the global health security work he championed on Foreign Affairs.' },
+    ],
     topSectors: [
       { category: 'Healthcare & Medical', amount: 520000, percentage: 38 },
       { category: 'Individual Contributors', amount: 480000, percentage: 35 },
@@ -293,6 +317,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Matsui supported the CHIPS Act semiconductor investment, highlighting the importance of domestic manufacturing for Sacramento\'s tech corridor.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Matsui, a senior House Energy & Commerce Committee member, opposed the FY2026 reconciliation bill, warning that its rollback of telehealth funding and Medicaid coverage would reverse years of progress in expanding healthcare access for Sacramento\'s seniors and low-income residents.' },
+    ],
     topSectors: [
       { category: 'Healthcare & Pharma', amount: 480000, percentage: 42 },
       { category: 'Telecom & Tech', amount: 340000, percentage: 30 },
@@ -326,6 +353,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'A lead proponent of the $1.2 trillion infrastructure bill, Garamendi championed its port modernization and water infrastructure components for his delta district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Garamendi, a House Armed Services and Transportation Committee member, voted against the FY2026 reconciliation bill, arguing that cuts to infrastructure programs would harm Port of Stockton modernization efforts and that reductions to military base community programs would undermine Travis and Beale Air Force Bases in his district.' },
+    ],
     topSectors: [
       { category: 'Defense Contractors', amount: 390000, percentage: 32 },
       { category: 'Labor & Unions', amount: 370000, percentage: 30 },
@@ -359,6 +389,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Harder supported the $1.9 trillion COVID relief package, pointing to its expanded child tax credits and small business relief as essential for Modesto-area families.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Harder, a House Agriculture Committee member representing the Central Valley\'s Modesto area, voted against the FY2026 reconciliation bill, warning that Medicaid cuts would harm farmworker families in his district and that proposed reductions to SNAP and agricultural support programs would destabilize the Central Valley farming economy.' },
+    ],
     topSectors: [
       { category: 'Agriculture', amount: 410000, percentage: 34 },
       { category: 'Individual Contributors', amount: 485000, percentage: 40 },
@@ -392,6 +425,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'DeSaulnier championed the infrastructure bill\'s BART and Bay Area transit funding provisions as critical to reducing Highway 680 and I-80 congestion.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'DeSaulnier, a House Education & Workforce and Transportation Committee member, voted against the FY2026 reconciliation bill, contending that cuts to worker safety programs and public transit investment would harm Contra Costa County commuters and undermine the labor protections he has championed throughout his career.' },
+    ],
     topSectors: [
       { category: 'Labor & Unions', amount: 410000, percentage: 38 },
       { category: 'Individual Contributors', amount: 380000, percentage: 35 },
@@ -428,6 +464,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Pelosi voted against the House Republican rules package at the start of the 119th Congress, arguing it undermined minority rights and stacked the procedural deck against Democratic amendments.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Pelosi, the Speaker Emerita representing San Francisco, voted against the FY2026 reconciliation bill and used her platform to rally Democratic opposition, calling it a generational assault on Medicaid, clean energy, and the social contract that her San Francisco constituents depend on.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 6500000, percentage: 65 },
       { category: 'Securities & Investment', amount: 1500000, percentage: 15 },
@@ -461,6 +500,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Simon opposed House Republican stopgap spending bills that would have cut community development and social service funding critical to her Oakland district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Simon, a House Judiciary and Transportation Committee member representing Oakland and Berkeley, voted against the FY2026 reconciliation bill, arguing that its Medicaid cuts would devastate low-income communities and that reductions to reentry and justice programs would reverse the criminal justice reforms she has championed throughout her career.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1200000, percentage: 52 },
       { category: 'Small-Dollar Donors', amount: 810000, percentage: 35 },
@@ -494,6 +536,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Gray has taken a bipartisan approach on water infrastructure votes, reflecting his competitive district\'s prioritization of agricultural reliability over partisan positioning.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Gray, a House Agriculture and Transportation Committee member representing the competitive Merced-area district, voted against the FY2026 reconciliation bill, arguing that cuts to Medicaid and agricultural assistance programs would harm the Central Valley farmworker families and rural communities he was elected to represent.' },
+    ],
     topSectors: [
       { category: 'Agriculture', amount: 480000, percentage: 40 },
       { category: 'Individual Contributors', amount: 420000, percentage: 35 },
@@ -527,6 +572,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Swalwell voted to impeach President Trump on both occasions and served as a House manager in the second impeachment trial.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Swalwell, a House Intelligence and Judiciary Committee member, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would hurt Alameda County families and that reductions to intelligence oversight funding undermined the national security priorities he has championed on the Intelligence Committee.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1100000, percentage: 55 },
       { category: 'Tech Industry', amount: 600000, percentage: 30 },
@@ -560,6 +608,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Though elected in 2022, Mullin championed CHIPS Act implementation as directly beneficial to semiconductor firms along the Peninsula.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Mullin, a House Science and Transportation Committee member representing Silicon Valley\'s southern corridor, voted against the FY2026 reconciliation bill, warning that cuts to federal R&D investment and clean energy programs would undermine innovation infrastructure that underpins the tech economy in his district.' },
+    ],
     topSectors: [
       { category: 'Tech Industry', amount: 680000, percentage: 45 },
       { category: 'Individual Contributors', amount: 530000, percentage: 35 },
@@ -593,6 +644,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Liccardo has taken a nuanced position on tech regulation, opposing blanket deregulation while supporting targeted rules for AI accountability.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Liccardo, a House Judiciary and Foreign Affairs Committee member and former San Jose Mayor, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would undo the community health investments he championed as mayor and that reductions to workforce development funding would harm Silicon Valley\'s working-class residents.' },
+    ],
     topSectors: [
       { category: 'Tech Industry', amount: 1400000, percentage: 52 },
       { category: 'Individual Contributors', amount: 900000, percentage: 33 },
@@ -627,6 +681,9 @@ const memberData: CongressMemberData[] = [
       year: 2023,
       summary: 'Khanna consistently voted against open-ended military authorization bills, championing congressional war powers reclamation.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Khanna, a House Armed Services, Science, and Oversight Committee member representing the heart of Silicon Valley, voted against the FY2026 reconciliation bill, arguing that its deep cuts to social safety-net programs would harm tech workers and gig economy employees while its tax cuts overwhelmingly benefited corporations and the ultra-wealthy.' },
+    ],
     topSectors: [
       { category: 'Tech Industry', amount: 1200000, percentage: 48 },
       { category: 'Individual Contributors', amount: 900000, percentage: 36 },
@@ -659,6 +716,9 @@ const memberData: CongressMemberData[] = [
       year: 2012,
       summary: 'Lofgren was one of the most vocal House opponents of SOPA, helping lead the legislative defeat of the bill following the internet-wide protest.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Lofgren, Ranking Member of the House Science Committee representing San Jose, voted against the FY2026 reconciliation bill, warning that cuts to federal science and research funding would cripple U.S. technological competitiveness and that Medicaid reductions would harm lower-income immigrant communities throughout her Silicon Valley district.' },
+    ],
     topSectors: [
       { category: 'Tech Industry', amount: 820000, percentage: 50 },
       { category: 'Individual Contributors', amount: 490000, percentage: 30 },
@@ -692,6 +752,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Panetta supported the IRA, highlighting its agricultural conservation programs and drought resilience investments for his coastal farming district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Panetta, a Ways & Means and Armed Services Committee member representing Monterey Bay\'s agricultural coast, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would devastate farmworker families in the Salinas Valley and that reductions to agricultural conservation programs would harm his district\'s drought-stressed farming economy.' },
+    ],
     topSectors: [
       { category: 'Agriculture & Wine', amount: 420000, percentage: 35 },
       { category: 'Defense', amount: 340000, percentage: 28 },
@@ -725,6 +788,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Fong has supported Republican fiscal positions, voting for spending reductions aligned with his predecessor McCarthy\'s fiscal legacy.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Fong, a House Transportation and Natural Resources Committee member representing Kern County\'s energy-producing heartland, backed the FY2026 reconciliation bill, highlighting provisions to expand oil and gas leasing on federal lands and spending cuts he said would reduce the regulatory costs burdening California\'s Central Valley energy producers.' },
+    ],
     topSectors: [
       { category: 'Oil & Gas', amount: 480000, percentage: 42 },
       { category: 'Agriculture', amount: 340000, percentage: 30 },
@@ -758,6 +824,9 @@ const memberData: CongressMemberData[] = [
       year: 2020,
       summary: 'Costa supported the United States-Mexico-Canada Agreement, citing its improved agricultural trade provisions for California dairy and produce exports.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Costa, a House Agriculture and Natural Resources Committee member and third-generation San Joaquin Valley farmer, voted against the FY2026 reconciliation bill, expressing concern that cuts to agricultural safety-net programs and water infrastructure funding would leave Central Valley farmers and dairy producers without critical federal backstops during drought years.' },
+    ],
     topSectors: [
       { category: 'Agriculture & Dairy', amount: 580000, percentage: 45 },
       { category: 'Water & Utilities', amount: 310000, percentage: 24 },
@@ -785,6 +854,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Valadao was one of ten House Republicans to vote to impeach President Trump after January 6th, and one of the few to survive the subsequent Republican primary.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Valadao, a House Appropriations Committee member representing a heavily Latino Kings County dairy district, backed the FY2026 reconciliation bill, emphasizing tax relief for agricultural operators and border security measures he said would reduce fentanyl trafficking affecting rural Central Valley communities.' },
+    ],
     notableBill: {
       title: 'SNAP Access for Agriculture Workers Act',
       year: 2023,
@@ -824,6 +896,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Obernolte championed provisions in the FY2025 NDAA expanding military AI adoption while establishing oversight guardrails.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Obernolte, a House Science and Armed Services Committee member with AI expertise, supported the FY2026 reconciliation bill, arguing its spending reductions and tax relief would free up private capital for the technology innovation he championed and reduce the deficit burden on California\'s Inland Empire communities.' },
+    ],
     topSectors: [
       { category: 'Tech & Defense Industries', amount: 580000, percentage: 42 },
       { category: 'Individual Contributors', amount: 430000, percentage: 31 },
@@ -857,6 +932,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Carbajal supported the $1.9T COVID relief package, highlighting its agricultural worker assistance and small business provisions for Santa Barbara County.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Carbajal, a Marine Corps veteran and Armed Services and Transportation Committee member, voted against the FY2026 reconciliation bill, warning that Medicaid cuts would harm farmworkers along the Central Coast and that reductions to Vandenberg Space Force Base support programs would undermine the military mission he has prioritized throughout his tenure.' },
+    ],
     topSectors: [
       { category: 'Labor & Unions', amount: 390000, percentage: 34 },
       { category: 'Defense', amount: 310000, percentage: 27 },
@@ -890,6 +968,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Ruiz strongly supported the IRA\'s Medicare drug negotiation provisions, noting that high drug costs disproportionately harm the uninsured and underinsured in his district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Ruiz, a Harvard-trained emergency physician and Energy & Commerce Committee member, voted against the FY2026 reconciliation bill, warning that Medicaid cuts would cause a healthcare crisis in the Coachella Valley\'s underserved desert communities and that rollbacks of clean energy programs would worsen air quality for the vulnerable populations he has treated throughout his medical career.' },
+    ],
     topSectors: [
       { category: 'Healthcare & Medical', amount: 620000, percentage: 48 },
       { category: 'Individual Contributors', amount: 420000, percentage: 33 },
@@ -922,6 +1003,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Brownley championed infrastructure investments for the US-101 corridor and Ventura County flood control projects included in the $1.2T infrastructure package.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Brownley, a House Transportation Committee member representing Ventura County\'s coastal communities, voted against the FY2026 reconciliation bill, arguing that cuts to VA healthcare programs would harm veterans throughout her district and that reductions to transportation funding would set back US-101 safety improvements she had long championed.' },
+    ],
     topSectors: [
       { category: 'Labor & Unions', amount: 360000, percentage: 34 },
       { category: 'Individual Contributors', amount: 420000, percentage: 40 },
@@ -955,6 +1039,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Whitesides supported funding for NASA\'s Artemis moon program and commercial crew partnerships, drawing on his decade leading a commercial spaceflight company.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Whitesides, a former Virgin Galactic CEO and member of the House Science and Armed Services Committees, voted against the FY2026 reconciliation bill, arguing that proposed cuts to NASA and federal R&D budgets would undermine the commercial space industry in his Santa Clarita-area district and cede technological leadership to China.' },
+    ],
     topSectors: [
       { category: 'Aerospace & Defense', amount: 980000, percentage: 48 },
       { category: 'Individual Contributors', amount: 720000, percentage: 35 },
@@ -988,6 +1075,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Chu championed the ARP\'s small business provisions and child tax credit expansion as essential for Alhambra and Monterey Park\'s working-class families.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Chu, the first Chinese American woman in Congress and a Ways & Means Committee member, voted against the FY2026 reconciliation bill, arguing that its tax provisions tilted toward the wealthy while Medicaid cuts would devastate the working-class Asian American families in Alhambra and Monterey Park who depend on public health coverage.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 510000, percentage: 45 },
       { category: 'Small Business & Trade', amount: 340000, percentage: 30 },
@@ -1021,6 +1111,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Rivas opposed Republican efforts to reduce Pell Grant funding, arguing that cuts would devastate college access for first-generation students in her district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Rivas, a House Science and Education Committee member and STEM education founder representing the San Fernando Valley, voted against the FY2026 reconciliation bill, warning that cuts to Pell Grants and Title I education funding would shut out first-generation Latino students in her district and that reductions to federal R&D investment would undermine the STEM pipeline she has built her career advancing.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 820000, percentage: 50 },
       { category: 'Education & Nonprofit', amount: 490000, percentage: 30 },
@@ -1054,6 +1147,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Friedman opposed rollbacks to EPA air quality standards, arguing that communities in the San Gabriel Valley already suffer disproportionate pollution burdens.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Friedman, a House Energy & Commerce and Transportation Committee member representing the eastern San Fernando Valley, voted against the FY2026 reconciliation bill, arguing that its rollback of clean energy incentives and EPA standards would worsen air quality for communities already burdened by refinery pollution and that Medicaid cuts would harm the working-class families in her district.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 900000, percentage: 52 },
       { category: 'Environmental & Transit Groups', amount: 520000, percentage: 30 },
@@ -1087,6 +1183,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Cisneros supported the FY2025 NDAA, highlighting provisions protecting March Air Reserve Base\'s mission and expanding veteran transition assistance.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Cisneros, a Navy veteran and Armed Services and Education Committee member representing the Inland Empire, voted against the FY2026 reconciliation bill, warning that Medicaid cuts would harm veterans and working families in his district and that reductions to education and workforce training programs would undermine the economic mobility he has championed for Riverside County residents.' },
+    ],
     topSectors: [
       { category: 'Defense & Veterans Groups', amount: 520000, percentage: 38 },
       { category: 'Individual Contributors', amount: 680000, percentage: 50 },
@@ -1120,6 +1219,9 @@ const memberData: CongressMemberData[] = [
       year: 2018,
       summary: 'Sherman was a prominent opponent of the Economic Growth, Regulatory Relief, and Consumer Protection Act, arguing it weakened post-2008 financial safeguards.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Sherman, a CPA and senior Financial Services and Foreign Affairs Committee member representing the San Fernando Valley, voted against the FY2026 reconciliation bill, arguing that its tax cuts were fiscally reckless and that proposed reductions to consumer financial protections would leave San Fernando Valley homeowners and small business owners vulnerable to predatory practices.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 780000, percentage: 55 },
       { category: 'Financial Industry', amount: 420000, percentage: 30 },
@@ -1155,6 +1257,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'As Democratic Caucus Chair, Aguilar organized and led unified Democratic opposition to the Republican budget reconciliation package in 2025, publicly condemning cuts to Medicaid and other safety-net programs as harmful to working families across the country.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Aguilar, the House Democratic Caucus Chair and a senior Appropriations Committee member, led the unified Democratic vote against the FY2026 reconciliation bill, calling it a direct attack on Medicaid, food assistance, and clean energy investments that his Inland Empire constituents depend on and organizing floor speeches to highlight its harm to working-class Latino families.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1400000, percentage: 52 },
       { category: 'Labor & Unions', amount: 700000, percentage: 26 },
@@ -1188,6 +1293,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Gomez was a vocal advocate for the $1.9T COVID relief package, particularly the expanded child tax credit that cut child poverty in half in its first year.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Gomez, a Ways & Means and Oversight Committee member representing Southeast Los Angeles, voted against the FY2026 reconciliation bill, warning that its Medicaid cuts and rollback of the Child Tax Credit would devastate the working-class farmworker families in his district and reverse the poverty reduction he has made the centerpiece of his legislative career.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 620000, percentage: 50 },
       { category: 'Labor & Progressive Groups', amount: 370000, percentage: 30 },
@@ -1221,6 +1329,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Torres used her Appropriations seat to secure funding for Pomona-area transportation and community development projects.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Torres, a House Appropriations and Foreign Affairs Committee member representing Pomona and the Inland Empire, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would harm the immigrant communities she immigrated from Guatemala to represent and that slashing Central American aid programs would worsen the root-cause conditions driving migration.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 580000, percentage: 46 },
       { category: 'Labor & Unions', amount: 380000, percentage: 30 },
@@ -1254,6 +1365,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Lieu voted to impeach President Trump on both occasions and was an outspoken advocate for congressional accountability mechanisms.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Lieu, an Air Force veteran and House Judiciary and Foreign Affairs Committee member representing the South Bay, voted against the FY2026 reconciliation bill, arguing that its Medicaid cuts would harm Los Angeles County residents and using his Judiciary seat to highlight constitutional concerns about the bill\'s scope and the lack of proper committee review.' },
+    ],
     topSectors: [
       { category: 'Tech Industry', amount: 780000, percentage: 46 },
       { category: 'Individual Contributors', amount: 590000, percentage: 35 },
@@ -1287,6 +1401,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Kamlager-Dove was among a small group of progressive Democrats who voted against the supplemental aid package, citing concerns about unconditional military aid to Israel.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Kamlager-Dove, a House Foreign Affairs and Science Committee member representing Culver City and Inglewood, voted against the FY2026 reconciliation bill, arguing that its Medicaid and housing assistance cuts would devastate the low-income Black and Latino communities in her district and that clean energy rollbacks would worsen environmental inequities in the communities she represents.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 820000, percentage: 52 },
       { category: 'Labor & Progressive Groups', amount: 470000, percentage: 30 },
@@ -1319,6 +1436,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Sánchez supported the ARP\'s expanded unemployment insurance and child tax credit, calling them essential lifelines for Whittier and Downey working families.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Sánchez, a senior Ways & Means Committee member representing southeastern Los Angeles\'s working-class suburbs, voted against the FY2026 reconciliation bill, warning that its tax provisions would slash Social Security\'s funding base and that Medicaid cuts would strip coverage from Whittier and Downey families who make up the backbone of her district.' },
+    ],
     topSectors: [
       { category: 'Labor & Unions', amount: 520000, percentage: 44 },
       { category: 'Individual Contributors', amount: 420000, percentage: 36 },
@@ -1354,6 +1474,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Takano supported the ARP, highlighting its education funding stabilization provisions for Riverside Unified School District.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Takano, Ranking Member of the House Veterans Affairs Committee and an Education Committee member representing Riverside, voted against the FY2026 reconciliation bill, warning that proposed cuts to VA healthcare programs would harm the large veteran population in his district and that reductions to education funding would undermine Riverside Unified\'s schools.' },
+    ],
     topSectors: [
       { category: 'Labor & Education Groups', amount: 480000, percentage: 40 },
       { category: 'Individual Contributors', amount: 420000, percentage: 35 },
@@ -1388,6 +1511,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Kim was one of the few Republicans to support the CHIPS Act, arguing that semiconductor manufacturing investment directly benefits California\'s defense and tech industries.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Kim, a House Foreign Affairs, Financial Services, and Science Committee member representing a competitive Orange County district, backed the FY2026 reconciliation bill, emphasizing its tax relief for small businesses and financial sector regulatory streamlining she said would benefit the entrepreneurs and Korean American business owners throughout her district.' },
+    ],
     topSectors: [
       { category: 'Financial & Tech Industries', amount: 680000, percentage: 45 },
       { category: 'Individual Contributors', amount: 530000, percentage: 35 },
@@ -1423,6 +1549,9 @@ const memberData: CongressMemberData[] = [
       year: 2023,
       summary: 'Calvert navigated the difficult balance between fiscal conservative demands for cuts and the defense community\'s need for investment, ultimately clearing defense appropriations.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Calvert, Chair of the Defense Appropriations Subcommittee, backed the FY2026 reconciliation bill, highlighting its spending discipline on domestic programs and arguing that reallocating resources toward defense priorities would strengthen March Air Reserve Base and the Riverside-area defense contractors that anchor his district\'s economy.' },
+    ],
     topSectors: [
       { category: 'Defense Contractors', amount: 980000, percentage: 52 },
       { category: 'Real Estate', amount: 450000, percentage: 24 },
@@ -1456,6 +1585,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Garcia supported the $61B Ukraine aid package, citing the defense manufacturing jobs it supports in Long Beach\'s shipbuilding sector.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Garcia, a House Armed Services and Oversight Committee member and former Long Beach Mayor, voted against the FY2026 reconciliation bill, arguing that Medicaid cuts would harm immigrants and working-class port workers who power the Long Beach economy and that proposed supply chain deregulation would undermine the port security standards he has championed.' },
+    ],
     topSectors: [
       { category: 'Labor & Ports', amount: 520000, percentage: 38 },
       { category: 'Individual Contributors', amount: 620000, percentage: 45 },
@@ -1491,6 +1623,9 @@ const memberData: CongressMemberData[] = [
       year: 2018,
       summary: 'Waters was the most prominent opponent of the Economic Growth, Regulatory Relief, and Consumer Protection Act, arguing it gutted key post-financial-crisis consumer protections.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Waters, Ranking Member of the House Financial Services Committee, voted against the FY2026 reconciliation bill, arguing that its cuts to affordable housing programs would worsen the homelessness crisis in her South Los Angeles district and that its financial deregulation provisions would strip away the consumer protections she has spent three decades building.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 860000, percentage: 50 },
       { category: 'Labor & Housing Advocates', amount: 520000, percentage: 30 },
@@ -1523,6 +1658,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Barragán championed the IRA\'s environmental justice investments, particularly its funding for pollution reduction in fence-line communities like those in her district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Barragán, a House Energy & Commerce Committee member representing refinery-dense Watts, Compton, and Carson, voted against the FY2026 reconciliation bill, calling its rollback of clean energy standards and EPA enforcement funding a direct assault on the health of fence-line communities in her district who already suffer disproportionate pollution exposure.' },
+    ],
     topSectors: [
       { category: 'Labor & Unions', amount: 420000, percentage: 38 },
       { category: 'Individual Contributors', amount: 390000, percentage: 35 },
@@ -1555,6 +1693,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Tran opposed Republican budget amendments that would have reduced VA community care funding, citing the large veteran population in Orange County.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Tran, a consumer protection attorney and Armed Services Committee member representing Orange County\'s large Vietnamese American community, voted against the FY2026 reconciliation bill, warning that Medicaid cuts would harm refugees and working-class immigrant families in his district and that reductions to VA community care would betray the veterans he has made the focus of his first term.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1600000, percentage: 58 },
       { category: 'Labor & Progressive Groups', amount: 700000, percentage: 25 },
@@ -1587,6 +1728,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Correa engaged constructively in bipartisan border security negotiations, breaking from some progressive Democrats to support increased enforcement resources alongside humanitarian protections.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Correa, a centrist House Judiciary Committee member representing Santa Ana, voted against the FY2026 reconciliation bill, arguing that while he supported targeted border security improvements, the bill\'s Medicaid cuts would cause unacceptable harm to the working-class Latino families in his Orange County district.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 560000, percentage: 48 },
       { category: 'Labor & Unions', amount: 360000, percentage: 31 },
@@ -1620,6 +1764,9 @@ const memberData: CongressMemberData[] = [
       year: 2025,
       summary: 'Min opposed broadly written immigration enforcement legislation, arguing it would harm legal immigrants and DACA recipients in his Orange County district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Min, a law professor and Armed Services and Judiciary Committee member representing Newport Beach and competitive Orange County, voted against the FY2026 reconciliation bill, arguing that its Medicaid cuts would harm working-class families in his district and using his financial regulatory expertise to warn that its deregulatory provisions posed systemic risks to consumers.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1800000, percentage: 60 },
       { category: 'Small-Dollar Donors', amount: 750000, percentage: 25 },
@@ -1653,6 +1800,9 @@ const memberData: CongressMemberData[] = [
       year: 2023,
       summary: 'Issa supported aggressive spending cut positions during House Republican internal debates over government funding levels.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'For', summary: 'Issa, a House Judiciary and Foreign Affairs Committee member representing San Diego\'s North County, backed the FY2026 reconciliation bill, calling it a necessary correction to runaway federal spending and highlighting border security provisions he said would reduce illegal crossings near his district\'s proximity to the U.S.-Mexico border.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1200000, percentage: 60 },
       { category: 'Tech & IP Industries', amount: 480000, percentage: 24 },
@@ -1686,6 +1836,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Levin championed the IRA\'s offshore wind and clean energy tax credit provisions as directly applicable to Southern California\'s emerging offshore wind corridor.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Levin, a House Energy & Commerce and Natural Resources Committee member representing the San Diego-Orange County coastal corridor, voted against the FY2026 reconciliation bill, warning that its rollback of offshore wind tax incentives would kill thousands of clean energy jobs in his coastal district and that Medicaid cuts would harm the working families along the Dana Point to Del Mar coastline.' },
+    ],
     topSectors: [
       { category: 'Clean Energy & Environmental', amount: 490000, percentage: 38 },
       { category: 'Individual Contributors', amount: 510000, percentage: 40 },
@@ -1719,6 +1872,9 @@ const memberData: CongressMemberData[] = [
       year: 2022,
       summary: 'Peters supported the IRA\'s Medicare drug negotiation provisions after helping shape them, calling it a necessary compromise to lower costs for San Diego seniors.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Peters, a centrist Energy & Commerce Committee member representing San Diego\'s biomedical research corridor, voted against the FY2026 reconciliation bill, arguing that its changes to Medicare drug pricing frameworks would reverse negotiated savings for seniors and create uncertainty for the biotech and pharmaceutical companies at the heart of his district\'s innovation economy.' },
+    ],
     topSectors: [
       { category: 'Biotech & Pharma', amount: 680000, percentage: 46 },
       { category: 'Individual Contributors', amount: 540000, percentage: 37 },
@@ -1752,6 +1908,9 @@ const memberData: CongressMemberData[] = [
       year: 2024,
       summary: 'Jacobs was among a group of Democratic members expressing concern about civilian harm in Gaza and calling for conditions on weapons transfers.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Jacobs, a former USAID diplomat and Armed Services and Foreign Affairs Committee member representing San Diego, voted against the FY2026 reconciliation bill, arguing that cuts to international humanitarian assistance programs would worsen civilian harm in conflict zones and that Medicaid reductions would hurt the veterans and military families she serves in San Diego\'s defense community.' },
+    ],
     topSectors: [
       { category: 'Individual Contributors', amount: 1100000, percentage: 55 },
       { category: 'Small-Dollar Donors', amount: 540000, percentage: 27 },
@@ -1785,6 +1944,9 @@ const memberData: CongressMemberData[] = [
       year: 2021,
       summary: 'Vargas supported the Farm Workforce Modernization Act, which would provide legal status for agricultural workers — essential for the Imperial Valley farming economy in his district.',
     },
+    keyVotes: [
+      { title: 'FY2026 Budget Reconciliation', year: 2026, month: 4, position: 'Against', summary: 'Vargas, a House Financial Services and Foreign Affairs Committee member representing the U.S.-Mexico border, voted against the FY2026 reconciliation bill, arguing that its Medicaid cuts would devastate the border communities and immigrant workers in the Imperial Valley and that its remittance fee provisions would harm the farmworkers in his district who send money to family in Mexico.' },
+    ],
     topSectors: [
       { category: 'Financial Services', amount: 480000, percentage: 38 },
       { category: 'Agriculture & Border Economy', amount: 360000, percentage: 29 },

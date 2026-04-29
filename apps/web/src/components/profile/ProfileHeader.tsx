@@ -26,6 +26,13 @@ export function ProfileHeader({ politician }: ProfileHeaderProps) {
   const { baselineCard, contact, social } = politician
   const sinceYear = baselineCard.currentOffice.startDate.slice(0, 4)
 
+  // Derive last updated from the most recent source retrieval date
+  const lastUpdated = politician.sources
+    .map(s => s.retrievedAt)
+    .filter(Boolean)
+    .sort()
+    .at(-1) ?? null
+
   const socialLinks = [
     social?.twitter && { label: 'X / Twitter', href: `https://twitter.com/${social.twitter}`, handle: `@${social.twitter}` },
     social?.instagram && { label: 'Instagram', href: `https://instagram.com/${social.instagram}`, handle: `@${social.instagram}` },
@@ -58,6 +65,12 @@ export function ProfileHeader({ politician }: ProfileHeaderProps) {
               <>
                 <span className="text-ink-4">·</span>
                 <span>Born {formatDate(baselineCard.birthDate)}</span>
+              </>
+            )}
+            {lastUpdated && (
+              <>
+                <span className="text-ink-4">·</span>
+                <span className="text-ink-4">Updated {lastUpdated}</span>
               </>
             )}
           </div>

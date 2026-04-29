@@ -5,14 +5,40 @@ import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { CandidatePhoto } from '@/components/ui/CandidatePhoto'
 import newsom from '@/data/politicians/gavin-newsom'
 import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { msDelegationProfiles } from '@/data/politicians/ms-delegation'
+import { njDelegationProfiles } from '@/data/politicians/nj-delegation'
+import { flDelegationProfiles } from '@/data/politicians/fl-delegation'
+import { txDelegationProfiles } from '@/data/politicians/tx-delegation'
+import { nyDelegationProfiles } from '@/data/politicians/ny-delegation'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries, GLOBAL_SUMMARY } from '@/data/economy/countries'
 import { presidentialCandidates2028 } from '@/data/presidential'
 import { formatBillions } from '@/lib/economy'
-import type { Bill } from '@political-intel/types'
+import type { Bill, PoliticianProfile } from '@political-intel/types'
 
+const allFullProfiles: PoliticianProfile[] = [
+  newsom,
+  ...Object.values(caDelegationProfiles),
+  ...Object.values(msDelegationProfiles),
+  ...Object.values(njDelegationProfiles),
+  ...Object.values(flDelegationProfiles),
+  ...Object.values(txDelegationProfiles),
+  ...Object.values(nyDelegationProfiles),
+]
+
+// For stats strip, just show the count of full profiles
 const allPoliticians = [newsom, ...Object.values(caDelegationProfiles)]
+
+// Recently updated — sorted by most recent source retrieval date
+const recentlyUpdatedProfiles = [...allFullProfiles]
+  .filter(p => p.sources.some(s => s.retrievedAt))
+  .sort((a, b) => {
+    const aDate = a.sources.map(s => s.retrievedAt).sort().at(-1) ?? ''
+    const bDate = b.sources.map(s => s.retrievedAt).sort().at(-1) ?? ''
+    return bDate.localeCompare(aDate)
+  })
+  .slice(0, 6)
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -29,7 +55,7 @@ const statusConfig: Record<string, { label: string; cls: string }> = {
 
 function StatsStrip() {
   const cells = [
-    { label: 'POLITICIANS TRACKED', value: `${allPoliticians.length}+`, sub: 'Federal & state' },
+    { label: 'POLITICIANS TRACKED', value: `${allFullProfiles.length}+`, sub: 'Federal & state' },
     { label: 'BILLS IN RECORD',    value: String(allBills.length),       sub: 'With full context' },
     { label: 'COMMITTEES',         value: String(committees.length),     sub: 'With jurisdiction detail' },
     { label: 'TRADE PARTNERS',     value: String(countries.length),      sub: `FY${GLOBAL_SUMMARY.dataYear} data` },
@@ -99,6 +125,12 @@ function EconomyTeaser() {
       >
         VIEW ALL {countries.length} PARTNERS →
       </Link>
+      <p className="font-mono text-[8px] text-ink-4 mt-2">
+        Source:{' '}
+        <a href="https://www.census.gov/foreign-trade/statistics/index.html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors underline-offset-2 hover:underline">U.S. Census Bureau</a>
+        {' '}·{' '}
+        <a href="https://ustr.gov/countries-regions" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors underline-offset-2 hover:underline">USTR</a>
+      </p>
     </div>
   )
 }
@@ -179,7 +211,12 @@ function LegislationSection() {
   return (
     <section className="mb-16">
       <div className="flex items-baseline justify-between mb-4">
-        <p className="font-mono text-[10px] tracking-widest text-accent/70">RECENT LEGISLATION</p>
+        <div className="flex items-baseline gap-3">
+          <p className="font-mono text-[10px] tracking-widest text-accent/70">RECENT LEGISLATION</p>
+          <a href="https://www.congress.gov" target="_blank" rel="noopener noreferrer" className="font-mono text-[8px] text-ink-4 hover:text-accent transition-colors">
+            Source: Congress.gov ↗
+          </a>
+        </div>
         <Link href="/bills" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
           VIEW ALL →
         </Link>
@@ -213,6 +250,42 @@ function BillRow({ bill }: { bill: Bill }) {
   )
 }
 
+// ─── Recently Updated ─────────────────────────────────────────────────────────
+
+function RecentlyUpdatedSection() {
+  if (recentlyUpdatedProfiles.length === 0) return null
+  return (
+    <section className="mb-16">
+      <div className="flex items-baseline justify-between mb-4">
+        <p className="font-mono text-[10px] tracking-widest text-accent/70">RECENTLY UPDATED</p>
+        <Link href="/politicians" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
+          ALL POLITICIANS →
+        </Link>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+        {recentlyUpdatedProfiles.map(p => {
+          const lastUpdated = p.sources.map(s => s.retrievedAt).sort().at(-1)
+          return (
+            <Link
+              key={p.slug}
+              href={`/politicians/${p.slug}`}
+              className="group flex flex-col items-center gap-2 p-3 bg-surface border border-border rounded hover:border-accent/40 hover:bg-surface-2 transition-colors text-center"
+            >
+              <PoliticianPhoto name={p.name} photoUrl={p.photoUrl} size={40} />
+              <div className="min-w-0 w-full">
+                <p className="text-xs font-medium text-ink group-hover:text-accent transition-colors leading-tight line-clamp-2">{p.name}</p>
+                {lastUpdated && (
+                  <p className="font-mono text-[8px] text-ink-4 mt-0.5">{lastUpdated}</p>
+                )}
+              </div>
+            </Link>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
 // ─── Featured profiles ────────────────────────────────────────────────────────
 
 function ProfilesSection() {
@@ -224,8 +297,8 @@ function ProfilesSection() {
     <section className="mb-16">
       <div className="flex items-baseline justify-between mb-4">
         <p className="font-mono text-[10px] tracking-widest text-accent/70">PROFILES</p>
-        <Link href="/explore" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
-          EXPLORE ALL →
+        <Link href="/politicians" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
+          ALL POLITICIANS →
         </Link>
       </div>
 
@@ -271,8 +344,76 @@ function ProfilesSection() {
       )}
 
       <p className="font-mono text-[10px] text-ink-4 mt-3">
-        {allPoliticians.length}+ profiles tracked · CA delegation, governors, and 2028 field
+        {allFullProfiles.length}+ full profiles tracked ·{' '}
+        <Link href="/politicians" className="text-accent/70 hover:text-accent transition-colors">
+          Browse all politicians →
+        </Link>
       </p>
+    </section>
+  )
+}
+
+// ─── Hero bill ticker ─────────────────────────────────────────────────────────
+
+function HeroBillTicker() {
+  const recent = allBills.slice(0, 5)
+  return (
+    <div className="max-w-2xl mt-5 border border-border rounded overflow-hidden">
+      <div className="flex items-center justify-between px-3 py-1.5 bg-surface border-b border-border">
+        <p className="font-mono text-[9px] tracking-widest text-accent/70">LATEST IN CONGRESS</p>
+        <Link href="/bills" className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors">
+          ALL BILLS →
+        </Link>
+      </div>
+      {recent.map((b) => {
+        const cfg = statusConfig[b.status] ?? { label: b.status.toUpperCase(), cls: 'text-ink-3 border-border' }
+        return (
+          <Link
+            key={b.id}
+            href={`/bills/${b.slug}`}
+            className="flex items-center justify-between gap-3 px-3 py-2 border-b border-border/40 last:border-0 hover:bg-surface transition-colors group"
+          >
+            <div className="min-w-0 flex items-baseline gap-2">
+              <span className="font-mono text-[10px] text-accent shrink-0">{b.number}</span>
+              <span className="text-xs text-ink-3 group-hover:text-ink-2 transition-colors truncate">{b.title}</span>
+            </div>
+            <span className={`font-mono text-[8px] px-1 py-0.5 rounded border shrink-0 ${cfg.cls}`}>
+              {cfg.label}
+            </span>
+          </Link>
+        )
+      })}
+    </div>
+  )
+}
+
+// ─── Why this exists ──────────────────────────────────────────────────────────
+
+function WhyThisExists() {
+  return (
+    <section className="mb-16 border border-border rounded p-6 bg-surface">
+      <p className="font-mono text-[9px] tracking-widest text-accent/70 mb-3">WHY THIS EXISTS</p>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {[
+          {
+            heading: 'Primary sources only',
+            body: 'Every vote, figure, and statement is traced to Congress.gov, the FEC, the Federal Register, or another primary government record. No third-party aggregators, no editorial spin.',
+          },
+          {
+            heading: 'No partisan framing',
+            body: 'Voting records are facts. Funding figures are facts. We present the record without characterizing it. Readers draw their own conclusions from the same data officials file publicly.',
+          },
+          {
+            heading: 'Every figure cited',
+            body: 'Each data card links directly to the underlying source. If a number is on this site, you can trace it to the original filing in two clicks.',
+          },
+        ].map(({ heading, body }) => (
+          <div key={heading}>
+            <p className="text-sm font-medium text-ink mb-1.5">{heading}</p>
+            <p className="text-xs text-ink-3 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
     </section>
   )
 }
@@ -293,7 +434,8 @@ export default function HomePage() {
         </h1>
         <p className="text-ink-2 text-base leading-relaxed max-w-2xl mb-6">
           Votes, statements, campaign funding, and trade exposure — pulled from primary sources,
-          cited, and interpreted without partisan framing.
+          cited, and interpreted without partisan framing.{' '}
+          <span className="text-amber-400/90">For journalists, researchers, and citizens who want the receipts.</span>
         </p>
         <SearchBar
           placeholder="Search politicians, bills, countries, committees…"
@@ -301,24 +443,32 @@ export default function HomePage() {
           size="lg"
           className="max-w-2xl mb-5"
         />
-        <div className="flex flex-wrap gap-3">
-          <Link href="/explore" className="font-mono text-[9px] tracking-widest px-3 py-1.5 border border-border rounded text-ink-3 hover:border-accent/40 hover:text-ink-2 transition-colors">
-            EXPLORE POLITICIANS
+        <div className="flex flex-wrap items-center gap-4">
+          <Link
+            href="/politicians"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-900 font-mono text-[10px] tracking-widest rounded transition-colors font-semibold"
+          >
+            EXPLORE POLITICIANS →
           </Link>
-          <Link href="/economy" className="font-mono text-[9px] tracking-widest px-3 py-1.5 border border-border rounded text-ink-3 hover:border-accent/40 hover:text-ink-2 transition-colors">
-            ECONOMIC EXPOSURE
+          <Link href="/methodology" className="font-mono text-[10px] tracking-widest text-ink-3 hover:text-ink-2 transition-colors">
+            See how this works →
           </Link>
-          <Link href="/compare" className="font-mono text-[9px] tracking-widest px-3 py-1.5 border border-border rounded text-ink-3 hover:border-accent/40 hover:text-ink-2 transition-colors">
-            COMPARE
-          </Link>
-          <Link href="/methodology" className="font-mono text-[9px] tracking-widest px-3 py-1.5 border border-border rounded text-ink-3 hover:border-accent/40 hover:text-ink-2 transition-colors">
-            HOW THIS WORKS
-          </Link>
+        </div>
+        <HeroBillTicker />
+        <div className="max-w-2xl mt-3 flex items-center gap-1.5 px-3 py-2 bg-surface border border-border/60 rounded">
+          <span className="font-mono text-[8px] tracking-widest text-accent/70 shrink-0">LIVE DATA</span>
+          <span className="text-ink-4 text-[8px] mx-1">·</span>
+          <p className="font-mono text-[8px] text-ink-4">
+            Congress.gov · FEC · Federal Register · Census Bureau / USTR · refreshed daily
+          </p>
         </div>
       </section>
 
       {/* Stats */}
       <StatsStrip />
+
+      {/* Why this exists */}
+      <WhyThisExists />
 
       {/* Economy + Presidential 2-col */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
@@ -328,6 +478,9 @@ export default function HomePage() {
 
       {/* Legislation */}
       <LegislationSection />
+
+      {/* Recently Updated */}
+      <RecentlyUpdatedSection />
 
       {/* Profiles */}
       <ProfilesSection />

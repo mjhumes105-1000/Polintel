@@ -1,0 +1,751 @@
+import type { PoliticianProfile } from '@political-intel/types'
+import { buildCongressProfile, type CongressMemberData } from './ca-congress-builder'
+
+const memberData: CongressMemberData[] = [
+  // ── U.S. SENATORS ─────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'P000595',
+    slug: 'gary-c-peters',
+    name: 'Gary C. Peters',
+    party: 'D',
+    chamber: 'Senate',
+    state: 'Michigan',
+    currentTitle: 'U.S. Senator from Michigan',
+    bio: 'Gary Peters has served as a U.S. Senator from Michigan since 2015, having previously served three terms in the House of Representatives. A former financial advisor and Navy Reserve officer, he is the Ranking Member of the Senate Homeland Security and Governmental Affairs Committee and serves on the Armed Services and Appropriations Committees. Peters has focused on manufacturing, Great Lakes protection, veterans\' issues, and strengthening cybersecurity policy throughout his congressional career.',
+    sinceYear: 2015,
+    committees: [
+      { slug: 'ssga', name: 'Senate Committee on Homeland Security and Governmental Affairs', chamber: 'Senate', role: 'Ranking Member' },
+      { slug: 'sscm', name: 'Senate Committee on Commerce, Science, and Transportation', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssas', name: 'Senate Committee on Armed Services', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssap', name: 'Senate Committee on Appropriations', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Infrastructure Investment and Jobs Act',
+        year: 2021,
+        month: 11,
+        position: 'For',
+        summary: 'Voted for the $1.2 trillion bipartisan infrastructure law, securing investments in Michigan\'s roads, bridges, water systems, and Great Lakes restoration programs. Peters highlighted the bill\'s $1 billion in PFAS remediation funding — critical for Michigan communities still dealing with contamination from the Flint water crisis and military base sites.',
+      },
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for the CHIPS and Science Act, supporting domestic semiconductor manufacturing investment as a manufacturing and national security priority. Peters argued the bill would benefit Michigan\'s automotive industry, which depends on semiconductor chips, and attract supply chain investment back to the Great Lakes manufacturing corridor.',
+      },
+      {
+        title: 'Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'For',
+        summary: 'Voted for the Inflation Reduction Act, supporting its electric vehicle tax credits that Peters argued were critical for Michigan\'s auto industry transition to EVs. He also backed the bill\'s climate provisions and Medicare drug price negotiation, calling it transformative for Michigan seniors facing high prescription costs.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Federal Rotational Cyber Workforce Program Act',
+        year: 2022,
+        month: 4,
+        summary: 'Authored and secured passage of legislation creating a federal rotational program allowing cybersecurity professionals to move between agencies to build government-wide cyber capacity. Peters, as Chair of the Homeland Security Committee, made federal cybersecurity workforce development a signature priority following major ransomware attacks on U.S. infrastructure.',
+      },
+      {
+        title: 'Great Lakes Restoration Initiative Funding',
+        year: 2023,
+        month: 5,
+        summary: 'Led efforts to secure and expand funding for the Great Lakes Restoration Initiative, the nation\'s largest investment in freshwater ecosystem restoration. Peters has been one of the Senate\'s most consistent advocates for Great Lakes water quality, fighting against invasive species, pollution, and shoreline erosion that threatens Michigan\'s tourism and fishing economy.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'S001208',
+    slug: 'elissa-slotkin',
+    name: 'Elissa Slotkin',
+    party: 'D',
+    chamber: 'Senate',
+    state: 'Michigan',
+    currentTitle: 'U.S. Senator from Michigan',
+    bio: 'Elissa Slotkin was elected to the U.S. Senate from Michigan in 2024 after three terms representing Michigan\'s 7th Congressional District in the House. A former CIA analyst and senior Pentagon and National Security Council official, she served three tours in Iraq as a political-military officer. In the Senate, she sits on the Armed Services, Homeland Security, Agriculture, and Veterans\' Affairs Committees. Slotkin has positioned herself as a national security moderate focused on manufacturing, veterans, and working-class economic concerns.',
+    sinceYear: 2019,
+    committees: [
+      { slug: 'ssga', name: 'Senate Committee on Homeland Security and Governmental Affairs', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssva', name: 'Senate Committee on Veterans\' Affairs', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssaf', name: 'Senate Committee on Agriculture, Nutrition, and Forestry', chamber: 'Senate', role: 'Member' },
+      { slug: 'ssas', name: 'Senate Committee on Armed Services', chamber: 'Senate', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Bipartisan Safer Communities Act',
+        year: 2022,
+        month: 6,
+        position: 'For',
+        summary: 'Voted for the first major federal gun safety legislation in nearly 30 years while still in the House. Slotkin, who had won in a competitive suburban Michigan district, backed the bill as a commonsense measure that enjoyed broad support among her constituents while not infringing on the rights of law-abiding gun owners.',
+      },
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for the CHIPS and Science Act while in the House, arguing it was essential for restoring semiconductor manufacturing and protecting Michigan\'s automotive supply chain. Slotkin has consistently framed economic competitiveness with China as a national security imperative rooted in her intelligence background.',
+      },
+      {
+        title: 'National Defense Authorization Act FY2026',
+        year: 2025,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for the NDAA FY2026 in her first year in the Senate, supporting provisions for military readiness and Michigan\'s defense installations. Slotkin used her Armed Services Committee seat and her experience at the Pentagon to advocate for sustained investment in the defense industrial base and military health systems she observed firsthand during her government service.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Servicemember and Veteran Mental Health Access Act',
+        year: 2023,
+        month: 5,
+        summary: 'Championed legislation expanding mental health care access for active-duty service members and veterans, requiring the VA and DoD to reduce wait times for mental health appointments and expand telehealth options for rural veterans. Slotkin has made veteran mental health a signature priority, citing suicide rates among veterans and her personal engagement with service members during her time in Iraq.',
+      },
+      {
+        title: 'Auto Manufacturing Competitiveness and EV Transition Act',
+        year: 2025,
+        month: 3,
+        summary: 'Introduced legislation supporting Michigan\'s auto manufacturers during the transition to electric vehicles, including workforce retraining grants and domestic battery supply chain incentives. Slotkin has framed EV transition policy as both a climate and a working-class economic issue, arguing that Michigan auto workers must not be left behind in the shift away from internal combustion engines.',
+      },
+    ],
+  },
+
+  // ── HOUSE ─────────────────────────────────────────────────────────────────
+
+  {
+    bioguideId: 'B001301',
+    slug: 'jack-bergman',
+    name: 'Jack Bergman',
+    party: 'R',
+    chamber: 'House',
+    district: 1,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 1st District',
+    bio: 'Jack Bergman has represented Michigan\'s 1st Congressional District since 2017. A retired Marine Corps Lieutenant General — the highest-ranking retired military officer ever elected to Congress at the time of his election — he serves on the House Armed Services, Veterans\' Affairs, and Budget Committees. Bergman\'s sprawling Upper and northern Lower Peninsula district is geographically the largest congressional district east of the Mississippi River, encompassing vast forests, the Great Lakes shoreline, and significant Native American communities.',
+    sinceYear: 2017,
+    committees: [
+      { slug: 'hsvr', name: 'House Committee on Veterans\' Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hsbu', name: 'House Committee on the Budget', chamber: 'House', role: 'Member' },
+      { slug: 'hsas', name: 'House Committee on Armed Services', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'PACT Act',
+        year: 2022,
+        month: 8,
+        position: 'For',
+        summary: 'Voted for the PACT Act expanding VA healthcare eligibility and benefits for veterans exposed to toxic burn pits and Agent Orange. Bergman, himself a retired Marine general, called the bill a long-overdue fulfillment of America\'s commitment to those who served and specifically advocated for veterans in Michigan\'s Upper Peninsula who faced long travel distances to VA facilities.',
+      },
+      {
+        title: 'National Defense Authorization Act FY2024',
+        year: 2023,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for the $886 billion NDAA, supporting military readiness provisions and benefits improvements for service members and retirees. As a retired three-star general, Bergman\'s voice on military affairs carries particular weight in the Armed Services Committee and he has consistently advocated for Guard and Reserve parity with active-duty forces.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, supporting tax cut extensions and spending reductions. Bergman backed the package while advocating for rural provisions affecting northern Michigan\'s forestry, fishing, and agriculture sectors that are significant to the 1st District\'s economy.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Rural Veterans Telehealth Expansion Act',
+        year: 2022,
+        month: 4,
+        summary: 'Championed legislation expanding VA telehealth services for veterans in rural and remote areas, addressing a critical gap for the 1st District\'s veterans who must travel hundreds of miles to reach VA medical centers. Bergman has made rural veteran healthcare access a defining issue for his district, where the geographic distances to VA facilities create barriers unmatched in most of the country.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'M001194',
+    slug: 'john-r-moolenaar',
+    name: 'John R. Moolenaar',
+    party: 'R',
+    chamber: 'House',
+    district: 2,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 2nd District',
+    bio: 'John Moolenaar has represented Michigan\'s 2nd Congressional District since 2015. A former Michigan state legislator with a background in chemistry and business, he chairs the House Select Committee on the Chinese Communist Party, the premier House body investigating economic, military, and technological competition with China. He also serves on the House Appropriations Committee. Moolenaar\'s west Michigan district includes Midland, Saginaw Bay, and the Thumb region.',
+    sinceYear: 2015,
+    committees: [
+      { slug: 'hszs', name: 'House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party', chamber: 'House', role: 'Chair' },
+      { slug: 'hsap', name: 'House Committee on Appropriations', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'BIOSECURE Act',
+        year: 2024,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for legislation restricting federal contracts with Chinese biotechnology companies on national security grounds. As Chair of the China Select Committee, Moolenaar was a leading advocate for the bill, arguing that Chinese biotech firms with access to American genomic data pose an unacceptable intelligence and security risk.',
+      },
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'Against',
+        summary: 'Voted against the CHIPS and Science Act despite its focus on competing with China, citing concerns about the size of the subsidy and the bill\'s other spending provisions. Moolenaar has since used the China Committee to advocate for stricter guardrails on technology transfer to China, arguing that export controls are more effective than industrial subsidies.',
+      },
+      {
+        title: 'Protecting American Intellectual Property Act',
+        year: 2022,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for legislation imposing sanctions on individuals and entities that steal U.S. trade secrets, a priority for Michigan\'s automotive and chemical industries. Moolenaar has consistently pushed for stronger intellectual property protections against Chinese state-sponsored theft, using his China Committee chairmanship to draw attention to cases of technology espionage.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'China Select Committee Investigations and Recommendations',
+        year: 2023,
+        month: 12,
+        summary: 'Led the bipartisan House Select Committee on the Chinese Communist Party in producing comprehensive reports and legislative recommendations on countering Chinese economic espionage, supply chain vulnerabilities, and military modernization. Under Moolenaar\'s chairmanship, the committee advanced over two dozen pieces of legislation and produced classified and unclassified reports that shaped congressional China policy.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'S001221',
+    slug: 'hillary-j-scholten',
+    name: 'Hillary J. Scholten',
+    party: 'D',
+    chamber: 'House',
+    district: 3,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 3rd District',
+    bio: 'Hillary Scholten has represented Michigan\'s 3rd Congressional District since 2023, flipping a seat that had long been held by Republicans. A former federal public defender and Department of Justice attorney, she serves on the House Transportation and Infrastructure and Small Business Committees. Scholten\'s west Michigan district centered on Grand Rapids is one of the most competitive in the state, and she has focused on clean water, infrastructure, and small business support.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hssm', name: 'House Committee on Small Business', chamber: 'House', role: 'Member' },
+      { slug: 'hspw', name: 'House Committee on Transportation and Infrastructure', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Infrastructure Investment and Jobs Act',
+        year: 2021,
+        month: 11,
+        position: 'For',
+        summary: 'Supported the $1.2 trillion bipartisan infrastructure law while still a candidate, and upon taking office in 2023 worked through the Transportation Committee to ensure west Michigan received its share of road, bridge, and water infrastructure funding. Grand Rapids faces significant infrastructure needs, and Scholten has made infrastructure investment a centerpiece of her freshman agenda.',
+      },
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, citing cuts to Medicaid and SNAP that she argued would harm working families in western Michigan. Scholten also objected to reductions in small business loan programs administered by the SBA that support Grand Rapids\'s entrepreneurial ecosystem.',
+      },
+      {
+        title: 'PFAS Action Act',
+        year: 2023,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for legislation setting enforceable standards for PFAS contamination in drinking water and requiring federal cleanup of contaminated sites. Michigan has some of the worst PFAS contamination in the country, and Scholten made clean water a signature issue during her campaign after years of contamination in communities around her district.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Grand River Restoration and Recreation Act',
+        year: 2023,
+        month: 9,
+        summary: 'Introduced legislation supporting restoration of the Grand River — which runs through Grand Rapids and much of her district — including dam removal, habitat restoration, and recreation improvements. Scholten framed the bill as an economic development initiative as well as an environmental one, noting that a healthy Grand River attracts tourism and improves property values throughout the watershed.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'H001058',
+    slug: 'bill-huizenga',
+    name: 'Bill Huizenga',
+    party: 'R',
+    chamber: 'House',
+    district: 4,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 4th District',
+    bio: 'Bill Huizenga has represented west Michigan in the House since 2011. A former real estate developer and state legislator, he serves on the House Financial Services Committee and the House Foreign Affairs Committee. Huizenga has focused on financial regulation, international trade, and the agricultural economy of his west Michigan lakeshore district. He is a senior member with significant influence over capital markets and banking legislation.',
+    sinceYear: 2011,
+    committees: [
+      { slug: 'hsba', name: 'House Committee on Financial Services', chamber: 'House', role: 'Member' },
+      { slug: 'hsfa', name: 'House Committee on Foreign Affairs', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Financial Choice Act',
+        year: 2017,
+        month: 6,
+        position: 'For',
+        summary: 'Voted for House Republican legislation rolling back Dodd-Frank financial regulations, arguing that the post-2008 regulatory framework imposed excessive compliance costs on community banks and credit unions that serve Michigan\'s small businesses and agricultural producers. Huizenga helped write the bill through the Financial Services Committee.',
+      },
+      {
+        title: 'Fiscal Responsibility Act of 2023',
+        year: 2023,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the bipartisan debt ceiling deal, supporting its spending caps as a meaningful step toward fiscal discipline. Huizenga has been a consistent fiscal conservative and backed the agreement as an achievable reduction in federal spending trajectory.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, supporting tax cut extensions and financial regulatory rollbacks he has championed through his Financial Services Committee work. Huizenga backed provisions reducing regulatory burdens on community banks that serve the agricultural and small business community of west Michigan.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'JOBS Act 4.0',
+        year: 2023,
+        month: 7,
+        summary: 'Led financial services legislation modernizing capital markets rules to improve access to capital for small and mid-size businesses, drawing on his Financial Services Committee seniority. Huizenga has consistently focused on reducing the regulatory friction that he argues prevents small businesses in west Michigan from accessing the capital they need to grow.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'W000798',
+    slug: 'tim-walberg',
+    name: 'Tim Walberg',
+    party: 'R',
+    chamber: 'House',
+    district: 5,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 5th District',
+    bio: 'Tim Walberg has represented south-central Michigan in the House since 2007, with a brief interruption when he lost his seat in 2008 and won it back in 2010. An ordained minister and former state legislator, he chairs the House Education and Workforce Committee, where he has focused on workforce development, school choice, and labor law reform. His district includes Jackson, Lenawee, and Hillsdale Counties, anchored by the region\'s manufacturing and agricultural economy.',
+    sinceYear: 2011,
+    committees: [
+      { slug: 'hsed', name: 'House Committee on Education and Workforce', chamber: 'House', role: 'Chair' },
+      { slug: 'hsii', name: 'House Committee on Natural Resources', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'PROSPER Act',
+        year: 2018,
+        month: 2,
+        position: 'For',
+        summary: 'Voted for House Republican legislation reauthorizing the Higher Education Act with major changes to student loan programs, accreditation, and campus free speech protections. As a senior member of the Education Committee, Walberg helped craft the bill and has continued to push for higher education reform that reduces costs and expands workforce-oriented alternatives to four-year degrees.',
+      },
+      {
+        title: 'Workforce Innovation and Opportunity Act Reauthorization',
+        year: 2022,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for reauthorization of federal workforce development programs, including expanded support for industry-recognized credentials and apprenticeships. As Education Committee Chair, Walberg has made closing the skills gap between workers and employers in manufacturing a central priority, particularly relevant to south Michigan\'s automotive and industrial economy.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, including education provisions he helped shape as Committee Chair to expand school choice options and reform student loan programs. Walberg argued the bill\'s education reforms would improve outcomes for Michigan students while reducing the long-term federal liability from student loan programs.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'JOBS Act — Workforce Training Provisions',
+        year: 2023,
+        month: 6,
+        summary: 'Led Education and Workforce Committee efforts to expand employer-sponsored training programs and industry-recognized credentials as alternatives to traditional college degrees. Walberg has argued that the four-year college model is not appropriate for many jobs in manufacturing, construction, and healthcare and that Congress should invest more heavily in vocational pathways.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'D000624',
+    slug: 'debbie-dingell',
+    name: 'Debbie Dingell',
+    party: 'D',
+    chamber: 'House',
+    district: 6,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 6th District',
+    bio: 'Debbie Dingell has represented southeast Michigan in the House since 2015, succeeding her late husband, John Dingell, the longest-serving member of Congress in history who represented the district for 59 years. A former General Motors executive and longtime Democratic activist, she sits on the House Energy and Commerce Committee and the Natural Resources Committee. Dingell has focused on auto industry competitiveness, gun safety, Great Lakes protection, and mental health policy throughout her tenure.',
+    sinceYear: 2015,
+    committees: [
+      { slug: 'hsif', name: 'House Committee on Energy and Commerce', chamber: 'House', role: 'Member' },
+      { slug: 'hsii', name: 'House Committee on Natural Resources', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'For',
+        summary: 'Voted for the Inflation Reduction Act, with particular emphasis on its electric vehicle tax credits that she argued were critical for Michigan\'s auto industry. Dingell had worked for years to secure EV incentives that required domestic manufacturing, arguing that clean energy transition must happen in a way that protects Michigan auto workers and the communities that depend on the industry.',
+      },
+      {
+        title: 'Bipartisan Safer Communities Act',
+        year: 2022,
+        month: 6,
+        position: 'For',
+        summary: 'Voted for the first major federal gun safety legislation in decades, which she celebrated as an important step while calling for further action. Dingell has been one of Congress\'s most persistent advocates for gun violence prevention, work that became deeply personal after the 2021 Oxford High School shooting in her home state of Michigan.',
+      },
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for the CHIPS and Science Act, supporting domestic semiconductor manufacturing investment she argued was essential for Michigan\'s automotive supply chain and long-term industrial competitiveness. Dingell has consistently framed U.S.-China economic competition as an existential issue for Michigan\'s manufacturing economy.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Mental Health Access Improvement Act',
+        year: 2021,
+        month: 5,
+        summary: 'Championed bipartisan legislation expanding Medicare coverage for mental health services provided by licensed counselors and marriage and family therapists, addressing critical gaps in mental health access. Dingell has made mental health a signature priority and worked across the aisle to secure the bill\'s inclusion in larger legislative packages, arguing that mental health care is healthcare.',
+      },
+      {
+        title: 'Great Lakes Restoration Initiative Provisions',
+        year: 2022,
+        month: 3,
+        summary: 'Led efforts to strengthen and fund the Great Lakes Restoration Initiative through appropriations and authorization legislation, continuing a legacy of Great Lakes advocacy that her husband John Dingell championed for decades. Debbie Dingell has argued that protecting the Great Lakes is both an environmental and economic imperative for Michigan and the region.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'B001321',
+    slug: 'tom-barrett',
+    name: 'Tom Barrett',
+    party: 'R',
+    chamber: 'House',
+    district: 7,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 7th District',
+    bio: 'Tom Barrett was elected to represent Michigan\'s 7th Congressional District in 2024, taking office in January 2025. A U.S. Army veteran and former Michigan state senator, he won the competitive seat that Elissa Slotkin had held before her successful Senate campaign. Barrett serves on the House Veterans\' Affairs and Transportation and Infrastructure Committees. His mid-Michigan district includes Lansing, the state capital, and surrounding communities.',
+    sinceYear: 2025,
+    committees: [
+      { slug: 'hsvr', name: 'House Committee on Veterans\' Affairs', chamber: 'House', role: 'Member' },
+      { slug: 'hspw', name: 'House Committee on Transportation and Infrastructure', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act in his first weeks in Congress, supporting mandatory ICE detention of undocumented immigrants charged with violent crimes. Barrett ran on a strong immigration enforcement platform and delivered on his campaign commitments with an early vote for the immigration enforcement legislation.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation package, supporting tax cut extensions, border security spending, and fiscal reductions. Barrett has positioned himself as a fiscal conservative aligned with the House Republican mainstream on major economic legislation.',
+      },
+      {
+        title: 'National Defense Authorization Act FY2026',
+        year: 2025,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for the NDAA FY2026, supporting provisions for military readiness and veteran programs. Barrett, a U.S. Army veteran, has made veteran affairs a personal priority and used his Veterans\' Affairs Committee assignment to advocate for improved access to mental health and primary care services for veterans in mid-Michigan.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Veterans Mental Health Modernization Act',
+        year: 2025,
+        month: 4,
+        summary: 'Introduced legislation to expand VA mental health telehealth services and reduce wait times for veterans in rural and mid-sized communities. Barrett, drawing on his military background, has made veteran mental health a signature issue in his first term and has worked within the Veterans\' Affairs Committee to identify legislative solutions to persistent VA care access gaps.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'M001237',
+    slug: 'kristen-mcdonald-rivet',
+    name: 'Kristen McDonald Rivet',
+    party: 'D',
+    chamber: 'House',
+    district: 8,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 8th District',
+    bio: 'Kristen McDonald Rivet was elected to Michigan\'s 8th Congressional District in a 2025 special election, becoming one of the newest members of the 119th Congress. A former Michigan state senator who had served the same district in Lansing, she is a healthcare attorney and advocate. She serves on the House Agriculture and Transportation and Infrastructure Committees. Her thumb-region district includes Bay City, Saginaw, and surrounding communities.',
+    sinceYear: 2025,
+    committees: [
+      { slug: 'hsag', name: 'House Committee on Agriculture', chamber: 'House', role: 'Member' },
+      { slug: 'hspw', name: 'House Committee on Transportation and Infrastructure', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, arguing that Medicaid cuts and SNAP reductions would harm Michigan\'s working families in her district. McDonald Rivet, with her background in healthcare law, specifically objected to Medicaid work requirements she argued would create barriers to care for low-income residents in the Thumb region.',
+      },
+      {
+        title: 'Farm Bill Reauthorization',
+        year: 2025,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for farm bill reauthorization supporting Michigan\'s agricultural producers, including the sugar beet, dry bean, and corn farmers who are central to the 8th District\'s economy. McDonald Rivet used her Agriculture Committee seat to advocate for provisions protecting mid-sized family farms from economic pressures.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Rural Healthcare Access Act',
+        year: 2025,
+        month: 6,
+        summary: 'Introduced legislation expanding Medicaid reimbursement rates for rural hospitals and critical access hospitals to address the wave of rural hospital closures threatening healthcare access in Michigan\'s Thumb region. McDonald Rivet, a healthcare attorney, has made rural hospital sustainability one of her signature legislative priorities, arguing that hospital closures devastate rural communities economically and medically.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'M001136',
+    slug: 'lisa-c-mcclain',
+    name: 'Lisa C. McClain',
+    party: 'R',
+    chamber: 'House',
+    district: 9,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 9th District',
+    bio: 'Lisa McClain has represented Michigan\'s 9th Congressional District since 2021. A businesswoman and entrepreneur who co-founded and ran multiple companies, she serves on the House Education and Workforce Committee and the House Financial Services Committee. McClain has been a consistent conservative voice on fiscal policy, regulatory reform, and economic development in her east Michigan district, which stretches from the northern Detroit suburbs through the Thumb along Lake Huron.',
+    sinceYear: 2021,
+    committees: [
+      { slug: 'hsed', name: 'House Committee on Education and Workforce', chamber: 'House', role: 'Member' },
+      { slug: 'hsba', name: 'House Committee on Financial Services', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'American Rescue Plan Act — Against',
+        year: 2021,
+        month: 3,
+        position: 'Against',
+        summary: 'Voted against the $1.9 trillion COVID-19 relief package in her first months in Congress, arguing the bill was too large, poorly targeted, and would fuel inflation. McClain, a businesswoman, argued that much of the spending was unnecessary given the economic recovery already underway and that the bill\'s size would create long-term fiscal damage.',
+      },
+      {
+        title: 'Fiscal Responsibility Act of 2023',
+        year: 2023,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the bipartisan debt ceiling deal, supporting spending caps as a step toward fiscal discipline that she argued was essential to prevent a debt crisis. McClain has been a consistent advocate for reducing federal spending and backed the deal as an achievable step toward the larger fiscal reforms she believes are necessary.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation bill, supporting its tax cut extensions and regulatory reductions. McClain has consistently advocated for tax relief for Michigan\'s small businesses and families and backed the legislation as consistent with her core economic priorities.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Small Business Regulatory Flexibility Improvements Act',
+        year: 2022,
+        month: 6,
+        summary: 'Championed legislation strengthening requirements for federal agencies to assess the impact of new regulations on small businesses and to consider less burdensome alternatives. Drawing on her background as a small business owner and executive, McClain has made regulatory relief a signature priority, arguing that federal rules impose disproportionate compliance costs on small firms in east Michigan\'s economy.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'J000307',
+    slug: 'john-james',
+    name: 'John James',
+    party: 'R',
+    chamber: 'House',
+    district: 10,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 10th District',
+    bio: 'John James has represented Michigan\'s 10th Congressional District since 2023, having previously run twice for U.S. Senate in Michigan in 2018 and 2020. A West Point graduate, Army Ranger, and Apache helicopter pilot who served in Iraq, he is also a logistics company executive who took over his family\'s business. James serves on the House Energy and Commerce Committee. His district covers Macomb County and northern Oakland County — Michigan\'s most competitive suburban terrain.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hsif', name: 'House Committee on Energy and Commerce', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'Laken Riley Act',
+        year: 2025,
+        month: 1,
+        position: 'For',
+        summary: 'Voted for the Laken Riley Act requiring ICE detention of undocumented immigrants charged with violent crimes. James has made border security and immigration enforcement a consistent priority across his political career and backed the bill as a meaningful step toward restoring immigration law enforcement.',
+      },
+      {
+        title: 'Lower Costs, More Transparency Act',
+        year: 2023,
+        month: 12,
+        position: 'For',
+        summary: 'Voted for bipartisan healthcare pricing transparency legislation targeting pharmacy benefit managers and hospital pricing opacity. James has framed healthcare cost reduction as both an economic and equity issue, arguing that lack of price transparency harms working families in Macomb County who are paying more for healthcare without understanding why.',
+      },
+      {
+        title: 'One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'For',
+        summary: 'Voted for the House Republican budget reconciliation package, supporting tax cut extensions and regulatory reductions he argued would benefit Michigan\'s small businesses and manufacturing sector. James, a logistics executive, backed provisions reducing business regulatory burdens as directly relevant to his professional experience.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Military Spouse Employment Act',
+        year: 2023,
+        month: 9,
+        summary: 'Introduced legislation expanding federal employment preferences and remote work opportunities for military spouses, addressing the high unemployment rate among military spouses due to frequent relocations. James, a veteran and son of a veteran, has made military family economic stability a signature priority and framed military spouse unemployment as both a readiness and a fairness issue.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'S001215',
+    slug: 'haley-m-stevens',
+    name: 'Haley M. Stevens',
+    party: 'D',
+    chamber: 'House',
+    district: 11,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 11th District',
+    bio: 'Haley Stevens has represented Michigan\'s 11th Congressional District since 2019. A former chief of staff of the Obama administration\'s auto industry rescue task force during the 2009 bailout, she brings deep manufacturing policy experience to Congress. She serves on the House Education and Workforce Committee, the Science, Space, and Technology Committee, and the China Select Committee. Her Oakland County suburban district is one of Michigan\'s most educated and competitive.',
+    sinceYear: 2019,
+    committees: [
+      { slug: 'hssy', name: 'House Committee on Science, Space, and Technology', chamber: 'House', role: 'Member' },
+      { slug: 'hszs', name: 'House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party', chamber: 'House', role: 'Member' },
+      { slug: 'hsed', name: 'House Committee on Education and Workforce', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'CHIPS and Science Act',
+        year: 2022,
+        month: 7,
+        position: 'For',
+        summary: 'Voted for the CHIPS and Science Act, which she had championed for years as a member of the Science Committee. Stevens, who helped manage the auto industry bailout, framed the bill as a direct descendant of that intervention — a targeted federal investment to prevent the collapse of a strategically vital domestic industry under Chinese competitive pressure.',
+      },
+      {
+        title: 'American Rescue Plan Act of 2021',
+        year: 2021,
+        month: 3,
+        position: 'For',
+        summary: 'Voted for the $1.9 trillion COVID-19 relief package, supporting its small business provisions, education funding, and expanded unemployment assistance. Stevens highlighted provisions supporting Michigan\'s auto industry suppliers and the small manufacturers in her district that had been devastated by the pandemic\'s supply chain disruptions.',
+      },
+      {
+        title: 'BIOSECURE Act',
+        year: 2024,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for legislation restricting federal contracts with Chinese biotechnology companies. As a member of the China Select Committee, Stevens supported the bill as part of a broader strategy to reduce U.S. economic and data dependence on Chinese state-affiliated companies, particularly in sensitive sectors like biotechnology and genomics.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'CHIPS for America Act — Early Legislation',
+        year: 2020,
+        month: 6,
+        summary: 'Was among the early sponsors of legislation creating federal incentives for domestic semiconductor manufacturing — the legislation that eventually became the CHIPS and Science Act. Stevens worked for over two years to build bipartisan support for the bill, arguing from her auto bailout experience that domestic manufacturing of critical components is both an economic and security imperative.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'T000481',
+    slug: 'rashida-tlaib',
+    name: 'Rashida Tlaib',
+    party: 'D',
+    chamber: 'House',
+    district: 12,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 12th District',
+    bio: 'Rashida Tlaib has represented Michigan\'s 12th Congressional District since 2019. The first Palestinian-American woman elected to Congress and one of the first two Muslim women elected to the House, she is a former Michigan state legislator and progressive activist. She serves on the House Financial Services Committee and the Oversight Committee. Tlaib represents Detroit and some of its southern suburbs, and is a prominent member of the progressive "Squad," focusing on economic justice, Palestinian rights, criminal justice reform, and housing.',
+    sinceYear: 2019,
+    committees: [
+      { slug: 'hsba', name: 'House Committee on Financial Services', chamber: 'House', role: 'Member' },
+      { slug: 'hsgo', name: 'House Committee on Oversight and Government Reform', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'American Rescue Plan Act of 2021',
+        year: 2021,
+        month: 3,
+        position: 'For',
+        summary: 'Voted for the $1.9 trillion COVID-19 relief package, which she argued was essential for Detroit\'s low-income communities devastated by the pandemic. Tlaib advocated for the bill\'s direct payments, enhanced unemployment benefits, and rental assistance programs, highlighting the housing crisis her district\'s residents faced during the pandemic.',
+      },
+      {
+        title: 'Against Iron Dome Supplemental Funding',
+        year: 2021,
+        month: 9,
+        position: 'Against',
+        summary: 'Voted against a $1 billion supplemental appropriation for Israel\'s Iron Dome missile defense system, one of only nine House members to do so. Tlaib, the first Palestinian-American woman in Congress, argued the funding was unconditional military aid that enabled policies she considers harmful to Palestinian civilians, and she was visibly emotional during the floor vote.',
+      },
+      {
+        title: 'Inflation Reduction Act',
+        year: 2022,
+        month: 8,
+        position: 'For',
+        summary: 'Voted for the Inflation Reduction Act, supporting its provisions for clean energy investment, Medicare drug price negotiation, and expanded healthcare subsidies. Tlaib called the climate provisions insufficient but voted for the bill as a meaningful step toward addressing climate change and lowering costs for her district\'s low-income residents.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'BREATHE Act',
+        year: 2021,
+        month: 7,
+        summary: 'Co-sponsored comprehensive police abolition and reimagining legislation introduced alongside the Movement for Black Lives, which called for dramatic reductions in police funding, repeal of laws criminalizing drug use, and major new investments in community health and social services. While the bill did not advance, it defined the outer bound of progressive criminal justice reform proposals in the House.',
+      },
+      {
+        title: 'End Poverty Act',
+        year: 2023,
+        month: 4,
+        summary: 'Introduced legislation replacing the federal minimum wage system with a wage floor tied to the local cost of living, arguing that a single national minimum wage cannot address the diverse cost-of-living realities across the country. Tlaib has been a persistent advocate for raising worker wages and strengthening union organizing rights throughout her congressional tenure.',
+      },
+    ],
+  },
+
+  {
+    bioguideId: 'T000488',
+    slug: 'shri-thanedar',
+    name: 'Shri Thanedar',
+    party: 'D',
+    chamber: 'House',
+    district: 13,
+    state: 'Michigan',
+    currentTitle: 'U.S. Representative, Michigan 13th District',
+    bio: 'Shri Thanedar has represented Michigan\'s 13th Congressional District since 2023. A chemist, entrepreneur, and former gubernatorial candidate, he was born in India and became an American citizen before building a successful pharmaceutical testing business in Michigan. He serves on the House Homeland Security and Agriculture Committees. Thanedar\'s district covers Detroit and portions of the city\'s surrounding communities, and he has focused on economic development, environmental justice, and small business growth.',
+    sinceYear: 2023,
+    committees: [
+      { slug: 'hshm', name: 'House Committee on Homeland Security', chamber: 'House', role: 'Member' },
+      { slug: 'hsag', name: 'House Committee on Agriculture', chamber: 'House', role: 'Member' },
+    ],
+    keyVotes: [
+      {
+        title: 'American Rescue Plan Act of 2021 — Retroactive Support',
+        year: 2021,
+        month: 3,
+        position: 'For',
+        summary: 'As a state candidate during the bill\'s passage, Thanedar publicly supported the American Rescue Plan and upon taking office in 2023 has consistently backed similar large-scale federal investment in his district\'s communities. Detroit received significant ARP funding for infrastructure and housing that Thanedar has championed in oversight.',
+      },
+      {
+        title: 'Against One Big Beautiful Bill',
+        year: 2025,
+        month: 5,
+        position: 'Against',
+        summary: 'Voted against the House Republican budget reconciliation bill, arguing that cuts to Medicaid and food assistance programs would devastate Detroit\'s working-class and low-income residents. Thanedar cited the high rates of poverty and uninsured residents in his district as making the Medicaid cuts especially harmful.',
+      },
+      {
+        title: 'BIOSECURE Act',
+        year: 2024,
+        month: 9,
+        position: 'For',
+        summary: 'Voted for legislation restricting federal contracts with Chinese biotechnology companies. Thanedar, with his background as a pharmaceutical chemist and testing laboratory owner, supported the bill\'s focus on protecting American scientific research integrity and reducing dependence on foreign-controlled biotech supply chains.',
+      },
+    ],
+    keyBills: [
+      {
+        title: 'Detroit Economic Revival and Environmental Justice Act',
+        year: 2023,
+        month: 7,
+        summary: 'Introduced legislation combining EPA environmental remediation funding, small business development grants, and infrastructure investment targeting Detroit\'s most economically distressed neighborhoods. Thanedar has made environmental justice — particularly addressing pollution legacy in majority-Black Detroit communities — a signature issue, drawing on his scientific background to advocate for evidence-based remediation standards.',
+      },
+    ],
+  },
+]
+
+export const miDelegationProfiles: Record<string, PoliticianProfile> =
+  Object.fromEntries(memberData.map(d => [d.slug, buildCongressProfile(d)]))
