@@ -10,7 +10,6 @@ import newsom from '@/data/politicians/gavin-newsom'
 import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { memberSlug } from '@/components/map/CongressionalMapSection'
-import { allCongressMembers } from '@/data/legislators/slim'
 import { allBills } from '@/data/bills'
 import { committees } from '@/data/committees'
 import { countries } from '@/data/economy/countries'
@@ -19,7 +18,7 @@ const fullProfiles = [newsom, ...Object.values(allDelegationProfiles)]
 const allPoliticians = [...fullProfiles, ...Object.values(stubProfiles)]
 
 interface Result {
-  type: 'politician' | 'politician-stub' | 'member' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
+  type: 'politician' | 'politician-stub' | 'state' | 'candidate' | 'bill' | 'committee' | 'country'
   label: string
   sub: string
   href?: string
@@ -61,29 +60,6 @@ function getResults(query: string): Result[] {
       // Full profiles rank above stubs at the same score
       score: s + (isStub ? 0 : 0.5),
     })
-  }
-
-  // Congress members — second tier
-  let memberCount = 0
-  for (const m of allCongressMembers) {
-    const nameScore = scoreStr(m.name, q)
-    const roleScore = m.title.toLowerCase().includes(q) ? 2 : 0
-    const stateScore = m.state.toLowerCase().includes(q) ? 1 : 0
-    const partyScore =
-      (m.party === 'D' && 'democrat'.startsWith(q)) ||
-      (m.party === 'R' && 'republican'.startsWith(q))
-        ? 1 : 0
-    const s = nameScore || roleScore || stateScore || partyScore
-    if (!s) continue
-    results.push({
-      type: 'member',
-      label: m.name,
-      sub: m.title,
-      href: `/politicians/${memberSlug(m.name)}`,
-      photoUrl: `https://theunitedstates.io/images/congress/225x275/${m.bioguide}.jpg`,
-      score: s - 1, // members rank below profile entries at same name score
-    })
-    if (++memberCount >= 3) break
   }
 
   // Presidential candidates without profiles
@@ -182,7 +158,6 @@ function getResults(query: string): Result[] {
 const typeLabel: Record<Result['type'], string> = {
   politician: 'PROFILE',
   'politician-stub': 'IN PROGRESS',
-  member: 'CONGRESS',
   state: 'STATE',
   candidate: 'CANDIDATE',
   bill: 'BILL',
@@ -193,7 +168,6 @@ const typeLabel: Record<Result['type'], string> = {
 const typeBadgeColor: Record<Result['type'], string> = {
   politician: 'text-accent/80 border-accent/30 bg-accent/5',
   'politician-stub': 'text-amber-600 border-amber-800/60 bg-amber-950/20',
-  member: 'text-ink-3 border-border bg-surface-2',
   state: 'text-teal-700 border-teal-300 bg-teal-100 dark:text-teal-400 dark:border-teal-900 dark:bg-teal-950',
   candidate: 'text-violet-700 border-violet-300 bg-violet-100 dark:text-violet-400 dark:border-violet-900 dark:bg-violet-950',
   bill: 'text-signal-bill border-signal-bill/30 bg-surface-2',
