@@ -405,8 +405,8 @@ const memberData: CongressMemberData[] = [
     chamber: 'House',
     district: 6,
     state: 'Minnesota',
-    currentTitle: 'U.S. Representative, Minnesota 6th District',
-    bio: 'Tom Emmer has represented Minnesota\'s 6th Congressional District — the northwest Twin Cities exurbs and St. Cloud area — since 2015. A former Minnesota state legislator and 2010 gubernatorial candidate, he served as House Majority Whip from 2023 to 2025, making him the third-highest-ranking Republican in Congress. He serves on the House Financial Services Committee and has been a leading voice on cryptocurrency regulation, fiscal policy, and conservative governance. He briefly won the House Speaker election in October 2023 before withdrawing after insufficient caucus support.',
+    currentTitle: 'House Majority Whip',
+    bio: 'Tom Emmer has represented Minnesota\'s 6th Congressional District — the northwest Twin Cities exurbs and St. Cloud area — since 2015. A former Minnesota state legislator and 2010 gubernatorial candidate, he serves as House Majority Whip — the third-highest-ranking Republican in Congress — responsible for counting and securing votes for the House Republican majority. He serves on the House Financial Services Committee and has been a leading voice on cryptocurrency regulation, fiscal policy, and conservative governance. He briefly won the House Speaker election in October 2023 before withdrawing after insufficient caucus support.',
     sinceYear: 2015,
     committees: [
       { slug: 'hsba', name: 'House Committee on Financial Services', chamber: 'House', role: 'Member' },

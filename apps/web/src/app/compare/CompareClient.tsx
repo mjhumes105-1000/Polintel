@@ -6,9 +6,10 @@ import Link from 'next/link'
 import type { PoliticianProfile } from '@political-intel/types'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import newsom from '@/data/politicians/gavin-newsom'
-import { caDelegationProfiles } from '@/data/politicians/ca-delegation'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
+import { stubProfiles } from '@/data/politicians/stub-profiles'
 
-const allPoliticians = [newsom, ...Object.values(caDelegationProfiles)]
+const allPoliticians = [newsom, ...Object.values(allDelegationProfiles), ...Object.values(stubProfiles)]
 const bySlug = Object.fromEntries(allPoliticians.map((p) => [p.slug, p]))
 
 function formatMoney(n: number) {

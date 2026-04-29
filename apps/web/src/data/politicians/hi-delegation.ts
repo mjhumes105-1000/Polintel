@@ -73,8 +73,8 @@ const memberData: CongressMemberData[] = [
     party: 'D',
     chamber: 'Senate',
     state: 'Hawaii',
-    currentTitle: 'U.S. Senator from Hawaii',
-    bio: 'Brian Schatz has served in the U.S. Senate since 2012, appointed following the death of Senator Daniel Inouye. He is one of Congress\'s leading voices on climate change and ocean policy, and serves on the Senate Appropriations Committee and Commerce Committee. Known for his progressive positions and social media presence, Schatz has championed legislation addressing climate adaptation, disaster preparedness, and Native Hawaiian rights.',
+    currentTitle: 'Senate Minority Whip',
+    bio: 'Brian Schatz has served in the U.S. Senate since 2012, appointed following the death of Senator Daniel Inouye. He serves as Senate Minority Whip in the 119th Congress, the second-highest position in Senate Democratic leadership, responsible for coordinating the caucus and counting votes. He is one of Congress\'s leading voices on climate change and ocean policy, and serves on the Senate Appropriations Committee and Commerce Committee.',
     sinceYear: 2012,
     committees: [
       { slug: 'slia', name: 'Senate Committee on Indian Affairs', chamber: 'Senate', role: 'Member' },

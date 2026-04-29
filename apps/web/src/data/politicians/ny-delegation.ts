@@ -11,7 +11,7 @@ const memberData: CongressMemberData[] = [
     party: 'D',
     chamber: 'Senate',
     state: 'New York',
-    currentTitle: 'U.S. Senator from New York (Minority Leader)',
+    currentTitle: 'Senate Minority Leader',
     bio: 'Chuck Schumer has served in the Senate since 1999 and has led the Senate Democratic Caucus since 2017, serving as Majority Leader during the 117th Congress when Democrats passed the American Rescue Plan, Infrastructure Investment and Jobs Act, CHIPS and Science Act, and Inflation Reduction Act. Now Senate Minority Leader in the 119th Congress, he remains the most powerful Democrat in the upper chamber.',
     sinceYear: 1999,
     committees: [
@@ -290,7 +290,7 @@ const memberData: CongressMemberData[] = [
     chamber: 'House',
     state: 'New York',
     district: 8,
-    currentTitle: 'U.S. Representative, New York 8th District (House Minority Leader)',
+    currentTitle: 'House Minority Leader',
     bio: 'Hakeem Jeffries became House Minority Leader in January 2023, the first Black American to lead a major party caucus in Congress. A former Brooklyn state assemblyman and corporate litigator, he represents Central Brooklyn\'s 8th District and is widely seen as a pragmatic leader who has maintained party discipline while managing the ideologically diverse House Democratic Caucus through two consecutive cycles of minority status.',
     sinceYear: 2013,
     committees: [],

@@ -362,7 +362,7 @@ const memberData: CongressMemberData[] = [
     chamber: 'House',
     district: 5,
     state: 'Massachusetts',
-    currentTitle: 'U.S. Representative, Massachusetts 5th District',
+    currentTitle: 'House Minority Whip',
     bio: 'Katherine Clark has represented Massachusetts\'s 5th Congressional District — inner suburbs of Boston including Watertown and Framingham — since 2013. She serves as House Minority Whip, the second-highest Democratic leadership position in the House, making her one of the most powerful Democrats in Congress. A former state legislator and prosecutor, she has focused on early childhood education, gun safety, and worker economic security, while playing a central role in Democratic floor strategy and vote-counting.',
     sinceYear: 2013,
     committees: [],

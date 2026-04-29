@@ -11,8 +11,8 @@ const memberData: CongressMemberData[] = [
     party: 'R',
     chamber: 'Senate',
     state: 'Wyoming',
-    currentTitle: 'U.S. Senator from Wyoming',
-    bio: 'John Barrasso has served in the U.S. Senate since 2007, appointed to fill the seat of the late Craig Thomas. An orthopedic surgeon before entering politics, he is the Senate Republican Conference Chairman — the third-highest leadership position among Senate Republicans — and a senior member of the Energy and Natural Resources, Finance, and Foreign Relations committees. He is a leading voice on energy policy, opposing regulations that affect Wyoming\'s coal, oil, and natural gas industries.',
+    currentTitle: 'Senate Majority Whip',
+    bio: 'John Barrasso has served in the U.S. Senate since 2007, appointed to fill the seat of the late Craig Thomas. An orthopedic surgeon before entering politics, he serves as Senate Majority Whip in the 119th Congress — responsible for securing votes and enforcing Republican caucus discipline — and is a senior member of the Energy and Natural Resources, Finance, and Foreign Relations committees. He is a leading voice on energy policy, opposing regulations that affect Wyoming\'s coal, oil, and natural gas industries.',
     sinceYear: 2007,
     committees: [
       { slug: 'sseg', name: 'Senate Committee on Energy and Natural Resources', chamber: 'Senate', role: 'Member' },
