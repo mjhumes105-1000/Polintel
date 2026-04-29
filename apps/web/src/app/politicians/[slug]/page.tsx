@@ -19,7 +19,6 @@ import { fetchLiveTimeline } from '@/lib/fetchLiveTimeline'
 import { fetchFECDonors } from '@/lib/fetchFECDonors'
 import { fetchNewsItems } from '@/lib/fetchNewsItems'
 import { NewsFeed } from '@/components/profile/NewsFeed'
-import { AskTeddy } from '@/components/ask-bear/AskTeddy'
 
 export const revalidate = 86400
 
@@ -211,7 +210,6 @@ export default async function PoliticianPage({
         <NewsFeed items={newsItems} politicianName={politician.name} />
         <FundingSection politician={enrichedPolitician} />
         <RecordAssessment politician={enrichedPolitician} />
-        <AskTeddy politicianId={politician.id} politicianName={politician.name} />
       </div>
     </>
   )

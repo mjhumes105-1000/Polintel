@@ -1,13 +1,24 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
-import type { AskBearResponse } from '@political-intel/types'
+import { usePathname } from 'next/navigation'
+import type { AskBearResponse, ConversationTurn } from '@political-intel/types'
 import { BearAnswer } from './BearAnswer'
 
 const BEAR_NAME = 'Teddy'
 
-const PROMPT_CHIPS = [
+const GENERAL_CHIPS = [
+  'How does a bill become law?',
+  'What is a filibuster?',
+  'How do tariffs affect prices?',
+  'What does the Fed do?',
+  'What is the debt ceiling?',
+  'How does Congress work?',
+]
+
+const POLITICIAN_CHIPS = [
   'Summarize this record',
   'Show funding context',
   'Compare votes and statements',
@@ -16,43 +27,79 @@ const PROMPT_CHIPS = [
   'What is unresolved?',
 ]
 
-interface AskTeddyProps {
-  politicianId: string
-  politicianName: string
+interface ThreadItem {
+  query: string
+  response: AskBearResponse
 }
 
-export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
+export function AskTeddy() {
+  const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [response, setResponse] = useState<AskBearResponse | null>(null)
+  const [thread, setThread] = useState<ThreadItem[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState<string | null>(null) // tracks which answer id was copied
   const inputRef = useRef<HTMLInputElement>(null)
+  const bottomRef = useRef<HTMLDivElement>(null)
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
+  // Detect context from URL
+  const politicianMatch = pathname.match(/^\/politicians\/([^/]+)\/?$/)
+  const politicianSlug = politicianMatch?.[1] ?? null
+  const isGeneralMode = !politicianSlug
+  const chips = politicianSlug ? POLITICIAN_CHIPS : GENERAL_CHIPS
+  const subTitle = politicianSlug
+    ? politicianSlug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ')
+    : 'Civic assistant'
+
+  useEffect(() => { setMounted(true) }, [])
+
+  // Scroll to bottom after each new response
+  useEffect(() => {
+    if (thread.length > 0) {
+      bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+    }
+  }, [thread.length, isLoading])
+
+  // Reset thread when navigating between pages
+  useEffect(() => {
+    setThread([])
+    setQuery('')
+    setError(null)
+  }, [pathname])
 
   const submit = useCallback(async (q: string) => {
     const trimmed = q.trim()
     if (!trimmed || isLoading) return
     setIsLoading(true)
     setError(null)
-    setResponse(null)
+    setQuery('')
     try {
       const endpoint = process.env.NEXT_PUBLIC_ASK_BEAR_ENDPOINT ?? '/api/ask-bear'
+      const history: ConversationTurn[] = thread.map(item => ({
+        query: item.query,
+        answer: item.response.answer,
+      }))
+      const body = politicianSlug
+        ? { query: trimmed, contextType: 'politician', contextId: politicianSlug, history }
+        : { query: trimmed, contextType: 'general', history }
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: trimmed, contextType: 'politician', contextId: politicianId }),
+        body: JSON.stringify(body),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data?.error ?? `Server returned ${res.status}`)
-      setResponse(data as AskBearResponse)
+      setThread(prev => [...prev, { query: trimmed, response: data as AskBearResponse }])
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
       setIsLoading(false)
+      setTimeout(() => inputRef.current?.focus(), 50)
     }
-  }, [isLoading, politicianId])
+  }, [isLoading, politicianSlug, thread])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -60,22 +107,20 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
   }
 
   function handleChip(chip: string) {
-    setQuery(chip)
     submit(chip)
   }
 
-  async function handleCopy() {
-    if (!response) return
+  async function handleCopy(response: AskBearResponse) {
     try {
       await navigator.clipboard.writeText(buildCopyText(response))
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2500)
+      setCopied(response.id)
+      setTimeout(() => setCopied(null), 2500)
     } catch { /* ignore */ }
   }
 
-  function handleReport() {
-    const subject = encodeURIComponent(`[Ask Teddy] Issue — ${politicianName}`)
-    const body = encodeURIComponent(`Question: ${response?.query ?? query}\n\nIssue:\n`)
+  function handleReport(q: string) {
+    const subject = encodeURIComponent(`[Ask Teddy] Issue`)
+    const body = encodeURIComponent(`Question: ${q}\n\nIssue:\n`)
     window.open(`mailto:feedback@polintel.com?subject=${subject}&body=${body}`)
   }
 
@@ -84,9 +129,24 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
     setTimeout(() => inputRef.current?.focus(), 80)
   }
 
-  // Desktop-only floating widget — hidden on mobile
-  return (
-    <div className="hidden md:block fixed bottom-6 right-6 z-50">
+  function handleClose() {
+    setOpen(false)
+  }
+
+  function handleNewConversation() {
+    setThread([])
+    setQuery('')
+    setError(null)
+    setTimeout(() => inputRef.current?.focus(), 50)
+  }
+
+  const hasThread = thread.length > 0
+
+  if (!mounted) return null
+
+  // Portal renders directly into document.body, bypassing all parent CSS stacking contexts
+  return createPortal(
+    <div className="hidden md:block fixed bottom-6 right-6 z-[9999]">
       {/* Collapsed trigger button */}
       {!open && (
         <button
@@ -111,7 +171,7 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
 
       {/* Expanded panel */}
       {open && (
-        <div className="w-[420px] max-h-[80vh] flex flex-col bg-bg border border-border rounded-xl shadow-2xl overflow-hidden">
+        <div className="w-[440px] max-h-[82vh] flex flex-col bg-bg border border-border rounded-xl shadow-2xl overflow-hidden">
           {/* Panel header */}
           <div className="flex items-center gap-2.5 px-4 py-3 border-b border-border bg-surface shrink-0">
             <div className="w-7 h-7 rounded-full bg-ink dark:bg-transparent overflow-hidden shrink-0">
@@ -125,64 +185,81 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-mono text-[10px] tracking-widest text-accent/70">ASK {BEAR_NAME.toUpperCase()}</p>
-              <p className="text-[11px] text-ink-3 truncate">{politicianName}</p>
+              <p className="text-[11px] text-ink-3 truncate">{subTitle}</p>
             </div>
-            <button
-              onClick={() => { setOpen(false); setResponse(null); setQuery(''); setError(null) }}
-              className="text-ink-4 hover:text-ink-2 transition-colors text-sm font-mono shrink-0"
-              aria-label="Close"
-            >
-              ✕
-            </button>
+            <div className="flex items-center gap-2 shrink-0">
+              {hasThread && (
+                <button
+                  onClick={handleNewConversation}
+                  className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors"
+                >
+                  NEW
+                </button>
+              )}
+              <button
+                onClick={handleClose}
+                className="text-ink-4 hover:text-ink-2 transition-colors text-sm font-mono"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+            </div>
           </div>
 
           {/* Scrollable body */}
           <div className="flex-1 overflow-y-auto min-h-0">
-            <div className="px-4 py-4">
-              {/* Input */}
-              <form onSubmit={handleSubmit} className="relative mb-3">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={query}
-                  onChange={e => setQuery(e.target.value)}
-                  disabled={isLoading}
-                  placeholder={`Ask ${BEAR_NAME} about the public record…`}
-                  className={[
-                    'w-full bg-surface border rounded px-3 py-2.5 pr-16 text-sm text-ink placeholder:text-ink-4',
-                    'focus:outline-none focus:border-accent transition-colors font-sans',
-                    isLoading ? 'border-accent/30 cursor-not-allowed opacity-60' : 'border-border',
-                  ].join(' ')}
-                />
-                <button
-                  type="submit"
-                  disabled={!query.trim() || isLoading}
-                  className="absolute right-1.5 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-accent text-bg font-mono text-[9px] tracking-widest rounded hover:bg-accent/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  ASK
-                </button>
-              </form>
+            <div className="px-4 py-4 flex flex-col gap-4">
 
-              {/* Chips — only before first answer */}
-              {!response && !isLoading && (
-                <div className="flex flex-wrap gap-1.5 mb-2">
-                  {PROMPT_CHIPS.map(chip => (
-                    <button
-                      key={chip}
-                      onClick={() => handleChip(chip)}
-                      className="px-2.5 py-1 bg-surface border border-border rounded text-[10px] text-ink-3 hover:text-accent hover:border-accent/40 transition-colors font-mono"
-                    >
-                      {chip}
-                    </button>
-                  ))}
-                </div>
+              {/* Empty state chips */}
+              {!hasThread && !isLoading && (
+                <>
+                  <div className="flex flex-wrap gap-1.5">
+                    {chips.map(chip => (
+                      <button
+                        key={chip}
+                        onClick={() => handleChip(chip)}
+                        className="px-2.5 py-1 bg-surface border border-border rounded text-[10px] text-ink-3 hover:text-accent hover:border-accent/40 transition-colors font-mono"
+                      >
+                        {chip}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-[9px] text-ink-4 font-mono leading-relaxed">
+                    {isGeneralMode
+                      ? 'Civic answers in plain language. No partisan framing.'
+                      : 'Answers only from cited public records. No scores, no partisan framing.'}
+                  </p>
+                </>
               )}
 
-              {/* Loading */}
+              {/* Conversation thread */}
+              {thread.map((item, i) => (
+                <div key={i} className="flex flex-col gap-2">
+                  {/* User question bubble */}
+                  <div className="flex justify-end">
+                    <div className="max-w-[85%] bg-accent/10 border border-accent/20 rounded-lg px-3 py-2">
+                      <p className="text-sm text-ink leading-snug">{item.query}</p>
+                    </div>
+                  </div>
+                  {/* Bear answer */}
+                  <BearAnswer
+                    response={item.response}
+                    onCopy={() => handleCopy(item.response)}
+                    onReport={() => handleReport(item.query)}
+                    copied={copied === item.response.id}
+                  />
+                </div>
+              ))}
+
+              {/* Loading indicator */}
               {isLoading && (
-                <div className="flex items-center gap-2.5 py-3 text-sm text-ink-3">
+                <div className="flex items-center gap-2.5 py-2 text-sm text-ink-3">
                   <span className="animate-pulse text-base">🐻</span>
-                  <span>{BEAR_NAME} is reviewing the cited record…</span>
+                  <span>
+                    {isGeneralMode
+                      ? `${BEAR_NAME} is on it…`
+                      : `${BEAR_NAME} is reviewing the cited record…`}
+                  </span>
                 </div>
               )}
 
@@ -199,40 +276,45 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
                 </div>
               )}
 
-              {/* Answer */}
-              {response && !isLoading && (
-                <>
-                  <div className="flex items-center justify-between mb-1">
-                    <p className="font-mono text-[9px] text-ink-4 truncate max-w-[280px]">
-                      &ldquo;{response.query}&rdquo;
-                    </p>
-                    <button
-                      onClick={() => { setResponse(null); setQuery(''); setTimeout(() => inputRef.current?.focus(), 50) }}
-                      className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors shrink-0 ml-2"
-                    >
-                      NEW ↩
-                    </button>
-                  </div>
-                  <BearAnswer
-                    response={response}
-                    onCopy={handleCopy}
-                    onReport={handleReport}
-                    copied={copied}
-                  />
-                </>
-              )}
-
-              {/* Footer note */}
-              {!response && !isLoading && (
-                <p className="mt-3 text-[9px] text-ink-4 font-mono leading-relaxed">
-                  Answers only from cited public records. No scores, no partisan framing.
-                </p>
-              )}
+              <div ref={bottomRef} />
             </div>
+          </div>
+
+          {/* Input — always pinned to bottom */}
+          <div className="shrink-0 border-t border-border bg-surface px-4 py-3">
+            <form onSubmit={handleSubmit} className="relative">
+              <input
+                ref={inputRef}
+                type="text"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                disabled={isLoading}
+                placeholder={
+                  hasThread
+                    ? 'Ask a follow-up…'
+                    : isGeneralMode
+                    ? `Ask ${BEAR_NAME} a civic question…`
+                    : `Ask ${BEAR_NAME} about the public record…`
+                }
+                className={[
+                  'w-full bg-bg border rounded px-3 py-2.5 pr-16 text-sm text-ink placeholder:text-ink-4',
+                  'focus:outline-none focus:border-accent transition-colors font-sans',
+                  isLoading ? 'border-accent/30 cursor-not-allowed opacity-60' : 'border-border',
+                ].join(' ')}
+              />
+              <button
+                type="submit"
+                disabled={!query.trim() || isLoading}
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-accent text-bg font-mono text-[9px] tracking-widest rounded hover:bg-accent/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                ASK
+              </button>
+            </form>
           </div>
         </div>
       )}
-    </div>
+    </div>,
+    document.body
   )
 }
 
@@ -254,7 +336,7 @@ function buildCopyText(response: AskBearResponse): string {
     lines.push('')
   }
   if (response.observations.length > 0) {
-    lines.push('WHAT WE OBSERVE (INTERPRETATION)')
+    lines.push('ALSO WORTH KNOWING')
     for (const obs of response.observations) lines.push(`· ${obs}`)
     lines.push('')
   }

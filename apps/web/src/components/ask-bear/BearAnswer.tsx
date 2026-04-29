@@ -45,6 +45,7 @@ interface BearAnswerProps {
 export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerProps) {
   const hasFunding = (response.openSecretsShows?.length ?? 0) > 0
   const hasTension = (response.recordTensionFlags?.length ?? 0) > 0
+  const isGeneralMode = response.mode === 'general' || response.recordShows.length === 0
 
   // Strip the required disclaimer from the answer for separate display
   const disclaimerEnd = response.answer.indexOf('not a statement of fact.')
@@ -56,13 +57,15 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
 
   return (
     <div className="mt-4 bg-surface border border-border rounded overflow-hidden">
-      {/* Disclaimer banner */}
-      <div className="border-b border-border bg-surface-2 px-4 py-2.5 flex items-start gap-2">
-        <span className="text-amber-500 text-xs mt-px shrink-0">⚠</span>
-        <p className="text-[11px] text-ink-3 leading-relaxed">
-          AI-generated editorial interpretation of the public record. Represents one reading of the evidence, not a statement of fact.
-        </p>
-      </div>
+      {/* Disclaimer banner — only for evidence-based (politician) answers */}
+      {!isGeneralMode && (
+        <div className="border-b border-border bg-surface-2 px-4 py-2.5 flex items-start gap-2">
+          <span className="text-amber-500 text-xs mt-px shrink-0">⚠</span>
+          <p className="text-[11px] text-ink-3 leading-relaxed">
+            AI-generated editorial interpretation of the public record. Represents one reading of the evidence, not a statement of fact.
+          </p>
+        </div>
+      )}
 
       <div className="px-5 py-5">
         {/* Tension + Funding context flags */}
@@ -182,12 +185,14 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
           </>
         )}
 
-        {/* What we observe */}
+        {/* What we observe / Also worth knowing */}
         {response.observations.length > 0 && (
           <>
             <Divider />
-            <SectionLabel>WHAT WE OBSERVE</SectionLabel>
-            <p className="text-[10px] font-mono text-ink-4 mb-2">INTERPRETATION — NOT ESTABLISHED FACT</p>
+            <SectionLabel>{isGeneralMode ? 'ALSO WORTH KNOWING' : 'WHAT WE OBSERVE'}</SectionLabel>
+            {!isGeneralMode && (
+              <p className="text-[10px] font-mono text-ink-4 mb-2">INTERPRETATION — NOT ESTABLISHED FACT</p>
+            )}
             <ul className="space-y-2">
               {response.observations.map((obs, i) => (
                 <li key={i} className="flex gap-2 text-sm">
@@ -219,7 +224,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
         {response.sources.length > 0 && (
           <>
             <Divider />
-            <SectionLabel>SOURCES</SectionLabel>
+            <SectionLabel>{isGeneralMode ? 'WEB SOURCES' : 'SOURCES'}</SectionLabel>
             <ul className="space-y-2">
               {response.sources.map(src => (
                 <li key={src.id} className="flex items-start gap-2 text-xs">
@@ -259,14 +264,16 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
           >
             {copied ? '✓ COPIED' : 'COPY CITED ANSWER'}
           </button>
-          <a
-            href={response.shareUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[10px] px-3 py-1.5 rounded border border-border text-ink-3 hover:text-ink hover:border-accent/40 transition-colors"
-          >
-            VIEW SOURCE RECORDS ↗
-          </a>
+          {!isGeneralMode && (
+            <a
+              href={response.shareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] px-3 py-1.5 rounded border border-border text-ink-3 hover:text-ink hover:border-accent/40 transition-colors"
+            >
+              VIEW SOURCE RECORDS ↗
+            </a>
+          )}
           <button
             onClick={onReport}
             className="font-mono text-[10px] text-ink-4 hover:text-ink-3 transition-colors ml-auto"

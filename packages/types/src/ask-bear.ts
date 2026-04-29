@@ -1,7 +1,13 @@
+export interface ConversationTurn {
+  query: string
+  answer: string
+}
+
 export interface AskBearRequest {
   query: string
-  contextType: 'politician' | 'bill' | 'vote' | 'committee' | 'topic' | 'funding' | 'donor' | 'pac' | 'search'
-  contextId: string
+  contextType: 'general' | 'politician' | 'bill' | 'vote' | 'committee' | 'topic' | 'funding' | 'donor' | 'pac' | 'search'
+  contextId?: string
+  history?: ConversationTurn[]
   userId?: string
   includeWebSearch?: boolean
   includeOpenSecrets?: boolean
@@ -14,6 +20,7 @@ export type EvidenceSourceType =
   | 'opensecrets'
   | 'official_statement'
   | 'reputable_secondary'
+  | 'web_search'
 
 export interface EvidenceSource {
   id: string
@@ -54,6 +61,7 @@ export interface AskBearResponse {
   id: string
   query: string
   answer: string
+  mode?: 'general' | 'politician'
   recordShows: EvidenceItem[]
   openSecretsShows?: FundingEvidenceItem[]
   observations: string[]

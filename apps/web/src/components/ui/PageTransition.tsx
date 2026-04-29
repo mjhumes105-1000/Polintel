@@ -11,13 +11,12 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     const el = ref.current
     if (!el) return
     el.style.animation = 'none'
-    // Force reflow so removing then re-adding the animation restarts it
     void el.offsetHeight
     el.style.animation = ''
   }, [pathname])
 
   return (
-    <div ref={ref} className="animate-page-enter" style={{ willChange: 'opacity, transform' }}>
+    <div ref={ref} className="animate-page-enter">
       {children}
     </div>
   )

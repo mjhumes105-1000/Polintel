@@ -12,6 +12,7 @@ import type {
   AskBearResponseDraft,
   EvidenceItem,
   FundingEvidenceItem,
+  ConversationTurn,
 } from '@political-intel/types'
 import { buildPoliticianEvidencePacket } from '@/lib/ask-bear/evidenceBuilder'
 import { buildSystemPrompt } from '@/lib/ask-bear/systemPrompt'
@@ -37,7 +38,7 @@ const SAFE_FALLBACK_ANSWER =
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as AskBearRequest
-    const { query, contextType, contextId } = body
+    const { query, contextType, contextId, history } = body
 
     if (!query?.trim()) {
       return NextResponse.json({ error: 'query is required' }, { status: 400 })
@@ -49,6 +50,99 @@ export async function POST(req: NextRequest) {
         { error: 'Ask Teddy is not configured on this deployment. Set ANTHROPIC_API_KEY to enable.' },
         { status: 503 }
       )
+    }
+
+    // General civic Q&A with live web search
+    if (contextType === 'general') {
+      const tavilyKey = process.env.TAVILY_API_KEY
+      const searchResults = tavilyKey ? await searchWithTavily(query, tavilyKey) : []
+
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+      const searchContext = searchResults.length > 0
+        ? `\nCURRENT WEB SEARCH RESULTS (today is ${today}):\n` +
+          searchResults.map((r, i) =>
+            `[${i + 1}] "${r.title}"${r.published_date ? ` (${r.published_date.slice(0, 10)})` : ''}\n    ${r.url}\n    ${r.content.slice(0, 300)}`
+          ).join('\n\n') +
+          '\n\nUse these results for current information. Reference them naturally when they are relevant.\n'
+        : ''
+
+      const GENERAL_PROMPT = `You are Teddy, PoliIntel's civic assistant. You answer questions about American government, politics, and the economy in plain language — like a knowledgeable friend, not a textbook.
+
+STYLE
+- Direct and honest. Get to the point.
+- Short paragraphs. No jargon unless you explain it.
+- Don't start with "Great question!" or filler phrases. Just answer.
+- If something is genuinely debated, say so.
+
+WHAT YOU COVER
+- How Congress, the White House, and the courts work
+- How bills become laws, what filibusters are, how committees function
+- Politicians — their votes, records, and public positions
+- The economy — the Fed, interest rates, inflation, tariffs, trade deficits, the debt ceiling
+- Civic basics — elections, how voting works, constitutional rights
+${searchContext}
+RULES
+1. No partisan framing. Describe facts and trade-offs, not sides.
+2. If you don't know something, say so plainly.
+3. Keep it under 300 words unless complexity demands more.
+4. Lead with the direct answer, then explain.
+
+Respond ONLY as JSON — no other text:
+{
+  "answer": "your conversational answer here",
+  "observations": ["optional additional context"],
+  "unresolved": ["if something is genuinely contested or uncertain"]
+}`
+
+      const client = new Anthropic({ apiKey })
+      const message = await client.messages.create({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1500,
+        system: GENERAL_PROMPT,
+        messages: [
+          ...buildHistory(history),
+          { role: 'user', content: query },
+        ],
+      })
+
+      const rawBlock = message.content[0]
+      if (rawBlock.type !== 'text') throw new Error('Unexpected response type')
+
+      let parsed: { answer: string; observations?: string[]; unresolved?: string[] }
+      try {
+        const match = rawBlock.text.match(/\{[\s\S]*\}/)
+        if (!match) throw new Error('No JSON found')
+        parsed = JSON.parse(match[0])
+      } catch {
+        parsed = { answer: rawBlock.text }
+      }
+
+      const webSources: AskBearResponse['sources'] = searchResults.map((r, i) => ({
+        id: `web-${i + 1}`,
+        title: r.title,
+        url: r.url,
+        publisher: new URL(r.url).hostname.replace(/^www\./, ''),
+        publishedAt: r.published_date ?? undefined,
+        sourceType: 'web_search' as const,
+        accessedAt: new Date().toISOString(),
+        reliabilityTier: 2 as const,
+      }))
+
+      const id = generateId()
+      const generalResponse: AskBearResponse = {
+        id,
+        query,
+        mode: 'general',
+        answer: parsed.answer ?? rawBlock.text,
+        recordShows: [],
+        observations: parsed.observations ?? [],
+        unresolved: parsed.unresolved ?? [],
+        sources: webSources,
+        createdAt: new Date().toISOString(),
+        shareUrl: `/api/ask-bear/${id}`,
+      }
+      storeAnswer(id, generalResponse)
+      return NextResponse.json(generalResponse)
     }
 
     // Build evidence packet from context
@@ -73,7 +167,10 @@ export async function POST(req: NextRequest) {
       model: 'claude-sonnet-4-6',
       max_tokens: 3000,
       system: systemPrompt,
-      messages: [{ role: 'user', content: query }],
+      messages: [
+        ...buildHistory(history),
+        { role: 'user', content: query },
+      ],
     })
 
     const rawBlock = message.content[0]
@@ -122,6 +219,7 @@ export async function POST(req: NextRequest) {
     const response: AskBearResponse = {
       id,
       query,
+      mode: 'politician',
       answer: sanitized.answer,
       recordShows: sanitized.recordShows.map((item, i) => ({
         id: `rs-${i}`,
@@ -153,6 +251,43 @@ export async function POST(req: NextRequest) {
     console.error('[ask-bear] Error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
+}
+
+interface TavilyResult {
+  title: string
+  url: string
+  content: string
+  score: number
+  published_date?: string
+}
+
+async function searchWithTavily(query: string, apiKey: string): Promise<TavilyResult[]> {
+  try {
+    const res = await fetch('https://api.tavily.com/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: apiKey,
+        query,
+        search_depth: 'basic',
+        max_results: 5,
+        include_answer: false,
+      }),
+    })
+    if (!res.ok) return []
+    const data = await res.json()
+    return (data.results ?? []) as TavilyResult[]
+  } catch {
+    return []
+  }
+}
+
+function buildHistory(history: ConversationTurn[] | undefined): { role: 'user' | 'assistant'; content: string }[] {
+  if (!history?.length) return []
+  return history.flatMap(turn => [
+    { role: 'user' as const, content: turn.query },
+    { role: 'assistant' as const, content: turn.answer },
+  ])
 }
 
 function buildFallbackResponse(

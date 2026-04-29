@@ -5,6 +5,7 @@ import './globals.css'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { PageTransition } from '@/components/ui/PageTransition'
+import { AskTeddy } from '@/components/ask-bear/AskTeddy'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
+        <AskTeddy />
       </body>
     </html>
   )
