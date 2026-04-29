@@ -13,8 +13,6 @@ export const stubProfileSlugs = new Set([
   'joe-biden',
   'kamala-harris',
   'barack-obama',
-  'mitch-mcconnell',
-  'mike-johnson',
   'ron-desantis',
 ])
 
@@ -116,58 +114,6 @@ const barackObama: PoliticianProfile = {
   recordAssessment: stubRecord(),
 }
 
-const mitchMcConnell: PoliticianProfile = {
-  id: 'mitch-mcconnell',
-  slug: 'mitch-mcconnell',
-  name: 'Mitch McConnell',
-  currentTitle: 'U.S. Senator from Kentucky',
-  state: 'Kentucky',
-  bio: 'Mitch McConnell has represented Kentucky in the U.S. Senate since 1985 and served as Senate Majority Leader from 2015 to 2021 and again from 2019 to 2021, and as Senate Minority Leader from 2021 to 2025. He stepped down from Senate Republican leadership in January 2025 and remains in the Senate as a rank-and-file member.',
-  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mitch_McConnell_official_portrait_112th_Congress.jpg/440px-Mitch_McConnell_official_portrait_112th_Congress.jpg',
-  sources: [stubSource('mcconnell-senate', 'Sen. Mitch McConnell — Official Senate Website', 'https://www.mcconnell.senate.gov', 'U.S. Senate')],
-  baselineCard: {
-    currentOffice: { title: 'U.S. Senator from Kentucky', jurisdiction: 'Kentucky', startDate: '1985-01-03' },
-    previousOffices: [
-      { title: 'Senate Minority Leader', jurisdiction: 'Federal', startDate: '2021-01-20', endDate: '2025-01-03' },
-      { title: 'Senate Majority Leader', jurisdiction: 'Federal', startDate: '2015-01-06', endDate: '2021-01-20' },
-    ],
-    party: 'Republican',
-    birthDate: '1942-02-20',
-    yearsInPublicService: 40,
-    sourceIds: ['mcconnell-senate'],
-  },
-  committees: [
-    { slug: 'senate-appropriations', name: 'Senate Appropriations Committee', chamber: 'Senate', role: 'Member' },
-    { slug: 'senate-rules', name: 'Senate Rules and Administration Committee', chamber: 'Senate', role: 'Member' },
-  ],
-  timeline: [],
-  funding: [],
-  recordAssessment: stubRecord(),
-}
-
-const mikeJohnson: PoliticianProfile = {
-  id: 'mike-johnson',
-  slug: 'mike-johnson',
-  name: 'Mike Johnson',
-  currentTitle: 'Speaker of the House',
-  state: 'Louisiana',
-  bio: 'Mike Johnson has represented Louisiana\'s 4th congressional district in the U.S. House since 2017 and was elected Speaker of the House in October 2023, the 56th person to hold the position. He is a member of the Republican Party.',
-  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Mike_Johnson_official_portrait%2C_118th_Congress.jpg/440px-Mike_Johnson_official_portrait%2C_118th_Congress.jpg',
-  sources: [stubSource('johnson-house', 'Rep. Mike Johnson — Official House Website', 'https://mikejohnson.house.gov', 'U.S. House of Representatives')],
-  baselineCard: {
-    currentOffice: { title: 'U.S. Representative, LA-4 / Speaker of the House', jurisdiction: 'Louisiana', startDate: '2017-01-03' },
-    previousOffices: [],
-    party: 'Republican',
-    birthDate: '1972-01-30',
-    yearsInPublicService: 8,
-    sourceIds: ['johnson-house'],
-  },
-  committees: [],
-  timeline: [],
-  funding: [],
-  recordAssessment: stubRecord(),
-}
-
 const ronDeSantis: PoliticianProfile = {
   id: 'ron-desantis',
   slug: 'ron-desantis',
@@ -197,7 +143,5 @@ export const stubProfiles: Record<string, PoliticianProfile> = {
   'joe-biden': joeBiden,
   'kamala-harris': kamalaHarris,
   'barack-obama': barackObama,
-  'mitch-mcconnell': mitchMcConnell,
-  'mike-johnson': mikeJohnson,
   'ron-desantis': ronDeSantis,
 }
