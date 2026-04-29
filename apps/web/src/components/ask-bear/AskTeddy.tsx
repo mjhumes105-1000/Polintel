@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
+import Image from 'next/image'
 import type { AskBearResponse } from '@political-intel/types'
 import { BearAnswer } from './BearAnswer'
 
@@ -21,48 +22,33 @@ interface AskTeddyProps {
 }
 
 export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
+  const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [response, setResponse] = useState<AskBearResponse | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
-  const answerRef = useRef<HTMLDivElement>(null)
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
   const submit = useCallback(async (q: string) => {
     const trimmed = q.trim()
     if (!trimmed || isLoading) return
-
     setIsLoading(true)
     setError(null)
     setResponse(null)
-
     try {
-      const endpoint =
-        (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_ASK_BEAR_ENDPOINT) ||
-        '/api/ask-bear'
-
+      const endpoint = process.env.NEXT_PUBLIC_ASK_BEAR_ENDPOINT ?? '/api/ask-bear'
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: trimmed,
-          contextType: 'politician',
-          contextId: politicianId,
-        }),
+        body: JSON.stringify({ query: trimmed, contextType: 'politician', contextId: politicianId }),
       })
-
       const data = await res.json()
-
-      if (!res.ok) {
-        throw new Error(data?.error ?? `Server returned ${res.status}`)
-      }
-
+      if (!res.ok) throw new Error(data?.error ?? `Server returned ${res.status}`)
       setResponse(data as AskBearResponse)
-      setTimeout(() => answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100)
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.'
-      setError(msg)
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
       setIsLoading(false)
     }
@@ -76,162 +62,182 @@ export function AskTeddy({ politicianId, politicianName }: AskTeddyProps) {
   function handleChip(chip: string) {
     setQuery(chip)
     submit(chip)
-    inputRef.current?.blur()
   }
 
   async function handleCopy() {
     if (!response) return
-    const text = buildCopyText(response)
     try {
-      await navigator.clipboard.writeText(text)
+      await navigator.clipboard.writeText(buildCopyText(response))
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
-    } catch {
-      // Fallback for environments without clipboard API
-    }
+    } catch { /* ignore */ }
   }
 
   function handleReport() {
-    const subject = encodeURIComponent(`[Ask Teddy] Issue with answer — ${politicianName}`)
-    const body = encodeURIComponent(
-      `Question: ${response?.query ?? query}\n\nIssue:\n\n(Describe what was wrong with the answer)`
-    )
+    const subject = encodeURIComponent(`[Ask Teddy] Issue — ${politicianName}`)
+    const body = encodeURIComponent(`Question: ${response?.query ?? query}\n\nIssue:\n`)
     window.open(`mailto:feedback@polintel.com?subject=${subject}&body=${body}`)
   }
 
+  function handleOpen() {
+    setOpen(true)
+    setTimeout(() => inputRef.current?.focus(), 80)
+  }
+
+  // Desktop-only floating widget — hidden on mobile
   return (
-    <section className="mt-10">
-      {/* Header */}
-      <div className="flex items-center gap-2.5 mb-5">
-        <span className="text-xl leading-none select-none">🐻</span>
-        <div>
-          <p className="font-mono text-[10px] tracking-widest text-accent/70">
-            ASK {BEAR_NAME.toUpperCase()}
-          </p>
-          <p className="text-xs text-ink-3 mt-0.5">
-            Ask questions about {politicianName}&apos;s public record — votes, funding, statements, and bill activity.
-          </p>
-        </div>
-      </div>
-
-      {/* Input */}
-      <form onSubmit={handleSubmit} className="relative">
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          disabled={isLoading}
-          placeholder={`Ask ${BEAR_NAME} about the public record…`}
-          className={[
-            'w-full bg-surface border rounded px-4 py-3 pr-24 text-sm text-ink placeholder:text-ink-4',
-            'focus:outline-none focus:border-accent transition-colors font-sans',
-            isLoading ? 'border-accent/30 cursor-not-allowed' : 'border-border hover:border-border/80',
-          ].join(' ')}
-        />
-        {query && !isLoading && (
-          <button
-            type="button"
-            onClick={() => setQuery('')}
-            className="absolute right-16 top-1/2 -translate-y-1/2 text-ink-4 hover:text-ink-2 transition-colors font-mono text-xs"
-          >
-            ✕
-          </button>
-        )}
+    <div className="hidden md:block fixed bottom-6 right-6 z-50">
+      {/* Collapsed trigger button */}
+      {!open && (
         <button
-          type="submit"
-          disabled={!query.trim() || isLoading}
-          className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-accent text-bg font-mono text-[10px] rounded hover:bg-accent/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          onClick={handleOpen}
+          className="flex items-center gap-2.5 pl-2 pr-4 py-2 bg-bg border border-border rounded-full shadow-lg hover:border-accent/50 hover:shadow-accent/10 transition-all group"
+          aria-label="Ask Teddy"
         >
-          ASK
+          <div className="w-8 h-8 rounded-full bg-ink dark:bg-transparent overflow-hidden shrink-0">
+            <Image
+              src={`${basePath}/polintel-logo.png`}
+              alt="Ask Teddy"
+              width={32}
+              height={32}
+              className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+          </div>
+          <span className="font-mono text-[10px] tracking-widest text-ink-3 group-hover:text-accent transition-colors">
+            ASK {BEAR_NAME.toUpperCase()}
+          </span>
         </button>
-      </form>
-
-      {/* Suggested prompts */}
-      {!isLoading && !response && (
-        <div className="flex flex-wrap gap-2 mt-3">
-          {PROMPT_CHIPS.map(chip => (
-            <button
-              key={chip}
-              onClick={() => handleChip(chip)}
-              className="px-3 py-1.5 bg-surface border border-border rounded text-xs text-ink-3 hover:text-accent hover:border-accent/40 transition-colors font-mono"
-            >
-              {chip}
-            </button>
-          ))}
-        </div>
       )}
 
-      {/* Loading */}
-      {isLoading && (
-        <div className="mt-4 flex items-center gap-3 px-4 py-3 bg-surface border border-border rounded">
-          <span className="text-base animate-pulse select-none">🐻</span>
-          <div>
-            <p className="text-sm text-ink-2">
-              {BEAR_NAME} is reviewing the cited record&hellip;
-            </p>
-            <p className="text-[11px] text-ink-4 mt-0.5">
-              Checking evidence against &ldquo;{query}&rdquo;
-            </p>
+      {/* Expanded panel */}
+      {open && (
+        <div className="w-[420px] max-h-[80vh] flex flex-col bg-bg border border-border rounded-xl shadow-2xl overflow-hidden">
+          {/* Panel header */}
+          <div className="flex items-center gap-2.5 px-4 py-3 border-b border-border bg-surface shrink-0">
+            <div className="w-7 h-7 rounded-full bg-ink dark:bg-transparent overflow-hidden shrink-0">
+              <Image
+                src={`${basePath}/polintel-logo.png`}
+                alt="Teddy"
+                width={28}
+                height={28}
+                className="w-full h-full object-contain opacity-90"
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-mono text-[10px] tracking-widest text-accent/70">ASK {BEAR_NAME.toUpperCase()}</p>
+              <p className="text-[11px] text-ink-3 truncate">{politicianName}</p>
+            </div>
+            <button
+              onClick={() => { setOpen(false); setResponse(null); setQuery(''); setError(null) }}
+              className="text-ink-4 hover:text-ink-2 transition-colors text-sm font-mono shrink-0"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Scrollable body */}
+          <div className="flex-1 overflow-y-auto min-h-0">
+            <div className="px-4 py-4">
+              {/* Input */}
+              <form onSubmit={handleSubmit} className="relative mb-3">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                  disabled={isLoading}
+                  placeholder={`Ask ${BEAR_NAME} about the public record…`}
+                  className={[
+                    'w-full bg-surface border rounded px-3 py-2.5 pr-16 text-sm text-ink placeholder:text-ink-4',
+                    'focus:outline-none focus:border-accent transition-colors font-sans',
+                    isLoading ? 'border-accent/30 cursor-not-allowed opacity-60' : 'border-border',
+                  ].join(' ')}
+                />
+                <button
+                  type="submit"
+                  disabled={!query.trim() || isLoading}
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-accent text-bg font-mono text-[9px] tracking-widest rounded hover:bg-accent/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  ASK
+                </button>
+              </form>
+
+              {/* Chips — only before first answer */}
+              {!response && !isLoading && (
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  {PROMPT_CHIPS.map(chip => (
+                    <button
+                      key={chip}
+                      onClick={() => handleChip(chip)}
+                      className="px-2.5 py-1 bg-surface border border-border rounded text-[10px] text-ink-3 hover:text-accent hover:border-accent/40 transition-colors font-mono"
+                    >
+                      {chip}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Loading */}
+              {isLoading && (
+                <div className="flex items-center gap-2.5 py-3 text-sm text-ink-3">
+                  <span className="animate-pulse text-base">🐻</span>
+                  <span>{BEAR_NAME} is reviewing the cited record…</span>
+                </div>
+              )}
+
+              {/* Error */}
+              {error && !isLoading && (
+                <div className="px-3 py-2.5 bg-surface border border-flag-muted rounded text-xs text-ink-2">
+                  <p className="font-mono text-[9px] text-flag tracking-widest mb-1">ERROR</p>
+                  {error}
+                  {error.includes('not configured') && (
+                    <p className="text-ink-4 mt-1.5">
+                      Set <code className="font-mono text-[9px]">ANTHROPIC_API_KEY</code> to enable Ask Teddy.
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* Answer */}
+              {response && !isLoading && (
+                <>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="font-mono text-[9px] text-ink-4 truncate max-w-[280px]">
+                      &ldquo;{response.query}&rdquo;
+                    </p>
+                    <button
+                      onClick={() => { setResponse(null); setQuery(''); setTimeout(() => inputRef.current?.focus(), 50) }}
+                      className="font-mono text-[9px] text-ink-4 hover:text-accent transition-colors shrink-0 ml-2"
+                    >
+                      NEW ↩
+                    </button>
+                  </div>
+                  <BearAnswer
+                    response={response}
+                    onCopy={handleCopy}
+                    onReport={handleReport}
+                    copied={copied}
+                  />
+                </>
+              )}
+
+              {/* Footer note */}
+              {!response && !isLoading && (
+                <p className="mt-3 text-[9px] text-ink-4 font-mono leading-relaxed">
+                  Answers only from cited public records. No scores, no partisan framing.
+                </p>
+              )}
+            </div>
           </div>
         </div>
       )}
-
-      {/* Error */}
-      {error && !isLoading && (
-        <div className="mt-4 px-4 py-3 bg-surface border border-flag-muted rounded">
-          <p className="text-sm text-flag font-mono text-[10px] tracking-widest mb-1">ERROR</p>
-          <p className="text-sm text-ink-2">{error}</p>
-          {error.includes('not configured') && (
-            <p className="text-xs text-ink-4 mt-2">
-              Ask Teddy requires a server deployment with <code className="font-mono text-[10px]">ANTHROPIC_API_KEY</code> set.
-              Set <code className="font-mono text-[10px]">NEXT_PUBLIC_ASK_BEAR_ENDPOINT</code> to point to an external API, or deploy to Vercel.
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Answer */}
-      {response && !isLoading && (
-        <div ref={answerRef}>
-          <div className="flex items-center justify-between mt-4 mb-1">
-            <p className="font-mono text-[10px] text-ink-4">
-              Answered: &ldquo;{response.query}&rdquo;
-            </p>
-            <button
-              onClick={() => { setResponse(null); setQuery(''); inputRef.current?.focus() }}
-              className="font-mono text-[9px] text-ink-4 hover:text-ink-2 transition-colors"
-            >
-              NEW QUESTION
-            </button>
-          </div>
-          <BearAnswer
-            response={response}
-            onCopy={handleCopy}
-            onReport={handleReport}
-            copied={copied}
-          />
-        </div>
-      )}
-
-      {/* Product philosophy note */}
-      {!response && !isLoading && (
-        <p className="mt-4 text-[10px] text-ink-4 font-mono leading-relaxed">
-          {BEAR_NAME} answers only from cited public records. No scores, no partisan framing. Campaign finance data is provided as context — not as proof of motive or causation.
-        </p>
-      )}
-    </section>
+    </div>
   )
 }
 
 function buildCopyText(response: AskBearResponse): string {
-  const lines: string[] = [
-    `Ask Teddy — ${response.query}`,
-    '',
-    response.answer,
-    '',
-  ]
-
+  const lines: string[] = [`Ask Teddy — ${response.query}`, '', response.answer, '']
   if (response.recordShows.length > 0) {
     lines.push('WHAT THE RECORD SHOWS')
     for (const item of response.recordShows) {
@@ -239,8 +245,7 @@ function buildCopyText(response: AskBearResponse): string {
     }
     lines.push('')
   }
-
-  if (response.openSecretsShows && response.openSecretsShows.length > 0) {
+  if (response.openSecretsShows?.length) {
     lines.push('WHAT THE FUNDING RECORD SHOWS')
     if (response.campaignFinanceDisclaimer) lines.push(response.campaignFinanceDisclaimer)
     for (const item of response.openSecretsShows) {
@@ -248,27 +253,20 @@ function buildCopyText(response: AskBearResponse): string {
     }
     lines.push('')
   }
-
   if (response.observations.length > 0) {
     lines.push('WHAT WE OBSERVE (INTERPRETATION)')
     for (const obs of response.observations) lines.push(`· ${obs}`)
     lines.push('')
   }
-
   if (response.unresolved.length > 0) {
     lines.push('WHAT IS UNRESOLVED')
     for (const item of response.unresolved) lines.push(`— ${item}`)
     lines.push('')
   }
-
   if (response.sources.length > 0) {
     lines.push('SOURCES')
-    for (const src of response.sources) {
-      lines.push(`[${src.id}] ${src.title} — ${src.publisher} — ${src.url}`)
-    }
-    lines.push('')
+    for (const src of response.sources) lines.push(`[${src.id}] ${src.title} — ${src.publisher} — ${src.url}`)
   }
-
-  lines.push('Generated by PoliIntel Ask Teddy — polintel.com')
+  lines.push('', 'Generated by PoliIntel Ask Teddy — polintel.com')
   return lines.join('\n')
 }
