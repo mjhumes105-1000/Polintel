@@ -1,4 +1,13 @@
 {
-  "lastUpdated": "2026-04-27T00:00:00Z",
-  "overrides": {}
+  "lastUpdated": "2026-04-30T15:29:50.441Z",
+  "overrides": {
+    "dhs-appropriations-act-2026": {
+      "status": "in-committee",
+      "statusDate": "2026-03-09"
+    },
+    "raise-the-wage-act-2025": {
+      "status": "in-committee",
+      "statusDate": "2025-02-05"
+    }
+  }
 }
