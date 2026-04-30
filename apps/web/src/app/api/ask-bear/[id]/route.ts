@@ -1,4 +1,6 @@
-export const dynamic = 'force-dynamic'
+// Return empty array so Next.js skips this route during static export (output: 'export').
+// Dynamic requests are still handled at runtime on Vercel.
+export function generateStaticParams() { return [] }
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getAnswer } from '@/lib/ask-bear/answerStore'
