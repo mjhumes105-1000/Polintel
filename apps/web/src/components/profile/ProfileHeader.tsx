@@ -110,6 +110,13 @@ export function ProfileHeader({ politician }: ProfileHeaderProps) {
           </div>
         </div>
       </div>
+
+      {politician.bio && (
+        <div className="mt-6">
+          <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-3">BACKGROUND</p>
+          <p className="text-sm text-ink-2 leading-relaxed">{politician.bio}</p>
+        </div>
+      )}
     </header>
   )
 }

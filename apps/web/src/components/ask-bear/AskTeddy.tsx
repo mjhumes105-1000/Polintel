@@ -6,8 +6,10 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import type { AskBearResponse, ConversationTurn } from '@political-intel/types'
 import { BearAnswer } from './BearAnswer'
+import { BearWalking } from './BearWalking'
 
 const BEAR_NAME = 'Teddy'
+const SESSION_KEY = 'ask-teddy-thread'
 
 const GENERAL_CHIPS = [
   'How does a bill become law?',
@@ -54,19 +56,29 @@ export function AskTeddy() {
     ? politicianSlug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ')
     : 'Civic assistant'
 
-  useEffect(() => { setMounted(true) }, [])
+  // Load persisted thread from sessionStorage on mount
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(SESSION_KEY)
+      if (saved) setThread(JSON.parse(saved))
+    } catch { /* ignore */ }
+    setMounted(true)
+  }, [])
+
+  // Persist thread to sessionStorage whenever it changes
+  useEffect(() => {
+    try {
+      if (thread.length > 0) {
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(thread))
+      }
+    } catch { /* ignore */ }
+  }, [thread])
 
   useEffect(() => {
     if (thread.length > 0) {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
     }
   }, [thread.length, isLoading])
-
-  useEffect(() => {
-    setThread([])
-    setQuery('')
-    setError(null)
-  }, [pathname])
 
   useEffect(() => {
     if (open) {
@@ -146,6 +158,7 @@ export function AskTeddy() {
     setThread([])
     setQuery('')
     setError(null)
+    try { sessionStorage.removeItem(SESSION_KEY) } catch { /* ignore */ }
     setTimeout(() => {
       desktopInputRef.current?.focus()
       mobileInputRef.current?.focus()
@@ -222,8 +235,7 @@ export function AskTeddy() {
 
         {isLoading && (
           <div className="flex items-center gap-2.5 py-2 text-sm text-ink-3">
-            <span className="animate-pulse text-base">🐻</span>
-            <span>
+            <span className="animate-pulse">
               {isGeneralMode ? `${BEAR_NAME} is on it…` : `${BEAR_NAME} is reviewing the cited record…`}
             </span>
           </div>

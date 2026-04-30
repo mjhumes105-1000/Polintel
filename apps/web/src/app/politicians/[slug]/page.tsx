@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { PoliticianProfile, CandidacyStatus, TimelineEvent } from '@political-intel/types'
 import newsom from '@/data/politicians/gavin-newsom'
+import tomCotton from '@/data/politicians/tom-cotton'
 import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles'
 import { ProfileHeader } from '@/components/profile/ProfileHeader'
@@ -14,6 +15,9 @@ import { StickyProfileHeader } from '@/components/profile/StickyProfileHeader'
 import { BackButton } from '@/components/ui/BackButton'
 import { AlertCapture } from '@/components/profile/AlertCapture'
 import { StubProfilePage } from '@/components/profile/StubProfilePage'
+import { TrumpProfilePage } from '@/components/executive/TrumpProfilePage'
+import { fetchPresidentialActions } from '@/lib/fetchPresidentialActions'
+import { fetchSignedBills, fetchVetoedBills, PUSHED_BILLS } from '@/lib/fetchPresidentialBills'
 import { getLegislator } from '@/data/legislators'
 import { fetchLiveTimeline } from '@/lib/fetchLiveTimeline'
 import { fetchFECDonors } from '@/lib/fetchFECDonors'
@@ -24,6 +28,7 @@ export const revalidate = 86400
 
 const fullProfiles: Record<string, PoliticianProfile> = {
   'gavin-newsom': newsom,
+  'tom-cotton': tomCotton,
   ...allDelegationProfiles,
 }
 
@@ -108,6 +113,28 @@ export default async function PoliticianPage({
   const { slug } = await params
   const politician = politicians[slug]
   if (!politician) notFound()
+
+  // Presidential profile — full live data page
+  if (slug === 'donald-trump') {
+    const [actions, signedBills, vetoedBills] = await Promise.all([
+      fetchPresidentialActions().catch(() => ({ executiveOrders: [], memoranda: [], proclamations: [] })),
+      fetchSignedBills().catch(() => []),
+      fetchVetoedBills().catch(() => []),
+    ])
+    return (
+      <TrumpProfilePage
+        politician={politician}
+        executiveOrders={actions.executiveOrders}
+        memoranda={actions.memoranda}
+        proclamations={actions.proclamations}
+        signedBills={signedBills}
+        vetoedBills={vetoedBills}
+        pushedBills={PUSHED_BILLS}
+        hasApiKey={!!process.env.CONGRESS_API_KEY}
+        lastUpdated={new Date().toISOString().slice(0, 10)}
+      />
+    )
+  }
 
   // Render minimal stub page for profiles not yet fully researched
   if (stubProfileSlugs.has(slug)) {

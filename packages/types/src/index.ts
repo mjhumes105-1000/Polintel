@@ -109,6 +109,7 @@ export interface LegislatorSocial {
   facebook?: string
   youtube?: string
   youtube_id?: string
+  truthsocial?: string
 }
 
 export interface LegislatorContact {
@@ -124,7 +125,7 @@ export interface PoliticianProfile {
   name: string
   currentTitle: string
   state: string
-  bio: string
+  bio?: string
   photoUrl?: string
   contact?: LegislatorContact
   social?: LegislatorSocial

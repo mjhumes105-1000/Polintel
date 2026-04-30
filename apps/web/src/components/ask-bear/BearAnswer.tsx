@@ -2,6 +2,14 @@
 
 import type { AskBearResponse, EvidenceSource } from '@political-intel/types'
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '$1')  // bold
+    .replace(/\*(.+?)\*/g, '$1')       // italic
+    .replace(/__(.+?)__/g, '$1')       // bold (underscore)
+    .replace(/_(.+?)_/g, '$1')         // italic (underscore)
+}
+
 function SourceBadge({ id, sources }: { id: string; sources: EvidenceSource[] }) {
   const src = sources.find(s => s.id === id)
   if (!src) return <span className="font-mono text-[9px] text-ink-4 border border-border rounded px-1">{id}</span>
@@ -49,7 +57,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
 
   // Strip the required disclaimer from the answer for separate display
   const disclaimerEnd = response.answer.indexOf('not a statement of fact.')
-  const cleanAnswer = (
+  const cleanAnswer = stripMarkdown(
     disclaimerEnd !== -1
       ? response.answer.slice(disclaimerEnd + 'not a statement of fact.'.length)
       : response.answer
@@ -106,7 +114,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
                 <li key={item.id} className="flex gap-2 text-sm">
                   <span className="text-accent/40 mt-0.5 shrink-0">·</span>
                   <div>
-                    <span className="text-ink-2 leading-relaxed">{item.claimSupported}</span>
+                    <span className="text-ink-2 leading-relaxed">{stripMarkdown(item.claimSupported)}</span>
                     {item.quote && (
                       <blockquote className="mt-1.5 pl-3 border-l-2 border-border text-xs text-ink-3 italic leading-relaxed">
                         &ldquo;{item.quote}&rdquo;
@@ -151,7 +159,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
                 <li key={item.id} className="flex gap-2 text-sm">
                   <span className="text-accent/40 mt-0.5 shrink-0">·</span>
                   <div>
-                    <span className="text-ink-2 leading-relaxed">{item.claimSupported}</span>
+                    <span className="text-ink-2 leading-relaxed">{stripMarkdown(item.claimSupported)}</span>
                     <div className="mt-1 flex flex-wrap items-center gap-1">
                       {item.cycle && (
                         <span className="font-mono text-[9px] text-ink-4">CYCLE {item.cycle}</span>
@@ -197,7 +205,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
               {response.observations.map((obs, i) => (
                 <li key={i} className="flex gap-2 text-sm">
                   <span className="text-ink-4 mt-0.5 shrink-0">·</span>
-                  <span className="text-ink-3 leading-relaxed italic">{obs}</span>
+                  <span className="text-ink-3 leading-relaxed italic">{stripMarkdown(obs)}</span>
                 </li>
               ))}
             </ul>
@@ -213,7 +221,7 @@ export function BearAnswer({ response, onCopy, onReport, copied }: BearAnswerPro
               {response.unresolved.map((item, i) => (
                 <li key={i} className="flex gap-2 text-sm">
                   <span className="text-ink-4 mt-0.5 shrink-0">—</span>
-                  <span className="text-ink-3 leading-relaxed">{item}</span>
+                  <span className="text-ink-3 leading-relaxed">{stripMarkdown(item)}</span>
                 </li>
               ))}
             </ul>

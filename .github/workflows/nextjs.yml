@@ -3,6 +3,8 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: '0 10 * * *'   # 10 AM UTC daily — rebuild with fresh GovTrack/FEC data
   workflow_dispatch:
 
 permissions:

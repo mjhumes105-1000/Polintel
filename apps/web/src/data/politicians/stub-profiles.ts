@@ -18,18 +18,23 @@ export const stubProfileSlugs = new Set([
   'ron-desantis',
   'jd-vance',
   'marco-rubio',
-  'tom-cotton',
   'glenn-youngkin',
   'nikki-haley',
   'brian-kemp',
-  // 2028 presidential field — Democrats
-  'gavin-newsom',
+  // 2028 presidential field — Democrats (gavin-newsom has a full profile, not listed here)
   'gretchen-whitmer',
   'josh-shapiro',
   'jb-pritzker',
   'andy-beshear',
   'wes-moore',
   'pete-buttigieg',
+  // Territorial delegates
+  'eleanor-holmes-norton',
+  'pablo-hernandez-rivera',
+  'james-moylan',
+  'stacey-plaskett',
+  'amata-radewagen',
+  'gregorio-sablan',
 ])
 
 // ── Former Presidents / Vice Presidents ────────────────────────────────────────
@@ -41,7 +46,17 @@ const donaldTrump: PoliticianProfile = {
   currentTitle: '47th President of the United States',
   state: 'National',
   bio: 'Donald Trump is the 47th President of the United States, having previously served as the 45th President from 2017 to 2021. He is a member of the Republican Party and the first U.S. president to serve non-consecutive terms since Grover Cleveland.',
-  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/440px-Donald_Trump_official_portrait.jpg',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/330px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg',
+  contact: {
+    website: 'https://www.whitehouse.gov',
+  },
+  social: {
+    truthsocial: 'realDonaldTrump',
+    twitter: 'realDonaldTrump',
+    instagram: 'realdonaldtrump',
+    facebook: 'DonaldTrump',
+    youtube: '@DonaldTrump',
+  },
   sources: [stubSource('whitehouse-trump', 'The White House — President Donald J. Trump', 'https://www.whitehouse.gov', 'The White House')],
   baselineCard: {
     currentOffice: { title: '47th President of the United States', jurisdiction: 'Federal', startDate: '2025-01-20' },
@@ -165,7 +180,15 @@ const jdVance: PoliticianProfile = {
   currentTitle: '50th Vice President of the United States',
   state: 'Ohio',
   bio: 'JD Vance is the 50th Vice President of the United States, inaugurated in January 2025. He previously served as U.S. Senator from Ohio (2023–2025), elected on a populist economic platform. He is the author of Hillbilly Elegy and a leading figure in the nationalist wing of the Republican Party.',
-  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Official_portrait_of_Vice_President_JD_Vance.jpg/440px-Official_portrait_of_Vice_President_JD_Vance.jpg',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance.jpg/330px-March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance.jpg',
+  contact: {
+    website: 'https://www.whitehouse.gov/administration/vice-president/',
+  },
+  social: {
+    twitter: 'JDVance',
+    instagram: 'jd_vance1',
+    facebook: 'JDVanceOhio',
+  },
   sources: [stubSource('whitehouse-vance', 'The White House — Vice President JD Vance', 'https://www.whitehouse.gov/administration/vice-president/', 'The White House')],
   baselineCard: {
     currentOffice: { title: '50th Vice President of the United States', jurisdiction: 'Federal', startDate: '2025-01-20' },
@@ -281,31 +304,7 @@ const brianKemp: PoliticianProfile = {
 }
 
 // ── 2028 Democrats ─────────────────────────────────────────────────────────────
-
-const gavinnewsom: PoliticianProfile = {
-  id: 'gavin-newsom',
-  slug: 'gavin-newsom',
-  name: 'Gavin Newsom',
-  currentTitle: 'Governor of California',
-  state: 'California',
-  bio: 'Gavin Newsom has served as Governor of California since January 2019 and was re-elected in 2022. He previously served as Lieutenant Governor of California and as Mayor of San Francisco. He has positioned himself as a leading national Democratic voice and vocal opponent of the Trump administration.',
-  photoUrl: '/politicians/gavin-newsom.jpg',
-  sources: [stubSource('newsom-ca', 'Office of the Governor of California', 'https://www.gov.ca.gov', 'State of California')],
-  baselineCard: {
-    currentOffice: { title: 'Governor of California', jurisdiction: 'California', startDate: '2019-01-07' },
-    previousOffices: [
-      { title: 'Lieutenant Governor of California', jurisdiction: 'California', startDate: '2011-01-10', endDate: '2019-01-07' },
-      { title: 'Mayor of San Francisco', jurisdiction: 'California', startDate: '2004-01-08', endDate: '2011-01-10' },
-    ],
-    party: 'Democratic',
-    birthDate: '1967-10-10',
-    yearsInPublicService: 22,
-    sourceIds: ['newsom-ca'],
-  },
-  timeline: [],
-  funding: [],
-  recordAssessment: stubRecord(),
-}
+// Note: gavin-newsom has a full profile in gavin-newsom.ts — no stub needed
 
 const gretchenWhitmer: PoliticianProfile = {
   id: 'gretchen-whitmer',
@@ -448,6 +447,122 @@ const peteButtigieg: PoliticianProfile = {
   recordAssessment: stubRecord(),
 }
 
+// ── U.S. Territorial Delegates (119th Congress) ───────────────────────────────
+
+const eleanorHolmesNorton: PoliticianProfile = {
+  id: 'eleanor-holmes-norton',
+  slug: 'eleanor-holmes-norton',
+  name: 'Eleanor Holmes Norton',
+  currentTitle: 'Delegate for the District of Columbia',
+  state: 'District of Columbia',
+  bio: 'Eleanor Holmes Norton has served as the non-voting Delegate for the District of Columbia since 1991, making her one of the longest-serving members of the House. A civil rights lawyer and former chair of the Equal Employment Opportunity Commission under President Carter, she has been a persistent advocate for DC statehood and full voting representation in Congress.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Eleanor_Holmes_Norton_official_photo.jpg/330px-Eleanor_Holmes_Norton_official_photo.jpg',
+  sources: [stubSource('norton-house', 'Rep. Eleanor Holmes Norton — U.S. House', 'https://norton.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Delegate for the District of Columbia', jurisdiction: 'District of Columbia', startDate: '1991-01-03' },
+    party: 'Democratic',
+    previousOffices: [],
+    yearsInPublicService: 35,
+    sourceIds: ['norton-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
+const pabloHernandezRivera: PoliticianProfile = {
+  id: 'pablo-hernandez-rivera',
+  slug: 'pablo-hernandez-rivera',
+  name: 'Pablo José Hernández Rivera',
+  currentTitle: 'Resident Commissioner of Puerto Rico',
+  state: 'Puerto Rico',
+  bio: 'Pablo José Hernández Rivera has served as Resident Commissioner of Puerto Rico since January 2025, the only member of Congress who serves a four-year term rather than two. A member of the Popular Democratic Party, which favors enhanced commonwealth status over statehood, he is a lawyer and former municipal official who represents Puerto Rico\'s approximately 3.2 million U.S. citizens.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Hern%C3%A1ndez_Rivera_Pablo_119th_Congress.jpg/330px-Hern%C3%A1ndez_Rivera_Pablo_119th_Congress.jpg',
+  sources: [stubSource('hernandez-house', 'Resident Commissioner Pablo Hernández Rivera', 'https://hernandezrivera.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Resident Commissioner of Puerto Rico', jurisdiction: 'Puerto Rico', startDate: '2025-01-03' },
+    party: 'Democratic',
+    previousOffices: [],
+    yearsInPublicService: 2,
+    sourceIds: ['hernandez-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
+const jamesMoylan: PoliticianProfile = {
+  id: 'james-moylan',
+  slug: 'james-moylan',
+  name: 'James Moylan',
+  currentTitle: 'Delegate for Guam',
+  state: 'Guam',
+  bio: 'James Moylan has served as the non-voting Delegate for Guam since January 2023, the first Republican to hold the seat in decades. A businessman and former member of the Guam Legislature, he has focused on military buildup issues, veterans affairs, and Guam\'s unique federal relationship. His election ended a long streak of Democratic representation for the island territory.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/James_Moylan%2C_official_portrait_%28119th_Congress%29.jpg/330px-James_Moylan%2C_official_portrait_%28119th_Congress%29.jpg',
+  sources: [stubSource('moylan-house', 'Rep. James Moylan — U.S. House', 'https://moylan.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Delegate for Guam', jurisdiction: 'Guam', startDate: '2023-01-03' },
+    party: 'Republican',
+    previousOffices: [],
+    yearsInPublicService: 3,
+    sourceIds: ['moylan-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
+const staceyPlaskett: PoliticianProfile = {
+  id: 'stacey-plaskett',
+  slug: 'stacey-plaskett',
+  name: 'Stacey Plaskett',
+  currentTitle: 'Delegate for the U.S. Virgin Islands',
+  state: 'U.S. Virgin Islands',
+  bio: 'Stacey Plaskett has served as the non-voting Delegate for the U.S. Virgin Islands since 2015. A former assistant district attorney and member of the House Budget and Agriculture committees, she gained national prominence as an impeachment manager during the second impeachment trial of President Trump in 2021. She is one of the most prominent territorial delegates in modern congressional history.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stacey_Plaskett_116th_Congress.jpg/330px-Stacey_Plaskett_116th_Congress.jpg',
+  sources: [stubSource('plaskett-house', 'Rep. Stacey Plaskett — U.S. House', 'https://plaskett.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Delegate for the U.S. Virgin Islands', jurisdiction: 'U.S. Virgin Islands', startDate: '2015-01-03' },
+    party: 'Democratic',
+    previousOffices: [],
+    yearsInPublicService: 11,
+    sourceIds: ['plaskett-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
+const amataRadewagen: PoliticianProfile = {
+  id: 'amata-radewagen',
+  slug: 'amata-radewagen',
+  name: 'Amata Coleman Radewagen',
+  currentTitle: 'Delegate for American Samoa',
+  state: 'American Samoa',
+  bio: 'Amata Coleman Radewagen has served as the non-voting Delegate for American Samoa since 2015 and is the first Samoan-American woman elected to Congress. A Republican, she has focused on issues unique to American Samoa including national park policy, federal recognition of traditional land rights, and the territory\'s longstanding debate over birthright citizenship for those born on the island.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Aumua_Amata_Radewagen_congressional_photo.jpg/330px-Aumua_Amata_Radewagen_congressional_photo.jpg',
+  sources: [stubSource('radewagen-house', 'Rep. Amata Coleman Radewagen — U.S. House', 'https://radewagen.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Delegate for American Samoa', jurisdiction: 'American Samoa', startDate: '2015-01-03' },
+    party: 'Republican',
+    previousOffices: [],
+    yearsInPublicService: 11,
+    sourceIds: ['radewagen-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
+const gregorioSablan: PoliticianProfile = {
+  id: 'gregorio-sablan',
+  slug: 'gregorio-sablan',
+  name: 'Gregorio Sablan',
+  currentTitle: 'Delegate for Northern Mariana Islands',
+  state: 'Northern Mariana Islands',
+  bio: 'Gregorio "Kilili" Sablan has served as the non-voting Delegate for the Commonwealth of the Northern Mariana Islands since 2009, the first person from the CNMI ever elected to Congress. A Democrat who serves on the House Natural Resources and Education committees, he has worked on military basing agreements, labor protections, and preserving the CNMI\'s unique federal covenant relationship with the United States.',
+  photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Gregorio_Kilili_Camacho_Sablan.jpg/330px-Gregorio_Kilili_Camacho_Sablan.jpg',
+  sources: [stubSource('sablan-house', 'Rep. Gregorio Sablan — U.S. House', 'https://sablan.house.gov', 'U.S. House of Representatives')],
+  baselineCard: {
+    currentOffice: { title: 'Delegate for Northern Mariana Islands', jurisdiction: 'Northern Mariana Islands', startDate: '2009-01-03' },
+    party: 'Democratic',
+    previousOffices: [],
+    yearsInPublicService: 17,
+    sourceIds: ['sablan-house'],
+  },
+  timeline: [], funding: [], recordAssessment: stubRecord(),
+}
+
 export const stubProfiles: Record<string, PoliticianProfile> = {
   'donald-trump': donaldTrump,
   'joe-biden': joeBiden,
@@ -459,11 +574,17 @@ export const stubProfiles: Record<string, PoliticianProfile> = {
   'nikki-haley': nikkiHaley,
   'glenn-youngkin': glennYoungkin,
   'brian-kemp': brianKemp,
-  'gavin-newsom': gavinnewsom,
   'gretchen-whitmer': gretchenWhitmer,
   'josh-shapiro': joshShapiro,
   'jb-pritzker': jbPritzker,
   'andy-beshear': andyBeshear,
   'wes-moore': wesMoore,
   'pete-buttigieg': peteButtigieg,
+  // Territorial delegates
+  'eleanor-holmes-norton': eleanorHolmesNorton,
+  'pablo-hernandez-rivera': pabloHernandezRivera,
+  'james-moylan': jamesMoylan,
+  'stacey-plaskett': staceyPlaskett,
+  'amata-radewagen': amataRadewagen,
+  'gregorio-sablan': gregorioSablan,
 }

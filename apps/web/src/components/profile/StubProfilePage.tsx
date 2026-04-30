@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { PoliticianProfile } from '@political-intel/types'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
+import { SocialLinks } from '@/components/ui/SocialLinks'
 
 interface StubProfilePageProps {
   politician: PoliticianProfile
@@ -98,11 +99,12 @@ export function StubProfilePage({ politician }: StubProfilePageProps) {
               {baselineCard.currentOffice.jurisdiction !== 'Federal' &&
                 `, ${baselineCard.currentOffice.jurisdiction}`}
             </p>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-ink-3">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-ink-3 mb-4">
               <span className="text-accent/80">{baselineCard.party}</span>
               <span className="text-ink-4">·</span>
               <span>In office since {sinceYear}</span>
             </div>
+            <SocialLinks social={politician.social} contact={politician.contact} />
           </div>
         </div>
       </header>
