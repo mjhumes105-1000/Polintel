@@ -35,6 +35,8 @@ interface ThreadItem {
 }
 
 export function AskTeddy() {
+  if (process.env.NEXT_PUBLIC_STATIC_SITE === 'true') return null
+
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)

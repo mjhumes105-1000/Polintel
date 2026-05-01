@@ -52,6 +52,7 @@ jobs:
         run: pnpm --filter web build
         env:
           NEXT_PUBLIC_BASE_PATH: /Polintel
+          NEXT_PUBLIC_STATIC_SITE: 'true'
           FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
           STATIC_EXPORT: true
 
