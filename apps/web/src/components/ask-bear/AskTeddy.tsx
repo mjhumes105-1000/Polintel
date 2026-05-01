@@ -109,8 +109,11 @@ export function AskTeddy() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
+      if (!res.ok) {
+        const errData = await res.json().catch(() => null)
+        throw new Error(errData?.error ?? `Server returned ${res.status}`)
+      }
       const data = await res.json()
-      if (!res.ok) throw new Error(data?.error ?? `Server returned ${res.status}`)
       setThread(prev => [...prev, { query: trimmed, response: data as AskBearResponse }])
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
