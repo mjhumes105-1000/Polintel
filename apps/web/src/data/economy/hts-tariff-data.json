@@ -4,7 +4,7 @@
     "apiBase": "https://hts.usitc.gov/reststop/",
     "release": "2026HTSRev7",
     "note": "generalRate = MFN/NTR (Most Favored Nation / Normal Trade Relations) rate. Does not include Section 301, 232, 201, or 2025 executive order additional duties.",
-    "retrievedAt": "2026-04-30"
+    "retrievedAt": "2026-05-01"
   },
   "sectors": {
     "211": {
