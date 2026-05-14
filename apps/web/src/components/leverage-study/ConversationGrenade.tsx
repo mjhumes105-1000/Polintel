@@ -1,16 +1,12 @@
 interface ConversationGrenadeProps {
   quote: string
-  attribution?: string
 }
 
-export function ConversationGrenade({ quote, attribution }: ConversationGrenadeProps) {
-  // Pull-quote rendering will be implemented in a subsequent prompt.
+export function ConversationGrenade({ quote }: ConversationGrenadeProps) {
   return (
-    <blockquote className="my-8 pl-4 border-l-2 border-accent">
-      <p className="text-ink-2 text-base italic leading-relaxed">{quote}</p>
-      {attribution && (
-        <footer className="mt-2 label-caps text-ink-4">{attribution}</footer>
-      )}
-    </blockquote>
+    <aside className="my-10 pl-5 border-l-2 border-flag bg-flag-bg/40 py-4 pr-4 rounded-r">
+      <p className="label-caps text-flag mb-3">Conversation Grenade</p>
+      <p className="font-serif italic text-lg leading-relaxed text-ink-2">{quote}</p>
+    </aside>
   )
 }
