@@ -88,6 +88,7 @@ export function Footer() {
                 { href: '/bills', label: 'Bills & Legislation' },
                 { href: '/economy', label: 'Economy & Trade' },
                 { href: '/compare', label: 'Compare' },
+                { href: '/leverage-study', label: 'Leverage Study' },
                 { href: '/methodology', label: 'Methodology' },
                 { href: '/about', label: 'About' },
               ].map(({ href, label }) => (
