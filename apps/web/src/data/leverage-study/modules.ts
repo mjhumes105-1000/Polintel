@@ -20,7 +20,7 @@ export const studyModules: StudyModule[] = [
       'That loyalty is rational. The Republican Party has spent six decades giving Black voters concrete reasons to stay away — from the Southern Strategy through modern racial rhetoric, through voter ID laws and Charlottesville. Distrust is not paranoia. It is memory.',
       'But there is a second thing that is also true. A constituency that is rational, loyal, and predictable creates a strange political problem. One party stops persuading it. The other party stops trying. Both stop competing.',
       'This study is about that problem.',
-      'The question isn\'t whether Black voters should vote Republican. They shouldn\'t have to, and most won\'t. The question is whether eight decades of overwhelming Democratic support have produced returns proportional to the investment — in the things that actually shape Black lives. Safety. Schools. Ownership. Health. Institutional power.',
+      "The question isn't whether Black voters should vote Republican. They shouldn't have to, and most won't. The question is whether eight decades of overwhelming Democratic support have produced returns proportional to the investment — in the things that actually shape Black lives. Safety. Schools. Ownership. Health. Institutional power.",
       'The honest answer is: in some places, yes. In many places, not nearly enough.',
     ],
     conversationGrenade:
@@ -32,176 +32,341 @@ export const studyModules: StudyModule[] = [
     title: 'The Frame',
     body: [
       'The right way to think about a vote is the way you think about capital.',
-      'You invest. You expect a return. You measure the return. You hold the manager accountable. You adjust the strategy if the returns aren\'t there. You diversify. You don\'t sell at a loss out of spite — but you don\'t keep pouring money into a bad portfolio out of loyalty either.',
+      "You invest. You expect a return. You measure the return. You hold the manager accountable. You adjust the strategy if the returns aren't there. You diversify. You don't sell at a loss out of spite — but you don't keep pouring money into a bad portfolio out of loyalty either.",
       'This is how every other interest group in American politics thinks about its vote.',
-      'Cuban Americans in Miami. Evangelicals in the Republican coalition. Organized labor. The Israel lobby. Environmentalists. Gun owners. AARP retirees. All of them treat their political support as conditional. They reward. They punish. They bargain. They walk away when terms aren\'t met. None of this is considered scandalous. It\'s considered politics.',
-      'Black voters are the only major American constituency where the conditional framing is treated as suspicious. Where we should make them earn it gets reframed as you want to help Trump. Where asking what the last forty years bought is described as ungrateful.',
+      "Cuban Americans in Miami. Evangelicals in the Republican coalition. Organized labor. The Israel lobby. Environmentalists. Gun owners. AARP retirees. All of them treat their political support as conditional. They reward. They punish. They bargain. They walk away when terms aren't met. None of this is considered scandalous. It's considered politics.",
+      "Black voters are the only major American constituency where the conditional framing is treated as suspicious. Where 'we should make them earn it' gets reframed as 'you want to help Trump.' Where asking what the last forty years bought is described as ungrateful.",
       'That double standard is the leverage problem in compressed form.',
     ],
     conversationGrenade:
-      'Every other voting bloc in America treats their vote like a transaction. Black voters are the only ones expected to treat it like a sacrament.',
+      "Every other voting bloc in America treats their vote like a transaction. Black voters are the only ones expected to treat it like a sacrament.",
   },
   {
-    id: 'the-counterargument-honestly',
+    id: 'the-counterargument',
     moduleNumber: '03',
     title: 'The Counterargument, Honestly',
     body: [
-      // TODO: paste module 03 body paragraphs here
+      'Before going further, the strongest opposing view deserves real space — not a token paragraph but a real engagement. Because if it goes unanswered, the rest of this study sounds like motivated reasoning.',
+      'Black voters have gotten returns from Democratic loyalty. Not enough. Not evenly. Not in every neighborhood. But the list is not nothing.',
+      'The Voting Rights Act and every subsequent reauthorization. The Civil Rights Act enforcement infrastructure. The Affordable Care Act, which cut Black uninsured rates by roughly forty percent. Pell Grants, which disproportionately fund Black college access. Public-sector employment, which became one of the most reliable on-ramps to the Black middle class. Federal judicial appointments that have shaped civil rights, voting rights, and policing law for two generations. Pandemic-era expansions that cut Black child poverty nearly in half before they were allowed to expire. Federal infrastructure spending now flowing to historically disinvested neighborhoods. Student debt relief that disproportionately benefits Black borrowers.',
+      'These are not symbolic. They are policy. And they are not what Republicans have offered.',
+      'So the leverage critique has to clear a bar. It has to acknowledge that the current arrangement has produced real things — not pretend it has produced nothing.',
+      "The honest version of the critique is this: the returns have been real but uneven, often top-line rather than neighborhood-level, frequently rolled back by Republican administrations and Democratic centrists alike, and increasingly oriented around symbolic representation and one-time programs rather than durable institutional power. The wealth gap is not closing. Black homeownership has not recovered to its 2004 peak. Public schools in majority-Black districts are still failing at scale. Police violence has not been meaningfully reformed in most cities run continuously by Democrats since the 1970s.",
+      "The question is not 'has loyalty paid nothing?' The question is 'has it paid enough — and does the current arrangement contain a mechanism for paying more?'",
+      'The answer to the first question is no. The answer to the second is unclear.',
     ],
-    conversationGrenade: '', // TODO: paste module 03 conversation grenade here
+    conversationGrenade:
+      "Democrats have delivered real things. They have not delivered enough things. And there's currently no mechanism to make them deliver more.",
   },
   {
     id: 'electoral-capture',
     moduleNumber: '04',
     title: 'Electoral Capture',
     body: [
-      // TODO: paste module 04 body paragraphs here
+      'The phenomenon this study describes has a name in academic political science. It is called electoral capture.',
+      "Princeton political scientist Paul Frymer developed the theory in Uneasy Alliances. The argument is straightforward: when a constituency has only one viable party but is electorally crucial to that party, the party can take its support for granted — as long as the other party makes itself unacceptable to the captured group. The captured constituency bears the costs of coalition management without receiving proportional returns.",
+      "Frymer's core finding, drawn from a century of American politics: parties suppress the issues of their captured constituencies when doing so helps them win swing voters. Civil rights gets soft-pedaled. Police reform gets walked back. Racial economic policy becomes 'universal' policy that disproportionately benefits non-Black recipients. The dynamic is not driven by individual cynicism. It is driven by the underlying coalition math.",
+      "This matters because it means the leverage problem is structural. It doesn't require any individual politician to be a bad actor. It just requires the standard political-science model of how parties manage multi-group coalitions in two-party systems with single-member districts.",
+      "If you remember nothing else about the academic background of this study, remember this: the leverage critique is not a fringe argument. It is the dominant scholarly explanation for why the most loyal voters in American politics get the least responsive politicians.",
     ],
-    conversationGrenade: '', // TODO: paste module 04 conversation grenade here
+    conversationGrenade:
+      "This isn't a hot take. It's the standard academic explanation for why the most loyal voters get the least responsive politicians.",
   },
   {
     id: 'name-the-offices',
     moduleNumber: '05',
     title: 'Name the Offices',
     body: [
-      // TODO: paste module 05 body paragraphs here
+      "'Democrats failed Black communities' is a sentence that is both true and useless.",
+      "It's useless because there is no office called Democrat. There are mayors. City councils. School boards. Prosecutors. Sheriffs. Judges. State legislators. Each controls different levers. Each is accountable on different terms. Each can be replaced or pressured independently.",
+      'When safety fails in a majority-Black neighborhood, the responsible parties have names and offices. The mayor selects the police chief, sets budget priorities, controls civilian oversight. The prosecutor decides which cases get charged, plea practices, diversion programs. The police chief controls deployment, training, internal discipline. The city council controls budget, zoning, civilian review boards. The judges control sentencing, bail, suppression hearings. The state legislature controls sentencing law, qualified immunity, training standards.',
+      'When schools fail, the responsible parties also have names and offices. The school board controls curriculum, principal selection, discipline policy. The superintendent controls operations, teacher hiring, school assignments. The mayor in mayoral-control cities controls superintendent appointment, budget, charter law. The state legislature controls funding formulas, accountability rules, charter law. The teachers\' union controls work rules, contract terms, evaluation systems.',
+      'None of these is the party. All of them can be primaried, scored, defeated, and replaced.',
+      'Most are elected in low-turnout local races where 5,000 votes is the difference between winning and losing.',
+      'This is where political leverage actually lives. Not in presidential elections — those are usually the worst place to bargain, because the stakes are highest and exit is most punishing. In primary elections for city council, school board, prosecutor, and state legislature. In races where a unified Black voter agenda, applied with discipline, would change outcomes in a single cycle.',
     ],
-    conversationGrenade: '', // TODO: paste module 05 conversation grenade here
+    conversationGrenade:
+      "You can't punish a party. You can punish a mayor. You can primary a prosecutor. You can flip a school board with 3,000 votes.",
   },
   {
     id: 'the-two-honest-tests',
     moduleNumber: '06',
     title: 'The Two Honest Tests',
     body: [
-      // TODO: paste module 06 body paragraphs here
+      'Pick almost any policy goal Black political loyalty is supposed to advance, and you will find competing data, framing disputes, and ideological landmines.',
+      'Except two.',
+      "Safety. Are people getting shot less? Are women walking to the train safely? Can a ten-year-old play outside without her mother watching from the porch? Are businesses staying open or boarding up?",
+      "Schools. Can third-graders read at grade level? Are middle-schoolers learning math? Are high-schoolers graduating with skills that get them paid? Are classrooms places where teachers can teach?",
+      'These are the test cases for two reasons. First, they are visible. Every parent and every grandparent in a Black neighborhood has direct evidence about both. Second, they are within the reach of local government — the level closest to where Black political power actually concentrates.',
+      'Here is the part of the safety conversation almost everyone gets wrong.',
+      "Black communities do not have to choose between abusive policing and no policing. That false choice is the trap. The opposite of George Floyd is not 1990s broken-windows mass incarceration. The opposite is competent, accountable, constitutional policing — the kind that white suburbs receive by default and Black neighborhoods receive rarely. The standard should be: residents should not have to choose between being over-policed and being under-protected. Both are forms of state failure.",
+      'Here is the part of the schools conversation almost everyone gets wrong.',
+      "The school-choice debate has been ideological for thirty years. The empirical record is mixed. Charters work in some cities and fail in others. Vouchers are mostly weak on academics. Some traditional district schools serve Black students brilliantly; many do not. The question is not 'are you for or against charters?' The question is: in your city, which schools are producing literate, prepared, confident Black kids — and how do we get more of those, regardless of governance model?",
+      'Ideological commitment to existing school structures has often won out over honest measurement of what works. That is a leverage problem, and it cuts both ways across the parties.',
     ],
-    conversationGrenade: '', // TODO: paste module 06 conversation grenade here
+    conversationGrenade:
+      "The opposite of George Floyd isn't no policing. It's the policing that white suburbs get without asking for it.",
   },
   {
     id: 'a-symmetric-audit',
     moduleNumber: '07',
     title: 'A Symmetric Audit',
     body: [
-      // TODO: paste module 07 body paragraphs here
+      'The nonpartisan claim has to hold. So a real accounting of what Republicans have done when they have actually held power.',
+      'Start with genuine Republican deliveries that affected Black communities.',
+      'The First Step Act of 2018 was the most significant federal sentencing reform in a generation. It reduced federal sentences for thousands of Black incarcerated people. It passed with bipartisan support but Republican Senate and Republican signature. Opportunity Zones produced mixed evidence on community benefit, but real capital deployment in some historically disinvested Black neighborhoods. HBCU funding under the Trump administration\'s first term exceeded recent Democratic baselines in some years. State-level criminal justice reform in Texas, Georgia, and Mississippi reduced incarceration rates with bipartisan support, often led by Republican governors.',
+      'Now the genuine Republican harms.',
+      'Withdrawal of federal police consent decrees, several of which covered majority-Black cities. Voter ID laws, registration restrictions, and roll purges with disproportionate Black impact. Federal judicial appointments hostile to Voting Rights Act enforcement. Defunding and deprioritization of equal-employment and fair-housing enforcement. Rhetoric — from \'shithole countries\' through \'very fine people on both sides\' through ongoing references — that signals a coalition unwilling to engage Black political grievance with seriousness.',
+      'The honest verdict: Republicans have delivered some real things and inflicted some real harms. The record is not zero. It is also not enough to clear the bar for earning broad Black political support — and the rhetorical posture of the modern Republican Party makes it hard for many Black voters to believe the policy wins are durable rather than transactional.',
+      'A Republican Party serious about Black votes would have to do four things: sustain local outreach between election cycles, develop credible joint policy on safety and civil-rights enforcement at the same time, retire the racial rhetoric, and accept that earning trust takes a decade, not a campaign.',
+      'None of which is currently happening at the national level.',
+      'This is why the Black leverage ceiling is not just a Democratic problem. It is also a Republican problem. Black bargaining power rises when both parties make credible offers. Right now only one party is in the building.',
     ],
-    conversationGrenade: '', // TODO: paste module 07 conversation grenade here
+    conversationGrenade:
+      "Republicans have delivered some things. They've also poisoned the well so thoroughly that Black voters can't tell when they mean it.",
   },
   {
     id: 'the-four-patterns',
     moduleNumber: '08',
     title: 'The Four Patterns',
     body: [
-      // TODO: paste module 08 body paragraphs here
+      'When campaigns lose the habit of competing for a constituency, certain patterns emerge. Four are documented across cycles.',
+      "Pattern one is identity pressure. Biden in May 2020: 'If you have a problem figuring out whether you're for me or Trump, then you ain't black.' Obama in October 2024, on Black male hesitation about Harris: framing it as discomfort with a woman president, telling Black men they were 'coming up with all kinds of reasons and excuses.' Both moves do the same thing. They treat dissent as a deficiency in Blackness rather than a signal of unmet policy demands. Identity pressure is the dialect of a constituency that is expected to deliver without negotiating.",
+      'Pattern two is symbolic outreach in place of scorecards. Clinton on Breakfast Club with the hot sauce. Candidates dropping into Black churches the Sunday before the election. Celebrity endorsement rollouts. None of these are bad in themselves. They become problems when they substitute for measurable commitments. Cultural fluency is cheap. Scorecards are not.',
+      "Pattern three is crisis framing without policy specifics. 'Democracy is on the line. This is the most important election of your lifetime. If you don't vote, you get Trump.' All may be true. None are policy commitments. Crisis framing is what campaigns reach for when they don't have specific promises they want to be held to. It works in the short term and corrodes leverage over time.",
+      "Pattern four is the late-cycle policy offer. Harris's Opportunity Agenda for Black Men — twenty-thousand-dollar forgivable business loans, apprenticeship expansion, sickle cell investment — was released in October 2024, after polling showed Black male drift. The agenda was substantive. It was also obviously reactive: produced because polling showed slippage, not because it was the campaign's pre-existing position. Late-cycle policy is better than no policy, but it teaches campaigns to wait until they are nervous before offering anything specific. Pre-cycle commitments would teach them to lead with policy.",
     ],
-    conversationGrenade: '', // TODO: paste module 08 conversation grenade here
+    conversationGrenade:
+      "When a campaign offers you policy in October, the policy is the panic, not the plan.",
   },
   {
     id: 'incentives-are-the-only-test',
     moduleNumber: '09',
     title: 'Incentives Are the Only Test',
     body: [
-      // TODO: paste module 09 body paragraphs here
+      "When a politician promises something, the question is never 'do they mean it?'",
+      "The question is 'what happens to them if they don't deliver?'",
+      "This is the single most important shift in how a voter evaluates political promises, and it is the one almost no one is taught to make. Most voters evaluate political promises the way they evaluate personal promises from people they trust — asking is this person sincere? But politics is not a personal relationship. It is an institutional one. And in institutional relationships, the only honest test of a promise is what happens to the promisor when the promise is broken.",
+      'If nothing happens, the promise is decorative. It is being made because it sounds good, not because the politician believes they will be held to it. Sincere or insincere does not matter. Without consequences, the promise is hot air.',
+      "This is why 'you can trust her, she really cares' is not an argument. It is a request to skip the analysis. Even a politician who genuinely cares — and many do — operates in a system where their re-election, their fundraising, their committee assignments, their political future, and their post-office career all depend on a set of incentives that may have nothing to do with the voters who put them in office. When those incentives diverge, the politician follows the incentives, not the original promise. This is not because they are bad people. It is because they are people responding rationally to the structure they operate in.",
+      'The lesson is not that politicians are untrustworthy. The lesson is that trust is the wrong category. The right category is incentive alignment.',
+      'Three questions tell you almost everything about whether a politician will deliver.',
+      "First, who pays them? Not just the campaign contributions, though those matter. Also: where did they work before politics? Where will they work after? Whose dinner invitations do they accept? Whose phone calls do they return within an hour? A politician's real constituency is the set of people whose disapproval would cost them something significant. If that set does not include the voters they represent, the voters are decorative too.",
+      "Second, what happens to them if they fail you? Will they lose their primary? Will they lose their seat? Will they face a credible challenger? Will their donor base dry up? Will their endorsement network desert them? If the honest answer is 'nothing — they'll be re-elected anyway because no one is paying attention to the local race,' then their incentive to deliver to you is zero. Their incentive to deliver to the people who can hurt them is total.",
+      "Third, what is their cost of crossing you compared to their cost of crossing their other constituencies? This is the calculation politicians actually run, every day, on every vote. The voter who has built a credible threat — the voter whose disapproval would cost the politician something concrete — gets represented. The voter who has not gets ignored, regardless of how loyal they are or how many of them there are.",
+      "Notice what this framework does. It removes the moral question entirely. It stops asking 'is this politician good or bad?' and starts asking 'is this politician structurally accountable to me?' The first question is unanswerable from the outside. The second has a precise answer that anyone can check.",
+      'A constituency that does not impose costs on politicians who fail it is not a constituency. It is a fan base. Fan bases get jerseys. Constituencies get policy.',
+      'The implication for Black political life is direct. Eight decades of overwhelming Democratic support without a built-in cost for underperformance has produced exactly what incentive analysis would predict: rhetorical commitment paired with selective delivery, with the most reliable delivery flowing to the constituencies whose disapproval would cost the most. This is not because Democratic politicians are bad people. It is because they are people responding to the incentive structure that Black political behavior has, collectively, set up.',
+      'The fix is not finding better politicians. The fix is creating real costs for underperformance — costs that exist regardless of who the politician is, regardless of their party, regardless of their personality. Costs that operate on the structure rather than the individual.',
+      'A primary challenger funded six months out from the election is a cost. A withheld endorsement from a major civic organization is a cost. A neighborhood that votes 80 percent for the incumbent dropping to 65 percent in a single cycle is a cost. A school board candidate who runs against the mayor\'s preferred slate is a cost. A coalition that publishes a scorecard and refuses to rubber-stamp candidates who fail it is a cost.',
+      "None of these requires anyone to abandon their values, change parties, or compromise their principles. All of them change the calculation politicians run when they decide whether to deliver.",
+      'This is the work of political leverage. Not changing minds. Changing incentives.',
     ],
-    conversationGrenade: '', // TODO: paste module 09 conversation grenade here
+    conversationGrenade:
+      "The question isn't whether the politician means it. The question is what happens to him if he doesn't deliver. If nothing happens, he's not lying — but he's not committing either.",
   },
   {
     id: 'the-exit-problem',
     moduleNumber: '10',
     title: 'The Exit Problem',
     body: [
-      // TODO: paste module 10 body paragraphs here
+      'A leverage study has to be honest about the hardest part.',
+      'In a two-party system with single-member districts, exit is expensive.',
+      "If Black voters in Georgia or Pennsylvania abstain or split their tickets in a general election, the result is not 'Democrats finally take us seriously next time.' The result is: Republicans win, Voting Rights Act enforcement collapses, federal civil-rights infrastructure rolls back, judges hostile to Black plaintiffs get lifetime appointments, and the same Black communities that wanted leverage end up worse off than before.",
+      'This is real. Any honest leverage strategy has to grapple with it.',
+      "The answer is not 'vote Republican to send a message.' The answer is that the place to bargain is not the general election — it is everywhere upstream.",
+      'Primary elections. Endorsement decisions. Local races. Ballot initiatives. School board contests. Prosecutor races. State legislative seats. Community contracts with mayors before they take office.',
+      "The general election in November is the worst place to extract concessions because the stakes are highest and the alternatives are worst. Leverage means making the Democratic primary in a majority-Black district a real contest with policy demands. It means a unified scorecard for mayoral candidates that has to be answered before church endorsements roll in. It means defeating a school board incumbent who has presided over five years of literacy decline. It means primarying a prosecutor whose clearance rate on Black homicide victims is below forty percent.",
+      "These moves don't risk a Republican presidency. They produce direct, measurable Black political power — in the offices that actually shape Black lives.",
     ],
-    conversationGrenade: '', // TODO: paste module 10 conversation grenade here
+    conversationGrenade:
+      "Bargaining happens in February primaries, not November generals. The general is where you settle. The primary is where you negotiate.",
   },
   {
     id: 'the-generational-split',
     moduleNumber: '11',
     title: 'The Generational Split',
     body: [
-      // TODO: paste module 11 body paragraphs here
+      'The Black political coalition is not running one operating system. It is running two — and they are diverging.',
+      "Voters over sixty tend toward what could be called the coalition mindset. Civil-rights memory is recent and lived rather than inherited. Republican racial hostility is direct experience, not historical reading. The Democratic Party's protection of voting rights and the social safety net is treated as primary. Political dissent inside the community is treated as risky, because the threat of organized white reaction is always close.",
+      "Voters under thirty-five tend toward what could be called the outcomes mindset. Civil-rights memory is inherited rather than lived. Republicans are bad, but so are many local Democrats. The Democratic Party feels like a brand that does not deliver locally. Dissent feels less dangerous because the threat seems more diffuse.",
+      "Both groups are responding rationally to the world they live in. Neither is wrong about the parts they are tracking. But the gap is widening, and it shows up clearest in the 2024 data. Trump's 15 percent share of the Black vote was roughly 30 percent among Black men under 45 — nearly double.",
+      'A serious leverage strategy treats this generational split as an asset, not a problem.',
+      'Older voters bring institutional networks, civil-rights credibility, church infrastructure, and historical wisdom. Younger voters bring willingness to demand outcomes, skepticism of symbolic politics, and openness to bargaining tactics. The combination is more powerful than either side alone — but only if neither side dismisses the other as naive or sold-out.',
     ],
-    conversationGrenade: '', // TODO: paste module 11 conversation grenade here
+    conversationGrenade:
+      "Older Black voters know what could be lost. Younger Black voters know what hasn't been won. Both are right. The question is whether the coalition can hold them both.",
   },
   {
     id: 'what-a-leverage-move-looks-like',
     moduleNumber: '12',
     title: 'What a Leverage Move Looks Like',
     body: [
-      // TODO: paste module 12 body paragraphs here
+      'To make this concrete, imagine a city. Any majority-Black city you know.',
+      'Detroit. Baltimore. Memphis. Jackson. Birmingham. Atlanta. Philadelphia. New Orleans.',
+      'The current arrangement. The Democratic primary effectively selects the mayor, prosecutor, sheriff, and council. Black voters constitute 50 to 80 percent of the primary electorate. The primary is held in a low-turnout month. Endorsements come from a handful of pastors and unions. Candidates compete on biography, identity, and party access — rarely on specific measurable commitments.',
+      'The leverage version. Six months before the primary, a coalition of Black civic institutions — churches, fraternities and sororities, Black media, business associations, neighborhood organizations — publishes a Black Community Contract. Twenty measurable commitments across safety, schools, ownership, housing, health, and accountability. Each candidate is invited to sign publicly. Each commitment includes specific numbers and specific dates.',
+      'The mayor must commit to: reduce homicides by X percent, raise clearance rates above Y percent, publish quarterly use-of-force data, fund violence interruption at Z dollars per resident, sign an anti-displacement clause in every TIF district.',
+      'The school board must commit to: third-grade reading proficiency above X percent, chronic absenteeism below Y percent, transparent comparison of district, charter, magnet, and vocational outcomes, school safety reports published monthly.',
+      'The prosecutor must commit to: clearance rate on Black homicide victims above X percent, diversion expansion for first-time non-violent offenders, civilian access to body-camera footage within 30 days, public charging-decision data.',
+      'The contract is the endorsement gate. No signature, no Sunday pulpit. No signature, no civic-organization mailer. No signature, no GOTV operation in the candidate\'s neighborhood.',
+      'After the election, the contract becomes a quarterly scorecard. Numbers published. Press conferences held. Failures named. Successors recruited.',
+      'This is what political leverage looks like in practice.',
+      "It does not require any voter to leave the Democratic Party. It requires the Democratic Party to actually compete for the votes that elected its officials.",
     ],
-    conversationGrenade: '', // TODO: paste module 12 conversation grenade here
+    conversationGrenade:
+      "Black political power isn't fifty miles away. It's in a contract a coalition could write next month and enforce next year.",
   },
   {
     id: 'like-it-is-their-own-money',
     moduleNumber: '13',
     title: 'Like It Is Their Own Money',
     body: [
-      // TODO: paste module 13 body paragraphs here
+      'There is a question this study has not yet answered directly: who does the negotiating?',
+      "Not 'Black voters' in the aggregate. Aggregates do not negotiate. Specific people do, in specific rooms, on behalf of specific communities. The question of who those people are, and how they hold the role, is the entire difference between leverage that exists on paper and leverage that exists in fact.",
+      'The answer is local leadership. And the disposition that makes local leadership effective is one borrowed directly from the world of finance: act like it is your own money.',
+      'Every dollar of community political support — every vote, every endorsement, every door-knock, every volunteer hour, every donation, every Sunday pulpit moment, every social media share — is capital. It belongs to the community. It was earned, accumulated, and entrusted. When a local leader decides how that capital gets deployed, they are not deciding for themselves. They are deciding as a fiduciary for everyone whose support they represent.',
+      'This is the framing that almost never gets applied in Black political life, and applying it changes everything.',
+      'A pastor whose congregation has spent decades knocking doors and turning out the vote is sitting on enormous accumulated political capital. A fraternity or sorority chapter whose members include voters across every income bracket of a city is sitting on enormous accumulated political capital. A neighborhood association that can mobilize five hundred dependable voters in a school board primary is sitting on enormous accumulated political capital. A barbershop owner whose customers trust their political read is sitting on enormous accumulated political capital. A small-business association whose members hire, contract, and donate locally is sitting on enormous accumulated political capital.',
+      'The question is how these stewards deploy that capital.',
+      'Most of the time, they deploy it the way an undisciplined heir deploys an inheritance — generously, reflexively, on the basis of personal relationship and prior loyalty, with little attention to return. They endorse the candidate they have always endorsed. They turn out the vote for the party they have always turned out for. They host the candidates they have always hosted. The capital flows out continuously. The return is whatever the politician feels like giving back, which is usually significantly less than what arrived.',
+      'A steward who treated that capital like their own money would behave differently.',
+      'They would ask, before endorsing, what is this candidate actually committing to that I can hold them to later? They would refuse to deploy their political capital until they had a written, public commitment that named specific outcomes on specific timelines. They would compare endorsement requests the way a small business owner compares vendor bids — what is each candidate offering, what is the cost, what is the track record, what are the references? They would treat their endorsement as scarce, because it is.',
+      'This is not about being mercenary. It is about being responsible.',
+      "A pastor who endorses a candidate without a written commitment is making a decision for every person in his congregation. If the candidate delivers, the congregation benefits. If the candidate fails, the congregation pays — in continued failing schools, in unaddressed crime, in disinvestment, in delayed development. The pastor does not absorb most of the cost of a bad endorsement. The congregation does. The same is true of every other community leader who controls or influences political capital.",
+      'When a leader treats community political capital the way they would treat a stranger\'s investment portfolio they had been hired to manage, the level of care goes up. The diligence goes up. The willingness to say no goes up. The pace of demand for documentation, specificity, and accountability goes up. The endorsement stops being a gift and starts being a contract.',
+      'This is the disposition that makes leverage possible. Without it, leverage is theoretical — a good idea in a study no one reads. With it, leverage becomes mechanical: a coalition of stewards, each acting as a responsible fiduciary, refuses to deploy capital without commitments, monitors delivery, and makes loud public consequences for failure.',
+      'The transformation does not require all stewards to behave this way. It requires enough of them to behave this way in a coordinated fashion. A handful of major Black civic institutions in a single city — three churches, two fraternities, one business association, two neighborhood organizations, one media outlet — operating as disciplined fiduciaries with shared standards, could reshape the politics of that city in a single election cycle.',
+      'This is not speculation. It is how the most effective political coalitions in American history have always worked. Organized labor at its peak. Cuban Americans in Florida. Evangelicals in Republican primaries. The Israel lobby. All of them function through coordinated institutional discipline by stewards who treat constituency political capital with the seriousness it deserves.',
+      'The difference between a community whose political capital gets full return and a community whose political capital gets symbolic acknowledgment is not the size of the community. It is the discipline of its stewards.',
+      'For Black political life specifically, this means that the most important shift is not at the voter level. Voters are doing their job. They are turning out, contributing, supporting. They have been holding up their end for sixty years. The shift that produces leverage is at the institutional level — at the pastors, the chapter presidents, the chamber leaders, the editorial board chairs, the alumni association heads, the precinct captains, the block club presidents, the small-business owners, the civic leaders whose endorsement or coordination matters.',
+      'Each of these stewards holds a piece of community political capital. Each of them has the option of deploying it like an heir, like a charity, or like a fiduciary.',
+      'The voter is not the leverage. The voter is the source of capital. The leverage is what the stewards do with it.',
+      'A community whose stewards have absorbed this framing — and who coordinate even loosely with one another in applying it — is a community no political party can afford to take for granted.',
     ],
-    conversationGrenade: '', // TODO: paste module 13 conversation grenade here
+    conversationGrenade: "Every endorsement is somebody else's money. Spend it like it is.",
   },
   {
     id: 'historical-memory-honestly',
     moduleNumber: '14',
     title: 'Historical Memory, Honestly',
     body: [
-      // TODO: paste module 14 body paragraphs here
+      'The strongest part of Black political tradition is the institution-building tradition — and it is the part most often left out of national political conversation.',
+      'Greenwood. Durham. Hayti. Sweet Auburn. Bronzeville. The Black Wall Streets. The Black banks. The Black insurance companies. The Black colleges. The mutual-aid societies. The fraternal organizations. The Black press.',
+      'This tradition deserves to be honored without being romanticized. Two facts about it matter.',
+      'First. Greenwood was not destroyed by market failure or political miscalculation. It was destroyed by a white mob in 1921 — burned to the ground in a coordinated act of racial violence, with deputized white participants and an indifferent state. The lesson of Greenwood is not that Black economic concentration is fragile in the abstract. The lesson is that Black economic concentration is durable until a hostile majority decides to destroy it, and the historical record on that point is grim.',
+      'Second. The institutional density of those communities depended in part on segregation itself. Black capital was forced to circulate locally because Black professionals, Black workers, and Black customers had no access to white institutions. Integration was a moral triumph and a political necessity — and one of its consequences was that Black capital began flowing outward to institutions that had previously refused to serve it.',
+      'This is the hard question the political conversation usually skips: how does a community rebuild institutional density without segregation forcing it? The honest answer is that this has never been fully solved in any majority population in American history, and any leverage strategy that pretends otherwise is selling something.',
+      'But the goal is still right. Local institutions, local capital, local schools, local press, local financial cooperatives, local mutual aid. Not as nostalgia. As leverage infrastructure.',
     ],
-    conversationGrenade: '', // TODO: paste module 14 conversation grenade here
+    conversationGrenade:
+      "Greenwood didn't fail. It was destroyed. The lesson isn't that institution-building is fragile. The lesson is that institution-building always needs political power behind it.",
   },
   {
     id: 'the-religion-politics-honesty',
     moduleNumber: '15',
     title: 'The Religion-Politics Honesty',
     body: [
-      // TODO: paste module 15 body paragraphs here
+      "The standard pundit framing on Black voters and religion goes like this: Black voters are culturally conservative, religiously committed, family-oriented, work-ethic-respecting — so why do they vote Democratic?",
+      "The framing assumes the answer should be 'they shouldn't.' It assumes the religion-and-party relationship that holds among white voters is universal.",
+      'The data says otherwise.',
+      'Pew Research found that 81 percent of Black weekly religious attenders identify as Democrats. So do 84 percent of Black adults who attend services seldom or never. The gap between the religious and the non-religious among Black voters is roughly three points. Among white voters, the same gap is more than thirty.',
+      "There is no 'value mismatch.' There is a value coherence that the framing has been mis-naming.",
+      'Black religious tradition is not the same political tradition as white religious tradition. The Black church developed under conditions where civil rights, economic justice, and personal moral discipline were treated as parts of the same theology. Liberation theology and prosperity gospel both grew in Black religious soil. Saying \'the Bible is true and so is the case for economic justice\' is not a contradiction in the Black religious tradition. It is the historical center of gravity.',
+      "So the right way to read the Black religion-and-vote data is not 'they should be voting Republican but aren't.' It is 'their political values are coherent on their own terms, and the framework that says otherwise is borrowing a model from a different community.'",
+      "This is worth naming because the 'Black voters should be Republican' argument leans on the value-mismatch framing more than on any specific policy claim. Once the framing collapses, the argument becomes much smaller.",
     ],
-    conversationGrenade: '', // TODO: paste module 15 conversation grenade here
+    conversationGrenade:
+      "There is no value mismatch. Black voters aren't culturally conservative voting against their values. Their values are coherent — the framework calling them mismatched is borrowing the wrong template.",
   },
   {
     id: 'the-two-paragraph-version',
     moduleNumber: '16',
     title: 'The Two-Paragraph Version',
+    eyebrow: 'For When Someone Asks',
     body: [
-      // TODO: paste module 16 body paragraphs here
+      "Black voters are the most loyal constituency in American politics, and that loyalty has been historically rational. But near-unconditional support creates a structural problem: one party takes the constituency for granted, the other writes it off, and both stop competing seriously. The result is real but uneven returns on the most loyal vote in modern American history.",
+      "The solution is not to vote Republican. It's to bargain upstream — in primaries, endorsements, local races, school board contests, prosecutor elections, and community contracts. Not because Democrats are enemies, but because political power means making both parties compete. The goal isn't partisan defection. The goal is to make Black voters politically expensive to ignore.",
     ],
-    conversationGrenade: '', // TODO: paste module 16 conversation grenade here
+    conversationGrenade:
+      "Don't argue with people about who to vote for in November. Build the leverage in February.",
   },
   {
     id: 'values-inherited-and-chosen',
     moduleNumber: '17',
     title: 'Values, Inherited and Chosen',
     body: [
-      // TODO: paste module 17 body paragraphs here
+      "Most people don't choose their politics. They absorb them.",
+      'From parents. From church. From neighborhood. From whoever was on the kitchen radio in 1994. From the cable host their uncle trusts. From the friend group they joined in college. From the platform whose algorithm decided what they would see this morning.',
+      "The absorption is so deep most people never notice it happened. They think they sat down at twenty-two and worked out their political views from first principles. They mostly didn't. They received them — and the received views feel like their own because there has never been a moment where the received and the chosen got separated.",
+      "This is not a moral failure. It is the standard human condition. Everyone is doing it. Including the people who think they aren't.",
+      "But here is what changes when a voter notices it: they stop being steerable. Not because they swing right, swing left, or swing anywhere. Because the appeal that worked yesterday — 'people like us vote this way' — stops working. The voter is no longer voting from inherited reflex. They are voting from a place they can defend, in their own words, to themselves.",
+      'That voter is harder to flip. Harder to scare. Harder to flatter. Harder to shame.',
+      'They are also, finally, the author of their own political life.',
+      'The recognition that what you actually believe and what you have been told to believe are two different things is worth noticing. A reader who finishes this section with that awareness has gotten what it is for.',
     ],
-    conversationGrenade: '', // TODO: paste module 17 conversation grenade here
+    conversationGrenade:
+      "Most people don't choose their politics. They absorb them. The first step to political power is noticing which is which.",
   },
   {
     id: 'reading-a-candidate',
     moduleNumber: '18',
     title: 'Reading a Candidate',
     body: [
-      // TODO: paste module 18 body paragraphs here
+      'There is a skill almost no one is taught: how to read a candidate.',
+      "Not how to like one. Not how to agree with one. How to read one — the way a doctor reads a chart, the way a mechanic reads an engine, the way a poker player reads a table. A skill that produces a clear picture, separate from how the candidate makes the reader feel.",
+      "This skill is treated as unusual. It shouldn't be. It is the basic literacy of citizenship. The reason it feels unusual is because for most of recent history, candidates have been packaged — the bio, the ad, the photo op, the church visit, the celebrity endorsement, the rally — in ways that make reading them harder, not easier.",
+      'The packaging is what gets received. The candidate underneath the packaging is a separate thing.',
+      "A candidate's record is public. Their funding is public. Their voting history, if they have held office, is public. Their staff is public. Their endorsements are public. Where they live, where their children go to school, what they did before politics, who paid them, what they have actually delivered and what they have only promised — all of it is on the record, often searchable in minutes.",
+      'The fact that most voters do not look is not because the information is hidden. It is because no one taught them that looking is part of voting.',
+      'When a voter develops the habit — and it is a habit, not an assignment — something quiet and important changes. The voter stops needing to be told who to vote for. They develop the capacity to figure it out themselves, for any race, at any level, for the rest of their voting life.',
+      'This is the difference between a voter who is acted upon and a voter who acts. It is not a difference of intelligence, education, or income. It is a difference of habit. And habits can be built at any age, at any starting point, by anyone.',
+      'The reader who finishes this section understanding that candidates are readable — that the information exists, that the looking is possible, that the steering depends on the looking not happening — has gotten what it is for.',
     ],
-    conversationGrenade: '', // TODO: paste module 18 conversation grenade here
+    conversationGrenade:
+      "Candidates are readable. The information is public. The reason most voters don't look is because no one ever told them looking was part of voting.",
   },
   {
     id: 'the-questioning-posture',
     moduleNumber: '19',
     title: 'The Questioning Posture',
     body: [
-      // TODO: paste module 19 body paragraphs here
+      'Before the skill of reading a candidate, there is something more basic. A disposition. A way of receiving information about politics that is the precondition for everything else.',
+      'A questioning attitude.',
+      "Not cynicism. Cynicism is a posture of refusal — nothing matters, no one is honest, the game is rigged. Cynicism produces disengagement. It is the most useful disposition a corrupt politician can cultivate in a citizen, because a cynic does not vote, does not show up, does not check, does not call. A cynic is steerable in exactly the same way a true believer is steerable. Both have stopped asking questions.",
+      'A questioning attitude is the opposite of both. It is the assumption that everyone making a political appeal wants something from you — your vote, your money, your attention, your endorsement, your silence — and that knowing what they want is the first step in deciding whether to give it.',
+      'This is not paranoia. This is how every functioning adult treats every other significant transaction in their life.',
+      "When a car dealer offers you a price, you ask how they arrived at it. When a contractor bids on your roof, you ask for references. When a doctor prescribes a procedure, you ask about alternatives. When a bank pitches you a financial product, you read the terms. None of this makes you a cynic. It makes you a competent adult navigating a world where most counterparties have interests that don't perfectly align with yours.",
+      "For some reason, this same disposition gets treated as suspicious when applied to politics. Don't you trust her? Why are you being so negative? He's one of us — what more do you want?",
+      "These responses are not arguments. They are pressure tactics. They exist to short-circuit the questioning posture before it produces an answer the person applying pressure won't like.",
+      "The questioning posture asks a small number of recurring things. Why are you telling me this now? Why are you telling me this here? Who benefits if I believe you? What happens to you if I don't? What have you delivered in the past on the things you are promising now? Who is paying you, and what do they expect in return? What is the strongest argument against your position, and what is your honest reply to it?",
+      "These are not hostile questions. They are basic questions. They are the questions a friend would ask you before letting you make a major decision. They are the questions an investor asks before writing a check. They are the questions a journalist asks before publishing a story.",
+      'A voter who has internalized them is not a difficult voter. They are a serious voter. They are the kind of voter politicians treat differently because they know the voter is paying attention.',
+      "The opposite of the questioning posture is not loyalty. The opposite is reception — the unconscious habit of treating whatever was last said by a trusted source as fact. A receptive voter is not a loyal voter. They are an open channel. Whoever has the strongest claim on their trust at the moment of decision determines the outcome. That is not citizenship. It is influence routing.",
+      'The questioning posture is not difficult. It is not advanced. It is not reserved for political junkies or the highly educated. It is available to anyone, at any age, in any neighborhood, the moment they decide that political claims are subject to the same scrutiny as every other claim in their life.',
+      'The moment a voter applies that scrutiny consistently, they become a different kind of political actor. Not louder. Not more partisan. Less steerable. And in a political system that runs on steerability, being unsteerable is one of the most powerful things a voter can be.',
     ],
-    conversationGrenade: '', // TODO: paste module 19 conversation grenade here
+    conversationGrenade:
+      "When a car dealer tells you a price, you ask how he got there. When a politician tells you to trust him, somehow that's supposed to be different. It isn't.",
   },
   {
     id: 'what-power-looks-like-actually',
     moduleNumber: '20',
     title: 'What Power Looks Like, Actually',
     body: [
-      // TODO: paste module 20 body paragraphs here
+      'The picture of political power most people carry in their heads is wrong.',
+      'They picture rallies. They picture marches. They picture viral speeches. They picture the presidential election in November. They picture a great leader on a stage. They picture, somewhere in the background, the words grassroots and movement and historic.',
+      'This picture has produced almost nothing of what was promised. Sixty years of it have left the wealth gap basically where it was, the schools mostly failing, the neighborhoods mostly the same, and the politicians mostly thriving regardless of outcomes.',
+      'The picture is wrong because political power, in the country we actually live in, does not work the way the picture suggests.',
+      'Real political power lives in small rooms. Local primaries decided by a few thousand votes. School board elections decided by a few hundred. Prosecutor races that turn on which neighborhood organizations show up to endorse. Endorsement meetings held months before any voter sees an ad. Budget hearings in fluorescent-lit chambers where five people in the audience would constitute a crowd.',
+      'This is the geography of political power in the United States. It is not glamorous. It is not televised. It is not what anyone gets famous for caring about. And it is where almost every decision that shapes daily life is made.',
+      'The candidate at the national level is the output of those small rooms. The mayor was endorsed in those rooms. The school board member was elected in those rooms. The prosecutor was vetted in those rooms. The congressman won a primary in those rooms before a single general-election voter mattered.',
+      'A voter who understands this carries a different map. They are not waiting for the next presidential election to feel political. They know the cycle never stops. They know the small races are where things move. They know that ten neighbors who pay attention together to one local office are more powerful than ten thousand strangers shouting at a national one.',
+      'This is not a call to action. It is a correction of the picture.',
+      'The reader who leaves this section with the corrected picture — that political power is small, local, and constant rather than large, national, and episodic — has gotten what it is for. What they do with that picture is theirs.',
     ],
-    conversationGrenade: '', // TODO: paste module 20 conversation grenade here
+    conversationGrenade:
+      "Political power isn't on a stage. It's in a small room you've never been told about. The room is real. The cameras just aren't pointed at it.",
   },
   {
     id: 'the-free-voter',
@@ -209,8 +374,17 @@ export const studyModules: StudyModule[] = [
     title: 'The Free Voter',
     eyebrow: 'Closing',
     body: [
-      // TODO: paste module 21 body paragraphs here
+      'The work of this study is finished here.',
+      'The reader who has come this far has been shown the problem — captured constituencies, structural underdelivery, identity pressure, symbolic outreach, late-cycle policy, the exit dilemma — the historical context, the institution-building tradition, the religion-and-politics misreading, the generational split — and the corrected picture of where power actually lives.',
+      'They have not been assigned anything. They have not been told who to vote for. They have not been recruited to a party, a movement, a candidate, or a cause.',
+      'What they have, if the study did its job, is a different relationship to political life.',
+      'They know that loyalty without measurement is just predictability, and that predictability is what makes a constituency invisible. They know that the strongest political moves happen upstream of the general election, in primaries and endorsements and local races. They know that the values they hold are theirs to audit, and that the candidates they support are theirs to read. They know that political power is smaller, closer, and quieter than the spectacle suggests.',
+      'That knowledge is the thing.',
+      "What they do with it — whether they become more active or stay where they are, whether they vote the same way they always have or differently, whether they tell anyone or no one — is not the study's business. The study was never about producing a behavior. It was about producing a free voter. Free in the operational sense. Free of inherited reflex. Free of identity pressure. Free of the picture that says politics is something that happens far away, on a stage, in November, every four years.",
+      'A free voter cannot be told who they are. They cannot be told who to be loyal to. They cannot be made cheap to ignore.',
+      'That is the entire study.',
     ],
-    conversationGrenade: '', // TODO: paste module 21 conversation grenade here
+    conversationGrenade:
+      "The goal of all of this isn't to make you vote a certain way. It's to make you the kind of voter no one can tell.",
   },
 ]
