@@ -22,12 +22,17 @@ export function StudyModule({ module }: StudyModuleProps) {
       </div>
 
       {/* Title */}
-      <h2 className="font-display text-4xl font-bold text-ink leading-tight mb-8 max-w-[640px]">
+      <h2 className="font-display text-4xl font-bold text-ink leading-tight mb-6 max-w-[640px]">
         {module.title}
       </h2>
 
+      {/* Conversation Grenade — directly below the title */}
+      {module.conversationGrenade && (
+        <ConversationGrenade quote={module.conversationGrenade} />
+      )}
+
       {/* Body paragraphs */}
-      <div className="space-y-5">
+      <div className="space-y-5 mt-8">
         {module.body.map((paragraph, i) => (
           <p
             key={i}
@@ -37,12 +42,6 @@ export function StudyModule({ module }: StudyModuleProps) {
           </p>
         ))}
       </div>
-
-      {module.conversationGrenade && (
-        <div className="mt-10">
-          <ConversationGrenade quote={module.conversationGrenade} />
-        </div>
-      )}
     </section>
   )
 }

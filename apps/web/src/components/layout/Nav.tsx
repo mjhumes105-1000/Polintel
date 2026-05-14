@@ -5,15 +5,15 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
-const NAV_LINKS = [
+const NAV_LINKS: { href: string; label: string; highlight?: boolean }[] = [
   { href: '/politicians', label: 'Politicians' },
   { href: '/bills', label: 'Bills' },
   { href: '/economy', label: 'Economy' },
   { href: '/compare', label: 'Compare' },
-  { href: '/leverage-study', label: 'Quarterly Study' },
   { href: '/search', label: 'Search' },
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'About' },
+  { href: '/leverage-study', label: 'Quarterly Study', highlight: true },
 ]
 
 export function Nav() {
@@ -43,7 +43,15 @@ export function Nav() {
         {/* Desktop nav links */}
         <div className="hidden sm:flex items-center gap-5">
           {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="text-xs text-ink-3 hover:text-ink-2 transition-colors">
+            <Link
+              key={l.href}
+              href={l.href}
+              className={
+                l.highlight
+                  ? 'text-xs text-flag font-semibold hover:text-flag/80 transition-colors'
+                  : 'text-xs text-ink-3 hover:text-ink-2 transition-colors'
+              }
+            >
               {l.label}
             </Link>
           ))}
@@ -84,7 +92,11 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center py-3 text-sm text-ink-3 hover:text-ink-2 transition-colors border-b border-border/40 last:border-0"
+                className={`flex items-center py-3 text-sm transition-colors border-b border-border/40 last:border-0 ${
+                  l.highlight
+                    ? 'text-flag font-semibold hover:text-flag/80'
+                    : 'text-ink-3 hover:text-ink-2'
+                }`}
               >
                 {l.label}
               </Link>
