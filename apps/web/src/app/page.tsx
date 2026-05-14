@@ -463,10 +463,10 @@ export default function HomePage() {
       {/* Why this exists */}
       <WhyThisExists />
 
-      {/* Leverage Study callout */}
+      {/* Quarterly Study callout */}
       <section className="mb-16 border border-flag/30 rounded p-6 bg-flag-bg/20 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div>
-          <p className="font-mono text-[9px] tracking-widest text-flag mb-2">NEW STUDY</p>
+          <p className="font-mono text-[9px] tracking-widest text-flag mb-2">QUARTERLY STUDY</p>
           <h2 className="text-lg font-semibold text-ink mb-1">Politically Expensive to Ignore</h2>
           <p className="text-sm text-ink-3 leading-relaxed max-w-lg">
             A study of Black political power and what it would take to make it real.

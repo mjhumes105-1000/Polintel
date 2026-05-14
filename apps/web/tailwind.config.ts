@@ -46,6 +46,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
       },
       maxWidth: {
         prose: '65ch',

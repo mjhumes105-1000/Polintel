@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { href: '/bills', label: 'Bills' },
   { href: '/economy', label: 'Economy' },
   { href: '/compare', label: 'Compare' },
-  { href: '/leverage-study', label: 'Leverage Study' },
+  { href: '/leverage-study', label: 'Quarterly Study' },
   { href: '/search', label: 'Search' },
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'About' },

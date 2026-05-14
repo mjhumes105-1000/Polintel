@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { Nav } from '@/components/layout/Nav'
@@ -17,6 +17,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 })
 
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['400', '700', '900'],
+  style: ['normal', 'italic'],
+})
+
 export const metadata: Metadata = {
   title: {
     default: 'PoliIntel — The Public Record',
@@ -29,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen flex flex-col font-sans`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} min-h-screen flex flex-col font-sans`}>
         <Script id="theme-init" strategy="beforeInteractive">{`
           (function(){
             var t=localStorage.getItem('theme');

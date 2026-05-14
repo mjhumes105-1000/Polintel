@@ -39,7 +39,7 @@ export default function OGImage() {
             position: 'relative',
           }}
         >
-          POLINTEL · Leverage Study
+          POLINTEL · Quarterly Study
         </div>
         <div
           style={{
