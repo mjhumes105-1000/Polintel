@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react'
+import { EntryGate } from '@/components/leverage-study/EntryGate'
 
 export const metadata = {
   title: 'Leverage Study — POLINTEL',
-  description: 'A structured study of political leverage, power dynamics, and institutional pressure in American government.',
+  description:
+    'A structured study of political leverage, power dynamics, and institutional pressure in American government.',
 }
 
 export default function LeverageStudyLayout({ children }: { children: ReactNode }) {
@@ -15,11 +17,11 @@ export default function LeverageStudyLayout({ children }: { children: ReactNode 
           <span className="label-caps text-accent">Leverage Study</span>
         </div>
       </div>
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="max-w-[760px]">
+      <EntryGate>
+        <div className="max-w-5xl mx-auto px-6">
           {children}
         </div>
-      </div>
+      </EntryGate>
     </div>
   )
 }
