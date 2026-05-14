@@ -33,9 +33,11 @@ export function StudyModule({ module }: StudyModuleProps) {
         ))}
       </div>
 
-      <div className="mt-10">
-        <ConversationGrenade quote={module.conversationGrenade} />
-      </div>
+      {module.conversationGrenade && (
+        <div className="mt-10">
+          <ConversationGrenade quote={module.conversationGrenade} />
+        </div>
+      )}
     </section>
   )
 }

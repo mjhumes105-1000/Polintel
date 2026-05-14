@@ -1,10 +1,20 @@
+import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { EntryGate } from '@/components/leverage-study/EntryGate'
 
-export const metadata = {
-  title: 'Leverage Study — POLINTEL',
-  description:
-    'A structured study of political leverage, power dynamics, and institutional pressure in American government.',
+export const metadata: Metadata = {
+  title: 'Politically Expensive to Ignore · POLINTEL',
+  description: 'A study of Black political power and what it would take to make it real.',
+  openGraph: {
+    title: 'Politically Expensive to Ignore · POLINTEL',
+    description: 'A study of Black political power and what it would take to make it real.',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Politically Expensive to Ignore · POLINTEL',
+    description: 'A study of Black political power and what it would take to make it real.',
+  },
 }
 
 export default function LeverageStudyLayout({ children }: { children: ReactNode }) {

@@ -45,8 +45,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Remove API routes (not supported in static export)
-        run: rm -rf apps/web/src/app/api
+      - name: Remove routes incompatible with static export
+        run: |
+          rm -rf apps/web/src/app/api
+          find apps/web/src/app -name "opengraph-image.tsx" -delete
 
       - name: Build with Next.js
         run: pnpm --filter web build

@@ -18,6 +18,17 @@ export function EntryGate({ children }: { children: ReactNode }) {
     }
   }, [])
 
+  // Scroll to hash anchor once gate opens (handles /leverage-study#module-id deep links)
+  useEffect(() => {
+    if (status !== 'open') return
+    const hash = window.location.hash.slice(1)
+    if (!hash) return
+    const timer = setTimeout(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 150)
+    return () => clearTimeout(timer)
+  }, [status])
+
   function handleComplete(submission: EntrySubmission) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(submission))
