@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Politically Expensive to Ignore — POLINTEL Leverage Study'
+export const alt = 'The Unaudited Investment — POLINTEL Quarterly Study'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -53,7 +53,7 @@ export default function OGImage() {
             position: 'relative',
           }}
         >
-          Politically Expensive to Ignore
+          The Unaudited Investment
         </div>
         <div
           style={{
@@ -64,7 +64,7 @@ export default function OGImage() {
             position: 'relative',
           }}
         >
-          A study of Black political power and what it would take to make it real
+          Black voters have built the most reliable bloc in American politics. The terms of that arrangement have never been audited.
         </div>
       </div>
     ),

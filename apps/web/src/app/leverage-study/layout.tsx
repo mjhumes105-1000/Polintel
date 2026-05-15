@@ -3,17 +3,17 @@ import type { ReactNode } from 'react'
 import { EntryGate } from '@/components/leverage-study/EntryGate'
 
 export const metadata: Metadata = {
-  title: 'Politically Expensive to Ignore · POLINTEL',
-  description: 'A study of Black political power and what it would take to make it real.',
+  title: 'The Unaudited Investment · POLINTEL Quarterly Study',
+  description: 'Black voters have built the most reliable bloc in American politics. The terms of that arrangement have never been audited.',
   openGraph: {
-    title: 'Politically Expensive to Ignore · POLINTEL',
-    description: 'A study of Black political power and what it would take to make it real.',
+    title: 'The Unaudited Investment · POLINTEL',
+    description: 'Black voters have built the most reliable bloc in American politics. The terms of that arrangement have never been audited.',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Politically Expensive to Ignore · POLINTEL',
-    description: 'A study of Black political power and what it would take to make it real.',
+    title: 'The Unaudited Investment · POLINTEL',
+    description: 'Black voters have built the most reliable bloc in American politics. The terms of that arrangement have never been audited.',
   },
 }
 
