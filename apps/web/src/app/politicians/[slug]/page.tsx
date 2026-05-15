@@ -90,11 +90,6 @@ const statusColor: Record<CandidacyStatus, string> = {
   lost: 'text-ink-4 border-border',
 }
 
-const STATE_EXPLORE_HREF: Record<string, string> = {
-  California: '/explore?state=California',
-  Mississippi: '/explore?state=Mississippi',
-  'New Jersey': '/explore?state=New Jersey',
-}
 
 const GOVTRACK_SOURCE = {
   id: 'govtrack',
@@ -186,15 +181,13 @@ export default async function PoliticianPage({
     ],
   }
 
-  const backHref = STATE_EXPLORE_HREF[politician.state] ?? '/politicians'
-
   return (
     <>
       <StickyProfileHeader politician={enrichedPolitician} />
       <div className="max-w-5xl mx-auto px-6 py-10">
         <div id="profile-header-sentinel" />
         <div className="mb-4">
-          <BackButton href={backHref} />
+          <BackButton />
         </div>
         <ProfileHeader politician={enrichedPolitician} />
 
