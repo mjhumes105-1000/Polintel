@@ -26,7 +26,7 @@ export async function fetchNewsItems(
   if (govtrackId) {
     try {
       const url = `https://www.govtrack.us/api/v2/statement?person=${govtrackId}&limit=5&order_by=-created`
-      const res = await fetch(url, { next: { revalidate: REVALIDATE } })
+      const res = await fetch(url, { next: { revalidate: REVALIDATE }, signal: AbortSignal.timeout(6000) })
       if (res.ok) {
         const data: { objects: GovTrackStatement[] } = await res.json()
         for (const s of data.objects) {

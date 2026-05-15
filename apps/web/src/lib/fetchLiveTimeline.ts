@@ -111,11 +111,11 @@ export async function fetchLiveTimeline(
   const [votesRes, billsRes] = await Promise.allSettled([
     fetch(
       `${GOVTRACK_BASE}/vote_voter?person=${govtrackId}&limit=15&order_by=-created`,
-      { next: { revalidate: 86400 } },
+      { next: { revalidate: 86400 }, signal: AbortSignal.timeout(8000) },
     ),
     fetch(
       `${GOVTRACK_BASE}/bill?sponsor=${govtrackId}&limit=10&order_by=-introduced_date`,
-      { next: { revalidate: 86400 } },
+      { next: { revalidate: 86400 }, signal: AbortSignal.timeout(8000) },
     ),
   ])
 

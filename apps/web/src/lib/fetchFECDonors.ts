@@ -4,11 +4,15 @@ const FEC_BASE = 'https://api.open.fec.gov/v1'
 const FEC_KEY = process.env.FEC_API_KEY ?? 'DEMO_KEY'
 const REVALIDATE = 86400 // 24h
 
-async function fecGet<T>(path: string, params: Record<string, string | number> = {}): Promise<T> {
+async function fecGet<T>(
+  path: string,
+  params: Record<string, string | number> = {},
+  signal?: AbortSignal,
+): Promise<T> {
   const url = new URL(`${FEC_BASE}${path}`)
   url.searchParams.set('api_key', FEC_KEY)
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v))
-  const res = await fetch(url.toString(), { next: { revalidate: REVALIDATE } })
+  const res = await fetch(url.toString(), { next: { revalidate: REVALIDATE }, signal })
   if (!res.ok) throw new Error(`FEC ${path} → ${res.status}`)
   return res.json() as Promise<T>
 }
@@ -74,6 +78,8 @@ export async function fetchFECDonors(
   cycle = 2024,
 ): Promise<FundingCycle | null> {
   try {
+    // Single 12-second budget for the entire FEC call chain
+    const signal = AbortSignal.timeout(12000)
     const office = chamber === 'Senate' ? 'S' : 'H'
     const candidates = await fecGet<{ results: FECCandidate[] }>('/candidates/search/', {
       q: name,
@@ -81,7 +87,7 @@ export async function fetchFECDonors(
       office,
       election_year: cycle,
       per_page: 5,
-    })
+    }, signal)
 
     const candidate = candidates.results[0]
     if (!candidate) return null
@@ -93,14 +99,14 @@ export async function fetchFECDonors(
       fecGet<{ results: { receipts: number }[] }>(`/committee/${committeeId}/totals/`, {
         cycle,
         per_page: 1,
-      }),
+      }, signal),
       fecGet<{ results: FECContribution[] }>('/schedules/schedule_a/', {
         committee_id: committeeId,
         two_year_transaction_period: cycle,
         per_page: 100,
         sort: '-contribution_receipt_amount',
         is_individual: 'true',
-      }),
+      }, signal),
     ])
 
     const totalRaised = Math.round(totalsData.results[0]?.receipts ?? 0)
