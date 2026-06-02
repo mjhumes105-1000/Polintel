@@ -13,7 +13,6 @@ const NAV_LINKS: { href: string; label: string; highlight?: boolean }[] = [
   { href: '/search', label: 'Search' },
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'About' },
-  { href: '/leverage-study', label: 'Quarterly Study', highlight: true },
 ]
 
 export function Nav() {
