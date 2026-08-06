@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T11:10:39.649Z",
+  "lastUpdated": "2026-08-06T04:56:40.561Z",
   "overrides": {
     "dhs-appropriations-act-2026": {
       "status": "in-committee",
@@ -7,7 +7,15 @@
     },
     "raise-the-wage-act-2025": {
       "status": "in-committee",
-      "statusDate": "2026-05-12"
+      "statusDate": "2026-05-21"
+    },
+    "farm-bill-2026": {
+      "status": "in-committee",
+      "statusDate": "2026-05-19"
+    },
+    "save-act-2025": {
+      "status": "in-committee",
+      "statusDate": "2025-04-10"
     }
   }
 }

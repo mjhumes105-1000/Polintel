@@ -75,10 +75,21 @@ function mapActionToStatus(latestAction, billType) {
     return { status: 'failed', statusDate: date }
   }
 
-  // Passed both chambers (pending presidential action)
+  // Presented to / enrolled — cleared both chambers, awaiting the President
   const isHouseBill = billType === 'hr' || billType === 'hjres' || billType === 'hres'
   const isSenateBill = billType === 's' || billType === 'sjres' || billType === 'sres'
 
+  if (
+    text.includes('presented to president') ||
+    text.includes('cleared for white house') ||
+    text.includes('enrolled')
+  ) {
+    return { status: 'passed', statusDate: date }
+  }
+
+  // Passed both chambers (pending presidential action): the *second* chamber's
+  // passage is the latest action. For an HR bill that's "passed senate"; for an
+  // S bill that's "passed house".
   if (isHouseBill && (text.includes('passed senate') || text.includes('passed/agreed to in senate'))) {
     return { status: 'passed', statusDate: date }
   }
@@ -86,22 +97,40 @@ function mapActionToStatus(latestAction, billType) {
     return { status: 'passed', statusDate: date }
   }
 
-  // Passed one chamber (still needs the other)
-  if (isHouseBill && (text.includes('passed house') || text.includes('passed/agreed to in house'))) {
+  // Passed one chamber, now before the other. Two forms of the latest action:
+  //   • the passage itself ("Passed House"/"Passed Senate"), or
+  //   • the receiving-chamber message ("Received in the Senate"/"...in the House"),
+  //     which is what Congress.gov reports once the bill is messaged over.
+  // The site's vocabulary has no "passed one chamber" value, so this maps to
+  // in-committee — it is now in the second chamber, not yet passed by it.
+  if (
+    isHouseBill &&
+    (text.includes('passed house') ||
+      text.includes('passed/agreed to in house') ||
+      text.includes('received in the senate'))
+  ) {
     return { status: 'in-committee', statusDate: date }
   }
-  if (isSenateBill && (text.includes('passed senate') || text.includes('passed/agreed to in senate'))) {
+  if (
+    isSenateBill &&
+    (text.includes('passed senate') ||
+      text.includes('passed/agreed to in senate') ||
+      text.includes('received in the house'))
+  ) {
     return { status: 'in-committee', statusDate: date }
   }
 
-  // In committee
+  // In committee (including subcommittee referral, hearings, and markup)
   if (
     text.includes('referred to') ||
     text.includes('ordered to be reported') ||
     text.includes('reported by') ||
+    text.includes('reported to') ||
     text.includes('placed on') ||
-    text.includes('committee markup') ||
-    text.includes('hearing held')
+    text.includes('markup') ||
+    text.includes('subcommittee') ||
+    text.includes('hearing held') ||
+    text.includes('hearings held')
   ) {
     return { status: 'in-committee', statusDate: date }
   }
