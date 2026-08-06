@@ -59,26 +59,31 @@ export const cabinet: CabinetMember[] = [
     party: 'R',
   },
   {
-    name: 'Kristi Noem',
+    // Kristi Noem removed as DHS Secretary (effective Mar 31, 2026); reassigned as
+    // special envoy for the Shield of the Americas. Markwayne Mullin confirmed by
+    // the Senate 54–45 on Mar 24, 2026 and sworn in as the 9th DHS Secretary.
+    name: 'Markwayne Mullin',
     title: 'Secretary of Homeland Security',
     shortTitle: 'Sec. of DHS',
     department: 'Homeland Security',
     group: 'national_security',
-    priorRole: 'Governor of South Dakota',
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Official_Portrait_of_Secretary_Kristi_Noem.jpg/330px-Official_Portrait_of_Secretary_Kristi_Noem.jpg',
+    priorRole: 'U.S. Senator, OK',
+    confirmedDate: 'March 24, 2026',
     party: 'R',
-    state: 'SD',
+    state: 'OK',
   },
   {
-    name: 'Tulsi Gabbard',
+    // Tulsi Gabbard departed as DNI (effective Jun 30, 2026). After brief acting
+    // tenures (Aaron Lukas, then Bill Pulte), Jay Clayton was confirmed by the
+    // Senate on Jul 30 and sworn in as DNI on Aug 3, 2026.
+    name: 'Jay Clayton',
     title: 'Director of National Intelligence',
     shortTitle: 'DNI',
     department: 'ODNI',
     group: 'national_security',
-    priorRole: 'U.S. Representative, HI',
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Director_Tulsi_Gabbard_Official_Portrait.jpg/330px-Director_Tulsi_Gabbard_Official_Portrait.jpg',
+    priorRole: 'SEC Chairman (2017–20) · U.S. Attorney, SDNY',
+    confirmedDate: 'August 3, 2026',
     party: 'R',
-    state: 'HI',
   },
   {
     name: 'John Ratcliffe',

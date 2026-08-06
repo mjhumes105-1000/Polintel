@@ -213,7 +213,8 @@ export function ExecutiveBranchSection() {
       </div>
 
       <p className="mt-6 font-mono text-[9px] text-ink-4">
-        Cabinet data current as of April 2026. Profiles added as records are verified.
+        Cabinet reflects DHS and ODNI changes through August 2026; remaining roles being verified.
+        Profiles added as records are verified.
       </p>
     </section>
   )
