@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { countryProfiles } from '@/data/economy/countryProfiles'
 import { countries } from '@/data/economy/countries'
-import { formatBillions, signedBalance } from '@/lib/economy'
+import { formatBillions, signedBalance, tariffFlow } from '@/lib/economy'
 import { BalanceChip } from '@/components/economy/BalanceChip'
 import { SeverityChip } from '@/components/economy/SeverityChip'
 import { compareSummaries } from '@/data/economy/compareSummaries'
@@ -450,11 +450,16 @@ function TariffCard({
         <p className="text-xs text-ink-3 italic">MFN rates apply. No sector-specific measures tracked.</p>
       ) : (
         <div className="space-y-2.5">
-          {tariffs.map((t, i) => (
+          {tariffs.map((t, i) => {
+            const flow = tariffFlow(t.imposedBy, profile.slug)
+            return (
             <div key={i} className="flex items-start gap-3">
               <div className="min-w-0 flex-1">
                 <p className="text-xs text-ink-2 leading-tight">{t.sector}</p>
-                <p className="font-mono text-[9px] text-ink-4 mt-0.5">{t.legalBasis ?? t.status.toUpperCase()}</p>
+                <p className="font-mono text-[9px] text-ink-4 mt-0.5">
+                  <span className={t.imposedBy === 'us' ? 'text-ink-3' : 'text-sky-300'}>{flow.label}</span>
+                  {' · '}{t.legalBasis ?? t.status.toUpperCase()}
+                </p>
               </div>
               <span className={`font-mono text-sm tabular-nums shrink-0 ${
                 t.rate >= 50 ? 'text-flag' :
@@ -464,7 +469,8 @@ function TariffCard({
                 {t.rate}%
               </span>
             </div>
-          ))}
+            )
+          })}
         </div>
       )}
     </div>

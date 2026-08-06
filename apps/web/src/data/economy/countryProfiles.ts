@@ -39,10 +39,10 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'Qualifying USMCA Goods', rate: 0, status: 'active', effectiveDate: '2020-07-01', legalBasis: 'USMCA', note: 'Zero tariff applies to goods meeting USMCA rules of origin. Auto sector requires 75% North American content and 70% steel/aluminum from North America.' },
-      { sector: 'Non-USMCA Goods', rate: 25, status: 'active', effectiveDate: '2025-03-04', legalBasis: 'IEEPA — Fentanyl/Cartel Executive Order', note: 'Non-USMCA-qualifying goods from Mexico subject to 25% tariff under the March 2025 executive order citing fentanyl trafficking and cartel activity. USMCA-compliant goods are explicitly exempted.' },
-      { sector: 'Steel & Aluminum (Section 232)', rate: 25, status: 'active', effectiveDate: '2025-03-12', legalBasis: 'Section 232 — USMCA Exemption Revoked', note: 'Section 232 steel (25%) and aluminum (10%) exemptions for USMCA partners were revoked in March 2025. Steel from Mexico once again faces the full 25% Section 232 rate.' },
-      { sector: 'Automobiles — Non-Qualifying', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: 'Section 232 tariffs on foreign-manufactured autos (25%) apply to Mexican vehicles not meeting USMCA content rules. Source: USITC HTS 2026, Chapter 87.' },
+      { sector: 'Qualifying USMCA Goods', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '2020-07-01', legalBasis: 'USMCA', note: 'Zero tariff applies to goods meeting USMCA rules of origin. Auto sector requires 75% North American content and 70% steel/aluminum from North America.' },
+      { sector: 'Non-USMCA Goods', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-03-04', legalBasis: 'IEEPA — Fentanyl/Cartel Executive Order', note: 'Non-USMCA-qualifying goods from Mexico subject to 25% tariff under the March 2025 executive order citing fentanyl trafficking and cartel activity. USMCA-compliant goods are explicitly exempted.' },
+      { sector: 'Steel & Aluminum (Section 232)', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-03-12', legalBasis: 'Section 232 — USMCA Exemption Revoked', note: 'Section 232 steel (25%) and aluminum (10%) exemptions for USMCA partners were revoked in March 2025. Steel from Mexico once again faces the full 25% Section 232 rate.' },
+      { sector: 'Automobiles — Non-Qualifying', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: 'Section 232 tariffs on foreign-manufactured autos (25%) apply to Mexican vehicles not meeting USMCA content rules. Source: USITC HTS 2026, Chapter 87.' },
     ],
     agreement: {
       name: 'USMCA',
@@ -124,11 +124,11 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'Qualifying USMCA Goods', rate: 0, status: 'active', effectiveDate: '2020-07-01', legalBasis: 'USMCA', note: 'The vast majority of U.S.–Canada goods trade qualifies for zero tariff treatment under USMCA.' },
-      { sector: 'Non-USMCA Goods', rate: 25, status: 'active', effectiveDate: '2025-03-04', legalBasis: 'IEEPA — Fentanyl/Cartel Executive Order', note: 'Canadian goods not qualifying under USMCA rules of origin face 25% tariff. Energy and energy products are subject to 10% rate. USMCA-compliant goods remain at 0%.' },
-      { sector: 'Steel & Aluminum (Section 232)', rate: 25, status: 'active', effectiveDate: '2025-03-12', legalBasis: 'Section 232 — USMCA Exemption Revoked', note: 'Section 232 exemptions for USMCA partners were revoked in March 2025. Canadian steel now faces the 25% Section 232 rate and aluminum faces 10%.' },
-      { sector: 'Softwood Lumber', rate: 8.05, status: 'active', effectiveDate: '2017-06-26', legalBasis: 'Countervailing Duty Order', note: 'Ongoing anti-subsidy dispute. The U.S. argues Canadian provinces subsidize softwood lumber through below-market stumpage fees. Rate subject to periodic administrative review.' },
-      { sector: 'Dairy (over TRQ)', rate: 270, status: 'active', effectiveDate: '2020-07-01', legalBasis: 'USMCA Tariff-Rate Quota', note: 'Canada maintains high over-quota tariffs (averaging 270%) to protect its supply-managed dairy sector. U.S. dairy access within TRQ limits is tariff-free.' },
+      { sector: 'Qualifying USMCA Goods', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '2020-07-01', legalBasis: 'USMCA', note: 'The vast majority of U.S.–Canada goods trade qualifies for zero tariff treatment under USMCA.' },
+      { sector: 'Non-USMCA Goods', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-03-04', legalBasis: 'IEEPA — Fentanyl/Cartel Executive Order', note: 'Canadian goods not qualifying under USMCA rules of origin face 25% tariff. Energy and energy products are subject to 10% rate. USMCA-compliant goods remain at 0%.' },
+      { sector: 'Steel & Aluminum (Section 232)', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-03-12', legalBasis: 'Section 232 — USMCA Exemption Revoked', note: 'Section 232 exemptions for USMCA partners were revoked in March 2025. Canadian steel now faces the 25% Section 232 rate and aluminum faces 10%.' },
+      { sector: 'Softwood Lumber', rate: 8.05, status: 'active', imposedBy: 'us', effectiveDate: '2017-06-26', legalBasis: 'Countervailing Duty Order', note: 'Ongoing anti-subsidy dispute. The U.S. argues Canadian provinces subsidize softwood lumber through below-market stumpage fees. Rate subject to periodic administrative review.' },
+      { sector: 'Dairy (over TRQ)', rate: 270, status: 'active', imposedBy: 'partner', effectiveDate: '2020-07-01', legalBasis: 'USMCA Tariff-Rate Quota', note: 'Canada maintains high over-quota tariffs (averaging 270%) to protect its supply-managed dairy sector. U.S. dairy access within TRQ limits is tariff-free.' },
     ],
     agreement: {
       name: 'USMCA',
@@ -199,11 +199,11 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'Most Chinese Goods (2025)', rate: 145, status: 'active', effectiveDate: '2025-04-09', legalBasis: 'IEEPA + Section 301 (Combined)', note: 'As of April 9, 2025, most Chinese goods face an effective rate of approximately 145%: 34% new IEEPA tariff + 10% prior IEEPA base + prior Section 301 tariffs (7.5–25%). Highest effective tariff rate in modern U.S. trade history. Source: White House Executive Order, April 2025.' },
-      { sector: 'Electric Vehicles', rate: 125, status: 'active', effectiveDate: '2025-04-09', legalBasis: 'IEEPA + Section 301 (EV)', note: 'Chinese EVs face 100% Section 301 rate (effective Sept 2024) plus additional IEEPA duties. Combined effective rate exceeds 125%. Nearly bars market entry.' },
-      { sector: 'Solar Cells & Panels', rate: 95, status: 'active', effectiveDate: '2025-04-09', legalBasis: 'Section 301 + IEEPA + Section 201', note: '50% Section 301 rate (raised June 2024) plus 10-25% IEEPA additional duties. Separate antidumping/CVD orders apply from specific Chinese facilities.' },
-      { sector: 'Steel Products', rate: 50, status: 'active', effectiveDate: '2025-04-09', legalBasis: 'Section 232 + IEEPA', note: '25% Section 232 national security tariff plus IEEPA additional duties. China has no TRQ arrangement or exemption pathway.' },
-      { sector: 'Semiconductors (Legacy)', rate: 50, status: 'active', effectiveDate: '2025-04-09', legalBasis: 'Section 301 — USTR Four-Year Review', note: '50% rate on Chinese legacy semiconductors under Section 301 four-year review (effective 2025). Advanced chips were blocked by export controls before this tariff layer.' },
+      { sector: 'Most Chinese Goods (2025)', rate: 145, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-09', legalBasis: 'IEEPA + Section 301 (Combined)', note: 'As of April 9, 2025, most Chinese goods face an effective rate of approximately 145%: 34% new IEEPA tariff + 10% prior IEEPA base + prior Section 301 tariffs (7.5–25%). Highest effective tariff rate in modern U.S. trade history. Source: White House Executive Order, April 2025.' },
+      { sector: 'Electric Vehicles', rate: 125, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-09', legalBasis: 'IEEPA + Section 301 (EV)', note: 'Chinese EVs face 100% Section 301 rate (effective Sept 2024) plus additional IEEPA duties. Combined effective rate exceeds 125%. Nearly bars market entry.' },
+      { sector: 'Solar Cells & Panels', rate: 95, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-09', legalBasis: 'Section 301 + IEEPA + Section 201', note: '50% Section 301 rate (raised June 2024) plus 10-25% IEEPA additional duties. Separate antidumping/CVD orders apply from specific Chinese facilities.' },
+      { sector: 'Steel Products', rate: 50, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-09', legalBasis: 'Section 232 + IEEPA', note: '25% Section 232 national security tariff plus IEEPA additional duties. China has no TRQ arrangement or exemption pathway.' },
+      { sector: 'Semiconductors (Legacy)', rate: 50, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-09', legalBasis: 'Section 301 — USTR Four-Year Review', note: '50% rate on Chinese legacy semiconductors under Section 301 four-year review (effective 2025). Advanced chips were blocked by export controls before this tariff layer.' },
     ],
     agreement: {
       name: 'No FTA — WTO MFN',
@@ -266,10 +266,10 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'Universal 10% baseline tariff on all U.S. imports took effect April 5, 2025 under IEEPA executive order. Applies to all German goods during the 90-day pause period.' },
-      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% country-specific rate announced April 2, 2025 for the EU. 90-day pause in effect through July 9, 2025 — current rate is 10% baseline. Rate reflects U.S. calculation of EU barriers to U.S. goods.' },
-      { sector: 'Automobiles', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles and light trucks effective May 3, 2025. This is additive to the IEEPA baseline and targets the auto deficit with Germany directly. Source: USITC HTS 2026, 8703.xx: MFN 2.5% + 22.5% Section 232.' },
-      { sector: 'Steel (Section 232 — TRQ)', rate: 25, status: 'suspended', effectiveDate: '2021-10-31', legalBasis: 'Section 232 — EU TRQ Arrangement', note: 'Section 232 tariffs suspended within quota limits under 2021 U.S.–EU arrangement. Future of TRQ uncertain under new 2025 tariff posture; subject to review.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'Universal 10% baseline tariff on all U.S. imports took effect April 5, 2025 under IEEPA executive order. Applies to all German goods during the 90-day pause period.' },
+      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% country-specific rate announced April 2, 2025 for the EU. 90-day pause in effect through July 9, 2025 — current rate is 10% baseline. Rate reflects U.S. calculation of EU barriers to U.S. goods.' },
+      { sector: 'Automobiles', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles and light trucks effective May 3, 2025. This is additive to the IEEPA baseline and targets the auto deficit with Germany directly. Source: USITC HTS 2026, 8703.xx: MFN 2.5% + 22.5% Section 232.' },
+      { sector: 'Steel (Section 232 — TRQ)', rate: 25, status: 'suspended', imposedBy: 'us', effectiveDate: '2021-10-31', legalBasis: 'Section 232 — EU TRQ Arrangement', note: 'Section 232 tariffs suspended within quota limits under 2021 U.S.–EU arrangement. Future of TRQ uncertain under new 2025 tariff posture; subject to review.' },
     ],
     agreement: {
       name: 'No U.S.–EU FTA',
@@ -331,11 +331,11 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'Universal 10% baseline tariff on all U.S. imports took effect April 5, 2025. Applies to Japanese goods during the 90-day pause.' },
-      { sector: 'Japan Reciprocal Tariff', rate: 24, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Japan Reciprocal Rate (Paused)', note: '24% country-specific rate announced April 2, 2025 for Japan. 90-day pause in effect through July 9, 2025; 10% baseline applies during pause. Japan has entered active negotiations with the U.S.' },
-      { sector: 'Automobiles', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles effective May 3, 2025 — a significant blow given autos are Japan\'s largest U.S. export. Source: USITC HTS 2026, 8703.xx: MFN 2.5% + 22.5% Section 232.' },
-      { sector: 'Agricultural Products', rate: 0, status: 'active', effectiveDate: '2020-01-01', legalBasis: 'U.S.–Japan Trade Agreement', note: 'Tariff-free access for approximately $7.2B of U.S. agricultural exports under the 2020 trade agreement. Separate from the 2025 IEEPA tariffs which apply to Japanese goods.' },
-      { sector: 'Steel (Section 232)', rate: 25, status: 'active', effectiveDate: '2018-06-01', legalBasis: 'Section 232', note: 'Section 232 steel tariffs continue to apply to Japanese steel imports. Japan has not reached a TRQ arrangement with the U.S. unlike the EU and UK.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'Universal 10% baseline tariff on all U.S. imports took effect April 5, 2025. Applies to Japanese goods during the 90-day pause.' },
+      { sector: 'Japan Reciprocal Tariff', rate: 24, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Japan Reciprocal Rate (Paused)', note: '24% country-specific rate announced April 2, 2025 for Japan. 90-day pause in effect through July 9, 2025; 10% baseline applies during pause. Japan has entered active negotiations with the U.S.' },
+      { sector: 'Automobiles', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles effective May 3, 2025 — a significant blow given autos are Japan\'s largest U.S. export. Source: USITC HTS 2026, 8703.xx: MFN 2.5% + 22.5% Section 232.' },
+      { sector: 'Agricultural Products', rate: 0, status: 'active', imposedBy: 'partner', effectiveDate: '2020-01-01', legalBasis: 'U.S.–Japan Trade Agreement', note: 'Tariff-free access for approximately $7.2B of U.S. agricultural exports under the 2020 trade agreement. Separate from the 2025 IEEPA tariffs which apply to Japanese goods.' },
+      { sector: 'Steel (Section 232)', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2018-06-01', legalBasis: 'Section 232', note: 'Section 232 steel tariffs continue to apply to Japanese steel imports. Japan has not reached a TRQ arrangement with the U.S. unlike the EU and UK.' },
     ],
     agreement: {
       name: 'U.S.–Japan Trade Agreement (Limited)',
@@ -401,10 +401,10 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'KORUS-Qualifying Goods', rate: 0, status: 'active', effectiveDate: '2012-03-15', legalBasis: 'KORUS FTA', note: 'The KORUS FTA eliminated tariffs on most manufactured goods at entry into force in 2012. Goods meeting KORUS rules of origin continue to enter duty-free. Source: USITC HTS 2026, Special column: Free (KR).' },
-      { sector: 'Non-KORUS Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline tariff applies to Korean goods not covered by KORUS exemptions. The interaction of the 2025 IEEPA tariffs with KORUS-qualifying goods is under legal review.' },
-      { sector: 'Korea Reciprocal Tariff', rate: 25, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Korea Reciprocal Rate (Paused)', note: '25% country-specific rate announced April 2, 2025 for South Korea. 90-day pause in effect through July 9, 2025. The Trump administration has indicated KORUS goods may be exempted pending negotiations.' },
-      { sector: 'Steel (Section 232)', rate: 25, status: 'active', effectiveDate: '2018-03-23', legalBasis: 'Section 232 — Quota Arrangement', note: 'South Korea agreed to a steel quota arrangement limiting exports to approximately 70% of the 2015–17 average. Quota volumes are tariff-free; above-quota steel faces 25% Section 232 rate.' },
+      { sector: 'KORUS-Qualifying Goods', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '2012-03-15', legalBasis: 'KORUS FTA', note: 'The KORUS FTA eliminated tariffs on most manufactured goods at entry into force in 2012. Goods meeting KORUS rules of origin continue to enter duty-free. Source: USITC HTS 2026, Special column: Free (KR).' },
+      { sector: 'Non-KORUS Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline tariff applies to Korean goods not covered by KORUS exemptions. The interaction of the 2025 IEEPA tariffs with KORUS-qualifying goods is under legal review.' },
+      { sector: 'Korea Reciprocal Tariff', rate: 25, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Korea Reciprocal Rate (Paused)', note: '25% country-specific rate announced April 2, 2025 for South Korea. 90-day pause in effect through July 9, 2025. The Trump administration has indicated KORUS goods may be exempted pending negotiations.' },
+      { sector: 'Steel (Section 232)', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2018-03-23', legalBasis: 'Section 232 — Quota Arrangement', note: 'South Korea agreed to a steel quota arrangement limiting exports to approximately 70% of the 2015–17 average. Quota volumes are tariff-free; above-quota steel faces 25% Section 232 rate.' },
     ],
     agreement: {
       name: 'KORUS FTA',
@@ -467,9 +467,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'UK received the 10% universal baseline — the same rate as all countries and notably not a higher country-specific rate. This reflects the strong U.S.–UK relationship and active FTA discussions. A bilateral deal could remove this tariff.' },
-      { sector: 'Automobiles', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles effective May 3, 2025. Applies to UK-manufactured cars (Rolls-Royce, Jaguar Land Rover, Mini). Source: USITC HTS 2026, 8703.xx.' },
-      { sector: 'Steel (Section 232 — TRQ)', rate: 25, status: 'suspended', effectiveDate: '2022-05-31', legalBasis: 'Section 232 — UK TRQ Arrangement', note: 'Section 232 tariffs suspended within TRQ limits under May 2022 U.S.–UK arrangement.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: 'UK received the 10% universal baseline — the same rate as all countries and notably not a higher country-specific rate. This reflects the strong U.S.–UK relationship and active FTA discussions. A bilateral deal could remove this tariff.' },
+      { sector: 'Automobiles', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles effective May 3, 2025. Applies to UK-manufactured cars (Rolls-Royce, Jaguar Land Rover, Mini). Source: USITC HTS 2026, 8703.xx.' },
+      { sector: 'Steel (Section 232 — TRQ)', rate: 25, status: 'suspended', imposedBy: 'us', effectiveDate: '2022-05-31', legalBasis: 'Section 232 — UK TRQ Arrangement', note: 'Section 232 tariffs suspended within TRQ limits under May 2022 U.S.–UK arrangement.' },
     ],
     agreement: {
       name: 'No FTA — Under Discussion',
@@ -529,9 +529,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause (April 9–July 9, 2025).' },
-      { sector: 'Vietnam Reciprocal Tariff', rate: 46, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Vietnam Reciprocal Rate (Paused)', note: '46% country-specific rate announced April 2, 2025 for Vietnam — among the highest in the schedule, reflecting the large U.S. trade deficit and the concern that Vietnamese exports include China-origin goods routed through Vietnam to avoid Section 301 tariffs.' },
-      { sector: 'Electronics & Apparel (MFN Baseline)', rate: 3.5, status: 'active', effectiveDate: '2007-01-11', legalBasis: 'WTO MFN — NTR', note: 'Applicable MFN rate before 2025 executive order additions. Electronics enter at 0% under ITA; apparel at 16.5% (cotton T-shirts, HTS 6109.10.00). Source: USITC HTS 2026.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause (April 9–July 9, 2025).' },
+      { sector: 'Vietnam Reciprocal Tariff', rate: 46, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Vietnam Reciprocal Rate (Paused)', note: '46% country-specific rate announced April 2, 2025 for Vietnam — among the highest in the schedule, reflecting the large U.S. trade deficit and the concern that Vietnamese exports include China-origin goods routed through Vietnam to avoid Section 301 tariffs.' },
+      { sector: 'Electronics & Apparel (MFN Baseline)', rate: 3.5, status: 'active', imposedBy: 'us', effectiveDate: '2007-01-11', legalBasis: 'WTO MFN — NTR', note: 'Applicable MFN rate before 2025 executive order additions. Electronics enter at 0% under ITA; apparel at 16.5% (cotton T-shirts, HTS 6109.10.00). Source: USITC HTS 2026.' },
     ],
     agreement: {
       name: 'No FTA — IPEF Observer',
@@ -599,10 +599,10 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause.' },
-      { sector: 'India Reciprocal Tariff', rate: 26, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — India Reciprocal Rate (Paused)', note: '26% country-specific rate announced April 2, 2025 for India. 90-day pause in effect through July 9, 2025. India has initiated trade talks with the U.S. to negotiate market access concessions.' },
-      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty (Pharma)', note: 'Pharmaceuticals enter duty-free under MFN (HTS Chapter 30). Source: USITC HTS 2026, 3004.xx: Free. This is critical given Indian generics dominate the U.S. market.' },
-      { sector: 'Steel (Section 232)', rate: 25, status: 'active', effectiveDate: '2018-06-01', legalBasis: 'Section 232', note: 'India was not granted a Section 232 exemption and has not reached a quota arrangement. India retaliated with tariffs on U.S. goods including almonds and apples.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause.' },
+      { sector: 'India Reciprocal Tariff', rate: 26, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — India Reciprocal Rate (Paused)', note: '26% country-specific rate announced April 2, 2025 for India. 90-day pause in effect through July 9, 2025. India has initiated trade talks with the U.S. to negotiate market access concessions.' },
+      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty (Pharma)', note: 'Pharmaceuticals enter duty-free under MFN (HTS Chapter 30). Source: USITC HTS 2026, 3004.xx: Free. This is critical given Indian generics dominate the U.S. market.' },
+      { sector: 'Steel (Section 232)', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2018-06-01', legalBasis: 'Section 232', note: 'India was not granted a Section 232 exemption and has not reached a quota arrangement. India retaliated with tariffs on U.S. goods including almonds and apples.' },
     ],
     agreement: {
       name: 'No FTA — Mini-Deal Framework',
@@ -669,9 +669,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'Semiconductors & Electronics (ITA)', rate: 0, status: 'active', effectiveDate: '1996-01-01', legalBasis: 'WTO ITA — Zero Duty', note: 'Semiconductors and electronics enter duty-free under the WTO Information Technology Agreement. A strategic carve-out to avoid raising costs for U.S. chip buyers. Source: USITC HTS 2026, 8471.30.01.00: Free.' },
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause. Whether ITA-covered goods (semiconductors) are exempt from the IEEPA tariff remains a contested legal question.' },
-      { sector: 'Taiwan Reciprocal Tariff', rate: 32, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Taiwan Reciprocal Rate (Paused)', note: '32% country-specific rate announced April 2, 2025 for Taiwan. 90-day pause in effect through July 9, 2025. Taiwan has signaled willingness to negotiate and potentially increase U.S. chip investments.' },
+      { sector: 'Semiconductors & Electronics (ITA)', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '1996-01-01', legalBasis: 'WTO ITA — Zero Duty', note: 'Semiconductors and electronics enter duty-free under the WTO Information Technology Agreement. A strategic carve-out to avoid raising costs for U.S. chip buyers. Source: USITC HTS 2026, 8471.30.01.00: Free.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during the 90-day pause. Whether ITA-covered goods (semiconductors) are exempt from the IEEPA tariff remains a contested legal question.' },
+      { sector: 'Taiwan Reciprocal Tariff', rate: 32, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Taiwan Reciprocal Rate (Paused)', note: '32% country-specific rate announced April 2, 2025 for Taiwan. 90-day pause in effect through July 9, 2025. Taiwan has signaled willingness to negotiate and potentially increase U.S. chip investments.' },
     ],
     agreement: {
       name: 'U.S.–Taiwan Initiative on 21st-Century Trade',
@@ -731,9 +731,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline tariff on all goods from France during 90-day pause.' },
-      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate announced April 2, 2025. Paused until July 9, 2025 — currently 10% applies. France-specific tariff threats on luxury goods and cognac have been floated but not formally imposed.' },
-      { sector: 'Automobiles', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles. Applies to French vehicles (Renault, Peugeot) though French auto exports to the U.S. are limited. Source: USITC HTS 2026, 8703.xx.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline tariff on all goods from France during 90-day pause.' },
+      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate announced April 2, 2025. Paused until July 9, 2025 — currently 10% applies. France-specific tariff threats on luxury goods and cognac have been floated but not formally imposed.' },
+      { sector: 'Automobiles', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported passenger vehicles. Applies to French vehicles (Renault, Peugeot) though French auto exports to the U.S. are limited. Source: USITC HTS 2026, 8703.xx.' },
     ],
     agreement: {
       name: 'No U.S.–EU FTA',
@@ -790,9 +790,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. Politically sensitive given most "Irish" pharmaceutical exports are manufactured by U.S. corporations — the tariff effectively taxes U.S. companies\' own products.' },
-      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. If applied to pharmaceuticals, this would uniquely impact U.S. pharma companies (Pfizer, J&J, Eli Lilly) whose Irish subsidiaries manufacture drugs sold in the U.S.' },
-      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty', note: 'Pharmaceuticals enter duty-free under WTO MFN rules. A separate pharmaceutical tariff has been threatened by the Trump administration — if implemented, it would be a major disruption. Source: USITC HTS 2026, Chapter 30: Free.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. Politically sensitive given most "Irish" pharmaceutical exports are manufactured by U.S. corporations — the tariff effectively taxes U.S. companies\' own products.' },
+      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. If applied to pharmaceuticals, this would uniquely impact U.S. pharma companies (Pfizer, J&J, Eli Lilly) whose Irish subsidiaries manufacture drugs sold in the U.S.' },
+      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty', note: 'Pharmaceuticals enter duty-free under WTO MFN rules. A separate pharmaceutical tariff has been threatened by the Trump administration — if implemented, it would be a major disruption. Source: USITC HTS 2026, Chapter 30: Free.' },
     ],
     agreement: {
       name: 'No U.S.–EU FTA',
@@ -850,9 +850,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. Switzerland is not in the EU — its rate was calculated separately from the EU 20% rate.' },
-      { sector: 'Switzerland Reciprocal Tariff', rate: 31, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Switzerland Reciprocal Rate (Paused)', note: '31% country-specific rate announced April 2, 2025 for Switzerland. 90-day pause through July 9, 2025. Politically sensitive given Switzerland\'s pharmaceutical dominance — Roche and Novartis drugs would face this rate.' },
-      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty', note: 'Swiss pharma imports (Roche, Novartis, Lonza) currently enter duty-free. Any pharmaceutical tariff would materially affect U.S. drug costs. Source: USITC HTS 2026, Chapter 30: Free.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. Switzerland is not in the EU — its rate was calculated separately from the EU 20% rate.' },
+      { sector: 'Switzerland Reciprocal Tariff', rate: 31, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — Switzerland Reciprocal Rate (Paused)', note: '31% country-specific rate announced April 2, 2025 for Switzerland. 90-day pause through July 9, 2025. Politically sensitive given Switzerland\'s pharmaceutical dominance — Roche and Novartis drugs would face this rate.' },
+      { sector: 'Pharmaceuticals (MFN)', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '1995-01-01', legalBasis: 'WTO MFN — Zero Duty', note: 'Swiss pharma imports (Roche, Novartis, Lonza) currently enter duty-free. Any pharmaceutical tariff would materially affect U.S. drug costs. Source: USITC HTS 2026, Chapter 30: Free.' },
     ],
     agreement: {
       name: 'No FTA',
@@ -909,9 +909,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause.' },
-      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. Italy-specific goods (wines, olive oil, luxury fashion) have been cited as potential retaliatory targets in U.S.–EU negotiations.' },
-      { sector: 'Automobiles', rate: 25, status: 'active', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported vehicles. Affects Italian luxury marques (Ferrari, Lamborghini, Maserati, Alfa Romeo). Source: USITC HTS 2026, 8703.xx.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause.' },
+      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. Italy-specific goods (wines, olive oil, luxury fashion) have been cited as potential retaliatory targets in U.S.–EU negotiations.' },
+      { sector: 'Automobiles', rate: 25, status: 'active', imposedBy: 'us', effectiveDate: '2025-05-03', legalBasis: 'Section 232 — Auto Tariff', note: '25% Section 232 tariff on imported vehicles. Affects Italian luxury marques (Ferrari, Lamborghini, Maserati, Alfa Romeo). Source: USITC HTS 2026, 8703.xx.' },
     ],
     agreement: {
       name: 'No U.S.–EU FTA',
@@ -969,9 +969,9 @@ export const countryProfiles: Record<string, CountryProfile> = {
       ],
     },
     tariffs: [
-      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. The Netherlands runs a significant U.S. trade surplus (U.S. exports $55.9B vs. imports $27.6B) — the tariff applies despite this favorable position.' },
-      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. Strategically significant: any tariff on ASML equipment would increase the cost of semiconductor manufacturing equipment for U.S. chipmakers.' },
-      { sector: 'Semiconductor Equipment (ITA)', rate: 0, status: 'active', effectiveDate: '1996-01-01', legalBasis: 'WTO ITA — Zero Duty', note: 'ASML lithography machines and semiconductor equipment enter duty-free under the WTO Information Technology Agreement. Whether IEEPA tariffs override ITA commitments is legally contested. Source: USITC HTS 2026, 8486.xx: Free.' },
+      { sector: 'All Goods (2025 Baseline)', rate: 10, status: 'active', imposedBy: 'us', effectiveDate: '2025-04-05', legalBasis: 'IEEPA — Global Reciprocal Tariff', note: '10% baseline applies during 90-day pause. The Netherlands runs a significant U.S. trade surplus (U.S. exports $55.9B vs. imports $27.6B) — the tariff applies despite this favorable position.' },
+      { sector: 'EU Reciprocal Tariff', rate: 20, status: 'proposed', imposedBy: 'us', effectiveDate: '2025-07-09', legalBasis: 'IEEPA — EU Reciprocal Rate (Paused)', note: '20% EU-wide rate paused until July 9, 2025. Strategically significant: any tariff on ASML equipment would increase the cost of semiconductor manufacturing equipment for U.S. chipmakers.' },
+      { sector: 'Semiconductor Equipment (ITA)', rate: 0, status: 'active', imposedBy: 'us', effectiveDate: '1996-01-01', legalBasis: 'WTO ITA — Zero Duty', note: 'ASML lithography machines and semiconductor equipment enter duty-free under the WTO Information Technology Agreement. Whether IEEPA tariffs override ITA commitments is legally contested. Source: USITC HTS 2026, 8486.xx: Free.' },
     ],
     agreement: {
       name: 'No U.S.–EU FTA',

@@ -224,6 +224,15 @@ export type TradeFlowDirection = 'import' | 'export'
 /** Lifecycle state of a tariff measure. */
 export type TariffStatus = 'active' | 'proposed' | 'suspended'
 
+/**
+ * Which government levies a tariff, from the U.S.–partner perspective.
+ *   'us'      = U.S. duty on imports from this partner (U.S. → partner flow).
+ *   'partner' = this country's duty on goods imported from the U.S. (partner → U.S.).
+ * The target is always the other party, so this single field fully specifies
+ * "who is tariffing whom" for a bilateral relationship.
+ */
+export type TariffImposer = 'us' | 'partner'
+
 /** Status of a bilateral or multilateral trade agreement. */
 export type AgreementStatus = 'in-force' | 'negotiating' | 'suspended' | 'none'
 
@@ -283,6 +292,8 @@ export interface TariffIndicator {
   sector: string
   /** Effective ad-valorem rate in percent (e.g., 25.0 for 25%). */
   rate: number
+  /** Which government levies this tariff. See TariffImposer. */
+  imposedBy: TariffImposer
   status: TariffStatus
   effectiveDate: string
   /** Legal authority for the tariff: "Section 301", "IEEPA", "MFN", "USMCA 0%". */
