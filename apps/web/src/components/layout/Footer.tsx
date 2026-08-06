@@ -55,7 +55,7 @@ function NewsletterForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="shrink-0 px-4 py-2 bg-surface-2 border border-border rounded text-xs font-mono text-ink-2 hover:border-accent hover:text-accent disabled:opacity-50 transition-colors"
+        className="btn btn-sheen shrink-0 px-4 py-2 bg-surface-2 border border-border text-xs text-ink-2 hover:border-accent hover:text-accent disabled:opacity-50 tracking-normal"
       >
         {status === 'loading' ? '…' : 'Subscribe'}
       </button>

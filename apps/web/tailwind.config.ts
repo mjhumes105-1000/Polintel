@@ -66,8 +66,8 @@ const config: Config = {
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         'page-enter': {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
+          from: { opacity: '0', transform: 'translateY(8px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
         'bear-run': {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg) scaleX(1)' },
@@ -83,7 +83,7 @@ const config: Config = {
         shimmer: 'shimmer 1.8s linear infinite',
         reveal: 'reveal 0.4s ease-out forwards',
         'fade-up': 'fade-up 0.3s ease-out forwards',
-        'page-enter': 'page-enter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'page-enter': 'page-enter 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'bear-run': 'bear-run 0.7s ease-in-out infinite',
       },
     },

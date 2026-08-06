@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const NAV_LINKS: { href: string; label: string; highlight?: boolean }[] = [
@@ -18,6 +19,7 @@ const NAV_LINKS: { href: string; label: string; highlight?: boolean }[] = [
 export function Nav() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur-sm">
@@ -41,19 +43,23 @@ export function Nav() {
 
         {/* Desktop nav links */}
         <div className="hidden sm:flex items-center gap-5">
-          {NAV_LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={
-                l.highlight
-                  ? 'text-xs text-flag font-semibold hover:text-flag/80 transition-colors'
-                  : 'text-xs text-ink-3 hover:text-ink-2 transition-colors'
-              }
-            >
-              {l.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((l) => {
+            const active = pathname === l.href || pathname.startsWith(`${l.href}/`)
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={active ? 'page' : undefined}
+                className={
+                  l.highlight
+                    ? 'nav-link text-xs text-flag font-semibold hover:text-flag/80 transition-colors'
+                    : `nav-link text-xs transition-colors ${active ? 'text-ink' : 'text-ink-3 hover:text-ink-2'}`
+                }
+              >
+                {l.label}
+              </Link>
+            )
+          })}
           <ThemeToggle />
         </div>
 
@@ -84,7 +90,7 @@ export function Nav() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="sm:hidden border-t border-border bg-bg/98 backdrop-blur-sm">
+        <div className="sm:hidden border-t border-border bg-bg/98 backdrop-blur-sm animate-fade-up">
           <div className="max-w-5xl mx-auto px-6 py-2">
             {NAV_LINKS.map((l) => (
               <Link

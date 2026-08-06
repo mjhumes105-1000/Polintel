@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { SearchBar } from '@/components/ui/SearchBar'
+import { HeroShader } from '@/components/ui/HeroShader'
 import { PoliticianPhoto } from '@/components/ui/PoliticianPhoto'
 import { CandidatePhoto } from '@/components/ui/CandidatePhoto'
 import newsom from '@/data/politicians/gavin-newsom'
@@ -89,7 +90,7 @@ function EconomyTeaser() {
           <Link
             key={c.slug}
             href={`/economy/${c.slug}`}
-            className="flex items-center gap-3 px-3 py-2.5 bg-surface-2 border border-border rounded hover:border-accent/40 transition-colors group"
+            className="card-interactive flex items-center gap-3 px-3 py-2.5 bg-surface-2 border border-border rounded hover:border-accent/40 group"
           >
             <span className="text-xl leading-none shrink-0">{c.flagEmoji}</span>
             <div className="flex-1 min-w-0">
@@ -108,7 +109,7 @@ function EconomyTeaser() {
 
       <Link
         href="/economy"
-        className="mt-4 block text-center font-mono text-[9px] tracking-widest py-2.5 rounded border border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+        className="btn btn-sheen mt-4 w-full text-[9px] py-2.5 border border-accent/40 text-accent hover:bg-accent/10"
       >
         VIEW ALL {countries.length} PARTNERS →
       </Link>
@@ -154,7 +155,7 @@ function PresidentialTeaser() {
             {c.profileSlug ? (
               <Link
                 href={`/politicians/${c.profileSlug}`}
-                className="flex flex-col items-center gap-2 p-3 bg-surface-2 border border-border rounded hover:border-accent/40 hover:bg-surface transition-colors group text-center"
+                className="card-interactive flex flex-col items-center gap-2 p-3 bg-surface-2 border border-border rounded hover:border-accent/40 hover:bg-surface group text-center"
               >
                 <CandidateMini candidate={c} />
               </Link>
@@ -169,7 +170,7 @@ function PresidentialTeaser() {
 
       <Link
         href="/explore"
-        className="mt-4 block text-center font-mono text-[9px] tracking-widest py-2.5 rounded border border-border text-ink-3 hover:border-accent/40 hover:text-ink-2 transition-colors"
+        className="btn mt-4 w-full text-[9px] py-2.5 border border-border text-ink-3 hover:border-accent/40 hover:text-ink-2"
       >
         EXPLORE 2028 RACE →
       </Link>
@@ -298,7 +299,7 @@ function ProfilesSection() {
       {/* Newsom — featured */}
       <Link
         href={`/politicians/${newsom.slug}`}
-        className="group flex items-center gap-4 px-5 py-4 bg-surface border border-border rounded hover:border-accent hover:bg-surface-2 transition-colors mb-2"
+        className="card-interactive group flex items-center gap-4 px-5 py-4 bg-surface border border-border rounded hover:border-accent hover:bg-surface-2 mb-2"
       >
         <PoliticianPhoto name={newsom.name} photoUrl={newsom.photoUrl} size={48} />
         <div className="flex-1 min-w-0">
@@ -324,7 +325,7 @@ function ProfilesSection() {
             <Link
               key={p.slug}
               href={`/politicians/${p.slug}`}
-              className="flex flex-col items-center gap-2 p-3 bg-surface border border-border rounded hover:border-accent/40 hover:bg-surface-2 transition-colors group text-center"
+              className="card-interactive flex flex-col items-center gap-2 p-3 bg-surface border border-border rounded hover:border-accent/40 hover:bg-surface-2 group text-center"
             >
               <PoliticianPhoto name={p.name} photoUrl={p.photoUrl} size={40} />
               <div className="min-w-0 w-full">
@@ -415,10 +416,15 @@ function WhyThisExists() {
 
 export default function HomePage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="relative max-w-5xl mx-auto px-6 py-16">
+
+      {/* Shader band — full-bleed behind the hero, fades out before the stats */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[480px] overflow-hidden pointer-events-none" aria-hidden>
+        <HeroShader className="absolute inset-0 w-full h-full" />
+      </div>
 
       {/* Hero */}
-      <section className="mb-16">
+      <section className="relative mb-16">
         <p className="font-mono text-[10px] tracking-widest text-accent mb-3">
           POLITICAL INTELLIGENCE PLATFORM
         </p>
@@ -439,7 +445,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href="/politicians"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-900 font-mono text-[10px] tracking-widest rounded transition-colors font-semibold"
+            className="btn btn-sheen px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-900 text-[10px] font-semibold"
           >
             EXPLORE POLITICIANS →
           </Link>
@@ -461,23 +467,30 @@ export default function HomePage() {
       <StatsStrip />
 
       {/* Why this exists */}
-      <WhyThisExists />
-
+      <div className="reveal-on-scroll">
+        <WhyThisExists />
+      </div>
 
       {/* Economy + Presidential 2-col */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
+      <section className="reveal-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-4 mb-16">
         <EconomyTeaser />
         <PresidentialTeaser />
       </section>
 
       {/* Legislation */}
-      <LegislationSection />
+      <div className="reveal-on-scroll">
+        <LegislationSection />
+      </div>
 
       {/* Recently Updated */}
-      <RecentlyUpdatedSection />
+      <div className="reveal-on-scroll">
+        <RecentlyUpdatedSection />
+      </div>
 
       {/* Profiles */}
-      <ProfilesSection />
+      <div className="reveal-on-scroll">
+        <ProfilesSection />
+      </div>
 
     </div>
   )

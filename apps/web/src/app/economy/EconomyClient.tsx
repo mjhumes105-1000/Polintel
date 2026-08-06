@@ -286,7 +286,7 @@ function FeaturedCard({ country }: { country: CountrySummary }) {
   const exportPct = 100 - importPct
 
   return (
-    <div className="relative bg-surface border border-border rounded overflow-hidden group hover:border-accent transition-colors">
+    <div className="card-interactive relative bg-surface border border-border rounded overflow-hidden group hover:border-accent">
       {/* Rank badge */}
       <div className="absolute top-3 right-3">
         <span className="font-mono text-[9px] text-ink-4">#{country.tradePartnerRank}</span>
@@ -367,7 +367,7 @@ function FeaturedCard({ country }: { country: CountrySummary }) {
         <div className="flex items-center gap-2">
           <Link
             href={`/economy/${country.slug}`}
-            className="flex-1 text-center font-mono text-[9px] tracking-widest py-2 rounded border border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+            className="btn btn-sheen flex-1 text-[9px] py-2 border border-accent/40 text-accent hover:bg-accent/10"
           >
             VIEW PROFILE →
           </Link>
@@ -387,7 +387,7 @@ function CountryCard({ country }: { country: CountrySummary }) {
     <div className="relative">
       <Link
         href={`/economy/${country.slug}`}
-        className="block bg-surface border border-border rounded p-4 hover:border-accent hover:bg-surface-2 transition-colors group"
+        className="card-interactive block bg-surface border border-border rounded p-4 hover:border-accent hover:bg-surface-2 group"
       >
         <div className="flex items-start justify-between gap-2 mb-3">
           <div className="flex items-center gap-2">
@@ -587,7 +587,7 @@ function CompareCallout() {
       <Link
         href="/economy/compare"
         onClick={() => track('economy.compare.cta_clicked', { source: 'landing_callout' })}
-        className="shrink-0 font-mono text-[10px] tracking-widest px-5 py-3 rounded border border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+        className="btn btn-sheen shrink-0 text-[10px] px-5 py-3 border border-accent/40 text-accent hover:bg-accent/10"
       >
         OPEN COMPARE →
       </Link>
@@ -819,9 +819,11 @@ export function EconomyClient() {
       </div>
 
       {tab === 'budget' ? (
-        <BudgetView />
+        <div key="budget" className="animate-fade-up">
+          <BudgetView />
+        </div>
       ) : (
-        <>
+        <div key="trade" className="animate-fade-up">
           {/* Global metrics */}
           <GlobalMetricsBar />
 
@@ -909,7 +911,7 @@ export function EconomyClient() {
             Source: U.S. Census Bureau Foreign Trade Division · USTR · USAID GreenBook ·
             FY{GLOBAL_SUMMARY.dataYear} data. Country detail pages in progress.
           </p>
-        </>
+        </div>
       )}
     </div>
   )
