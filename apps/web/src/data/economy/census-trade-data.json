@@ -5,7 +5,1073 @@
     "dataYear": "2024",
     "dataMonth": "12",
     "note": "Month 12 = full-year cumulative total. Values in USD.",
-    "retrievedAt": "2026-08-05"
+    "retrievedAt": "2026-08-06"
   },
-  "countries": {}
+  "countries": {
+    "mexico": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 334492067202,
+      "usImportsUSD": 503110112724,
+      "tradeBalanceUSD": -168618045522,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 54128926134,
+          "percentOfTotal": 16,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 43068995096,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Petroleum & Coal Products",
+          "valueUSD": 35233187849,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 31037731727,
+          "percentOfTotal": 9,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 26077824994,
+          "percentOfTotal": 8,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 170646190160,
+          "percentOfTotal": 34,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 96717081492,
+          "percentOfTotal": 19,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 45252459764,
+          "percentOfTotal": 9,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 31712160441,
+          "percentOfTotal": 6,
+          "direction": "import"
+        },
+        {
+          "name": "Agricultural Products",
+          "valueUSD": 20079721505,
+          "percentOfTotal": 4,
+          "direction": "import"
+        }
+      ]
+    },
+    "canada": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 350605572155,
+      "usImportsUSD": 411771590692,
+      "tradeBalanceUSD": -61166018537,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 74218711075,
+          "percentOfTotal": 21,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 38103984108,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 37970029685,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 26465013362,
+          "percentOfTotal": 8,
+          "direction": "export"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 19712754570,
+          "percentOfTotal": 6,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 106047622918,
+          "percentOfTotal": 26,
+          "direction": "import"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 67390826499,
+          "percentOfTotal": 16,
+          "direction": "import"
+        },
+        {
+          "name": "Primary Metals",
+          "valueUSD": 32164684234,
+          "percentOfTotal": 8,
+          "direction": "import"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 30102025713,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 29987759970,
+          "percentOfTotal": 7,
+          "direction": "import"
+        }
+      ]
+    },
+    "china": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 143271716369,
+      "usImportsUSD": 440319387970,
+      "tradeBalanceUSD": -297047671601,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 25513856505,
+          "percentOfTotal": 18,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 19972226375,
+          "percentOfTotal": 14,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 18218777839,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Agricultural Products",
+          "valueUSD": 17982667102,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 12272034005,
+          "percentOfTotal": 9,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 122629365483,
+          "percentOfTotal": 28,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 57221484717,
+          "percentOfTotal": 13,
+          "direction": "import"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 49170135566,
+          "percentOfTotal": 11,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 32138267135,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Fabricated Metal Products",
+          "valueUSD": 24866723737,
+          "percentOfTotal": 6,
+          "direction": "import"
+        }
+      ]
+    },
+    "germany": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 75694996238,
+      "usImportsUSD": 160307088671,
+      "tradeBalanceUSD": -84612092433,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 19123565870,
+          "percentOfTotal": 25,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 14617745727,
+          "percentOfTotal": 19,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 8446130795,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 5863147411,
+          "percentOfTotal": 8,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 5758032733,
+          "percentOfTotal": 8,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 41293918854,
+          "percentOfTotal": 26,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 29908343242,
+          "percentOfTotal": 19,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 28089135566,
+          "percentOfTotal": 18,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 13190391183,
+          "percentOfTotal": 8,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 8621979345,
+          "percentOfTotal": 5,
+          "direction": "import"
+        }
+      ]
+    },
+    "japan": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 78863444365,
+      "usImportsUSD": 147116521693,
+      "tradeBalanceUSD": -68253077328,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 15597515530,
+          "percentOfTotal": 20,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 9496157617,
+          "percentOfTotal": 12,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 8716994784,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 8604646089,
+          "percentOfTotal": 11,
+          "direction": "export"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 5843356983,
+          "percentOfTotal": 7,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 57126465702,
+          "percentOfTotal": 39,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 28068888301,
+          "percentOfTotal": 19,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 17212592188,
+          "percentOfTotal": 12,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 12705436605,
+          "percentOfTotal": 9,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 9781752576,
+          "percentOfTotal": 7,
+          "direction": "import"
+        }
+      ]
+    },
+    "south-korea": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 65771337079,
+      "usImportsUSD": 131457319567,
+      "tradeBalanceUSD": -65685982488,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 17886329552,
+          "percentOfTotal": 27,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 8065362789,
+          "percentOfTotal": 12,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 6870760440,
+          "percentOfTotal": 10,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 6723086618,
+          "percentOfTotal": 10,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 6442897822,
+          "percentOfTotal": 10,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 46343487197,
+          "percentOfTotal": 35,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 20042008684,
+          "percentOfTotal": 15,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 14170634389,
+          "percentOfTotal": 11,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 12792739968,
+          "percentOfTotal": 10,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 10952025882,
+          "percentOfTotal": 8,
+          "direction": "import"
+        }
+      ]
+    },
+    "united-kingdom": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 79507606927,
+      "usImportsUSD": 68218378775,
+      "tradeBalanceUSD": 11289228152,
+      "balance": "surplus",
+      "topExportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 12423475531,
+          "percentOfTotal": 16,
+          "direction": "export"
+        },
+        {
+          "name": "Primary Metals",
+          "valueUSD": 12226451786,
+          "percentOfTotal": 15,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 10438082942,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 10125604536,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 5917830817,
+          "percentOfTotal": 7,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 17441433772,
+          "percentOfTotal": 26,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 12020569209,
+          "percentOfTotal": 18,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 9074185236,
+          "percentOfTotal": 13,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 5025872833,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 4254917324,
+          "percentOfTotal": 6,
+          "direction": "import"
+        }
+      ]
+    },
+    "vietnam": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 13068254076,
+      "usImportsUSD": 136317602464,
+      "tradeBalanceUSD": -123249348388,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 4314267370,
+          "percentOfTotal": 33,
+          "direction": "export"
+        },
+        {
+          "name": "Agricultural Products",
+          "valueUSD": 1776917940,
+          "percentOfTotal": 14,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 1525496621,
+          "percentOfTotal": 12,
+          "direction": "export"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 1248573598,
+          "percentOfTotal": 10,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 541223392,
+          "percentOfTotal": 4,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 58333748023,
+          "percentOfTotal": 43,
+          "direction": "import"
+        },
+        {
+          "name": "Apparel & Clothing",
+          "valueUSD": 15109482838,
+          "percentOfTotal": 11,
+          "direction": "import"
+        },
+        {
+          "name": "Furniture & Related",
+          "valueUSD": 12065790596,
+          "percentOfTotal": 9,
+          "direction": "import"
+        },
+        {
+          "name": "Leather Goods & Footwear",
+          "valueUSD": 9989029232,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 7435004156,
+          "percentOfTotal": 5,
+          "direction": "import"
+        }
+      ]
+    },
+    "india": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 41581198347,
+      "usImportsUSD": 87284807153,
+      "tradeBalanceUSD": -45703608806,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 7815468208,
+          "percentOfTotal": 19,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 5085566660,
+          "percentOfTotal": 12,
+          "direction": "export"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 3896327744,
+          "percentOfTotal": 9,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 3791811453,
+          "percentOfTotal": 9,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 3723563871,
+          "percentOfTotal": 9,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 18209366757,
+          "percentOfTotal": 21,
+          "direction": "import"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 12502451066,
+          "percentOfTotal": 14,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 11898885285,
+          "percentOfTotal": 14,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 5644594898,
+          "percentOfTotal": 6,
+          "direction": "import"
+        },
+        {
+          "name": "Apparel & Clothing",
+          "valueUSD": 4956348464,
+          "percentOfTotal": 6,
+          "direction": "import"
+        }
+      ]
+    },
+    "taiwan": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 42497985973,
+      "usImportsUSD": 116284909081,
+      "tradeBalanceUSD": -73786923108,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 11947094478,
+          "percentOfTotal": 28,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 7380431345,
+          "percentOfTotal": 17,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 5462469770,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 3610247234,
+          "percentOfTotal": 8,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 3372879307,
+          "percentOfTotal": 8,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 77555396736,
+          "percentOfTotal": 67,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 7104972943,
+          "percentOfTotal": 6,
+          "direction": "import"
+        },
+        {
+          "name": "Fabricated Metal Products",
+          "valueUSD": 6553656552,
+          "percentOfTotal": 6,
+          "direction": "import"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 4746968468,
+          "percentOfTotal": 4,
+          "direction": "import"
+        },
+        {
+          "name": "Electrical Equipment & Appliances",
+          "valueUSD": 4296729013,
+          "percentOfTotal": 4,
+          "direction": "import"
+        }
+      ]
+    },
+    "france": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 43655468472,
+      "usImportsUSD": 59781374329,
+      "tradeBalanceUSD": -16125905857,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 11755893646,
+          "percentOfTotal": 27,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 7090451118,
+          "percentOfTotal": 16,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 5036270681,
+          "percentOfTotal": 12,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 3563956445,
+          "percentOfTotal": 8,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 2911511768,
+          "percentOfTotal": 7,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 12434002558,
+          "percentOfTotal": 21,
+          "direction": "import"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 11406498278,
+          "percentOfTotal": 19,
+          "direction": "import"
+        },
+        {
+          "name": "Beverages & Tobacco",
+          "valueUSD": 4927176961,
+          "percentOfTotal": 8,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 4742334293,
+          "percentOfTotal": 8,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 3677135587,
+          "percentOfTotal": 6,
+          "direction": "import"
+        }
+      ]
+    },
+    "ireland": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 16770718458,
+      "usImportsUSD": 103264421039,
+      "tradeBalanceUSD": -86493702581,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 6081052184,
+          "percentOfTotal": 36,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 2253875615,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 1669125822,
+          "percentOfTotal": 10,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 1520664442,
+          "percentOfTotal": 9,
+          "direction": "export"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 1293995282,
+          "percentOfTotal": 8,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 80400286567,
+          "percentOfTotal": 78,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 7111090008,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 6726430172,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 4948214814,
+          "percentOfTotal": 5,
+          "direction": "import"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 1147467616,
+          "percentOfTotal": 1,
+          "direction": "import"
+        }
+      ]
+    },
+    "switzerland": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 24926221394,
+      "usImportsUSD": 63418571056,
+      "tradeBalanceUSD": -38492349662,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Primary Metals",
+          "valueUSD": 10335152242,
+          "percentOfTotal": 41,
+          "direction": "export"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 4419617169,
+          "percentOfTotal": 18,
+          "direction": "export"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 3325902879,
+          "percentOfTotal": 13,
+          "direction": "export"
+        },
+        {
+          "name": "Used Or Second-Hand Merchandise",
+          "valueUSD": 1606185378,
+          "percentOfTotal": 6,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 1439826230,
+          "percentOfTotal": 6,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 24149655073,
+          "percentOfTotal": 38,
+          "direction": "import"
+        },
+        {
+          "name": "Primary Metals",
+          "valueUSD": 14177497017,
+          "percentOfTotal": 22,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 9162237701,
+          "percentOfTotal": 14,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 3527641807,
+          "percentOfTotal": 6,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 3164577480,
+          "percentOfTotal": 5,
+          "direction": "import"
+        }
+      ]
+    },
+    "italy": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 32461275285,
+      "usImportsUSD": 75994675445,
+      "tradeBalanceUSD": -43533400160,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 11593403437,
+          "percentOfTotal": 36,
+          "direction": "export"
+        },
+        {
+          "name": "Oil & Natural Gas",
+          "valueUSD": 5136703427,
+          "percentOfTotal": 16,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 2332877469,
+          "percentOfTotal": 7,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 1881461126,
+          "percentOfTotal": 6,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 1808724181,
+          "percentOfTotal": 6,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 15412569271,
+          "percentOfTotal": 20,
+          "direction": "import"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 12072658911,
+          "percentOfTotal": 16,
+          "direction": "import"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 7272314058,
+          "percentOfTotal": 10,
+          "direction": "import"
+        },
+        {
+          "name": "Food & Beverage Manufacturing",
+          "valueUSD": 5135661392,
+          "percentOfTotal": 7,
+          "direction": "import"
+        },
+        {
+          "name": "Miscellaneous Manufactured Goods",
+          "valueUSD": 4198816661,
+          "percentOfTotal": 6,
+          "direction": "import"
+        }
+      ]
+    },
+    "netherlands": {
+      "fiscalYear": "2024",
+      "usExportsUSD": 4466741726,
+      "usImportsUSD": 19180872734,
+      "tradeBalanceUSD": -14714131008,
+      "balance": "deficit",
+      "topExportCategories": [
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 2113671151,
+          "percentOfTotal": 47,
+          "direction": "export"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 342785538,
+          "percentOfTotal": 8,
+          "direction": "export"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 329835317,
+          "percentOfTotal": 7,
+          "direction": "export"
+        },
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 320627698,
+          "percentOfTotal": 7,
+          "direction": "export"
+        },
+        {
+          "name": "Mining & Quarrying",
+          "valueUSD": 278881490,
+          "percentOfTotal": 6,
+          "direction": "export"
+        }
+      ],
+      "topImportCategories": [
+        {
+          "name": "Industrial Machinery",
+          "valueUSD": 4026290141,
+          "percentOfTotal": 21,
+          "direction": "import"
+        },
+        {
+          "name": "Chemicals & Pharmaceuticals",
+          "valueUSD": 3996165278,
+          "percentOfTotal": 21,
+          "direction": "import"
+        },
+        {
+          "name": "Transportation Equipment",
+          "valueUSD": 3534701768,
+          "percentOfTotal": 18,
+          "direction": "import"
+        },
+        {
+          "name": "Goods Returned To Canada (Exports Only); U.S. Goods Returned And Reimported Items (Imports Only)",
+          "valueUSD": 1870258848,
+          "percentOfTotal": 10,
+          "direction": "import"
+        },
+        {
+          "name": "Computer & Electronic Products",
+          "valueUSD": 990811261,
+          "percentOfTotal": 5,
+          "direction": "import"
+        }
+      ]
+    }
+  }
 }
