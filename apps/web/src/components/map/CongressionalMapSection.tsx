@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { stateData, type StateInfo } from '@/data/states'
 import { allCongressMembers, type CongressMember } from '@/data/legislators/slim'
+import { allDelegationProfiles } from '@/data/politicians/all-delegations'
 import { houseVacancies, type Vacancy } from '@/data/vacancies'
 
 const USMap = dynamic(() => import('@/components/map/USMap').then((m) => m.USMap), {
@@ -46,6 +47,19 @@ export function memberSlug(name: string) {
     .replace(/\s+/g, '-')
 }
 
+// Congress members are linked to their profile by bioguide, NOT by a name-derived
+// slug. slim.ts carries official names with middle initials ("Roger F. Wicker"),
+// so memberSlug(name) yields "roger-f-wicker" and 404s against the hand-authored
+// profile slug ("roger-wicker"). Delegation profiles store the bioguide in `id`,
+// so resolve through that and fall back to the name only for members with no profile.
+const slugByBioguide: Record<string, string> = Object.fromEntries(
+  Object.values(allDelegationProfiles).map((p) => [p.id, p.slug])
+)
+
+export function memberHref(member: Pick<CongressMember, 'name' | 'bioguide'>) {
+  return `/politicians/${slugByBioguide[member.bioguide] ?? memberSlug(member.name)}`
+}
+
 function photoUrl(bioguide: string) {
   return `https://theunitedstates.io/images/congress/225x275/${bioguide}.jpg`
 }
@@ -54,7 +68,7 @@ function MemberRow({ member, large = false }: { member: CongressMember; large?: 
   const isSenator = member.district === null
   return (
     <Link
-      href={`/politicians/${memberSlug(member.name)}`}
+      href={memberHref(member)}
       className={`flex items-center gap-3 bg-surface-2 border border-border rounded px-3 hover:border-accent/40 hover:bg-surface transition-colors ${large ? 'py-3' : 'py-2'}`}
     >
       <div className={`relative shrink-0 rounded-full overflow-hidden bg-surface-3 ${large ? 'w-10 h-10' : 'w-7 h-7'}`}>
@@ -241,7 +255,7 @@ function StateDistrictPanel({
           <div className="space-y-2">
             <MemberRow member={member} large />
             <Link
-              href={`/politicians/${memberSlug(member.name)}`}
+              href={memberHref(member)}
               className="block text-center py-2 font-mono text-[10px] tracking-widest text-accent hover:text-accent-bright border border-accent/30 hover:border-accent rounded transition-colors"
             >
               VIEW FULL PROFILE →
@@ -282,7 +296,7 @@ function StateDistrictPanel({
                 ) : null}
                 <span className="text-xs text-ink-2 truncate">
                   {v ? 'VACANT' : m ? (
-                    <Link href={`/politicians/${memberSlug(m.name)}`} className="hover:text-accent">
+                    <Link href={memberHref(m)} className="hover:text-accent">
                       {m.name}
                     </Link>
                   ) : ''}
@@ -455,7 +469,7 @@ export function CongressionalMapSection({ readStateFromUrl = false, syncStateToU
             {senators.map(s => (
               <Link
                 key={s.bioguide}
-                href={`/politicians/${memberSlug(s.name)}`}
+                href={memberHref(s)}
                 className="flex items-center gap-3 bg-surface border border-border rounded p-3 hover:border-accent/50 hover:bg-surface-2 transition-colors"
               >
                 <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-2 shrink-0">
@@ -509,7 +523,7 @@ export function CongressionalMapSection({ readStateFromUrl = false, syncStateToU
                 return (
                   <Link
                     key={d}
-                    href={`/politicians/${memberSlug(m.name)}`}
+                    href={memberHref(m)}
                     className={[
                       'flex flex-col items-center gap-2 p-3 rounded border transition-colors',
                       isActive ? 'border-accent/60 bg-accent/10' : 'border-border bg-surface hover:border-accent/40 hover:bg-surface-2',
