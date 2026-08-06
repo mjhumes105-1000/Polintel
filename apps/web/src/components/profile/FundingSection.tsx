@@ -4,6 +4,7 @@ import { useState } from 'react'
 import type { PoliticianProfile, DonorCategory, Donor } from '@political-intel/types'
 import { SourceBadge } from '@/components/ui/SourceBadge'
 import { DataSourceFooter } from '@/components/ui/DataSourceFooter'
+import { DataBar } from '@/components/ui/DataBar'
 
 interface FundingSectionProps {
   politician: PoliticianProfile
@@ -30,7 +31,6 @@ const donorTypeColor: Record<Donor['type'], string> = {
 function CategoryRow({ cat, maxPercentage }: { cat: DonorCategory; maxPercentage: number }) {
   const [open, setOpen] = useState(false)
   const hasDonors = cat.topDonors && cat.topDonors.length > 0
-  const barWidth = `${(cat.percentage / maxPercentage) * 100}%`
 
   return (
     <div>
@@ -56,15 +56,11 @@ function CategoryRow({ cat, maxPercentage }: { cat: DonorCategory; maxPercentage
             <span className="font-mono text-ink-4 w-8 text-right tabular-nums">{cat.percentage}%</span>
           </div>
         </div>
-        <div className="h-1 bg-surface-3 rounded overflow-hidden">
-          <div
-            className={[
-              'h-full rounded transition-all',
-              hasDonors ? 'bg-accent' : 'bg-ink-4',
-            ].join(' ')}
-            style={{ width: barWidth }}
-          />
-        </div>
+        <DataBar
+          pct={(cat.percentage / maxPercentage) * 100}
+          colorClass={hasDonors ? 'bg-accent' : 'bg-ink-4'}
+          heightClass="h-1"
+        />
       </button>
 
       {open && cat.topDonors && (

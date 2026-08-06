@@ -1,5 +1,6 @@
 import type { TradeCategory } from '@political-intel/types'
 import { formatBillions } from '@/lib/economy'
+import { DataBar, SeriesSwatch } from '@/components/ui/DataBar'
 
 interface Props {
   imports: TradeCategory[]
@@ -30,12 +31,7 @@ function CategoryBar({
           </span>
         </div>
       </div>
-      <div className="h-1 bg-surface-3 rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full transition-all ${color}`}
-          style={{ width: `${pct}%` }}
-        />
-      </div>
+      <DataBar pct={pct} colorClass={color} heightClass="h-1" />
     </div>
   )
 }
@@ -50,11 +46,14 @@ function FlowColumn({
   label: string
 }) {
   const maxValue = Math.max(...categories.map((c) => c.valueUSD))
-  const color = direction === 'import' ? 'bg-accent/60' : 'bg-teal-600/70'
+  const color = direction === 'import' ? 'bg-accent' : 'bg-teal-600'
 
   return (
     <div>
-      <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-3">{label}</p>
+      <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-3 flex items-center gap-1.5">
+        <SeriesSwatch colorClass={color} />
+        {label}
+      </p>
       <div className="space-y-3">
         {categories.map((cat) => (
           <CategoryBar

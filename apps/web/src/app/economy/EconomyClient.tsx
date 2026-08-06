@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { countries, GLOBAL_SUMMARY, formatBillions, type CountrySummary } from '@/data/economy/countries'
 import { CompareButtonPill, CompareButtonInline, CompareButtonIcon } from '@/components/economy/CompareButton'
+import { DataBar, SeriesSwatch } from '@/components/ui/DataBar'
 import { track } from '@/lib/analytics'
 import { BudgetView } from './BudgetView'
 
@@ -140,13 +141,13 @@ function GlobalMetricsBar() {
       label: 'FTA PARTNERS',
       value: String(ftaCountries),
       sub: `of ${countries.length} tracked`,
-      color: 'text-teal-600 dark:text-teal-400',
+      color: 'text-ink',
     },
     {
       label: 'U.S. AID OUTFLOWS',
       value: formatBillions(totalAid),
       sub: 'Annual · tracked partners',
-      color: 'text-ink-2',
+      color: 'text-ink',
     },
   ]
 
@@ -155,7 +156,7 @@ function GlobalMetricsBar() {
       {cells.map((cell) => (
         <div key={cell.label} className="bg-surface px-4 py-4">
           <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-1.5 leading-tight">{cell.label}</p>
-          <p className={`font-mono text-lg tabular-nums ${cell.color}`}>{cell.value}</p>
+          <p className={`text-lg font-semibold ${cell.color}`}>{cell.value}</p>
           <p className="font-mono text-[9px] text-ink-4 mt-0.5">{cell.sub}</p>
         </div>
       ))}
@@ -314,37 +315,34 @@ function FeaturedCard({ country }: { country: CountrySummary }) {
         <div className="space-y-2 mb-4">
           <div>
             <div className="flex justify-between mb-1">
-              <span className="font-mono text-[9px] text-ink-4">IMPORTS FROM</span>
+              <span className="font-mono text-[9px] text-ink-4 flex items-center gap-1.5">
+                <SeriesSwatch colorClass="bg-accent" />
+                IMPORTS FROM
+              </span>
               <span className="font-mono text-[9px] text-ink-3 tabular-nums">
                 {formatBillions(country.usImportsUSD)}
               </span>
             </div>
-            <div className="h-1.5 bg-surface-3 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-accent/50 rounded-full"
-                style={{ width: `${Math.min(100, (country.usImportsUSD / maxTrade) * 100)}%` }}
-              />
-            </div>
+            <DataBar pct={(country.usImportsUSD / maxTrade) * 100} colorClass="bg-accent" />
           </div>
           <div>
             <div className="flex justify-between mb-1">
-              <span className="font-mono text-[9px] text-ink-4">EXPORTS TO</span>
+              <span className="font-mono text-[9px] text-ink-4 flex items-center gap-1.5">
+                <SeriesSwatch colorClass="bg-teal-600" />
+                EXPORTS TO
+              </span>
               <span className="font-mono text-[9px] text-ink-3 tabular-nums">
                 {formatBillions(country.usExportsUSD)}
               </span>
             </div>
-            <div className="h-1.5 bg-surface-3 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-teal-600/70 rounded-full"
-                style={{ width: `${Math.min(100, (country.usExportsUSD / maxTrade) * 100)}%` }}
-              />
-            </div>
+            <DataBar pct={(country.usExportsUSD / maxTrade) * 100} colorClass="bg-teal-600" />
           </div>
         </div>
 
         {/* Composition stat */}
         <p className="font-mono text-[10px] text-ink-4 mb-4">
-          Import-heavy · {importPct}% of bilateral flow
+          {importPct >= exportPct ? 'Import-heavy' : 'Export-heavy'} ·{' '}
+          {Math.max(importPct, exportPct)}% of bilateral flow
         </p>
 
         {/* Top categories */}
@@ -410,31 +408,27 @@ function CountryCard({ country }: { country: CountrySummary }) {
         <div className="space-y-2 mb-3">
           <div>
             <div className="flex justify-between items-center mb-1">
-              <span className="font-mono text-[9px] text-ink-4">IMPORTS FROM</span>
+              <span className="font-mono text-[9px] text-ink-4 flex items-center gap-1.5">
+                <SeriesSwatch colorClass="bg-accent" />
+                IMPORTS FROM
+              </span>
               <span className="font-mono text-[9px] text-ink-3 tabular-nums">
                 {formatBillions(country.usImportsUSD)}
               </span>
             </div>
-            <div className="h-1 bg-surface-3 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-accent/50 rounded-full"
-                style={{ width: `${Math.min(100, (country.usImportsUSD / maxTrade) * 100)}%` }}
-              />
-            </div>
+            <DataBar pct={(country.usImportsUSD / maxTrade) * 100} colorClass="bg-accent" heightClass="h-1" />
           </div>
           <div>
             <div className="flex justify-between items-center mb-1">
-              <span className="font-mono text-[9px] text-ink-4">EXPORTS TO</span>
+              <span className="font-mono text-[9px] text-ink-4 flex items-center gap-1.5">
+                <SeriesSwatch colorClass="bg-teal-600" />
+                EXPORTS TO
+              </span>
               <span className="font-mono text-[9px] text-ink-3 tabular-nums">
                 {formatBillions(country.usExportsUSD)}
               </span>
             </div>
-            <div className="h-1 bg-surface-3 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-teal-600/70 rounded-full"
-                style={{ width: `${Math.min(100, (country.usExportsUSD / maxTrade) * 100)}%` }}
-              />
-            </div>
+            <DataBar pct={(country.usExportsUSD / maxTrade) * 100} colorClass="bg-teal-600" heightClass="h-1" />
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 import { formatBillions, signedBalance } from '@/lib/economy'
+import { SeriesSwatch } from '@/components/ui/DataBar'
 
 interface Props {
   totalTradeUSD: number
@@ -13,14 +14,20 @@ interface CellProps {
   label: string
   value: string
   sub?: string
+  /** direction/status color for the value — only when a text label backs it */
   color?: string
+  /** series identity swatch beside the label — identity rides the mark, not the text */
+  swatchClass?: string
 }
 
-function Cell({ label, value, sub, color = 'text-ink' }: CellProps) {
+function Cell({ label, value, sub, color = 'text-ink', swatchClass }: CellProps) {
   return (
     <div className="bg-surface px-4 py-4">
-      <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-1.5 leading-tight">{label}</p>
-      <p className={`font-mono text-lg tabular-nums ${color}`}>{value}</p>
+      <p className="font-mono text-[9px] tracking-widest text-ink-4 mb-1.5 leading-tight flex items-center gap-1.5">
+        {swatchClass && <SeriesSwatch colorClass={swatchClass} />}
+        {label}
+      </p>
+      <p className={`text-lg font-semibold ${color}`}>{value}</p>
       {sub && <p className="font-mono text-[9px] text-ink-4 mt-0.5">{sub}</p>}
     </div>
   )
@@ -50,13 +57,13 @@ export function MetricsStrip({
         label="U.S. IMPORTS FROM"
         value={formatBillions(usImportsUSD)}
         sub={`Goods, FY${fiscalYear}`}
-        color="text-accent"
+        swatchClass="bg-accent"
       />
       <Cell
         label="U.S. EXPORTS TO"
         value={formatBillions(usExportsUSD)}
         sub={`Goods, FY${fiscalYear}`}
-        color="text-teal-600 dark:text-teal-400"
+        swatchClass="bg-teal-600"
       />
       <Cell
         label="TRADE BALANCE"
