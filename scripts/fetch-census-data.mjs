@@ -27,7 +27,16 @@ function loadEnvKey(key) {
 }
 
 const CENSUS_API_KEY = loadEnvKey('CENSUS_API_KEY')
-if (!CENSUS_API_KEY) console.warn('⚠ CENSUS_API_KEY not found — requests may be rate-limited\n')
+if (!CENSUS_API_KEY) {
+  // These timeseries endpoints REQUIRE a key: a keyless request 302-redirects to
+  // an HTML "Missing Key" page served as HTTP 200, which would otherwise slip past
+  // the res.ok check and fail per-country as an opaque JSON parse error — silently
+  // producing an empty {"countries": {}} file. Fail loudly instead so CI surfaces
+  // the misconfigured secret rather than committing empty data over good data.
+  console.error('✗ CENSUS_API_KEY not found. Get a free key at https://api.census.gov/data/key_signup.html')
+  console.error('  Set it as the CENSUS_API_KEY GitHub Actions secret, or add it to apps/web/.env.local.')
+  process.exit(1)
+}
 
 const BASE_EXP = 'https://api.census.gov/data/timeseries/intltrade/exports/naics'
 const BASE_IMP = 'https://api.census.gov/data/timeseries/intltrade/imports/naics'
@@ -107,6 +116,18 @@ async function fetchJSON(url) {
     const text = await res.text()
     throw new Error(`Census API ${res.status}: ${text.slice(0, 200)}`)
   }
+  // A missing/invalid key 302-redirects to an HTML error page (missing_key.html /
+  // invalid_key.html) that is served with HTTP 200. fetch follows the redirect, so
+  // res.ok is true — detect it via the final URL and content-type before parsing,
+  // otherwise res.json() throws an opaque "Unexpected token '<'" per country.
+  if (res.redirected && /_key\.html/.test(res.url)) {
+    throw new Error('Census API rejected the key (missing or invalid) — check CENSUS_API_KEY')
+  }
+  const contentType = res.headers.get('content-type') ?? ''
+  if (!contentType.includes('json')) {
+    const text = await res.text()
+    throw new Error(`Census API returned non-JSON (${contentType || 'unknown'}): ${text.slice(0, 120)}`)
+  }
   return res.json()
 }
 
@@ -178,7 +199,16 @@ async function fetchCountryData(slug, code) {
 async function main() {
   console.log(`Fetching Census Bureau trade data for ${COUNTRIES.length} countries (FY${YEAR})...\n`)
 
-  const results = {}
+  const outPath = resolve(__dirname, '../apps/web/src/data/economy/census-trade-data.json')
+
+  // Seed from the existing file so a transient single-country failure keeps the
+  // last-known-good value instead of dropping that country from the dataset.
+  let results = {}
+  try {
+    results = JSON.parse(readFileSync(outPath, 'utf8')).countries ?? {}
+  } catch {}
+
+  let fetched = 0
   const errors = []
 
   for (const { slug, code } of COUNTRIES) {
@@ -186,6 +216,7 @@ async function main() {
     try {
       const data = await fetchCountryData(slug, code)
       results[slug] = data
+      fetched++
       const exp = (data.usExportsUSD / 1e9).toFixed(1)
       const imp = (data.usImportsUSD / 1e9).toFixed(1)
       const bal = (data.tradeBalanceUSD / 1e9).toFixed(1)
@@ -197,6 +228,15 @@ async function main() {
     }
     // Polite delay between requests
     await new Promise(r => setTimeout(r, 150))
+  }
+
+  // Never overwrite good committed data with an empty file. If every country
+  // failed, the data source (not the data) is broken — leave the file untouched
+  // and exit non-zero so the workflow fails visibly instead of committing {}.
+  if (fetched === 0) {
+    console.error(`\n✗ Fetched 0 country profiles — leaving ${outPath} unchanged.`)
+    if (errors.length > 0) errors.forEach(e => console.error(`  - ${e.slug}: ${e.error}`))
+    process.exit(1)
   }
 
   const output = {
@@ -211,10 +251,9 @@ async function main() {
     countries: results,
   }
 
-  const outPath = resolve(__dirname, '../apps/web/src/data/economy/census-trade-data.json')
   writeFileSync(outPath, JSON.stringify(output, null, 2))
 
-  console.log(`\n✓ Wrote ${Object.keys(results).length} country profiles → ${outPath}`)
+  console.log(`\n✓ Wrote ${Object.keys(results).length} country profiles (${fetched} fetched this run) → ${outPath}`)
   if (errors.length > 0) {
     console.log(`\n⚠ ${errors.length} errors:`)
     errors.forEach(e => console.log(`  - ${e.slug}: ${e.error}`))
