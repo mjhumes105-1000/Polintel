@@ -30,6 +30,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2005,
     priorRole: 'Judge, U.S. Court of Appeals, D.C. Circuit',
     seniority: 1,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Official_roberts_CJ.jpg/330px-Official_roberts_CJ.jpg',
   },
   {
     name: 'Clarence Thomas',
@@ -39,6 +40,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 1991,
     priorRole: 'Judge, U.S. Court of Appeals, D.C. Circuit',
     seniority: 2,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Clarence_Thomas_official_SCOTUS_portrait_%283x4_cropped%29.jpg/330px-Clarence_Thomas_official_SCOTUS_portrait_%283x4_cropped%29.jpg',
   },
   {
     name: 'Samuel A. Alito Jr.',
@@ -48,6 +50,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2006,
     priorRole: 'Judge, U.S. Court of Appeals, 3rd Circuit',
     seniority: 3,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Samuel_Alito_official_photo.jpg/330px-Samuel_Alito_official_photo.jpg',
   },
   {
     name: 'Sonia Sotomayor',
@@ -57,6 +60,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2009,
     priorRole: 'Judge, U.S. Court of Appeals, 2nd Circuit',
     seniority: 4,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sonia_Sotomayor_in_SCOTUS_robe.jpg/330px-Sonia_Sotomayor_in_SCOTUS_robe.jpg',
   },
   {
     name: 'Elena Kagan',
@@ -66,6 +70,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2010,
     priorRole: 'U.S. Solicitor General',
     seniority: 5,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Elena_Kagan_Official_SCOTUS_Portrait_%282013%29.jpg/330px-Elena_Kagan_Official_SCOTUS_Portrait_%282013%29.jpg',
   },
   {
     name: 'Neil M. Gorsuch',
@@ -75,6 +80,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2017,
     priorRole: 'Judge, U.S. Court of Appeals, 10th Circuit',
     seniority: 6,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg/330px-Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg',
   },
   {
     name: 'Brett M. Kavanaugh',
@@ -84,6 +90,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2018,
     priorRole: 'Judge, U.S. Court of Appeals, D.C. Circuit',
     seniority: 7,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Associate_Justice_Brett_Kavanaugh_Official_Portrait_%28full_length%29.jpg/330px-Associate_Justice_Brett_Kavanaugh_Official_Portrait_%28full_length%29.jpg',
   },
   {
     name: 'Amy Coney Barrett',
@@ -93,6 +100,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2020,
     priorRole: 'Judge, U.S. Court of Appeals, 7th Circuit',
     seniority: 8,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Official_Amy_Barrett_photo.jpg/330px-Official_Amy_Barrett_photo.jpg',
   },
   {
     name: 'Ketanji Brown Jackson',
@@ -102,6 +110,7 @@ export const supremeCourt: Justice[] = [
     tookSeat: 2022,
     priorRole: 'Judge, U.S. Court of Appeals, D.C. Circuit',
     seniority: 9,
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ketanji_Brown_Jackson_official_SCOTUS_portrait.jpg/330px-Ketanji_Brown_Jackson_official_SCOTUS_portrait.jpg',
   },
 ]
 
