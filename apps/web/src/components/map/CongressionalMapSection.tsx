@@ -81,6 +81,7 @@ function MemberRow({ member, large = false }: { member: CongressMember; large?: 
           alt={member.name}
           width={large ? 40 : 28}
           height={large ? 40 : 28}
+          loading="eager"
           className="object-cover w-full h-full"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
         />
@@ -477,7 +478,7 @@ export function CongressionalMapSection({ readStateFromUrl = false, syncStateToU
                 className="flex items-center gap-3 bg-surface border border-border rounded p-3 hover:border-accent/50 hover:bg-surface-2 transition-colors"
               >
                 <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-2 shrink-0">
-                  <Image src={photoUrl(s.bioguide)} alt={s.name} width={56} height={56} className="object-cover w-full h-full" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                  <Image src={photoUrl(s.bioguide)} alt={s.name} width={56} height={56} loading="eager" className="object-cover w-full h-full" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-ink">{s.name}</p>
@@ -534,7 +535,7 @@ export function CongressionalMapSection({ readStateFromUrl = false, syncStateToU
                     ].join(' ')}
                   >
                     <div className="relative w-12 h-12 rounded-full overflow-hidden bg-surface-2 shrink-0">
-                      <Image src={photoUrl(m.bioguide)} alt={m.name} width={48} height={48} className="object-cover w-full h-full" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                      <Image src={photoUrl(m.bioguide)} alt={m.name} width={48} height={48} loading="eager" className="object-cover w-full h-full" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
                     </div>
                     <div className="w-full text-center">
                       <p className="text-xs font-medium text-ink leading-tight line-clamp-2">{m.name}</p>
