@@ -60,8 +60,12 @@ export function memberHref(member: Pick<CongressMember, 'name' | 'bioguide'>) {
   return `/politicians/${slugByBioguide[member.bioguide] ?? memberSlug(member.name)}`
 }
 
+// Use the official Congress bioguide photos — the same source the profile pages
+// use (see getPhotoUrl in @/data/legislators). The previous theunitedstates.io
+// host is down (connection failures), which left every preview-card photo blank
+// while profile pages, on bioguide.congress.gov, still rendered.
 function photoUrl(bioguide: string) {
-  return `https://theunitedstates.io/images/congress/225x275/${bioguide}.jpg`
+  return `https://bioguide.congress.gov/bioguide/photo/${bioguide[0]}/${bioguide}.jpg`
 }
 
 function MemberRow({ member, large = false }: { member: CongressMember; large?: boolean }) {
