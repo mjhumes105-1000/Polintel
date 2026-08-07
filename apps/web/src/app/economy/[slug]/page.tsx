@@ -112,7 +112,7 @@ export default async function CountryPage({
       />
 
       {/* Tariffs */}
-      <TariffSection tariffs={profile.tariffs} />
+      <TariffSection tariffs={profile.tariffs} partnerSlug={profile.slug} partnerName={profile.name} />
 
       {/* Trade agreement */}
       <AgreementSection agreement={profile.agreement} />
