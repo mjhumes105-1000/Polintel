@@ -185,15 +185,19 @@ export const cabinet: CabinetMember[] = [
 
   // ── Domestic Policy ──────────────────────────────────────────────────────
   {
-    name: 'Pam Bondi',
-    title: 'Attorney General',
-    shortTitle: 'Attorney General',
+    // Pam Bondi served as AG from Feb 5, 2025 until Trump removed her on Apr 2, 2026
+    // amid fallout over the handling of the Epstein files. Deputy AG Todd Blanche
+    // took over as Acting Attorney General the same day. His nomination for the
+    // permanent post advanced out of the Senate Judiciary Committee (12–10) on
+    // Aug 4, 2026 and is awaiting a full Senate floor vote — not yet confirmed.
+    name: 'Todd Blanche',
+    title: 'Acting Attorney General',
+    shortTitle: 'Acting AG',
     department: 'Justice',
     group: 'domestic',
-    priorRole: 'Florida Attorney General (2011–19)',
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg/330px-Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg',
+    priorRole: 'Deputy Attorney General (2025–26) · Trump defense attorney',
     party: 'R',
-    state: 'FL',
+    state: 'NY',
   },
   {
     name: 'Doug Burgum',
