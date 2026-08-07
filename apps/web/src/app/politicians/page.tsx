@@ -10,6 +10,8 @@ import { stubProfiles, stubProfileSlugs } from '@/data/politicians/stub-profiles
 import type { PoliticianProfile } from '@political-intel/types'
 import { ExecutiveBranchSection } from '@/components/executive/ExecutiveBranchSection'
 import { CongressionalLeadershipSection } from '@/components/legislative/CongressionalLeadershipSection'
+import { JudicialBranchSection } from '@/components/judicial/JudicialBranchSection'
+import { supremeCourt } from '@/data/scotus'
 
 const fullProfiles: PoliticianProfile[] = [
   newsom,
@@ -26,7 +28,7 @@ const allProfiles: PoliticianProfile[] = [..._profileMap.values()]
 // Trump and Vance shown via ExecutiveBranchSection — exclude from grid
 const EXEC_ADMIN_SLUGS = new Set(['donald-trump', 'jd-vance'])
 
-type Tab = 'executive' | 'legislative' | 'state'
+type Tab = 'executive' | 'legislative' | 'judicial' | 'state'
 type SortKey = 'name' | 'state' | 'coverage'
 type LegType = 'all' | 'senator' | 'representative' | 'delegate'
 
@@ -185,6 +187,7 @@ export default function PoliticiansDirectoryPage() {
   const TABS: { id: Tab; label: string; count: number | null }[] = [
     { id: 'executive',   label: 'Executive',   count: null },
     { id: 'legislative', label: 'Legislative', count: counts.legislative },
+    { id: 'judicial',    label: 'Judicial',    count: supremeCourt.length },
     { id: 'state',       label: 'State',       count: counts.state },
   ]
 
@@ -195,7 +198,7 @@ export default function PoliticiansDirectoryPage() {
         <p className="font-mono text-[10px] tracking-widest text-accent/70 mb-1.5">DIRECTORY</p>
         <h1 className="text-2xl font-semibold text-ink mb-2">Politicians</h1>
         <p className="text-sm text-ink-3 leading-relaxed max-w-2xl">
-          {allProfiles.length} politicians tracked across the Executive, Legislative, and State branches.
+          {allProfiles.length} politicians tracked across the Executive, Legislative, and State branches, plus the Supreme Court.
         </p>
       </div>
 
@@ -240,8 +243,15 @@ export default function PoliticiansDirectoryPage() {
         </div>
       )}
 
+      {/* ── JUDICIAL TAB ─────────────────────────────────────────────────────── */}
+      {tab === 'judicial' && (
+        <div id="judicial">
+          <JudicialBranchSection />
+        </div>
+      )}
+
       {/* ── LEGISLATIVE & STATE TABS ─────────────────────────────────────────── */}
-      {tab !== 'executive' && (
+      {(tab === 'legislative' || tab === 'state') && (
         <>
           {/* Congressional leadership header — Legislative tab only */}
           {tab === 'legislative' && <CongressionalLeadershipSection />}
